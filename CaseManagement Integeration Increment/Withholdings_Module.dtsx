@@ -1,19 +1,28 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/27/2022 3:56:52 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="TXBI-DWA-01"
   DTS:CreatorName="CLOUD\Excel_admin3"
-  DTS:DTSID="{D81E3FE0-A5DA-4A42-9B58-C99A0A148AA0}"
+  DTS:DTSID="{A24D8FE4-DAA3-44E5-A45F-2B94562A4AB4}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Withholdings_Module"
   DTS:PackageType="5"
-  DTS:VersionGUID="{57EEBA22-943B-49C7-AB75-A440C3308409}">
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{4C364C84-0A74-4DBF-AA9A-C37E290C0A08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables />
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
