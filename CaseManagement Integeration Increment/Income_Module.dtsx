@@ -7,12 +7,12 @@
   DTS:CreatorName="CLOUD\Excel_admin3"
   DTS:DTSID="{E69AB709-DC1F-484C-94A2-C3AB641F9B26}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{D37C1A20-53A3-4808-9119-7EA72B888F21}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{28C484B3-88CA-4394-953C-25790F746B62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,6 +31,7 @@
           DTS:refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{3FCAB849-ADFD-46F1-9749-F598FC5E6BED}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -66,7 +67,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  b.DeclarationYear,rtb.Unique_Tax_Id,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  b.DeclarationYear,rtb.Unique_Tax_Id,
  b.NetDeclarationData
 ,b.TaxPayerID,a.DeclarationType,a.CreationDate,
 convert(varchar(9),rtb.Unique_Tax_Id)+'_'+convert(varchar,b.[DeclarationYear]) as Artificial_Key
@@ -319,7 +320,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,inc.[CreationDate]) from D
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2009,7 +2010,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,inc.[CreationDate]) from D
           DTS:refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{0FBB8CBB-1AF2-449D-B435-1E9CCC4CFA70}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -2045,19 +2045,23 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,inc.[CreationDate]) from D
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  b.DeclarationData,b.DeclarationYear,rtb.Unique_Tax_Id,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  b.DeclarationData,b.DeclarationYear,rtb.Unique_Tax_Id,
 b.TaxPayerID,a.DeclarationType,a.CreationDate
 ,a.DeclarationNum
 ,convert(varchar(9),rtb.Unique_Tax_Id)+'_'+convert(varchar,b.[DeclarationYear]) as Artificial_Key
+
 from
 tblDeclarations a join [tblDeclarationProfit] b
 on a.DeclarationID=b.ProfitDeclarationID
+
 join DWH_TAX.[dbo].[Dim_Registered_TaxPayers] rtb
 on b.TaxPayerID=rtb.Taxpayer_Id
+
+
 where a.DeclarationNum=106 and a.DeclarationType!=4
 and 
-convert(varchar(9),rtb.Unique_Tax_Id)+'_'+convert(varchar,b.[DeclarationYear]) 
-not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</property>
+convert(varchar(9),rtb.Unique_Tax_Id)+'_'+convert(varchar,b.[DeclarationYear])+'_'+convert(varchar,b.[CreationDate]) 
+not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2298,7 +2302,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2607,7 +2611,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8748,6 +8752,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
           DTS:refId="Package\Stg_to_DWH\102_Stg_DWH"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{222A603E-9BC9-4845-A79C-DCD36E75B028}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -8783,7 +8788,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9092,7 +9097,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -9539,7 +9544,6 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
           DTS:refId="Package\Stg_to_DWH\106_Stg_DWH"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{A5BA04B7-AD29-4899-A722-601FE13A01C4}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -9575,7 +9579,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9930,7 +9934,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -10470,6 +10474,7 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
       DTS:refId="Package\Trunacte_IncomeFlattened"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{D1607997-A6B9-470A-820C-CAD67A1EA48E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -10514,27 +10519,27 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening"
           TopLeft="41,5.5" />
         <NodeLayout
-          Size="149,42"
+          Size="148,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening"
           TopLeft="37,81" />
         <EdgeLayout
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened.PrecedenceConstraints[Constraint]"
-          TopLeft="113.5,47.5">
+          TopLeft="113.2,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.5"
+              EndConnector="0,33.9"
               Start="0,0"
-              End="0,26">
+              End="0,26.4">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,26.4" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10545,17 +10550,17 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="241,178"
-          Size="366,221"
+          IsExpanded="False"
+          PanelSize="366.4,177.6"
+          Size="366.4,43.2"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened"
           TopLeft="0,153" />
         <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Stg_to_DWH\102_Stg_DWH"
           TopLeft="28,5.5" />
         <NodeLayout
-          Size="148,42"
+          Size="148,41.6"
           Id="Package\Stg_to_DWH\106_Stg_DWH"
           TopLeft="37,88" />
         <EdgeLayout
@@ -10594,41 +10599,41 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="205,185"
-          Size="205,228"
+          IsExpanded="False"
+          PanelSize="204.8,184.8"
+          Size="204.8,43.2"
           Id="Package\Stg_to_DWH"
-          TopLeft="520,77" />
+          TopLeft="474.285713507204,77" />
         <NodeLayout
-          Size="206,42"
+          Size="206.4,41.6"
           Id="Package\Trunacte_IncomeFlattened"
           TopLeft="94,21" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="197,63">
+          TopLeft="197.2,62.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-73.6666666666667,90"
+              EndConnector="-14,90.4"
               Start="0,0"
-              End="-73.6666666666667,82.5">
+              End="-14,82.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.7649619151251" />
+                    End="0,41.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.7649619151251"
-                    Point2="0,53.7649619151251"
-                    Point3="-4,53.7649619151251" />
+                    Point1="0,41.2"
+                    Point2="0,45.2"
+                    Point3="-4,45.2" />
                   <mssgle:LineSegment
-                    End="-69.6666666666667,53.7649619151251" />
+                    End="-10,45.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="-69.6666666666667,53.7649619151251"
-                    Point2="-73.6666666666667,53.7649619151251"
-                    Point3="-73.6666666666667,57.7649619151251" />
+                    Point1="-10,45.2"
+                    Point2="-14,45.2"
+                    Point3="-14,49.2" />
                   <mssgle:LineSegment
-                    End="-73.6666666666667,82.5" />
+                    End="-14,82.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10639,30 +10644,30 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="366,263.5">
+          TopLeft="242.933333333333,153">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="154,-72.5"
+              EndConnector="333.752380173871,-32.8"
               Start="0,0"
-              End="146.5,-72.5">
+              End="333.752380173871,-25.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="73,0" />
+                    End="0,-9.20556521739129" />
                   <mssgle:CubicBezierSegment
-                    Point1="73,0"
-                    Point2="77,0"
-                    Point3="77,-4" />
+                    Point1="0,-9.20556521739129"
+                    Point2="0,-13.2055652173913"
+                    Point3="4,-13.2055652173913" />
                   <mssgle:LineSegment
-                    End="77,-68.5" />
+                    End="329.752380173871,-13.2055652173913" />
                   <mssgle:CubicBezierSegment
-                    Point1="77,-68.5"
-                    Point2="77,-72.5"
-                    Point3="81,-72.5" />
+                    Point1="329.752380173871,-13.2055652173913"
+                    Point2="333.752380173871,-13.2055652173913"
+                    Point3="333.752380173871,-17.2055652173913" />
                   <mssgle:LineSegment
-                    End="146.5,-72.5" />
+                    End="333.752380173871,-25.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10680,15 +10685,15 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160,42"
+          Size="160,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening\Income_Tax_102"
           TopLeft="135,212" />
         <NodeLayout
-          Size="183,42"
+          Size="183.2,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening\XML Parser Transform"
           TopLeft="87,118" />
         <NodeLayout
-          Size="96,42"
+          Size="96,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening\102"
           TopLeft="94,28" />
         <EdgeLayout
@@ -10789,19 +10794,19 @@ not in (select inc.Artificial_Key from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 inc)</p
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="160,42"
+          Size="160,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\Income_Tax_106"
           TopLeft="87,216" />
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\XML Parser Transform"
           TopLeft="154,100" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\OLE DB Destination"
           TopLeft="481,238" />
         <NodeLayout
-          Size="96,42"
+          Size="96,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\106"
           TopLeft="52,33" />
         <EdgeLayout
