@@ -11,12 +11,118 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{3614295F-9D59-4E21-BEFA-76DEF0F326AA}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{F6CF3E7C-F912-44E0-8C84-5D43F38F2CF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Deleting Overlapping Records (Spooky)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{055A752C-4CDD-4206-8903-9482A7084B0B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Deleting Overlapping Records (Spooky)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B614CD0D-5A96-42DE-A2DC-F2F066F2D670}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete dwh_102_that over laps with 106"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [DWH_TAX].dbo.Dim_Dec_IncomeTax_102 inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.Artificial_Key=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=102 and del.db='dwh'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{AB5F3770-9198-484D-B017-CF0231C77181}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete dwh_106_that over laps with 102"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [DWH_TAX].dbo.Dim_Dec_IncomeTax_106 inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.Artificial_Key=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=106 and del.db='dwh'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{07325B98-FF19-45DA-A083-33C4DCACD0B4}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete STG_102_that over laps with 106"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [102_temp_result] inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.[Artificial_Key]=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=102 and del.db='stg'&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{591BB6A6-62B3-4AE8-A5F6-2CD54A5B62B6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete STG_106_that over laps with 102"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [106_temp_result] inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.Artifical_Key=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=106 and del.db='stg'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{5637C9B0-5AAD-4B1A-81A9-46A659B90C9B}"
+          DTS:From="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{E6DF76D4-C3B8-428D-BDE2-665F6B9084C2}"
+          DTS:From="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{91882F4E-0DDC-4AD7-AF6C-EDC728931C1B}"
+          DTS:From="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -10125,6 +10231,14 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Flattened_to_STG" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{ACFEBB52-0AAA-406C-B938-9A2686DA6CDA}"
+      DTS:From="Package\Flattened_to_STG"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Deleting Overlapping Records (Spooky)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -10137,7 +10251,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening"
@@ -10223,37 +10337,37 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
           PanelSize="204.8,184.8"
           Size="186.4,43.2"
           Id="Package\Flattened_to_STG"
-          TopLeft="352.571425720137,61.7058821384469" />
+          TopLeft="303.999996321542,219.541178469674" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Trunacte_IncomeFlattened"
-          TopLeft="94,21" />
+          TopLeft="11.7142843129683,16.7176469987651" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="197.2,62.6">
+          TopLeft="114.914284312968,58.3176469987651">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-73.7333333333333,90.4"
+              EndConnector="8.55238235369832,94.6823530012348"
               Start="0,0"
-              End="-73.7333333333333,82.9">
+              End="8.55238235369832,87.1823530012348">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.0041739130435" />
+                    End="0,52.562414358129" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.0041739130435"
-                    Point2="0,54.0041739130435"
-                    Point3="-4,54.0041739130435" />
+                    Point1="0,52.562414358129"
+                    Point2="0,56.562414358129"
+                    Point3="4,56.562414358129" />
                   <mssgle:LineSegment
-                    End="-69.7333333333333,54.0041739130435" />
+                    End="4.55238235369832,56.562414358129" />
                   <mssgle:CubicBezierSegment
-                    Point1="-69.7333333333333,54.0041739130435"
-                    Point2="-73.7333333333333,54.0041739130435"
-                    Point3="-73.7333333333333,58.0041739130435" />
+                    Point1="4.55238235369832,56.562414358129"
+                    Point2="8.55238235369832,56.562414358129"
+                    Point3="8.55238235369832,60.562414358129" />
                   <mssgle:LineSegment
-                    End="-73.7333333333333,82.9" />
+                    End="8.55238235369832,87.1823530012348" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10264,30 +10378,171 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="242.933333333333,153">
+          TopLeft="183.2,196.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="202.838092386804,-48.094117861553"
+              EndConnector="213.999996321542,23.3411784696744"
               Start="0,0"
-              End="202.838092386804,-40.594117861553">
+              End="213.999996321542,15.8411784696744">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-15.3631100607818" />
+                    End="0,7.67058923483721" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-15.3631100607818"
-                    Point2="0,-19.3631100607818"
-                    Point3="4,-19.3631100607818" />
+                    Point1="0,7.67058923483721"
+                    Point2="0,11.6705892348372"
+                    Point3="4,11.6705892348372" />
                   <mssgle:LineSegment
-                    End="198.838092386804,-19.3631100607818" />
+                    End="209.999996321542,11.6705892348372" />
                   <mssgle:CubicBezierSegment
-                    Point1="198.838092386804,-19.3631100607818"
-                    Point2="202.838092386804,-19.3631100607818"
-                    Point3="202.838092386804,-23.3631100607818" />
+                    Point1="209.999996321542,11.6705892348372"
+                    Point2="213.999996321542,11.6705892348372"
+                    Point3="213.999996321542,15.6705892348372" />
                   <mssgle:LineSegment
-                    End="202.838092386804,-40.594117861553" />
+                    End="213.999996321542,15.8411784696744" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          TopLeft="28,3.10588520142437" />
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 2]"
+          TopLeft="28,23.9058852014244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.14285729855905,62.4000008751366"
+              Start="0,0"
+              End="1.64285729855905,62.4000008751366">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,58.4000008751366" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,58.4000008751366"
+                    Point2="-22.5,62.4000008751366"
+                    Point3="-18.5,62.4000008751366" />
+                  <mssgle:LineSegment
+                    End="1.64285729855905,62.4000008751366" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          TopLeft="37.1428572985591,65.505886076561" />
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 3]"
+          TopLeft="171.542857298559,107.105886076561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.31428587971897,26.3999976663028"
+              Start="0,0"
+              End="-9.31428587971897,18.8999976663028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.19999883315138" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.19999883315138"
+                    Point2="0,13.1999988331514"
+                    Point3="-4,13.1999988331514" />
+                  <mssgle:LineSegment
+                    End="-5.31428587971897,13.1999988331514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.31428587971897,13.1999988331514"
+                    Point2="-9.31428587971897,13.1999988331514"
+                    Point3="-9.31428587971897,17.1999988331514" />
+                  <mssgle:LineSegment
+                    End="-9.31428587971897,18.8999976663028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          TopLeft="27.4285714188401,133.505883742864" />
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 4]"
+          TopLeft="165.08571432464,175.105883742864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.388237619235"
+              Start="0,0"
+              End="0,15.888237619235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.888237619235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102"
+          TopLeft="33.1428572304396,198.494121362099" />
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="350.4,295.2"
+          Size="350.4,43.2"
+          Id="Package\Deleting Overlapping Records (Spooky)"
+          TopLeft="25.1428575710374,280.188236744099" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="303.999996321542,241.141178469674">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-103.657138750504,39.0470582744243"
+              Start="0,0"
+              End="-103.657138750504,31.5470582744243">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-99.6571387505043,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-99.6571387505043,0"
+                    Point2="-103.657138750504,0"
+                    Point3="-103.657138750504,4" />
+                  <mssgle:LineSegment
+                    End="-103.657138750504,31.5470582744243" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10521,7 +10776,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
     design-time-name="Package\Flattened_to_STG\102_Stg_DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="118,42"
           Id="Package\Flattened_to_STG\102_Stg_DWH\VW_102"
@@ -10561,7 +10816,9 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10597,13 +10854,13 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
     design-time-name="Package\Flattened_to_STG\106_Stg_DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118,42"
+          Size="118.4,41.6"
           Id="Package\Flattened_to_STG\106_Stg_DWH\VW_106"
           TopLeft="118,67" />
         <NodeLayout
-          Size="203,42"
+          Size="203.2,41.6"
           Id="Package\Flattened_to_STG\106_Stg_DWH\Dim_Dec_IncomeTax_106"
           TopLeft="128,184" />
         <EdgeLayout
@@ -10637,9 +10894,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
