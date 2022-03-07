@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{D30C3A28-5235-4A28-B0CA-1BB8DB7C0B4B}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{739C5AC6-5146-4DAF-A370-6022CBD1B318}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Deleting Overlapping Records (Spooky)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{055A752C-4CDD-4206-8903-9482A7084B0B}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -10197,6 +10198,62 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Post_Load_Deletions"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C696E756-BE07-4320-9B45-B4F70C76EA54}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post_Load_Deletions">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Post_Load_Deletions\Delete DWH_Dime_Income_102 overlapping with 106"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{B8FB4A85-5BA4-40B7-AF00-CF938984857C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete DWH_Dime_Income_102 overlapping with 106"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete  dw&#xA;from DWH_TAX.dbo.Dim_Dec_IncomeTax_102 dw join&#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106] stg&#xA; on dw.Artificial_Key=stg.AK and dw.CreationDate=stg.CreationDate&#xA; where stg.type=102" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Post_Load_Deletions\Delete DWH_Dime_Income_106 overlapping with 102"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7EFB10F5-FFE3-4E91-AEDB-E438EEF2275A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete DWH_Dime_Income_106 overlapping with 102"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete  dw&#xA;from DWH_TAX.dbo.Dim_Dec_IncomeTax_106 dw join&#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106] stg&#xA; on dw.Artificial_Key=stg.AK and dw.CreationDate=stg.CreationDate&#xA; where stg.type=106" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Post_Load_Deletions.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{67D90B4A-510C-44D9-8BB0-BD2938ED803D}"
+          DTS:From="Package\Post_Load_Deletions\Delete DWH_Dime_Income_102 overlapping with 106"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Post_Load_Deletions\Delete DWH_Dime_Income_106 overlapping with 102" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Staging to DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -10728,7 +10785,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\102_stg__to_DWH\Dim_Income_102_Inserts.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
+                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -11016,7 +11073,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\102_stg__to_DWH\DWH_102_Updates.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
+                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -11391,7 +11448,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\102_stg__to_DWH\Slowly Changing Dimension.Connections[LookupConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
+                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
                       description="Defines the connection to use for lookups in the dimension table"
                       name="LookupConnection" />
                   </connections>
@@ -12409,7 +12466,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
+                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -12738,7 +12795,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
+                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -13189,7 +13246,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\106_stg_to_DWH\Slowly Changing Dimension.Connections[LookupConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
+                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
                       description="Defines the connection to use for lookups in the dimension table"
                       name="LookupConnection" />
                   </connections>
@@ -13710,6 +13767,14 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Staging to DWH" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{C61A35D4-5007-488E-A722-BB8872462487}"
+      DTS:From="Package\Staging to DWH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Post_Load_Deletions" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -13928,7 +13993,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="204.8,184.8"
+          PanelSize="206.4,184.8"
           Size="206.4,43.2"
           Id="Package\Flattened_to_STG"
           TopLeft="303.999996321542,219.541178469674" />
@@ -13976,9 +14041,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="222.4,171.2"
-          Size="222.4,214.4"
+          Size="222.4,43.2"
           Id="Package\Staging to DWH"
           TopLeft="402.571435461239,313.611767923296" />
         <NodeLayout
@@ -14087,9 +14152,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="106.571439139697,50.8705894536221"
+              EndConnector="106.571439139697,50.870589453622"
               Start="0,0"
-              End="106.571439139697,43.3705894536221">
+              End="106.571439139697,43.370589453622">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14106,7 +14171,78 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     Point2="106.571439139697,25.435294726811"
                     Point3="106.571439139697,29.435294726811" />
                   <mssgle:LineSegment
-                    End="106.571439139697,43.3705894536221" />
+                    End="106.571439139697,43.370589453622" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="332,41.6"
+          Id="Package\Post_Load_Deletions\Delete DWH_Dime_Income_102 overlapping with 106"
+          TopLeft="45.2571445406701,20.3294157971974" />
+        <EdgeLayout
+          Id="Package\Post_Load_Deletions.PrecedenceConstraints[Constraint 4]"
+          TopLeft="45.25714454067,41.1294157971975">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="3.42857148695964,59.5764707169316"
+              Start="0,0"
+              End="-4.07142851304036,59.5764707169316">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,55.5764707169316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,55.5764707169316"
+                    Point2="-22.5,59.5764707169316"
+                    Point3="-18.5,59.5764707169316" />
+                  <mssgle:LineSegment
+                    End="-4.07142851304036,59.5764707169316" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="332,41.6"
+          Id="Package\Post_Load_Deletions\Delete DWH_Dime_Income_106 overlapping with 102"
+          TopLeft="48.6857160276297,79.9058865141291" />
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="405.6,176.8"
+          Size="200,43.2"
+          Id="Package\Post_Load_Deletions"
+          TopLeft="410.857149853998,412.329414192781" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="512.314292657619,356.811767923296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.5176462694845"
+              Start="0,0"
+              End="0,48.0176462694845">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.0176462694845" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14496,6 +14632,14 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Staging to DWH\102_stg__to_DWH\DWH_102_Updates"
+          TopLeft="499.957144063833,208.7" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Staging to DWH\102_stg__to_DWH\Dim_Income_102_Inserts"
+          TopLeft="206.3,208.7" />
+        <NodeLayout
           Size="96,41.6"
           Id="Package\Staging to DWH\102_stg__to_DWH\102"
           TopLeft="463.5,5.49999999999984" />
@@ -14503,32 +14647,6 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           Size="208.8,41.6"
           Id="Package\Staging to DWH\102_stg__to_DWH\Slowly Changing Dimension"
           TopLeft="407.1,107.1" />
-        <EdgeLayout
-          Id="Package\Staging to DWH\102_stg__to_DWH.Paths[OLE DB Source Output]"
-          TopLeft="511.5,47.0999999999998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="200,41.6"
-          Id="Package\Staging to DWH\102_stg__to_DWH\Dim_Income_102_Inserts"
-          TopLeft="206.3,208.7" />
         <EdgeLayout
           Id="Package\Staging to DWH\102_stg__to_DWH.Paths[New Output]"
           TopLeft="478.033333333333,148.7">
@@ -14565,10 +14683,6 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Staging to DWH\102_stg__to_DWH\DWH_102_Updates"
-          TopLeft="499.957144063833,208.7" />
         <EdgeLayout
           Id="Package\Staging to DWH\102_stg__to_DWH.Paths[Changing Attribute Updates Output]"
           TopLeft="544.966666666667,148.7">
@@ -14605,9 +14719,44 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging to DWH\102_stg__to_DWH.Paths[OLE DB Source Output]"
+          TopLeft="511.5,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Staging to DWH\102_stg__to_DWH\Dim_Income_102_Inserts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Staging to DWH\102_stg__to_DWH\102">
     <Properties>
@@ -14868,19 +15017,6 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Staging to DWH\106_stg_to_DWH\106">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Staging to DWH\102_stg__to_DWH\Dim_Income_102_Inserts">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
