@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.VatCustomDB"
+  DTS:ObjectName="VatCustomDB"
   DTS:DTSID="{C75AF3C8-456D-4E17-AC5F-2CBFFDD155B6}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>

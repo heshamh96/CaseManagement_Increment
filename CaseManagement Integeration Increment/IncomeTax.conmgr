@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.IncomeTax"
+  DTS:ObjectName="IncomeTax"
   DTS:DTSID="{15AFC585-9C4E-425F-AA78-0DA37EE682D8}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>

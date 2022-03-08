@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{739C5AC6-5146-4DAF-A370-6022CBD1B318}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{06E87AE4-60AF-40FA-A90A-5D5522F88243}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -213,7 +213,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,inc.[CreationDate]) from D
                     <connection
                       refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening\102.Connections[OleDbConnection]"
                       connectionManagerID="{15AFC585-9C4E-425F-AA78-0DA37EE682D8}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.IncomeTax]"
+                      connectionManagerRefId="Project.ConnectionManagers[IncomeTax]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -462,7 +462,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,inc.[CreationDate]) from D
                     <connection
                       refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening\Income_Tax_102.Connections[OleDbConnection]"
                       connectionManagerID="{46FCD740-D409-4A31-87A4-800BA5D002C6}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.Income_Tax_Flattened]"
+                      connectionManagerRefId="Project.ConnectionManagers[Income_Tax_Flattened]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2195,7 +2195,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
                     <connection
                       refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\106.Connections[OleDbConnection]"
                       connectionManagerID="{15AFC585-9C4E-425F-AA78-0DA37EE682D8}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.IncomeTax]"
+                      connectionManagerRefId="Project.ConnectionManagers[IncomeTax]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2444,7 +2444,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
                     <connection
                       refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\Income_Tax_106.Connections[OleDbConnection]"
                       connectionManagerID="{46FCD740-D409-4A31-87A4-800BA5D002C6}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.Income_Tax_Flattened]"
+                      connectionManagerRefId="Project.ConnectionManagers[Income_Tax_Flattened]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
