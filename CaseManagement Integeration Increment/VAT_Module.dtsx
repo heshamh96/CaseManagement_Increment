@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{483626AB-EC08-4325-84E2-37BA7A75B713}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{CDE70A59-1B70-42F3-AE85-7BACE7DB73D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -18866,7 +18866,7 @@ where scd.Version&lt;&gt;1</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
-          SQLTask:SqlStatementSource="Truncate table [dbo].[STG_DIm_Declarations_SCD]&#xA;Truncate table [dbo].[Declarations_To_Delete]&#xA;Truncate table [dbo].[Declarations_To_Add]&#xA;Truncate table [dbo].[SentPurchasesInvoices_Stage]&#xA;Truncate table [dbo].[SentSalesInvoices_Stage]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="Truncate table [dbo].[STG_DIm_Declarations_SCD]&#xA;Truncate table [dbo].[Declarations_To_Delete]&#xA;Truncate table [dbo].[Declarations_To_Add]&#xA;Truncate table [dbo].[SentPurchasesInvoices_Stage]&#xA;Truncate table [dbo].[SentSalesInvoices_Stage]&#xA;Truncate table [dbo].[Purchase_Invoices_Master_STG]&#xA;Truncate table [dbo].[Purchase_Invoice_Details_Stg]&#xA;Truncate table [dbo].[Sales_Invoices_Master_STG]&#xA;Truncate table [dbo].[Sales_Invoice_Details_Stg]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
