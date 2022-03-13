@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.Coexistence_GTA"
+  DTS:ObjectName="IBM_Vat"
   DTS:DTSID="{79743A5A-1DF2-4622-AF69-F3DD9F55B6F8}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>

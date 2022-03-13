@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.Sent_Tables_Try_out"
+  DTS:ObjectName="Sent_Tables_Try_out"
   DTS:DTSID="{36A8BFA1-E597-4723-B52D-36D24D2C60BB}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
