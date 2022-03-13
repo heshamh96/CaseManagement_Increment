@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{4FE4860F-96C8-47C7-8593-AA2D15CFBFDD}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{983FABBC-1715-4276-A00A-2D0EBB1BBB02}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,6 +31,7 @@
           DTS:refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{89394C97-85C5-4999-8BE1-588267276C5C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3541,6 +3542,7 @@
           DTS:refId="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
           DTS:DTSID="{DBDCBE15-1E9E-4B34-93FE-A3FC289BA83F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -7284,6 +7286,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
           DTS:refId="Package\Dim_Declarations_SCD Logic\Truncate DWH_Dim_Declarations_SCD"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{E604546F-28AD-45F7-8605-4F1DBD5B6329}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -7326,15 +7329,742 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Fix The Sent Tables On the Fly"
+      DTS:refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{384FC62D-CC86-401B-91B6-02A18D63101E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Filter_Sent_Invoices_Based On Declarations in Staging">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C34A226A-0AA9-4E5D-9511-A041563EB7BC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SentPurchasesInvoices"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SentPurchasesInvoices"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+     [TaxpayerID]
+      ,[TaxVatDecID]
+      ,[PurchaseInvoiceID] from SentPurshaseInvoices
+where TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where FK_VAT_Type_ID=1)
+or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where  FK_VAT_Type_ID=2)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Connections[OleDbConnection]"
+                      connectionManagerID="{093C623A-AEDE-4774-924E-C5FA47ACAD80}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SentTables]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[TaxpayerID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxpayerID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[TaxpayerID]"
+                          name="TaxpayerID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                          name="TaxVatDecID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoiceID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceID]"
+                          name="PurchaseInvoiceID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxpayerID]"
+                          dataType="guid"
+                          name="TaxpayerID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                          dataType="guid"
+                          name="TaxVatDecID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoiceID]"
+                          dataType="guid"
+                          name="PurchaseInvoiceID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxpayerID]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxpayerID]"
+                          name="TaxpayerID" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                          name="TaxVatDecID" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoiceID]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoiceID]"
+                          name="PurchaseInvoiceID" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SentPurchasesInvoices_Stage"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[SentPurchasesInvoices_Stage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Connections[OleDbConnection]"
+                      connectionManagerID="{FBF56239-FE81-403C-B6F1-EA3744C892CC}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[stg]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[TaxpayerID]"
+                          cachedDataType="guid"
+                          cachedName="TaxpayerID"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[TaxpayerID]" />
+                        <inputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[TaxVatDecID]"
+                          cachedDataType="guid"
+                          cachedName="TaxVatDecID"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[TaxVatDecID]" />
+                        <inputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[PurchaseInvoiceID]"
+                          cachedDataType="guid"
+                          cachedName="PurchaseInvoiceID"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseInvoiceID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                          dataType="guid"
+                          name="TaxpayerID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                          dataType="guid"
+                          name="TaxVatDecID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseInvoiceID]"
+                          dataType="guid"
+                          name="PurchaseInvoiceID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices.Paths[OLE DB Source Output]"
+                  endId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C972D2CB-6BA0-4FDD-A6DF-84617FBADFC4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SentSalesInvoices"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SentSalesInvoices"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+     [TaxpayerID]
+      ,[TaxVatDecID]
+      ,[SalesInvoiceID] from SentSalesInvoices
+where TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where FK_VAT_Type_ID=1)
+or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where  FK_VAT_Type_ID=2)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Connections[OleDbConnection]"
+                      connectionManagerID="{093C623A-AEDE-4774-924E-C5FA47ACAD80}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SentTables]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[TaxpayerID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxpayerID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[TaxpayerID]"
+                          name="TaxpayerID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                          name="TaxVatDecID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[SalesInvoiceID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoiceID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[SalesInvoiceID]"
+                          name="SalesInvoiceID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxpayerID]"
+                          dataType="guid"
+                          name="TaxpayerID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                          dataType="guid"
+                          name="TaxVatDecID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoiceID]"
+                          dataType="guid"
+                          name="SalesInvoiceID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxpayerID]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxpayerID]"
+                          name="TaxpayerID" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                          name="TaxVatDecID" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[SalesInvoiceID]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[SalesInvoiceID]"
+                          name="SalesInvoiceID" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SentSalesInvoices_Stage"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[SentSalesInvoices_Stage]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Connections[OleDbConnection]"
+                      connectionManagerID="{FBF56239-FE81-403C-B6F1-EA3744C892CC}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[stg]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[TaxpayerID]"
+                          cachedDataType="guid"
+                          cachedName="TaxpayerID"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[TaxpayerID]" />
+                        <inputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[TaxVatDecID]"
+                          cachedDataType="guid"
+                          cachedName="TaxVatDecID"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[TaxVatDecID]" />
+                        <inputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[SalesInvoiceID]"
+                          cachedDataType="guid"
+                          cachedName="SalesInvoiceID"
+                          externalMetadataColumnId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SalesInvoiceID]"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output].Columns[SalesInvoiceID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                          dataType="guid"
+                          name="TaxpayerID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                          dataType="guid"
+                          name="TaxVatDecID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SalesInvoiceID]"
+                          dataType="guid"
+                          name="SalesInvoiceID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices.Paths[OLE DB Source Output]"
+                  endId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{C0F6B64F-C621-432E-94DD-2279ECF35008}"
+          DTS:From="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fix The Sent Tables (On the Fly)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{41E5136A-536D-4DF6-B1CD-04F5FC1B8016}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Fix The Sent Tables On the Fly">
+      DTS:ObjectName="Fix The Sent Tables (On the Fly)">
       <DTS:Variables />
-      <DTS:Executables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fix The Sent Tables (On the Fly)\SentPurchases_Append (On_Sent_Tables)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{66fa5c46-4027-4cfe-8447-8dd552b667ba}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SentPurchases_Append (On_Sent_Tables)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{36A8BFA1-E597-4723-B52D-36D24D2C60BB}"
+              SQLTask:SqlStatementSource="insert into SentTables.dbo.[SentPurshaseInvoices](&#xA; [ID]      &#xA;,[TaxVatDecID]&#xA;,[PurchaseInvoiceID]&#xA;,[CreationDate]&#xA;,Developed_By)&#xA;&#xA;SELECT  a.[ID]      &#xA;,a.[TaxVatDecID]&#xA;,a.[PurchaseInvoiceID]&#xA;,a.[CreationDate]&#xA;,'false_est5las' as Developed_By&#xA;  FROM [Sent_Tables_Try_out].[dbo].[SentPurshaseInvoices_inc] a&#xA;  left join (select distinct PurchaseInvoiceID,TaxVatDecID from SentTables.dbo.SentPurshaseInvoices) as spik &#xA;on a.PurchaseInvoiceID=spik.PurchaseInvoiceID and a.TaxVatDecID=spik.TaxVatDecID &#xA;where  spik.PurchaseInvoiceID is null&#xA;and spik.TaxVatDecID is null&#xA; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fix The Sent Tables (On the Fly)\SentSales_Append (On_Sent_Tables)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c4269ffe-8f5e-4415-be23-89cffba9faba}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SentSales_Append (On_Sent_Tables)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{36A8BFA1-E597-4723-B52D-36D24D2C60BB}"
+              SQLTask:SqlStatementSource="insert into SentTables.dbo.SentSalesInvoices(&#xA; [ID]      &#xA;,[TaxVatDecID]&#xA;,[SalesInvoiceID]&#xA;,[CreationDate]&#xA;,Developed_By)&#xA;&#xA;SELECT  a.[ID]      &#xA;,a.[TaxVatDecID]&#xA;,a.[SalesInvoiceID]&#xA;,a.[CreationDate]&#xA;,'false_est5las' as Developed_By&#xA;  FROM [Sent_Tables_Try_out].[dbo].SentSalesInvoices_inc a&#xA;  left join (select distinct [SalesInvoiceID],TaxVatDecID from SentTables.dbo.SentSalesInvoices) as ssik &#xA;on a.[SalesInvoiceID]=ssik.[SalesInvoiceID] and a.TaxVatDecID=ssik.TaxVatDecID &#xA;where  ssik.[SalesInvoiceID] is null&#xA;and ssik.TaxVatDecID is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fix The Sent Tables (On the Fly)\Sent_Purchases"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5df6e86a-e8bd-42f8-bd6c-dc1d901657d0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sent_Purchases"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="exec [dbo].[all_declarations_with_no_invoices_sent_purchases_insertion] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Fix The Sent Tables (On the Fly)\Sent_Sales"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{37f6288f-18b2-4d2e-925a-5b4798e3fdf9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sent_Sales"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="exec [dbo].[all_declarations_with_no_invoices_sent_sales_insertion] " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D2EBBC51-82AF-4B92-8B45-86502432C0E5}"
+          DTS:From="Package\Fix The Sent Tables (On the Fly)\Sent_Sales"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Fix The Sent Tables (On the Fly)\SentPurchases_Append (On_Sent_Tables)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint 51]"
+          DTS:CreationName=""
+          DTS:DTSID="{D5B976EF-F310-40EC-AFFA-9C3E5ED160F3}"
+          DTS:From="Package\Fix The Sent Tables (On the Fly)\SentPurchases_Append (On_Sent_Tables)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Fix The Sent Tables (On the Fly)\SentSales_Append (On_Sent_Tables)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{E270B48E-30DD-4ED9-975F-70C722D6DF4E}"
+          DTS:From="Package\Fix The Sent Tables (On the Fly)\Sent_Purchases"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Fix The Sent Tables (On the Fly)\Sent_Sales" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)"
@@ -10809,6 +11539,7 @@ where scd.Version&lt;&gt;1</property>
           DTS:refId="Package\The Deletion Logic\Delete DWH Dim_Declarations"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{823AC86B-3E00-4804-90A0-7743F1AE4B11}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -10826,6 +11557,7 @@ where scd.Version&lt;&gt;1</property>
           DTS:refId="Package\The Deletion Logic\Delete DWH Dim_Invoices"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{989C8249-FE92-4CD5-8197-5B896A8B7698}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -10920,6 +11652,22 @@ where scd.Version&lt;&gt;1</property>
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Dim_Declarations_Increment STG_to_DWH"
       DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{A245BC75-C4FB-4C9B-ADE6-5FE6E38478A4}"
+      DTS:From="Package\Dim_Declarations_Increment STG_to_DWH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Fix The Sent Tables (On the Fly)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{A90E7771-5B6D-4ACD-A7D0-F20B031EFED8}"
+      DTS:From="Package\Fix The Sent Tables (On the Fly)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Filter_Sent_Invoices_Based On Declarations in Staging" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -10932,7 +11680,7 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="315.2,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)"
@@ -11238,14 +11986,14 @@ where scd.Version&lt;&gt;1</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.7058824301585"
+              EndConnector="0,64.7058824301584"
               Start="0,0"
-              End="0,57.2058824301585">
+              End="0,57.2058824301584">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.2058824301585" />
+                    End="0,57.2058824301584" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11258,7 +12006,7 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="435.428578843876,285.629411786156">
+          TopLeft="435.428578843876,285.629411786155">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11280,13 +12028,206 @@ where scd.Version&lt;&gt;1</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Fix The Sent Tables (On the Fly)\Sent_Purchases"
+          TopLeft="10.3292583615719,5.88235693934894" />
+        <EdgeLayout
+          Id="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint 5]"
+          TopLeft="86.7292583615719,47.482356939349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.01496594237176,23.9753510597253"
+              Start="0,0"
+              End="-9.01496594237176,16.4753510597253">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.98767552986266" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.98767552986266"
+                    Point2="0,11.9876755298627"
+                    Point3="-4,11.9876755298627" />
+                  <mssgle:LineSegment
+                    End="-5.01496594237176,11.9876755298627" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.01496594237176,11.9876755298627"
+                    Point2="-9.01496594237176,11.9876755298627"
+                    Point3="-9.01496594237176,15.9876755298627" />
+                  <mssgle:LineSegment
+                    End="-9.01496594237176,16.4753510597253" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Fix The Sent Tables (On the Fly)\Sent_Sales"
+          TopLeft="12.9142924192001,71.4577079990743" />
+        <NodeLayout
+          Size="276.8,41.6"
+          Id="Package\Fix The Sent Tables (On the Fly)\SentPurchases_Append (On_Sent_Tables)"
+          TopLeft="5.5,149.317649332462" />
+        <EdgeLayout
+          Id="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint 51]"
+          TopLeft="145.746258633616,190.917649332462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.4903837747368"
+              Start="0,0"
+              End="0,18.9903837747368">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9903837747368" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="253.6,41.6"
+          Id="Package\Fix The Sent Tables (On the Fly)\SentSales_Append (On_Sent_Tables)"
+          TopLeft="20.7925172672326,217.408033107199" />
+        <EdgeLayout
+          Id="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint]"
+          TopLeft="77.7142924192001,113.057707999074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.1857075807999,36.2599413333881"
+              Start="0,0"
+              End="66.1857075807999,28.7599413333881">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1299706666941" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1299706666941"
+                    Point2="0,18.1299706666941"
+                    Point3="4,18.1299706666941" />
+                  <mssgle:LineSegment
+                    End="62.1857075807999,18.1299706666941" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.1857075807999,18.1299706666941"
+                    Point2="66.1857075807999,18.1299706666941"
+                    Point3="66.1857075807999,22.1299706666941" />
+                  <mssgle:LineSegment
+                    End="66.1857075807999,28.7599413333881" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="287.2,314.4"
+          Size="255.2,43.2"
+          Id="Package\Fix The Sent Tables (On the Fly)"
+          TopLeft="29.9428575710374,361.600003646402" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="156.914285913779,307.952943475849">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.6470601705531"
+              Start="0,0"
+              End="0,46.1470601705531">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.1470601705531" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices"
+          TopLeft="94.7428637018009,15.6235317626214" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices"
+          TopLeft="105.60000674384,87.24706177497" />
+        <EdgeLayout
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="187.17143522282,57.2235317626214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.0235300123486"
+              Start="0,0"
+              End="0,22.5235300123486">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5235300123486" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="204.8,55.2"
-          Size="247.2,98.4"
-          Id="Package\Fix The Sent Tables On the Fly"
-          TopLeft="385.942863633681,342.023532783614" />
+          IsExpanded="False"
+          PanelSize="359.2,179.2"
+          Size="359.2,43.2"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
+          TopLeft="293.371433485771,422.917650207599" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="285.142857571037,383.200003646402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="187.828575914733,39.7176465611971"
+              Start="0,0"
+              End="187.828575914733,32.2176465611971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="183.828575914733,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="183.828575914733,0"
+                    Point2="187.828575914733,0"
+                    Point3="187.828575914733,4" />
+                  <mssgle:LineSegment
+                    End="187.828575914733,32.2176465611971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -11672,6 +12613,148 @@ where scd.Version&lt;&gt;1</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices"
+          TopLeft="212.8,54.4" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage"
+          TopLeft="223.2,176.8" />
+        <EdgeLayout
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices.Paths[OLE DB Source Output]"
+          TopLeft="305.6,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.4,80.8"
+              Start="0,0"
+              End="26.4,73.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.4"
+                    Point2="0,40.4"
+                    Point3="4,40.4" />
+                  <mssgle:LineSegment
+                    End="22.4,40.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.4,40.4"
+                    Point2="26.4,40.4"
+                    Point3="26.4,44.4" />
+                  <mssgle:LineSegment
+                    End="26.4,73.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices"
+          TopLeft="340,46.4" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage"
+          TopLeft="343.2,196" />
+        <EdgeLayout
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices.Paths[OLE DB Source Output]"
+          TopLeft="421.2,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.6000000000001,108"
+              Start="0,0"
+              End="19.6000000000001,100.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50"
+                    Point2="0,54"
+                    Point3="4,54" />
+                  <mssgle:LineSegment
+                    End="15.6000000000001,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.6000000000001,54"
+                    Point2="19.6000000000001,54"
+                    Point3="19.6000000000001,58" />
+                  <mssgle:LineSegment
+                    End="19.6000000000001,100.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
