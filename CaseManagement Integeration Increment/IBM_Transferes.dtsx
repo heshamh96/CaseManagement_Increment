@@ -1,0 +1,1310 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/13/2022 6:45:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TXBI-DWA-01"
+  DTS:CreatorName="CLOUD\Excel_admin3"
+  DTS:DTSID="{793600BA-A75F-40CE-9AA6-A1223F534EA5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IBM_Transferes"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{86DD2B16-6CBA-4E06-80C2-BA85A5CDE34C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\IBM_Sent_Purchases"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{91906CF9-F3CD-44B2-BEBE-E8057B042D45}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="IBM_Sent_Purchases"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\IBM_Sent_Purchases\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\IBM_Sent_Purchases\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\IBM_Sent_Purchases\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                      name="Developed_By"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,3,1252)"IBM"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,3,1252)"IBM"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\IBM_Sent_Purchases\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SentPurchasesInvoices_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SentPurchasesInvoices_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="{FBF56239-FE81-403C-B6F1-EA3744C892CC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[stg]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[TaxpayerID]"
+                      cachedDataType="guid"
+                      cachedName="TaxpayerID"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[TaxpayerID]" />
+                    <inputColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[TaxVatDecID]"
+                      cachedDataType="guid"
+                      cachedName="TaxVatDecID"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[TaxVatDecID]" />
+                    <inputColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[PurchaseInvoiceID]"
+                      cachedDataType="guid"
+                      cachedName="PurchaseInvoiceID"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseInvoiceID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceID]" />
+                    <inputColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].Columns[Developed_By]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Developed_By"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                      lineageId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                      dataType="guid"
+                      name="TaxpayerID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                      dataType="guid"
+                      name="TaxVatDecID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseInvoiceID]"
+                      dataType="guid"
+                      name="PurchaseInvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Developed_By" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\IBM_Sent_Purchases\Sent_Purchases"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Sent_Purchases"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SentPurshaseInvoices]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from [dbo].[SentPurshaseInvoices] a
+--join SentTables.dbo.SentPurshaseInvoices b on a.ID=b.ID
+--join Sent_Tables_Try_out.dbo.Declarations_Backup c on a.TaxVatDecID=c.ID
+where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Declarations_To_Add where Developed_By='IBM')</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\IBM_Sent_Purchases\Sent_Purchases.Connections[OleDbConnection]"
+                  connectionManagerID="{79743A5A-1DF2-4622-AF69-F3DD9F55B6F8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IBM_Vat]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[TaxpayerID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[TaxpayerID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[TaxpayerID]"
+                      name="TaxpayerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                      name="TaxVatDecID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoiceID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceID]"
+                      name="PurchaseInvoiceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceDetailsID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoiceDetailsID]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[PurchaseInvoiceDetailsID]"
+                      name="PurchaseInvoiceDetailsID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                      name="CreationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                      name="IsDeleted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[IsReplicated]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[IsReplicated]"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].Columns[IsReplicated]"
+                      name="IsReplicated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="guid"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[TaxpayerID]"
+                      dataType="guid"
+                      name="TaxpayerID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                      dataType="guid"
+                      name="TaxVatDecID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoiceID]"
+                      dataType="guid"
+                      name="PurchaseInvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoiceDetailsID]"
+                      dataType="guid"
+                      name="PurchaseInvoiceDetailsID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output].ExternalColumns[IsReplicated]"
+                      dataType="bool"
+                      name="IsReplicated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[TaxpayerID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[TaxpayerID]"
+                      name="TaxpayerID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                      name="TaxVatDecID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoiceID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoiceID]"
+                      name="PurchaseInvoiceID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoiceDetailsID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoiceDetailsID]"
+                      name="PurchaseInvoiceDetailsID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                      name="CreationDate" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                      name="IsDeleted" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[IsReplicated]"
+                      dataType="bool"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[IsReplicated]"
+                      name="IsReplicated" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\IBM_Sent_Purchases.Paths[Derived Column Output]"
+              endId="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\IBM_Sent_Purchases\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\IBM_Sent_Purchases.Paths[OLE DB Source Output]"
+              endId="Package\IBM_Sent_Purchases\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\IBM_Sent_Purchases\Sent_Purchases.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\IBM_Sent_Sales"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CC8AD66E-C7F0-47B6-A674-13B3D2F56950}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="IBM_Sent_Sales"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\IBM_Sent_Sales\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\IBM_Sent_Sales\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\IBM_Sent_Sales\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                      name="Developed_By"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,3,1252)"IBM"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,3,1252)"IBM"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\IBM_Sent_Sales\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\IBM_Sent_Sales\SentSales_Stage"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SentSales_Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SentSalesInvoices_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\IBM_Sent_Sales\SentSales_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="{FBF56239-FE81-403C-B6F1-EA3744C892CC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[stg]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].Columns[TaxPayerID]"
+                      cachedDataType="guid"
+                      cachedName="TaxPayerID"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[TaxPayerID]" />
+                    <inputColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].Columns[TaxVatDecID]"
+                      cachedDataType="guid"
+                      cachedName="TaxVatDecID"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[TaxVatDecID]" />
+                    <inputColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].Columns[SalesInvoiceID]"
+                      cachedDataType="guid"
+                      cachedName="SalesInvoiceID"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SalesInvoiceID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[SalesInvoiceID]" />
+                    <inputColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].Columns[Developed_By]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Developed_By"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                      lineageId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxpayerID]"
+                      dataType="guid"
+                      name="TaxpayerID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TaxVatDecID]"
+                      dataType="guid"
+                      name="TaxVatDecID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SalesInvoiceID]"
+                      dataType="guid"
+                      name="SalesInvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Developed_By" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\IBM_Sent_Sales\SentSales_Stage.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Sales\SentSales_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\SentSales_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Sales\SentSales_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\IBM_Sent_Sales\Sent_Sales"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Sent_Sales"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from [dbo].SentSalesInvoices a
+--join SentTables.dbo.SentPurshaseInvoices b on a.ID=b.ID
+--join Sent_Tables_Try_out.dbo.Declarations_Backup c on a.TaxVatDecID=c.ID
+where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Declarations_To_Add where Developed_By='IBM')</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\IBM_Sent_Sales\Sent_Sales.Connections[OleDbConnection]"
+                  connectionManagerID="{79743A5A-1DF2-4622-AF69-F3DD9F55B6F8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[IBM_Vat]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[TaxPayerID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[TaxPayerID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[TaxPayerID]"
+                      name="TaxPayerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[TaxVatDecID]"
+                      name="TaxVatDecID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[SalesInvoiceID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoiceID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[SalesInvoiceID]"
+                      name="SalesInvoiceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[SalesInvoiceDetailsID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoiceDetailsID]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[SalesInvoiceDetailsID]"
+                      name="SalesInvoiceDetailsID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                      name="CreationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                      name="IsDeleted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[IsReplicated]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[IsReplicated]"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].Columns[IsReplicated]"
+                      name="IsReplicated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="guid"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[TaxPayerID]"
+                      dataType="guid"
+                      name="TaxPayerID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[TaxVatDecID]"
+                      dataType="guid"
+                      name="TaxVatDecID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoiceID]"
+                      dataType="guid"
+                      name="SalesInvoiceID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoiceDetailsID]"
+                      dataType="guid"
+                      name="SalesInvoiceDetailsID" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                      dataType="bool"
+                      name="IsDeleted" />
+                    <externalMetadataColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output].ExternalColumns[IsReplicated]"
+                      dataType="bool"
+                      name="IsReplicated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[TaxPayerID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[TaxPayerID]"
+                      name="TaxPayerID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[TaxVatDecID]"
+                      name="TaxVatDecID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[SalesInvoiceID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[SalesInvoiceID]"
+                      name="SalesInvoiceID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[SalesInvoiceDetailsID]"
+                      dataType="guid"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[SalesInvoiceDetailsID]"
+                      name="SalesInvoiceDetailsID" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                      name="CreationDate" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                      dataType="bool"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                      name="IsDeleted" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[IsReplicated]"
+                      dataType="bool"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[IsReplicated]"
+                      name="IsReplicated" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\IBM_Sent_Sales.Paths[Derived Column Output]"
+              endId="Package\IBM_Sent_Sales\SentSales_Stage.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\IBM_Sent_Sales\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\IBM_Sent_Sales.Paths[OLE DB Source Output]"
+              endId="Package\IBM_Sent_Sales\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\IBM_Sent_Sales\Sent_Sales.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CC0D059E-BA52-4139-8971-FCC4E4C1144A}"
+      DTS:From="Package\IBM_Sent_Purchases"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\IBM_Sent_Sales" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\IBM_Sent_Purchases"
+          TopLeft="120.571430624748,52.6117654437425" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\IBM_Sent_Sales"
+          TopLeft="141.142859546506,156.611766902303" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="208.971430624748,94.2117654437425">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.97142892175796,62.4000014585608"
+              Start="0,0"
+              End="8.97142892175796,54.9000014585608">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2000007292804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2000007292804"
+                    Point2="0,31.2000007292804"
+                    Point3="4,31.2000007292804" />
+                  <mssgle:LineSegment
+                    End="4.97142892175796,31.2000007292804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.97142892175796,31.2000007292804"
+                    Point2="8.97142892175796,31.2000007292804"
+                    Point3="8.97142892175796,35.2000007292804" />
+                  <mssgle:LineSegment
+                    End="8.97142892175796,54.9000014585608" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\IBM_Sent_Purchases">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\IBM_Sent_Purchases\Sent_Purchases"
+          TopLeft="249.714289966895,40.9882358689622" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage"
+          TopLeft="245.142861317615,160.282355189076" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\IBM_Sent_Purchases\Derived Column"
+          TopLeft="72.5714298073127,102.211764714462" />
+        <EdgeLayout
+          Id="Package\IBM_Sent_Purchases.Paths[OLE DB Source Output]"
+          TopLeft="249.714289966895,61.7882358689622">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.342860159582,55.6235288455"
+              Start="0,0"
+              End="-16.842860159582,55.6235288455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-10.0647636477585,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.0647636477585,0"
+                    Point2="-14.0647636477585,0"
+                    Point3="-14.0647636477585,4" />
+                  <mssgle:LineSegment
+                    End="-14.0647636477585,51.6235288455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.0647636477585,51.6235288455"
+                    Point2="-14.0647636477585,55.6235288455"
+                    Point3="-18.0647636477585,55.6235288455" />
+                  <mssgle:LineSegment
+                    End="-16.842860159582,55.6235288455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\IBM_Sent_Purchases.Paths[Derived Column Output]"
+          TopLeft="225.371429807313,128.611764714462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.571431510302,31.6705904746138"
+              Start="0,0"
+              End="128.571431510302,24.1705904746138">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="124.571431510302,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.571431510302,0"
+                    Point2="128.571431510302,0"
+                    Point3="128.571431510302,4" />
+                  <mssgle:LineSegment
+                    End="128.571431510302,24.1705904746138" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\IBM_Sent_Sales">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\IBM_Sent_Sales\Sent_Sales"
+          TopLeft="232.8,81.6" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\IBM_Sent_Sales\SentSales_Stage"
+          TopLeft="227.9,215.1" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\IBM_Sent_Sales\Derived Column"
+          TopLeft="57.6,131.9" />
+        <EdgeLayout
+          Id="Package\IBM_Sent_Sales.Paths[OLE DB Source Output]"
+          TopLeft="232.8,102.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.8,29.5"
+              Start="0,0"
+              End="-98.8,22">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-94.8,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.8,0"
+                    Point2="-98.8,0"
+                    Point3="-98.8,4" />
+                  <mssgle:LineSegment
+                    End="-98.8,22" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\IBM_Sent_Sales.Paths[Derived Column Output]"
+          TopLeft="134,173.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171.9,41.6"
+              Start="0,0"
+              End="171.9,34.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.8"
+                    Point2="0,20.8"
+                    Point3="4,20.8" />
+                  <mssgle:LineSegment
+                    End="167.9,20.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="167.9,20.8"
+                    Point2="171.9,20.8"
+                    Point3="171.9,24.8" />
+                  <mssgle:LineSegment
+                    End="171.9,34.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\IBM_Sent_Purchases\Sent_Purchases">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\IBM_Sent_Purchases\SentPurchasesInvoices_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\IBM_Sent_Sales\Sent_Sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\IBM_Sent_Sales\SentSales_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
