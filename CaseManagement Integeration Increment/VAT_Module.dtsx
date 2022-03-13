@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{88953D3C-5106-40C4-876A-423C47AB57EC}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{DFE7566E-C765-4F76-BBA6-9514A1AB8B92}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -7329,6 +7329,1988 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Filter_Invoices_Based On Sent Invoices in Staging"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E6B4245F-99E8-4EFA-AEE9-0E19A671FFD7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Filter_Invoices_Based On Sent Invoices in Staging">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7833B223-0A46-41CA-AD5B-841632FA3947}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Purchae_Invoice_Master_STG"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                          name="Developed_By"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)"Excel Systems"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)"Excel Systems"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Purchase_Invoices"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[PurchasesInvoices]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select   pinv.*, 1 as FK_Inv_Type_ID
+--,case when pinv.Developed_By is null then 'Excel Systems' else pinv.Developed_By end as Developed_Byy
+ FROM  Staging_Area_Increment.dbo.SentPurchasesInvoices_Stage stg join [dbo].PurchasesInvoices pinv
+ on pinv.PurchaseInvoice_Id=stg.PurchaseInvoiceID
+where
+--convert(varchar(6),pinv.Invoice_Date,112) =? and
+pinv.IsDeleted=0</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Connections[OleDbConnection]"
+                      connectionManagerID="{470622B2-8C38-4C26-B92B-8FF88516FF9C}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[VAT]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[PurchaseInvoice_Id]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoice_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[PurchaseInvoice_Id]"
+                          name="PurchaseInvoice_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Taxpayer_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Company_Taxpayer_Id]"
+                          name="Company_Taxpayer_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Unique_Tax_Id]"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Company_Unique_Tax_Id]"
+                          name="Company_Unique_Tax_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Number]"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Number]"
+                          name="Invoice_Number"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                          name="Invoice_Date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Net]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Net]"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Tax]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Tax]"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Money]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Money]"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                          name="Customer_Name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Unique_Tax_Id]"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Unique_Tax_Id]"
+                          name="Customer_Unique_Tax_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_File_Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_File_Number]"
+                          length="16"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_File_Number]"
+                          name="Customer_File_Number"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_National_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_National_Id]"
+                          length="14"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_National_Id]"
+                          name="Customer_National_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Mobile]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Mobile]"
+                          length="15"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Mobile]"
+                          name="Customer_Mobile"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Address]"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Address]"
+                          name="Customer_Address"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Replicated]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Replicated]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Replicated]"
+                          name="Replicated"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[InvoiceType]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[InvoiceType]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[InvoiceType]"
+                          name="InvoiceType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                          name="IsDeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                          name="CreationDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                          name="UpdatedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[IsAPI]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsAPI]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[IsAPI]"
+                          name="IsAPI"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[FK_Inv_Type_ID]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[FK_Inv_Type_ID]"
+                          name="FK_Inv_Type_ID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[PurchaseInvoice_Id]"
+                          dataType="guid"
+                          name="PurchaseInvoice_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          name="Company_Taxpayer_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Company_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="Invoice_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                          dataType="dbDate"
+                          name="Invoice_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Name" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Customer_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_File_Number]"
+                          dataType="wstr"
+                          length="16"
+                          name="Customer_File_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_National_Id]"
+                          dataType="wstr"
+                          length="14"
+                          name="Customer_National_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Mobile]"
+                          dataType="wstr"
+                          length="15"
+                          name="Customer_Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Address]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Address" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Replicated]"
+                          dataType="bool"
+                          name="Replicated" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[InvoiceType]"
+                          dataType="i4"
+                          name="InvoiceType" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          name="CreationDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          name="UpdatedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsAPI]"
+                          dataType="bool"
+                          name="IsAPI" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
+                          codePage="1256"
+                          dataType="str"
+                          length="50"
+                          name="Developed_By" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          name="FK_Inv_Type_ID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoice_Id]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[PurchaseInvoice_Id]"
+                          name="PurchaseInvoice_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Taxpayer_Id]"
+                          name="Company_Taxpayer_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Unique_Tax_Id]"
+                          name="Company_Unique_Tax_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Number]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Number]"
+                          name="Invoice_Number" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                          dataType="dbDate"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                          name="Invoice_Date" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Net]"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Tax]"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Money]"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                          name="Customer_Name" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Unique_Tax_Id]"
+                          name="Customer_Unique_Tax_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_File_Number]"
+                          dataType="wstr"
+                          length="16"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_File_Number]"
+                          name="Customer_File_Number" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_National_Id]"
+                          dataType="wstr"
+                          length="14"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_National_Id]"
+                          name="Customer_National_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Mobile]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Mobile]"
+                          name="Customer_Mobile" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Address]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Address]"
+                          name="Customer_Address" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Replicated]"
+                          dataType="bool"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[Replicated]"
+                          name="Replicated" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[InvoiceType]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[InvoiceType]"
+                          name="InvoiceType" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                          dataType="bool"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                          name="IsDeleted" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                          name="CreationDate" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                          name="UpdatedDate" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[IsAPI]"
+                          dataType="bool"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[IsAPI]"
+                          name="IsAPI" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[FK_Inv_Type_ID]"
+                          name="FK_Inv_Type_ID" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Purchase_Invoices_Master_STG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Purchase_Invoices_Master_STG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Connections[OleDbConnection]"
+                      connectionManagerID="{FBF56239-FE81-403C-B6F1-EA3744C892CC}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[stg]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[PurchaseInvoice_Id]"
+                          cachedDataType="guid"
+                          cachedName="PurchaseInvoice_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseInvoice_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[PurchaseInvoice_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Company_Taxpayer_Id]"
+                          cachedDataType="guid"
+                          cachedName="Company_Taxpayer_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Taxpayer_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Company_Taxpayer_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Company_Unique_Tax_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="Company_Unique_Tax_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Unique_Tax_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Company_Unique_Tax_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Number]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Invoice_Number"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Number]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Number]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Date]"
+                          cachedDataType="dbDate"
+                          cachedName="Invoice_Date"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Date]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Total_Net]"
+                          cachedDataType="numeric"
+                          cachedName="Invoice_Total_Net"
+                          cachedPrecision="19"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Net]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Net]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Total_Tax]"
+                          cachedDataType="numeric"
+                          cachedName="Invoice_Total_Tax"
+                          cachedPrecision="19"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Tax]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Tax]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Total_Money]"
+                          cachedDataType="numeric"
+                          cachedName="Invoice_Total_Money"
+                          cachedPrecision="19"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Money]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Money]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Customer_Name"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Name]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Unique_Tax_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="Customer_Unique_Tax_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Unique_Tax_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Unique_Tax_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_File_Number]"
+                          cachedDataType="wstr"
+                          cachedLength="16"
+                          cachedName="Customer_File_Number"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_File_Number]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_File_Number]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_National_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="14"
+                          cachedName="Customer_National_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_National_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_National_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Mobile]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="Customer_Mobile"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Mobile]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Mobile]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Address]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Customer_Address"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Address]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Address]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Replicated]"
+                          cachedDataType="bool"
+                          cachedName="Replicated"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Replicated]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[Replicated]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[InvoiceType]"
+                          cachedDataType="i4"
+                          cachedName="InvoiceType"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceType]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[InvoiceType]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[IsDeleted]"
+                          cachedDataType="bool"
+                          cachedName="IsDeleted"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[IsDeleted]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[CreationDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CreationDate"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[CreationDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[CreationDate]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="UpdatedDate"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[IsAPI]"
+                          cachedDataType="bool"
+                          cachedName="IsAPI"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsAPI]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[IsAPI]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[FK_Inv_Type_ID]"
+                          cachedDataType="i4"
+                          cachedName="FK_Inv_Type_ID"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[FK_Inv_Type_ID]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].Columns[FK_Inv_Type_ID]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Developed_By]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Developed_By"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseInvoice_Id]"
+                          dataType="guid"
+                          name="PurchaseInvoice_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          name="Company_Taxpayer_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Company_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="Invoice_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                          dataType="dbDate"
+                          name="Invoice_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Name" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Customer_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_File_Number]"
+                          dataType="wstr"
+                          length="16"
+                          name="Customer_File_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_National_Id]"
+                          dataType="wstr"
+                          length="14"
+                          name="Customer_National_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Mobile]"
+                          dataType="wstr"
+                          length="15"
+                          name="Customer_Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Address]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Address" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Replicated]"
+                          dataType="bool"
+                          name="Replicated" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceType]"
+                          dataType="i4"
+                          name="InvoiceType" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          name="CreationDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          name="UpdatedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsAPI]"
+                          dataType="bool"
+                          name="IsAPI" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          name="FK_Inv_Type_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Developed_By" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG.Paths[Derived Column Output]"
+                  endId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG.Paths[OLE DB Source Output]"
+                  endId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{34B39CC2-2461-4865-9FEC-289D33A066BC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sales_Invoice_Master_STG"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]"
+                          name="Developed_By"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,50,1252)"Excel Systems"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,50,1252)"Excel Systems"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Sales_Invoices"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[PurchasesInvoices]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select   sinv.*, 2 as FK_Inv_Type_ID
+--,case when pinv.Developed_By is null then 'Excel Systems' else pinv.Developed_By end as Developed_Byy
+ FROM  Staging_Area_Increment.dbo.SentSalesInvoices_Stage stg join [dbo].SalesInvoices sinv 
+ on sinv.SalesInvoice_Id=stg.SalesInvoiceID
+where
+--convert(varchar(6),pinv.Invoice_Date,112) =? and
+sinv.IsDeleted=0</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Connections[OleDbConnection]"
+                      connectionManagerID="{470622B2-8C38-4C26-B92B-8FF88516FF9C}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[VAT]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Taxpayer_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Company_Taxpayer_Id]"
+                          name="Company_Taxpayer_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Unique_Tax_Id]"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Company_Unique_Tax_Id]"
+                          name="Company_Unique_Tax_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Number]"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Number]"
+                          name="Invoice_Number"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Date]"
+                          name="Invoice_Date"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Net]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Net]"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Tax]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Tax]"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Money]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Money]"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                          name="Customer_Name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Unique_Tax_Id]"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Unique_Tax_Id]"
+                          name="Customer_Unique_Tax_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_File_Number]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_File_Number]"
+                          length="16"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_File_Number]"
+                          name="Customer_File_Number"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_National_Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_National_Id]"
+                          length="14"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_National_Id]"
+                          name="Customer_National_Id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Mobile]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Mobile]"
+                          length="15"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Mobile]"
+                          name="Customer_Mobile"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Address]"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Address]"
+                          name="Customer_Address"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Replicated]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Replicated]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Replicated]"
+                          name="Replicated"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[InvoiceType]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[InvoiceType]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[InvoiceType]"
+                          name="InvoiceType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[IsDeleted]"
+                          name="IsDeleted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                          name="CreationDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                          name="UpdatedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[IsAPI]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsAPI]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[IsAPI]"
+                          name="IsAPI"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[FK_Inv_Type_ID]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[FK_Inv_Type_ID]"
+                          name="FK_Inv_Type_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[SalesInvoice_Id]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoice_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[SalesInvoice_Id]"
+                          name="SalesInvoice_Id"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          name="Company_Taxpayer_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Company_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="Invoice_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Date]"
+                          dataType="dbDate"
+                          name="Invoice_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Name" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Customer_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_File_Number]"
+                          dataType="wstr"
+                          length="16"
+                          name="Customer_File_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_National_Id]"
+                          dataType="wstr"
+                          length="14"
+                          name="Customer_National_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Mobile]"
+                          dataType="wstr"
+                          length="15"
+                          name="Customer_Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Customer_Address]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Address" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Replicated]"
+                          dataType="bool"
+                          name="Replicated" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[InvoiceType]"
+                          dataType="i4"
+                          name="InvoiceType" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          name="CreationDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          name="UpdatedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsAPI]"
+                          dataType="bool"
+                          name="IsAPI" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
+                          codePage="1256"
+                          dataType="str"
+                          length="50"
+                          name="Developed_By" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          name="FK_Inv_Type_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[SalesInvoice_Id]"
+                          dataType="guid"
+                          name="SalesInvoice_Id" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[SalesInvoice_Id]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[SalesInvoice_Id]"
+                          name="SalesInvoice_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Taxpayer_Id]"
+                          name="Company_Taxpayer_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Company_Unique_Tax_Id]"
+                          name="Company_Unique_Tax_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Number]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Number]"
+                          name="Invoice_Number" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                          dataType="dbDate"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Date]"
+                          name="Invoice_Date" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Net]"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Tax]"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Invoice_Total_Money]"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                          name="Customer_Name" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Unique_Tax_Id]"
+                          name="Customer_Unique_Tax_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_File_Number]"
+                          dataType="wstr"
+                          length="16"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_File_Number]"
+                          name="Customer_File_Number" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_National_Id]"
+                          dataType="wstr"
+                          length="14"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_National_Id]"
+                          name="Customer_National_Id" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Mobile]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Mobile]"
+                          name="Customer_Mobile" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Address]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Customer_Address]"
+                          name="Customer_Address" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Replicated]"
+                          dataType="bool"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[Replicated]"
+                          name="Replicated" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[InvoiceType]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[InvoiceType]"
+                          name="InvoiceType" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                          dataType="bool"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[IsDeleted]"
+                          name="IsDeleted" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                          name="CreationDate" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                          name="UpdatedDate" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[IsAPI]"
+                          dataType="bool"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[IsAPI]"
+                          name="IsAPI" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[FK_Inv_Type_ID]"
+                          name="FK_Inv_Type_ID" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Sales_Invoices_Master_STG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Sales_Invoices_Master_STG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Connections[OleDbConnection]"
+                      connectionManagerID="{FBF56239-FE81-403C-B6F1-EA3744C892CC}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[stg]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Company_Taxpayer_Id]"
+                          cachedDataType="guid"
+                          cachedName="Company_Taxpayer_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Taxpayer_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Company_Taxpayer_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Company_Unique_Tax_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="Company_Unique_Tax_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Unique_Tax_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Company_Unique_Tax_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Number]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Invoice_Number"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Number]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Number]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Date]"
+                          cachedDataType="dbDate"
+                          cachedName="Invoice_Date"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Date]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Total_Net]"
+                          cachedDataType="numeric"
+                          cachedName="Invoice_Total_Net"
+                          cachedPrecision="19"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Net]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Net]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Total_Tax]"
+                          cachedDataType="numeric"
+                          cachedName="Invoice_Total_Tax"
+                          cachedPrecision="19"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Tax]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Tax]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Invoice_Total_Money]"
+                          cachedDataType="numeric"
+                          cachedName="Invoice_Total_Money"
+                          cachedPrecision="19"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Money]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Invoice_Total_Money]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Name]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Customer_Name"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Name]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Unique_Tax_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="Customer_Unique_Tax_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Unique_Tax_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Unique_Tax_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_File_Number]"
+                          cachedDataType="wstr"
+                          cachedLength="16"
+                          cachedName="Customer_File_Number"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_File_Number]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_File_Number]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_National_Id]"
+                          cachedDataType="wstr"
+                          cachedLength="14"
+                          cachedName="Customer_National_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_National_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_National_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Mobile]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="Customer_Mobile"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Mobile]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Mobile]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Customer_Address]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Customer_Address"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Address]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Customer_Address]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Replicated]"
+                          cachedDataType="bool"
+                          cachedName="Replicated"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Replicated]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[Replicated]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[InvoiceType]"
+                          cachedDataType="i4"
+                          cachedName="InvoiceType"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceType]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[InvoiceType]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[IsDeleted]"
+                          cachedDataType="bool"
+                          cachedName="IsDeleted"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[IsDeleted]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[CreationDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CreationDate"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[CreationDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[CreationDate]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="UpdatedDate"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[UpdatedDate]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[IsAPI]"
+                          cachedDataType="bool"
+                          cachedName="IsAPI"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsAPI]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[IsAPI]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[FK_Inv_Type_ID]"
+                          cachedDataType="i4"
+                          cachedName="FK_Inv_Type_ID"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[FK_Inv_Type_ID]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[FK_Inv_Type_ID]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[SalesInvoice_Id]"
+                          cachedDataType="guid"
+                          cachedName="SalesInvoice_Id"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesInvoice_Id]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].Columns[SalesInvoice_Id]" />
+                        <inputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].Columns[Developed_By]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Developed_By"
+                          externalMetadataColumnId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output].Columns[Developed_By]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Taxpayer_Id]"
+                          dataType="guid"
+                          name="Company_Taxpayer_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Company_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Company_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Number]"
+                          dataType="wstr"
+                          length="255"
+                          name="Invoice_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Date]"
+                          dataType="dbDate"
+                          name="Invoice_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Net]"
+                          dataType="numeric"
+                          name="Invoice_Total_Net"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Tax]"
+                          dataType="numeric"
+                          name="Invoice_Total_Tax"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Invoice_Total_Money]"
+                          dataType="numeric"
+                          name="Invoice_Total_Money"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Name" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Unique_Tax_Id]"
+                          dataType="wstr"
+                          length="9"
+                          name="Customer_Unique_Tax_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_File_Number]"
+                          dataType="wstr"
+                          length="16"
+                          name="Customer_File_Number" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_National_Id]"
+                          dataType="wstr"
+                          length="14"
+                          name="Customer_National_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Mobile]"
+                          dataType="wstr"
+                          length="15"
+                          name="Customer_Mobile" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Address]"
+                          dataType="wstr"
+                          length="255"
+                          name="Customer_Address" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Replicated]"
+                          dataType="bool"
+                          name="Replicated" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceType]"
+                          dataType="i4"
+                          name="InvoiceType" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
+                          dataType="bool"
+                          name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[CreationDate]"
+                          dataType="dbTimeStamp"
+                          name="CreationDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                          dataType="dbTimeStamp"
+                          name="UpdatedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[IsAPI]"
+                          dataType="bool"
+                          name="IsAPI" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[FK_Inv_Type_ID]"
+                          dataType="i4"
+                          name="FK_Inv_Type_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[SalesInvoice_Id]"
+                          dataType="guid"
+                          name="SalesInvoice_Id" />
+                        <externalMetadataColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Developed_By" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[Derived Column Output]"
+                  endId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[OLE DB Source Output]"
+                  endId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Filter_Invoices_Based On Sent Invoices in Staging.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{457561D6-54A4-4A43-9521-F95B5B303814}"
+          DTS:From="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -11881,6 +13863,14 @@ where scd.Version&lt;&gt;1</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Fix The Sent Tables (On the Fly)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{3DE48297-018F-4875-A253-D4BD8BE84028}"
+      DTS:From="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Filter_Invoices_Based On Sent Invoices in Staging" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -12471,6 +14461,77 @@ where scd.Version&lt;&gt;1</property>
                     Point3="8.40000068119585,20.117648603182" />
                   <mssgle:LineSegment
                     End="8.40000068119585,24.735297206364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG"
+          TopLeft="42.8571488322045,12.5176494783184" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG"
+          TopLeft="48.5714346438037,103.435297206364" />
+        <EdgeLayout
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="151.514291738004,54.1176494783184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3176477280455"
+              Start="0,0"
+              End="0,41.8176477280455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8176477280455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="338.4,200"
+          Size="338.4,243.2"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
+          TopLeft="334.400005245209,549.176474071622" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="517.542862816246,507.717650791023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.9428575710373,41.4588232805984"
+              Start="0,0"
+              End="-13.9428575710373,33.9588232805984">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7294116402992" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7294116402992"
+                    Point2="0,20.7294116402992"
+                    Point3="-4,20.7294116402992" />
+                  <mssgle:LineSegment
+                    End="-9.94285757103728,20.7294116402992" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.94285757103728,20.7294116402992"
+                    Point2="-13.9428575710373,20.7294116402992"
+                    Point3="-13.9428575710373,24.7294116402992" />
+                  <mssgle:LineSegment
+                    End="-13.9428575710373,33.9588232805984" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13076,6 +15137,229 @@ where scd.Version&lt;&gt;1</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices"
+          TopLeft="292.8,76.8" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
+          TopLeft="291.2,189.6" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column"
+          TopLeft="81.6,120" />
+        <EdgeLayout
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG.Paths[OLE DB Source Output]"
+          TopLeft="292.8,97.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58.4,43.2"
+              Start="0,0"
+              End="-50.9,43.2">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.2,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.2,0"
+                    Point2="-29.2,0"
+                    Point3="-29.2,4" />
+                  <mssgle:LineSegment
+                    End="-29.2,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.2,39.2"
+                    Point2="-29.2,43.2"
+                    Point3="-33.2,43.2" />
+                  <mssgle:LineSegment
+                    End="-50.9,43.2" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG.Paths[Derived Column Output]"
+          TopLeft="158,161.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="247.2,28.0000000000001"
+              Start="0,0"
+              End="247.2,20.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="243.2,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="243.2,14"
+                    Point2="247.2,14"
+                    Point3="247.2,18" />
+                  <mssgle:LineSegment
+                    End="247.2,20.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices"
+          TopLeft="271.2,60" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column"
+          TopLeft="60,103.2" />
+        <EdgeLayout
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[OLE DB Source Output]"
+          TopLeft="271.2,80.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58.3999999999999,43.2"
+              Start="0,0"
+              End="-50.8999999999999,43.2">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.2,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.2,0"
+                    Point2="-29.2,0"
+                    Point3="-29.2,4" />
+                  <mssgle:LineSegment
+                    End="-29.2,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.2,39.2"
+                    Point2="-29.2,43.2"
+                    Point3="-33.2,43.2" />
+                  <mssgle:LineSegment
+                    End="-50.8999999999999,43.2" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
+          TopLeft="244,185.6" />
+        <EdgeLayout
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[Derived Column Output]"
+          TopLeft="136.4,144.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.4,40.8"
+              Start="0,0"
+              End="212.4,33.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4"
+                    Point2="0,20.4"
+                    Point3="4,20.4" />
+                  <mssgle:LineSegment
+                    End="208.4,20.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.4,20.4"
+                    Point2="212.4,20.4"
+                    Point3="212.4,24.4" />
+                  <mssgle:LineSegment
+                    End="212.4,33.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
