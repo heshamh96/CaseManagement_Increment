@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{3888D44E-0C93-40C2-A7A3-761FC01AF20D}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{2E288732-4523-4C28-BA33-69291041821C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -16019,8 +16019,8 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select scd.* from STG_DIm_Declarations_SCD scd
-left join DWH_TAX.dbo.Dim_Declarations dwh on scd.Artificial_Key=dwh.Artificial_Key
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select scd.* from STG_DIm_Declarations_SCD scd with(nolock)
+left join DWH_TAX.dbo.Dim_Declarations dwh with(nolock) on scd.Artificial_Key=dwh.Artificial_Key
 and scd.SendDate=dwh.SendDate
 where scd.Version=1
 and dwh.Artificial_Key is null
@@ -17760,8 +17760,8 @@ and dwh.SendDate is null</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select scd.* from STG_DIm_Declarations_SCD scd
-join DWH_TAX.dbo.Dim_Declarations dwh on scd.Artificial_Key=dwh.Artificial_Key and dwh.SendDate=scd.SendDate
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select scd.* from STG_DIm_Declarations_SCD scd with(nolock)
+join DWH_TAX.dbo.Dim_Declarations dwh with(nolock) on scd.Artificial_Key=dwh.Artificial_Key and dwh.SendDate=scd.SendDate
 where scd.Version&lt;&gt;1</property>
                     <property
                       dataType="System.String"
@@ -19058,7 +19058,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -19103,7 +19105,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19125,7 +19129,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19147,7 +19153,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -19247,7 +19255,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -19380,7 +19390,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19402,7 +19414,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19424,7 +19438,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -19502,7 +19518,7 @@ where scd.Version&lt;&gt;1</property>
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="271.2,262.4"
-          Size="271.2,43.2"
+          Size="189.6,43.2"
           Id="Package\The Deletion Logic"
           TopLeft="466.571436517092,263.305880096462" />
         <NodeLayout
@@ -19693,26 +19709,26 @@ where scd.Version&lt;&gt;1</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="204.704766137907,140.694114288079"
+              EndConnector="163.904766137907,140.694114288079"
               Start="0,0"
-              End="204.704766137907,133.194114288079">
+              End="163.904766137907,133.194114288079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.7727569678583" />
+                    End="0,52.7727569678584" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.7727569678583"
-                    Point2="0,56.7727569678583"
-                    Point3="4,56.7727569678583" />
+                    Point1="0,52.7727569678584"
+                    Point2="0,56.7727569678584"
+                    Point3="4,56.7727569678584" />
                   <mssgle:LineSegment
-                    End="200.704766137907,56.7727569678583" />
+                    End="159.904766137907,56.7727569678584" />
                   <mssgle:CubicBezierSegment
-                    Point1="200.704766137907,56.7727569678583"
-                    Point2="204.704766137907,56.7727569678583"
-                    Point3="204.704766137907,60.7727569678583" />
+                    Point1="159.904766137907,56.7727569678584"
+                    Point2="163.904766137907,56.7727569678584"
+                    Point3="163.904766137907,60.7727569678584" />
                   <mssgle:LineSegment
-                    End="204.704766137907,133.194114288079" />
+                    End="163.904766137907,133.194114288079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19765,7 +19781,7 @@ where scd.Version&lt;&gt;1</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-76.2115996922276,5,50.60890625,11.609375"
+              BoundingBox="-76.2115996922275,5,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -21003,13 +21019,13 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="190,42"
+          Size="190.4,41.6"
           Id="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG\Declarations_To_Delete"
           TopLeft="284.8,167.2" />
         <NodeLayout
-          Size="298,42"
+          Size="297.6,41.6"
           Id="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG\Final Declarations from STG_SCD_Declarations"
           TopLeft="228,40" />
         <EdgeLayout
@@ -21031,9 +21047,7 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
