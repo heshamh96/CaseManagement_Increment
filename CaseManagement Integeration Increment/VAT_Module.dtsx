@@ -7,12 +7,12 @@
   DTS:CreatorName="CLOUD\Excel_admin3"
   DTS:DTSID="{5285F40A-BA23-4251-8BBD-7A0DBEB76162}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{D79C4826-1236-424C-87CA-FE8D2C2BCACD}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{8AEE3C16-D878-4DBE-AC9C-68207B300162}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -67,7 +67,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1115,7 +1115,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1816,7 +1816,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2465,7 +2465,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3515,6 +3515,7 @@
       DTS:refId="Package\Dim_Declarations_SCD Logic"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{2DA0AC23-20FC-439B-8506-586CD423FBFD}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -3578,7 +3579,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4249,7 +4250,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -5340,7 +5341,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (
 select 
 *,
 ROW_NUMBER() over (partition by Artificial_Key order by [SendDate] desc) as Version 
@@ -6637,7 +6638,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7332,6 +7333,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
       DTS:refId="Package\Dim_Invoices_STG_to_DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{DEF0B291-75BE-460C-BDEE-FCD5DB3DA542}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -7377,7 +7379,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7947,7 +7949,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  distinct
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  distinct
  pms.[PurchaseInvoice_Id]
 ,pms.[Company_Taxpayer_Id]
 ,pms.[Company_Unique_Tax_Id]
@@ -8898,7 +8900,7 @@ on pms.PurchaseInvoice_Id=pid.Fk_PurchasesInvoices_Id</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9468,7 +9470,7 @@ on pms.PurchaseInvoice_Id=pid.Fk_PurchasesInvoices_Id</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct
  sms.SalesInvoice_Id
 ,sms.[Company_Taxpayer_Id]
 ,sms.[Company_Unique_Tax_Id]
@@ -10442,7 +10444,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select det.* from 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select det.* from 
 [Staging_Area_Increment].[dbo].[Purchase_Invoices_Master_STG] pur 
 join dbo.PurchasesInvoicesDetails det
 on det.Fk_PurchasesInvoices_Id=pur.PurchaseInvoice_Id
@@ -11030,7 +11032,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11436,7 +11438,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select det.* from  [Staging_Area_Increment].dbo.Sales_Invoices_Master_STG sls
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select det.* from  [Staging_Area_Increment].dbo.Sales_Invoices_Master_STG sls
 join dbo.SalesInvoicesDetails det
 on det.Fk_SalesInvoices_Id=sls.SalesInvoice_Id
 --and convert(varchar(6),sls.Invoice_Date,112) = ?
@@ -12023,7 +12025,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12526,7 +12528,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select   pinv.*, 1 as FK_Inv_Type_ID
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select   pinv.*, 1 as FK_Inv_Type_ID
 --,case when pinv.Developed_By is null then 'Excel Systems' else pinv.Developed_By end as Developed_Byy
  FROM  Staging_Area_Increment.dbo.SentPurchasesInvoices_Stage stg join [dbo].PurchasesInvoices pinv
  on pinv.PurchaseInvoice_Id=stg.PurchaseInvoiceID
@@ -13046,7 +13048,7 @@ pinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13506,7 +13508,7 @@ pinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select   sinv.*, 2 as FK_Inv_Type_ID
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select   sinv.*, 2 as FK_Inv_Type_ID
 --,case when pinv.Developed_By is null then 'Excel Systems' else pinv.Developed_By end as Developed_Byy
  FROM  Staging_Area_Increment.dbo.SentSalesInvoices_Stage stg join [dbo].SalesInvoices sinv 
  on sinv.SalesInvoice_Id=stg.SalesInvoiceID
@@ -14026,7 +14028,7 @@ sinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14508,10 +14510,10 @@ sinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
      [TaxpayerID]
       ,[TaxVatDecID]
-      ,[PurchaseInvoiceID] from SentPurshaseInvoices
+      ,[PurchaseInvoiceID] from [dbo].[SentPurshaseInvoices_inc]
 where TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where FK_VAT_Type_ID=1 and Developed_By = 'Excel Systems')
 or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where  FK_VAT_Type_ID=2 and Developed_By='Excel Systems')</property>
                     <property
@@ -14539,8 +14541,8 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                   <connections>
                     <connection
                       refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices.Connections[OleDbConnection]"
-                      connectionManagerID="{093C623A-AEDE-4774-924E-C5FA47ACAD80}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[SentTables]"
+                      connectionManagerID="{36A8BFA1-E597-4723-B52D-36D24D2C60BB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Sent_Tables_Try_out]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -14655,7 +14657,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14907,10 +14909,10 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
      [TaxpayerID]
       ,[TaxVatDecID]
-      ,[SalesInvoiceID] from SentSalesInvoices
+      ,[SalesInvoiceID] from [dbo].[SentSalesInvoices_inc]
 where TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where FK_VAT_Type_ID=1 and Developed_By='Excel Systems')
 or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_Add where  FK_VAT_Type_ID=2 and Developed_By='Excel Systems')</property>
                     <property
@@ -14938,8 +14940,8 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                   <connections>
                     <connection
                       refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices.Connections[OleDbConnection]"
-                      connectionManagerID="{093C623A-AEDE-4774-924E-C5FA47ACAD80}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[SentTables]"
+                      connectionManagerID="{36A8BFA1-E597-4723-B52D-36D24D2C60BB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Sent_Tables_Try_out]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -15054,7 +15056,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -15218,6 +15220,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
           DTS:refId="Package\Fix The Sent Tables (On the Fly)\SentPurchases_Append (On_Sent_Tables)"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{66fa5c46-4027-4cfe-8447-8dd552b667ba}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -15235,6 +15238,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
           DTS:refId="Package\Fix The Sent Tables (On the Fly)\SentSales_Append (On_Sent_Tables)"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{c4269ffe-8f5e-4415-be23-89cffba9faba}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -15366,7 +15370,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -16015,7 +16019,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select scd.* from STG_DIm_Declarations_SCD scd
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select scd.* from STG_DIm_Declarations_SCD scd
 left join DWH_TAX.dbo.Dim_Declarations dwh on scd.Artificial_Key=dwh.Artificial_Key
 and scd.SendDate=dwh.SendDate
 where scd.Version=1
@@ -17107,7 +17111,7 @@ and dwh.SendDate is null</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -17756,7 +17760,7 @@ and dwh.SendDate is null</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select scd.* from STG_DIm_Declarations_SCD scd
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select scd.* from STG_DIm_Declarations_SCD scd
 join DWH_TAX.dbo.Dim_Declarations dwh on scd.Artificial_Key=dwh.Artificial_Key and dwh.SendDate=scd.SendDate
 where scd.Version&lt;&gt;1</property>
                     <property
@@ -18856,6 +18860,7 @@ where scd.Version&lt;&gt;1</property>
       DTS:refId="Package\Truncate STG_Tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{83106B35-B5FB-4D03-8B66-3319EF15A4DF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -18873,6 +18878,7 @@ where scd.Version&lt;&gt;1</property>
       DTS:refId="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{981C4FFB-34D9-4418-AB0B-2D755C5590BF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -18890,6 +18896,7 @@ where scd.Version&lt;&gt;1</property>
       DTS:refId="Package\Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{3D446FB6-F213-4FE7-93DC-6482FFB7CE1A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -19025,27 +19032,27 @@ where scd.Version&lt;&gt;1</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="230,42"
+          Size="230.4,41.6"
           Id="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH"
-          TopLeft="47.8857156189121,79.7176503534549" />
+          TopLeft="47.8857156189121,78.9529444603772" />
         <NodeLayout
-          Size="311,42"
+          Size="311.2,41.6"
           Id="Package\Dim_Declarations_Increment STG_to_DWH\New_Declarations_TO_ADD_ STG_to_STG (Final)"
           TopLeft="6.5,5.74118124093991" />
         <EdgeLayout
           Id="Package\Dim_Declarations_Increment STG_to_DWH.PrecedenceConstraints[Constraint]"
-          TopLeft="162.442857809456,47.7411812409399">
+          TopLeft="162.592857809456,47.3411812409399">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.976469112515"
+              EndConnector="0,31.6117632194373"
               Start="0,0"
-              End="0,24.476469112515">
+              End="0,24.1117632194373">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.476469112515" />
+                    End="0,24.1117632194373" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19057,24 +19064,24 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="322,176"
-          Size="322,43"
+          PanelSize="321.6,176"
+          Size="321.6,43.2"
           Id="Package\Dim_Declarations_Increment STG_to_DWH"
-          TopLeft="35.657143382637,265.752943475849" />
+          TopLeft="35.657143382637,264.988237582771" />
         <NodeLayout
-          Size="255,42"
+          Size="255.2,41.6"
           Id="Package\Dim_Declarations_SCD Logic\Fix_UniqueTaxIDs of the Declarations"
           TopLeft="7.78571432464014,85.970589161909" />
         <NodeLayout
-          Size="230,42"
+          Size="230.4,41.6"
           Id="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH"
           TopLeft="18.0714287855187,219.57059134975" />
         <NodeLayout
-          Size="224,42"
+          Size="224,41.6"
           Id="Package\Dim_Declarations_SCD Logic\SCD_Declarations VAT_to_STG"
           TopLeft="20.9285716913183,5.5" />
         <NodeLayout
-          Size="261,42"
+          Size="260.8,41.6"
           Id="Package\Dim_Declarations_SCD Logic\Truncate DWH_Dim_Declarations_SCD"
           TopLeft="5.5,150.488237327523" />
         <EdgeLayout
@@ -19146,10 +19153,10 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="271,316"
-          Size="237,43"
+          PanelSize="271.2,316"
+          Size="271.2,43.2"
           Id="Package\Dim_Declarations_SCD Logic"
-          TopLeft="219.428575165418,77.8823540222274" />
+          TopLeft="218.000003712518,79.4117658083827" />
         <NodeLayout
           Size="194,42"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases"
@@ -19189,14 +19196,16 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="325,186"
-          Size="325,43"
+          Size="324.8,43.2"
           Id="Package\Dim_Invoices_STG_to_DWH"
           TopLeft="228.11428914946,700.20000335469" />
         <NodeLayout
@@ -19238,18 +19247,16 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="332.8,173.6"
-          Size="333,43"
+          Size="332.8,43.2"
           Id="Package\Filter Inovices_Details Based on Invoices Staging"
-          TopLeft="338.971433077053,623.576473925765" />
+          TopLeft="336.114290171253,624.341179818843" />
         <NodeLayout
           Size="218,42"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG"
@@ -19277,22 +19284,24 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="338,200"
-          Size="338,43"
+          Size="337.6,43.2"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
           TopLeft="334.400005245209,549.176474071622" />
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices"
           TopLeft="94.7428637018009,15.6235317626214" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices"
           TopLeft="105.60000674384,87.24706177497" />
         <EdgeLayout
@@ -19320,24 +19329,24 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="359,179"
-          Size="359,43"
+          PanelSize="359.2,179.2"
+          Size="359.2,43.2"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
-          TopLeft="344.942862816246,459.517650791023" />
+          TopLeft="343.514291363346,458.752944897946" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Fix The Sent Tables (On the Fly)\Sent_Purchases"
-          TopLeft="10.3292583615719,5.88235693934894" />
+          TopLeft="8.90068690867201,4.35294515319356" />
         <NodeLayout
-          Size="130,42"
+          Size="129.6,41.6"
           Id="Package\Fix The Sent Tables (On the Fly)\Sent_Sales"
           TopLeft="12.9142924192001,71.4577079990743" />
         <NodeLayout
-          Size="277,42"
+          Size="276.8,41.6"
           Id="Package\Fix The Sent Tables (On the Fly)\SentPurchases_Append (On_Sent_Tables)"
           TopLeft="5.5,149.317649332462" />
         <NodeLayout
-          Size="254,42"
+          Size="254.4,41.6"
           Id="Package\Fix The Sent Tables (On the Fly)\SentSales_Append (On_Sent_Tables)"
           TopLeft="20.7925172672326,217.408033107199" />
         <EdgeLayout
@@ -19398,30 +19407,18 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fix The Sent Tables (On the Fly).PrecedenceConstraints[Constraint 51]"
-          TopLeft="86.7292583615719,47.482356939349">
+          TopLeft="81.5074896639361,45.9529451531936">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.01496594237176,23.9753510597253"
+              EndConnector="0,25.5047628458807"
               Start="0,0"
-              End="-9.01496594237176,16.4753510597253">
+              End="0,18.0047628458807">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.98767552986266" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.98767552986266"
-                    Point2="0,11.9876755298627"
-                    Point3="-4,11.9876755298627" />
-                  <mssgle:LineSegment
-                    End="-5.01496594237176,11.9876755298627" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.01496594237176,11.9876755298627"
-                    Point2="-9.01496594237176,11.9876755298627"
-                    Point3="-9.01496594237176,15.9876755298627" />
-                  <mssgle:LineSegment
-                    End="-9.01496594237176,16.4753510597253" />
+                    End="0,18.0047628458807" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19433,28 +19430,28 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="287,314"
-          Size="255,43"
+          PanelSize="287.2,313.6"
+          Size="287.2,43.2"
           Id="Package\Fix The Sent Tables (On the Fly)"
-          TopLeft="46.5142864246757,411.764710232296" />
+          TopLeft="47.9428578775755,413.294122018451" />
         <NodeLayout
-          Size="360,42"
+          Size="360,41.6"
           Id="Package\IBM_Transferes_to Staging (Sent,Invoices,Invoices_Details)"
           TopLeft="1.71428574347988,337.929413025932" />
         <NodeLayout
-          Size="315,42"
+          Size="315.2,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)"
           TopLeft="37.7142863565561,156.44706104569" />
         <NodeLayout
-          Size="261,42"
+          Size="260.8,41.6"
           Id="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG"
           TopLeft="7.7857143246398,23.2411767194015" />
         <NodeLayout
-          Size="222,42"
+          Size="221.6,41.6"
           Id="Package\The Deletion Logic\Delete DWH Dim_Declarations"
           TopLeft="23.2142860159583,95.8588267811442" />
         <NodeLayout
-          Size="202,42"
+          Size="201.6,41.6"
           Id="Package\The Deletion Logic\Delete DWH Dim_Invoices"
           TopLeft="32.5714352568802,165.976473488197" />
         <EdgeLayout
@@ -19481,18 +19478,18 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\The Deletion Logic.PrecedenceConstraints[Constraint 1]"
-          TopLeft="133.892860636419,137.458826781144">
+          TopLeft="133.692860636419,137.458826781144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.517646707053"
+              EndConnector="0,28.5176467070528"
               Start="0,0"
-              End="0,21.017646707053">
+              End="0,21.0176467070528">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.017646707053" />
+                    End="0,21.0176467070528" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19504,48 +19501,48 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="271,220"
-          Size="189,43"
+          PanelSize="271.2,262.4"
+          Size="271.2,43.2"
           Id="Package\The Deletion Logic"
-          TopLeft="468.000007969992,263.305880096462" />
+          TopLeft="466.571436517092,263.305880096462" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Truncate STG_Tables"
           TopLeft="544.000009264265,7.95294128800758" />
         <NodeLayout
-          Size="362,42"
+          Size="361.6,41.6"
           Id="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
           TopLeft="110.400001430511,773.976473925766" />
         <NodeLayout
-          Size="471,42"
+          Size="471.2,41.6"
           Id="Package\Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
           TopLeft="146.400002043588,864.141180219947" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="633.500009264265,49.9529412880076">
+          TopLeft="633.600009264265,49.5529412880076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-295.571434098847,27.9294127342198"
+              EndConnector="-280.000005551747,29.8588245203752"
               Start="0,0"
-              End="-295.571434098847,20.4294127342198">
+              End="-280.000005551747,22.3588245203752">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.9647063671099" />
+                    End="0,10.9294122601876" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.9647063671099"
-                    Point2="0,13.9647063671099"
-                    Point3="-4,13.9647063671099" />
+                    Point1="0,10.9294122601876"
+                    Point2="0,14.9294122601876"
+                    Point3="-4,14.9294122601876" />
                   <mssgle:LineSegment
-                    End="-291.571434098847,13.9647063671099" />
+                    End="-276.000005551747,14.9294122601876" />
                   <mssgle:CubicBezierSegment
-                    Point1="-291.571434098847,13.9647063671099"
-                    Point2="-295.571434098847,13.9647063671099"
-                    Point3="-295.571434098847,17.9647063671099" />
+                    Point1="-276.000005551747,14.9294122601876"
+                    Point2="-280.000005551747,14.9294122601876"
+                    Point3="-280.000005551747,18.9294122601876" />
                   <mssgle:LineSegment
-                    End="-295.571434098847,20.4294127342198" />
+                    End="-280.000005551747,22.3588245203752" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19556,30 +19553,30 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="299.761908498751,120.882354022227">
+          TopLeft="309.733337045851,122.611765808383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104.547622142195,35.5647070234626"
+              EndConnector="-114.419050689295,33.8352952373073"
               Start="0,0"
-              End="-104.547622142195,28.0647070234626">
+              End="-114.419050689295,26.3352952373073">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.368976349798" />
+                    End="0,9.65318658256152" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.368976349798"
-                    Point2="0,14.368976349798"
-                    Point3="-4,14.368976349798" />
+                    Point1="0,9.65318658256152"
+                    Point2="0,13.6531865825615"
+                    Point3="-4,13.6531865825615" />
                   <mssgle:LineSegment
-                    End="-100.547622142195,14.368976349798" />
+                    End="-110.419050689295,13.6531865825615" />
                   <mssgle:CubicBezierSegment
-                    Point1="-100.547622142195,14.368976349798"
-                    Point2="-104.547622142195,14.368976349798"
-                    Point3="-104.547622142195,18.368976349798" />
+                    Point1="-110.419050689295,13.6531865825615"
+                    Point2="-114.419050689295,13.6531865825615"
+                    Point3="-114.419050689295,17.6531865825615" />
                   <mssgle:LineSegment
-                    End="-104.547622142195,28.0647070234626" />
+                    End="-114.419050689295,26.3352952373073" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19590,30 +19587,30 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="505.471433077053,666.576473925765">
+          TopLeft="502.514290171253,667.541179818843">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-114.857143927593,33.6235294289251"
+              EndConnector="-112.000001021793,32.6588235358473"
               Start="0,0"
-              End="-114.857143927593,26.1235294289251">
+              End="-112.000001021793,25.1588235358473">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.8117647144625" />
+                    End="0,12.3294117679237" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.8117647144625"
-                    Point2="0,16.8117647144625"
-                    Point3="-4,16.8117647144625" />
+                    Point1="0,12.3294117679237"
+                    Point2="0,16.3294117679237"
+                    Point3="-4,16.3294117679237" />
                   <mssgle:LineSegment
-                    End="-110.857143927593,16.8117647144625" />
+                    End="-108.000001021793,16.3294117679237" />
                   <mssgle:CubicBezierSegment
-                    Point1="-110.857143927593,16.8117647144625"
-                    Point2="-114.857143927593,16.8117647144625"
-                    Point3="-114.857143927593,20.8117647144625" />
+                    Point1="-108.000001021793,16.3294117679237"
+                    Point2="-112.000001021793,16.3294117679237"
+                    Point3="-112.000001021793,20.3294117679237" />
                   <mssgle:LineSegment
-                    End="-114.857143927593,26.1235294289251" />
+                    End="-112.000001021793,25.1588235358473" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19692,30 +19689,30 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="376.095241832085,120.882354022227">
+          TopLeft="397.466670379185,122.611765808383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186.404766137907,142.423526074235"
+              EndConnector="204.704766137907,140.694114288079"
               Start="0,0"
-              End="186.404766137907,134.923526074235">
+              End="204.704766137907,133.194114288079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5424472487687" />
+                    End="0,52.7727569678583" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,53.5424472487687"
-                    Point2="0,57.5424472487687"
-                    Point3="4,57.5424472487687" />
+                    Point1="0,52.7727569678583"
+                    Point2="0,56.7727569678583"
+                    Point3="4,56.7727569678583" />
                   <mssgle:LineSegment
-                    End="182.404766137907,57.5424472487687" />
+                    End="200.704766137907,56.7727569678583" />
                   <mssgle:CubicBezierSegment
-                    Point1="182.404766137907,57.5424472487687"
-                    Point2="186.404766137907,57.5424472487687"
-                    Point3="186.404766137907,61.5424472487687" />
+                    Point1="200.704766137907,56.7727569678583"
+                    Point2="204.704766137907,56.7727569678583"
+                    Point3="204.704766137907,60.7727569678583" />
                   <mssgle:LineSegment
-                    End="186.404766137907,134.923526074235" />
+                    End="204.704766137907,133.194114288079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19726,78 +19723,78 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="195.935714869597,198.44706104569">
+          TopLeft="195.885714869597,198.04706104569">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.305882430159"
+              EndConnector="0,66.9411765370813"
               Start="0,0"
-              End="0,59.805882430159">
+              End="0,59.4411765370813">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.805882430159" />
+                    End="0,59.4411765370813" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,24.0982537150795,50.60890625,11.609375"
+              BoundingBox="-25.304453125,23.9159007685406,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="468.000007969992,286.029411786155">
+          TopLeft="466.571436517092,285.747058839617">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-110.342864587355,0"
+              EndConnector="-109.314293134455,0"
               Start="0,0"
-              End="-102.842864587355,0">
+              End="-101.814293134455,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-102.842864587355,0" />
+                    End="-101.814293134455,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-76.7258854186775,5,50.60890625,11.609375"
+              BoundingBox="-76.2115996922276,5,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="196.657143382637,308.752943475849">
+          TopLeft="196.457143382637,308.188237582771">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.9428576391571,29.176469550083"
+              EndConnector="-14.7428576391571,29.7411754431607"
               Start="0,0"
-              End="-14.9428576391571,21.676469550083">
+              End="-14.7428576391571,22.2411754431607">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.5882347750415" />
+                    End="0,10.8705877215804" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.5882347750415"
-                    Point2="0,14.5882347750415"
-                    Point3="-4,14.5882347750415" />
+                    Point1="0,10.8705877215804"
+                    Point2="0,14.8705877215804"
+                    Point3="-4,14.8705877215804" />
                   <mssgle:LineSegment
-                    End="-10.9428576391571,14.5882347750415" />
+                    End="-10.7428576391571,14.8705877215804" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.9428576391571,14.5882347750415"
-                    Point2="-14.9428576391571,14.5882347750415"
-                    Point3="-14.9428576391571,18.5882347750415" />
+                    Point1="-10.7428576391571,14.8705877215804"
+                    Point2="-14.7428576391571,14.8705877215804"
+                    Point3="-14.7428576391571,18.8705877215804" />
                   <mssgle:LineSegment
-                    End="-14.9428576391571,21.676469550083" />
+                    End="-14.7428576391571,22.2411754431607" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19808,30 +19805,24 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="301.514286424676,433.264710232296">
+          TopLeft="335.142857877575,434.894122018451">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.4285763915703,47.752940558727"
+              EndConnector="187.971433485771,23.8588228794941"
               Start="0,0"
-              End="35.9285763915703,47.752940558727">
+              End="187.971433485771,16.3588228794941">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="17.7142881957852,0" />
+                    End="183.971433485771,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.7142881957852,0"
-                    Point2="21.7142881957852,0"
-                    Point3="21.7142881957852,4" />
+                    Point1="183.971433485771,0"
+                    Point2="187.971433485771,0"
+                    Point3="187.971433485771,4" />
                   <mssgle:LineSegment
-                    End="21.7142881957852,43.752940558727" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.7142881957852,43.752940558727"
-                    Point2="21.7142881957852,47.752940558727"
-                    Point3="25.7142881957852,47.752940558727" />
-                  <mssgle:LineSegment
-                    End="35.9285763915703,47.752940558727" />
+                    End="187.971433485771,16.3588228794941" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19842,18 +19833,30 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="177.864286084078,379.929413025932">
+          TopLeft="181.71428574348,379.529413025932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.835297206364"
+              EndConnector="9.82857213409562,33.7647089925194"
               Start="0,0"
-              End="0,24.335297206364">
+              End="9.82857213409562,26.2647089925194">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.335297206364" />
+                    End="0,12.8823544962597" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8823544962597"
+                    Point2="0,16.8823544962597"
+                    Point3="4,16.8823544962597" />
+                  <mssgle:LineSegment
+                    End="5.82857213409562,16.8823544962597" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.82857213409562,16.8823544962597"
+                    Point2="9.82857213409562,16.8823544962597"
+                    Point3="9.82857213409562,20.8823544962597" />
+                  <mssgle:LineSegment
+                    End="9.82857213409562,26.2647089925194" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19864,30 +19867,30 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="524.442862816246,502.517650791023">
+          TopLeft="523.114291363346,501.952944897945">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-21.042857571037,46.658823280599"
+              EndConnector="-19.9142861181372,47.2235291736765"
               Start="0,0"
-              End="-21.042857571037,39.158823280599">
+              End="-19.9142861181372,39.7235291736765">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.3294116402995" />
+                    End="0,19.6117645868383" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.3294116402995"
-                    Point2="0,23.3294116402995"
-                    Point3="-4,23.3294116402995" />
+                    Point1="0,19.6117645868383"
+                    Point2="0,23.6117645868383"
+                    Point3="-4,23.6117645868383" />
                   <mssgle:LineSegment
-                    End="-17.042857571037,23.3294116402995" />
+                    End="-15.9142861181372,23.6117645868383" />
                   <mssgle:CubicBezierSegment
-                    Point1="-17.042857571037,23.3294116402995"
-                    Point2="-21.042857571037,23.3294116402995"
-                    Point3="-21.042857571037,27.3294116402995" />
+                    Point1="-15.9142861181372,23.6117645868383"
+                    Point2="-19.9142861181372,23.6117645868383"
+                    Point3="-19.9142861181372,27.6117645868383" />
                   <mssgle:LineSegment
-                    End="-21.042857571037,39.158823280599" />
+                    End="-19.9142861181372,39.7235291736765" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19898,18 +19901,18 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="504.435719161131,592.176474071622">
+          TopLeft="502.857147708231,592.376474071622">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.3999998541429"
+              EndConnector="0,31.9647057472206"
               Start="0,0"
-              End="0,23.8999998541429">
+              End="0,24.4647057472206">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.8999998541429" />
+                    End="0,24.4647057472206" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20403,13 +20406,13 @@ where scd.Version&lt;&gt;1</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,41.6"
-          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details"
-          TopLeft="256.8,73.6" />
-        <NodeLayout
           Size="201.6,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details_Stg"
           TopLeft="237.6,210.4" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details"
+          TopLeft="256.8,73.6" />
         <EdgeLayout
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details.Paths[OLE DB Source Output]"
           TopLeft="346.8,115.2">
@@ -20701,13 +20704,13 @@ where scd.Version&lt;&gt;1</property>
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices"
           TopLeft="212.8,54.4" />
         <NodeLayout
-          Size="217.6,41.6"
-          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage"
-          TopLeft="223.2,176.8" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\Derived Column"
           TopLeft="68.8,104.8" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices_Stage"
+          TopLeft="223.2,176.8" />
         <EdgeLayout
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices.Paths[OLE DB Source Output]"
           TopLeft="212.8,75.2">
@@ -20804,13 +20807,13 @@ where scd.Version&lt;&gt;1</property>
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices"
           TopLeft="340,45.6" />
         <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage"
-          TopLeft="343.2,196" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\Derived Column"
           TopLeft="56,90.4" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage"
+          TopLeft="343.2,196" />
         <EdgeLayout
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices.Paths[OLE DB Source Output]"
           TopLeft="340,66.4">
