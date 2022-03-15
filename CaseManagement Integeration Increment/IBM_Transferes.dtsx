@@ -7,12 +7,12 @@
   DTS:CreatorName="CLOUD\Excel_admin3"
   DTS:DTSID="{793600BA-A75F-40CE-9AA6-A1223F534EA5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
   DTS:ObjectName="IBM_Transferes"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{C6F61E0C-F520-46C7-B926-FD41D59C1DB9}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{822904C9-BA7E-4B52-A989-6AC0F82409AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -66,7 +66,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select det.* from 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select det.* from 
 [Staging_Area_Increment].[dbo].[Purchase_Invoices_Master_STG] pur 
 join dbo.PurchasesInvoicesDetails det
 on det.Fk_PurchasesInvoices_Id=pur.PurchaseInvoice_Id
@@ -648,7 +648,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1054,7 +1054,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select det.* from  [Staging_Area_Increment].dbo.Sales_Invoices_Master_STG sls
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select det.* from  [Staging_Area_Increment].dbo.Sales_Invoices_Master_STG sls
 join dbo.SalesInvoicesDetails det
 on det.Fk_SalesInvoices_Id=sls.SalesInvoice_Id
 --and convert(varchar(6),sls.Invoice_Date,112) = ?
@@ -1635,7 +1635,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2138,7 +2138,7 @@ and det.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select   pinv.*, 1 as FK_Inv_Type_ID
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select   pinv.*, 1 as FK_Inv_Type_ID
 --,case when pinv.Developed_By is null then 'Excel Systems' else pinv.Developed_By end as Developed_Byy
  FROM  Staging_Area_Increment.dbo.SentPurchasesInvoices_Stage stg join [dbo].PurchasesInvoices pinv
  on pinv.PurchaseInvoice_Id=stg.PurchaseInvoiceID
@@ -2652,7 +2652,7 @@ pinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3112,7 +3112,7 @@ pinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select   sinv.*, 2 as FK_Inv_Type_ID
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select   sinv.*, 2 as FK_Inv_Type_ID
 --,case when pinv.Developed_By is null then 'Excel Systems' else pinv.Developed_By end as Developed_Byy
  FROM  Staging_Area_Increment.dbo.SentSalesInvoices_Stage stg join [dbo].SalesInvoices sinv 
  on sinv.SalesInvoice_Id=stg.SalesInvoiceID
@@ -3626,7 +3626,7 @@ sinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4108,7 +4108,7 @@ sinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4255,7 +4255,7 @@ sinv.IsDeleted=0</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  * from [dbo].[SentPurshaseInvoices] a
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from [dbo].[SentPurshaseInvoices] a
 --join SentTables.dbo.SentPurshaseInvoices b on a.ID=b.ID
 --join Sent_Tables_Try_out.dbo.Declarations_Backup c on a.TaxVatDecID=c.ID
 where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Declarations_To_Add where Developed_By='IBM')</property>
@@ -4613,7 +4613,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4760,7 +4760,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  * from [dbo].SentSalesInvoices a
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from [dbo].SentSalesInvoices a
 --join SentTables.dbo.SentPurshaseInvoices b on a.ID=b.ID
 --join Sent_Tables_Try_out.dbo.Declarations_Backup c on a.TaxVatDecID=c.ID
 where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Declarations_To_Add where Developed_By='IBM')</property>
@@ -5046,13 +5046,13 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="223,42"
+          Size="223.2,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details"
           TopLeft="12.3428619988111,11.4352967687957" />
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details"
           TopLeft="23.77143362201,76.2823559183564" />
         <EdgeLayout
@@ -5080,8 +5080,8 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="333,174"
-          Size="332,43"
+          PanelSize="332.8,174.4"
+          Size="332.8,43.2"
           Id="Package\Filter Inovices_Details Based on Invoices Staging"
           TopLeft="192.5714318509,359.576472758917" />
         <NodeLayout
@@ -5111,22 +5111,24 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="338,200"
-          Size="338,43"
+          Size="337.6,43.2"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
           TopLeft="121.142859205908,258.211766902303" />
         <NodeLayout
-          Size="177,42"
+          Size="176.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Purchases"
           TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Sales"
           TopLeft="199.78571759438,109.500001458561" />
         <EdgeLayout
@@ -5165,37 +5167,37 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
-          PanelSize="358,206"
-          Size="359,43"
+          IsExpanded="True"
+          PanelSize="359.2,206.4"
+          Size="359.2,249.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
-          TopLeft="90.8571444044307,120.517648749038" />
+          TopLeft="90.8571444044307,121.1294134635" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="270.357144404431,163.517648749038">
+          TopLeft="270.457144404431,370.7294134635">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.7857148014773,94.694118153265"
+              EndConnector="19.4857148014773,-112.517646561197"
               Start="0,0"
-              End="19.7857148014773,87.194118153265">
+              End="19.4857148014773,-105.017646561197">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.3470590766325" />
+                    End="0,-52.2588232805986" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,43.3470590766325"
-                    Point2="0,47.3470590766325"
-                    Point3="4,47.3470590766325" />
+                    Point1="0,-52.2588232805986"
+                    Point2="0,-56.2588232805986"
+                    Point3="4,-56.2588232805986" />
                   <mssgle:LineSegment
-                    End="15.7857148014773,47.3470590766325" />
+                    End="15.4857148014773,-56.2588232805986" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.7857148014773,47.3470590766325"
-                    Point2="19.7857148014773,47.3470590766325"
-                    Point3="19.7857148014773,51.3470590766325" />
+                    Point1="15.4857148014773,-56.2588232805986"
+                    Point2="19.4857148014773,-56.2588232805986"
+                    Point3="19.4857148014773,-60.2588232805986" />
                   <mssgle:LineSegment
-                    End="19.7857148014773,87.194118153265" />
+                    End="19.4857148014773,-105.017646561197" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5206,30 +5208,30 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="290.142859205908,301.211766902303">
+          TopLeft="289.942859205908,301.411766902303">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="68.428572644992,58.364705856614"
+              EndConnector="69.028572644992,58.164705856614"
               Start="0,0"
-              End="68.428572644992,50.864705856614">
+              End="69.028572644992,50.664705856614">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.182352928307" />
+                    End="0,25.082352928307" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.182352928307"
-                    Point2="0,29.182352928307"
-                    Point3="4,29.182352928307" />
+                    Point1="0,25.082352928307"
+                    Point2="0,29.082352928307"
+                    Point3="4,29.082352928307" />
                   <mssgle:LineSegment
-                    End="64.428572644992,29.182352928307" />
+                    End="65.028572644992,29.082352928307" />
                   <mssgle:CubicBezierSegment
-                    Point1="64.428572644992,29.182352928307"
-                    Point2="68.428572644992,29.182352928307"
-                    Point3="68.428572644992,33.182352928307" />
+                    Point1="65.028572644992,29.082352928307"
+                    Point2="69.028572644992,29.082352928307"
+                    Point3="69.028572644992,33.082352928307" />
                   <mssgle:LineSegment
-                    End="68.428572644992,50.864705856614" />
+                    End="69.028572644992,50.664705856614" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5247,13 +5249,13 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details"
-          TopLeft="165.6,95.2" />
-        <NodeLayout
           Size="219.2,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details_Stg"
           TopLeft="172,204.8" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details"
+          TopLeft="165.6,95.2" />
         <EdgeLayout
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details.Paths[OLE DB Source Output]"
           TopLeft="264.8,136.8">
@@ -5303,7 +5305,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
     design-time-name="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="201.6,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details_Stg"
@@ -5343,7 +5345,9 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5361,7 +5365,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="228,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
@@ -5405,7 +5409,9 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5439,7 +5445,9 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5470,53 +5478,19 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
           TopLeft="244,185.6" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column"
-          TopLeft="60,103.2" />
-        <NodeLayout
           Size="147.2,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices"
           TopLeft="271.2,60" />
-        <EdgeLayout
-          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[Derived Column Output]"
-          TopLeft="136.4,144.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="212.4,40.8"
-              Start="0,0"
-              End="212.4,33.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4"
-                    Point2="0,20.4"
-                    Point3="4,20.4" />
-                  <mssgle:LineSegment
-                    End="208.4,20.4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="208.4,20.4"
-                    Point2="212.4,20.4"
-                    Point3="212.4,24.4" />
-                  <mssgle:LineSegment
-                    End="212.4,33.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Derived Column"
+          TopLeft="60,103.2" />
         <EdgeLayout
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[OLE DB Source Output]"
           TopLeft="271.2,80.8">
@@ -5548,7 +5522,45 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[Derived Column Output]"
+          TopLeft="136.4,144.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.4,40.8"
+              Start="0,0"
+              End="212.4,33.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4"
+                    Point2="0,20.4"
+                    Point3="4,20.4" />
+                  <mssgle:LineSegment
+                    End="208.4,20.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.4,20.4"
+                    Point2="212.4,20.4"
+                    Point3="212.4,24.4" />
+                  <mssgle:LineSegment
+                    End="212.4,33.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5568,15 +5580,15 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="218,42"
+          Size="217.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Purchases\SentPurchasesInvoices_Stage"
           TopLeft="245.142861317615,160.282355189076" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Purchases\Derived Column"
           TopLeft="72.5714298073127,102.211764714462" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Purchases\Sent_Purchases"
           TopLeft="249.714289966895,40.9882358689622" />
         <EdgeLayout
@@ -5676,10 +5688,6 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Sales\Sent_Sales"
-          TopLeft="232.8,81.6" />
-        <NodeLayout
           Size="156,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Sales\SentSales_Stage"
           TopLeft="227.9,215.1" />
@@ -5687,6 +5695,10 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           Size="152.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Sales\Derived Column"
           TopLeft="57.6,131.9" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Sales\Sent_Sales"
+          TopLeft="232.8,81.6" />
         <EdgeLayout
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\IBM_Sent_Sales.Paths[OLE DB Source Output]"
           TopLeft="232.8,102.4">
