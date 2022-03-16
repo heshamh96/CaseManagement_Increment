@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Sent_Tables_Try_out"
-  DTS:DTSID="{4B0081A2-2784-4308-9EA3-C669AEB1E3F0}"
+  DTS:ObjectName="lol"
+  DTS:DTSID="{201AD85D-05BD-4F1B-BDBA-8D5A88D70FE7}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
