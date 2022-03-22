@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{C137A6DB-8CFF-4B76-8A1E-90533F9C629C}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{7FEBBB8C-3A22-4D0E-9F8C-EC2B0AFAE95E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -10216,7 +10216,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete DWH_Dime_Income_102 overlapping with 106"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -10233,7 +10233,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete DWH_Dime_Income_106 overlapping with 102"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13733,6 +13733,164 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           SQLTask:SqlStatementSource="truncate table [dbo].[Income_Tax_102]&#xA;truncate table [dbo].[Income_Tax_106]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{ba3dd60a-d39f-46bc-aea7-3df5b7e3698c}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_IncomeTax_Dim_Tables(102 &amp; 106)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{444df1d8-86bf-4241-83ea-b3dd2ad9086b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="update trgt&#xA;set trgt.VAT_DEC_NET_SALES=&#xA;(select sum(dc.SalesNet) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo),&#xA;&#xA;trgt.VAT_DEC_NET_Table_SALES=(select sum(dc.SalesTableNet) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo)&#xA;&#xA;from [DWH_TAX].[dbo].[Dim_Dec_IncomeTax_102] trgt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_Sales_Adjustment)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{21e7d3a0-358a-4ce4-aa3c-934507731c41}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update_IncomeTax_102(Vat_DEC_Sales_Adjustment)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="update trgt&#xA;set VAT_DEC_SALES_ADJUSTMENT=&#xA;(select sum(dc.SalesAdjustment) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo)&#xA;from [DWH_TAX].[dbo].[Dim_Dec_IncomeTax_102] trgt&#xA;where (select sum(dc.SalesAdjustment) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo) is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_Net_Sales)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{8ffb8a58-63de-4343-bf13-a130322e7885}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update_IncomeTax_102(Vat_Net_Sales)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F7318975-42C3-4F09-82FB-D41A06D96A6C}"
+              SQLTask:SqlStatementSource="update trgt&#xA;  set [VAT_Net_Sales]=(select sum(case when FK_Sub_inv_type=3 then -1*Product_Total_Net else Product_Total_Net end ) as lol&#xA;  from Dim_Invoices inv --join Dim_Declarations dc on dc.Artificial_Key=inv.FK_Artificial_Key &#xA;  where FK_Inv_Type_ID=2 &#xA;  --and dc.est5las_Sales_Is_Correct=1&#xA;  and trgt.Unique_Tax_ID=Company_Unique_Tax_Id&#xA;  and CONVERT(int,inv.TaxPeriod) between _TaxPeriodFrom and _TaxPeriodTo )  &#xA;  &#xA;  FROM [DWH_TAX].[dbo].[Dim_Dec_IncomeTax_102] trgt&#xA;  join Dim_Declarations dc on dc.UniqueTaxID=trgt.Unique_Tax_ID&#xA;  &#xA;  where --is_Motada5el=1  and&#xA;        dc.est5las_Sales_Is_Correct=1 and&#xA;   (select sum(case when FK_Sub_inv_type=3 then -1*Product_Total_Net else Product_Total_Net end ) as lol&#xA;  from Dim_Invoices inv --join Dim_Declarations dc on dc.Artificial_Key=inv.FK_Artificial_Key &#xA;  where FK_Inv_Type_ID=2 &#xA;  --and dc.est5las_Sales_Is_Correct=1&#xA;  and trgt.Unique_Tax_ID=Company_Unique_Tax_Id&#xA;  and CONVERT(int,inv.TaxPeriod) between _TaxPeriodFrom and _TaxPeriodTo )  is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bdcb7f41-f730-4110-99c3-ea779a9b6f2c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update_IncomeTax_106(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="update trgt&#xA;set trgt.VAT_DEC_NET_SALES=&#xA;(select sum(dc.SalesNet) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo),&#xA;&#xA;trgt.VAT_DEC_NET_Table_SALES=(select sum(dc.SalesTableNet) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo)&#xA;&#xA;from [DWH_TAX].[dbo].[Dim_Dec_IncomeTax_106] trgt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_Sales_Adjustment)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c949ac2e-50d9-4f75-95e1-a4999d0fb6d1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update_IncomeTax_106(Vat_DEC_Sales_Adjustment)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="update trgt&#xA;set VAT_DEC_SALES_ADJUSTMENT=&#xA;(select sum(dc.SalesAdjustment) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo)&#xA;from [DWH_TAX].[dbo].[Dim_Dec_IncomeTax_106] trgt&#xA;where (select sum(dc.SalesAdjustment) from Dim_Declarations dc&#xA;where trgt.Unique_Tax_ID=dc.UniqueTaxID&#xA;and dc.TaxPeriod between trgt._TaxPeriodFrom and trgt._TaxPeriodTo) is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_Net_Sales)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{b9d771f9-9ef5-4cfc-b3f7-dbdab4277a3a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update_IncomeTax_106(Vat_Net_Sales)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F7318975-42C3-4F09-82FB-D41A06D96A6C}"
+              SQLTask:SqlStatementSource="update trgt&#xA;  set [VAT_Net_Sales]=(select sum(case when FK_Sub_inv_type=3 then -1*Product_Total_Net else Product_Total_Net end ) as lol&#xA;  from Dim_Invoices inv --join Dim_Declarations dc on dc.Artificial_Key=inv.FK_Artificial_Key &#xA;  where FK_Inv_Type_ID=2 &#xA;  --and dc.est5las_Sales_Is_Correct=1&#xA;  and trgt.Unique_Tax_ID=Company_Unique_Tax_Id&#xA;  and CONVERT(int,inv.TaxPeriod) between _TaxPeriodFrom and _TaxPeriodTo )  &#xA;  &#xA;  FROM [DWH_TAX].[dbo].[Dim_Dec_IncomeTax_106] trgt&#xA;  join Dim_Declarations dc on dc.UniqueTaxID=trgt.Unique_Tax_ID&#xA;  &#xA;  where --is_Motada5el=1  and&#xA;        dc.est5las_Sales_Is_Correct=1 and&#xA;   (select sum(case when FK_Sub_inv_type=3 then -1*Product_Total_Net else Product_Total_Net end ) as lol&#xA;  from Dim_Invoices inv --join Dim_Declarations dc on dc.Artificial_Key=inv.FK_Artificial_Key &#xA;  where FK_Inv_Type_ID=2 &#xA;  --and dc.est5las_Sales_Is_Correct=1&#xA;  and trgt.Unique_Tax_ID=Company_Unique_Tax_Id&#xA;  and CONVERT(int,inv.TaxPeriod) between _TaxPeriodFrom and _TaxPeriodTo )  is not null&#xA;&#xA;  --update Dim_Dec_IncomeTax_106&#xA;  --set VAT_Net_Sales=null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{b347d277-8322-45fc-b099-be553b73536a}"
+          DTS:From="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_Net_Sales)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_Sales_Adjustment)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7504bef6-a688-4ad6-86e3-193e1dd70a31}"
+          DTS:From="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_Net_Sales)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_Net_Sales)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 11]"
+          DTS:CreationName=""
+          DTS:DTSID="{679c8317-6a01-4da9-9ef2-e767811b2363}"
+          DTS:From="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_Sales_Adjustment)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_Sales_Adjustment)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{332e2410-71ee-4efa-8c83-152ea34f48da}"
+          DTS:From="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_Sales_Adjustment)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{f838916c-5aeb-49ad-91a2-ddee250f8bc8}"
+          DTS:From="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales)" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -13775,6 +13933,14 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Post_Load_Deletions" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{3EA9FA1D-4CF5-4005-A249-E07E36A59236}"
+      DTS:From="Package\Post_Load_Deletions"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -13787,7 +13953,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="269.6,41.6"
           Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
@@ -13934,9 +14100,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -14041,11 +14205,11 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="405.6,176.8"
-          Size="405.6,220"
+          Size="405.6,43.2"
           Id="Package\Post_Load_Deletions"
-          TopLeft="410.857149853998,412.329414192781" />
+          TopLeft="368.571434848162,417.83529662294" />
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Staging to DWH\102_stg__to_DWH"
@@ -14092,9 +14256,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="222.4,171.2"
-          Size="177.6,43.2"
+          Size="222.4,43.2"
           Id="Package\Staging to DWH"
-          TopLeft="402.571435461239,313.611767923296" />
+          TopLeft="403.714292623559,313.611767923296" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Trunacte_IncomeFlattened"
@@ -14105,26 +14269,26 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.55238235369832,94.6823530012348"
+              EndConnector="68.2857156870317,94.6823530012349"
               Start="0,0"
-              End="8.55238235369832,87.1823530012348">
+              End="68.2857156870317,87.1823530012349">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.562414358129" />
+                    End="0,43.3411765006174" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,52.562414358129"
-                    Point2="0,56.562414358129"
-                    Point3="4,56.562414358129" />
+                    Point1="0,43.3411765006174"
+                    Point2="0,47.3411765006174"
+                    Point3="4,47.3411765006174" />
                   <mssgle:LineSegment
-                    End="4.55238235369832,56.562414358129" />
+                    End="64.2857156870317,47.3411765006174" />
                   <mssgle:CubicBezierSegment
-                    Point1="4.55238235369832,56.562414358129"
-                    Point2="8.55238235369832,56.562414358129"
-                    Point3="8.55238235369832,60.562414358129" />
+                    Point1="64.2857156870317,47.3411765006174"
+                    Point2="68.2857156870317,47.3411765006174"
+                    Point3="68.2857156870317,51.3411765006174" />
                   <mssgle:LineSegment
-                    End="8.55238235369832,87.1823530012348" />
+                    End="68.2857156870317,87.1823530012349" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14201,9 +14365,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="84.171439139697,50.870589453622"
+              EndConnector="107.714296302017,50.870589453622"
               Start="0,0"
-              End="84.171439139697,43.370589453622">
+              End="107.714296302017,43.370589453622">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14214,13 +14378,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     Point2="0,25.435294726811"
                     Point3="4,25.435294726811" />
                   <mssgle:LineSegment
-                    End="80.171439139697,25.435294726811" />
+                    End="103.714296302017,25.435294726811" />
                   <mssgle:CubicBezierSegment
-                    Point1="80.171439139697,25.435294726811"
-                    Point2="84.171439139697,25.435294726811"
-                    Point3="84.171439139697,29.435294726811" />
+                    Point1="103.714296302017,25.435294726811"
+                    Point2="107.714296302017,25.435294726811"
+                    Point3="107.714296302017,29.435294726811" />
                   <mssgle:LineSegment
-                    End="84.171439139697,43.370589453622" />
+                    End="107.714296302017,43.370589453622" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14231,30 +14395,253 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="491.371435461239,356.811767923296">
+          TopLeft="514.914292623559,356.811767923296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="122.285714392759,55.517646269485"
+              EndConnector="56.4571422246033,61.0235286996441"
               Start="0,0"
-              End="122.285714392759,48.017646269485">
+              End="56.4571422246033,53.5235286996441">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7588231347425" />
+                    End="0,26.511764349822" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.7588231347425"
-                    Point2="0,27.7588231347425"
-                    Point3="4,27.7588231347425" />
+                    Point1="0,26.511764349822"
+                    Point2="0,30.511764349822"
+                    Point3="4,30.511764349822" />
                   <mssgle:LineSegment
-                    End="118.285714392759,27.7588231347425" />
+                    End="52.4571422246033,30.511764349822" />
                   <mssgle:CubicBezierSegment
-                    Point1="118.285714392759,27.7588231347425"
-                    Point2="122.285714392759,27.7588231347425"
-                    Point3="122.285714392759,31.7588231347425" />
+                    Point1="52.4571422246033,30.511764349822"
+                    Point2="56.4571422246033,30.511764349822"
+                    Point3="56.4571422246033,34.511764349822" />
                   <mssgle:LineSegment
-                    End="122.285714392759,48.017646269485" />
+                    End="56.4571422246033,53.5235286996441" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="417.6,41.6"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )"
+          TopLeft="5.5,241.929417401614" />
+        <NodeLayout
+          Size="332,41.6"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_Sales_Adjustment)"
+          TopLeft="15.5428620669306,127.529415797197" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_Net_Sales)"
+          TopLeft="80.914288672622,3.29412136209811" />
+        <NodeLayout
+          Size="414.4,41.6"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales)"
+          TopLeft="25.8285765278094,311.670594850296" />
+        <NodeLayout
+          Size="332,41.6"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_DEC_Sales_Adjustment)"
+          TopLeft="14.4000049046108,183.811769527713" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_106(Vat_Net_Sales)"
+          TopLeft="92.9142888769814,73.1294166723345" />
+        <EdgeLayout
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint]"
+          TopLeft="92.9142888769814,93.9294166723345">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.6285731899492,33.5999991248625"
+              Start="0,0"
+              End="88.6285731899492,26.0999991248625">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.6285731899492,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84.6285731899492,0"
+                    Point2="88.6285731899492,0"
+                    Point3="88.6285731899492,4" />
+                  <mssgle:LineSegment
+                    End="88.6285731899492,26.0999991248625" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 1]"
+          TopLeft="215.714288672622,44.8941213620981">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.0000002043594,28.2352953102364"
+              Start="0,0"
+              End="12.0000002043594,20.7352953102364">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.1176476551182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.1176476551182"
+                    Point2="0,14.1176476551182"
+                    Point3="4,14.1176476551182" />
+                  <mssgle:LineSegment
+                    End="8.00000020435942,14.1176476551182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.00000020435942,14.1176476551182"
+                    Point2="12.0000002043594,14.1176476551182"
+                    Point3="12.0000002043594,18.1176476551182" />
+                  <mssgle:LineSegment
+                    End="12.0000002043594,20.7352953102364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 11]"
+          TopLeft="347.542862066931,148.329415797197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.14285716231979,50.6823537305152"
+              Start="0,0"
+              End="6.35714283768021,50.6823537305152">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,46.6823537305152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,46.6823537305152"
+                    Point2="22.5,50.6823537305152"
+                    Point3="18.5,50.6823537305152" />
+                  <mssgle:LineSegment
+                    End="6.35714283768021,50.6823537305152" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 4]"
+          TopLeft="346.400004904611,210.211769527713">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-132.100004904611,31.717647873901"
+              Start="0,0"
+              End="-132.100004904611,24.217647873901">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-128.100004904611,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-128.100004904611,0"
+                    Point2="-132.100004904611,0"
+                    Point3="-132.100004904611,4" />
+                  <mssgle:LineSegment
+                    End="-132.100004904611,24.217647873901" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106).PrecedenceConstraints[Constraint 5]"
+          TopLeft="214.3,283.529417401614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7285765278093,28.141177448682"
+              Start="0,0"
+              End="18.7285765278093,20.641177448682">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.070588724341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.070588724341"
+                    Point2="0,14.070588724341"
+                    Point3="4,14.070588724341" />
+                  <mssgle:LineSegment
+                    End="14.7285765278093,14.070588724341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7285765278093,14.070588724341"
+                    Point2="18.7285765278093,14.070588724341"
+                    Point3="18.7285765278093,18.070588724341" />
+                  <mssgle:LineSegment
+                    End="18.7285765278093,20.641177448682" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="452,408"
+          Size="312,43.2"
+          Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)"
+          TopLeft="210.857146448019,500.235296331228" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="571.371434848162,461.03529662294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-204.514288400144,39.1999997082879"
+              Start="0,0"
+              End="-204.514288400144,31.6999997082879">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5999998541439" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5999998541439"
+                    Point2="0,19.5999998541439"
+                    Point3="-4,19.5999998541439" />
+                  <mssgle:LineSegment
+                    End="-200.514288400144,19.5999998541439" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-200.514288400144,19.5999998541439"
+                    Point2="-204.514288400144,19.5999998541439"
+                    Point3="-204.514288400144,23.5999998541439" />
+                  <mssgle:LineSegment
+                    End="-204.514288400144,31.6999997082879" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14270,7 +14657,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
     design-time-name="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening\Income_Tax_102"
@@ -14314,9 +14701,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14350,9 +14735,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
