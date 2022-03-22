@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.TaxVAT"
-  DTS:DTSID="{2DA6221F-B11D-40B2-B8E3-7894FB7ECCF2}"
+  DTS:ObjectName="VAT"
+  DTS:DTSID="{470622B2-8C38-4C26-B92B-8FF88516FF9C}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager

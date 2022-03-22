@@ -1,0 +1,123 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/22/2022 10:12:16 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TXBI-DWA-01"
+  DTS:CreatorName="CLOUD\Excel_admin3"
+  DTS:DTSID="{6F4E35DC-A4C7-4AD5-859E-1CB7A1268F23}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Post_Excution_Increment"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{83F1D539-1F69-4197-857D-36F2F1AC8078}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update_Declarations(est5las_Purchase_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{06e6dda5-0c7c-4c10-be2d-625298dbc573}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_Declarations(est5las_Purchase_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+          SQLTask:SqlStatementSource="UPDATE &#xA;    decs&#xA;SET &#xA;    est5las_Purchase_Is_Correct=est5las_Purchase_Flag.flag&#xA;FROM &#xA;    (   SELECT &#xA;           &#xA;                    (   SELECT &#xA;                            SUM( &#xA;                            CASE &#xA;                                WHEN FK_Inv_Type_ID=3 &#xA;                                THEN -1*lol &#xA;                                ELSE lol &#xA;                            END) &#xA;                        FROM&#xA;                            (   SELECT&#xA;                                    &#xA;                                    Product_Total_Tax_Value as lol,     &#xA;                                    FK_Inv_Type_ID , &#xA;                                    Company_Unique_Tax_Id , &#xA;                                    TaxPeriod&#xA;                                FROM &#xA;                                    (select convert(varchar(6),m.Invoice_Date,112) as TaxPeriod,m.FK_Inv_Type_ID,m.Company_Unique_Tax_Id,d.SectionType,d.Product_Total_Tax_Value,d.Product_Total_Money from Purchase_Invoices_Master_STG m join Purchase_Invoice_Details_Stg d on m.PurchaseInvoice_Id=d.Fk_PurchasesInvoices_Id  ) AS inv&#xA;                                WHERE &#xA;                                    inv.Company_Unique_Tax_Id=trgt.UniqueTaxID &#xA;         and inv.TaxPeriod=trgt.TaxPeriod&#xA;                                AND FK_Inv_Type_ID=1) AS subinvs&#xA;                        WHERE &#xA;                            subinvs.Company_Unique_Tax_Id=trgt.UniqueTaxID&#xA;       and subinvs.TaxPeriod=trgt.TaxPeriod) &#xA;                    - PurchaseVat  AS flag, &#xA;            Artificial_Key&#xA;            --,(select decs.SalesVat from Dim_Declarations decs where decs.UniqueTaxID= &#xA;            -- trgt.Unique_Tax_ID and DeclarationTypeID=1)&#xA;        FROM &#xA;            Declarations_To_Add trgt) AS est5las_Purchase_Flag&#xA;JOIN &#xA;    Declarations_To_Add decs &#xA;ON &#xA;    decs.Artificial_Key=est5las_Purchase_Flag.Artificial_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update_Declarations(est5las_Sales_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1f010a43-d4cd-4abc-a447-034e24fa8c46}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_Declarations(est5las_Sales_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+          SQLTask:SqlStatementSource="UPDATE &#xA;    decs&#xA;SET &#xA;    est5las_Sales_Is_Correct=est5las_Sales_Flag.flag&#xA;FROM &#xA;    (   SELECT &#xA;           &#xA;                    (   SELECT &#xA;                            SUM( &#xA;                            CASE &#xA;                                WHEN FK_Inv_Type_ID=3 &#xA;                                THEN -1*lol &#xA;                                ELSE lol &#xA;                            END) &#xA;                        FROM&#xA;                            (   SELECT&#xA;                                    CASE &#xA;                                        WHEN SectionType=0 &#xA;                                        THEN Product_Total_Tax_Value&#xA;                                        WHEN SectionType=2 &#xA;                                        THEN Product_Total_Money*0.14&#xA;                                        ELSE 0 &#xA;                                    END AS lol , &#xA;                                    FK_Inv_Type_ID , &#xA;                                    Company_Unique_Tax_Id , &#xA;                                    TaxPeriod&#xA;                                FROM &#xA;                                    (select convert(varchar(6),m.Invoice_Date,112) as TaxPeriod,m.FK_Inv_Type_ID,m.Company_Unique_Tax_Id,d.SectionType,d.Product_Total_Tax_Value,d.Product_Total_Money from Sales_Invoices_Master_STG m join Sales_Invoice_Details_Stg d on m.SalesInvoice_Id=d.Fk_SalesInvoices_Id  ) AS inv&#xA;                                WHERE &#xA;                                    inv.Company_Unique_Tax_Id=trgt.UniqueTaxID &#xA;         and inv.TaxPeriod=trgt.TaxPeriod&#xA;                                AND FK_Inv_Type_ID=2) AS subinvs&#xA;                        WHERE &#xA;                            subinvs.Company_Unique_Tax_Id=trgt.UniqueTaxID&#xA;       and subinvs.TaxPeriod=trgt.TaxPeriod) &#xA;                    - SalesVat  AS flag, &#xA;            Artificial_Key&#xA;            --,(select decs.SalesVat from Dim_Declarations decs where decs.UniqueTaxID= &#xA;            -- trgt.Unique_Tax_ID and DeclarationTypeID=1)&#xA;        FROM &#xA;            Declarations_To_Add trgt) AS est5las_Sales_Flag&#xA;JOIN &#xA;    Declarations_To_Add decs &#xA;ON &#xA;    decs.Artificial_Key=est5las_Sales_Flag.Artificial_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4121465C-8BCC-4960-80B4-E6B90BE1C7C7}"
+      DTS:From="Package\Update_Declarations(est5las_Sales_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Update_Declarations(est5las_Purchase_Is_Correct) (for nontable &amp; Table) (New Numeric Value)" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="512.8,41.6"
+          Id="Package\Update_Declarations(est5las_Sales_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+          TopLeft="50.285714120281,19.6235288455" />
+        <NodeLayout
+          Size="531.2,41.6"
+          Id="Package\Update_Declarations(est5las_Purchase_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
+          TopLeft="85.142857571038,125.364706877606" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="306.685714120281,61.2235288455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.0571434507571,64.141178032106"
+              Start="0,0"
+              End="44.0571434507571,56.641178032106">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.070589016053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.070589016053"
+                    Point2="0,32.070589016053"
+                    Point3="4,32.070589016053" />
+                  <mssgle:LineSegment
+                    End="40.0571434507571,32.070589016053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.0571434507571,32.070589016053"
+                    Point2="44.0571434507571,32.070589016053"
+                    Point3="44.0571434507571,36.070589016053" />
+                  <mssgle:LineSegment
+                    End="44.0571434507571,56.641178032106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

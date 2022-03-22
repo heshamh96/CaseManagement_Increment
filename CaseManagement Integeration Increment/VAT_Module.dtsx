@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{6BCA9314-FD2D-445D-87E9-3F64FA9986F5}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{01F56239-980B-4F31-9E34-E5D8C18C6360}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -564,6 +564,28 @@
                           lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[Developed_By]"
                           name="Developed_By"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[est5las_Sales_Is_Correct]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[est5las_Sales_Is_Correct]"
+                          lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[est5las_Sales_Is_Correct]"
+                          name="est5las_Sales_Is_Correct"
+                          precision="18"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[est5las_Purchase_Is_Correct]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[est5las_Purchase_Is_Correct]"
+                          lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[est5las_Purchase_Is_Correct]"
+                          name="est5las_Purchase_Is_Correct"
+                          precision="18"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -793,6 +815,18 @@
                           dataType="str"
                           length="50"
                           name="Developed_By" />
+                        <externalMetadataColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[est5las_Sales_Is_Correct]"
+                          dataType="numeric"
+                          name="est5las_Sales_Is_Correct"
+                          precision="18"
+                          scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[est5las_Purchase_Is_Correct]"
+                          dataType="numeric"
+                          name="est5las_Purchase_Is_Correct"
+                          precision="18"
+                          scale="5" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1073,6 +1107,20 @@
                           length="50"
                           lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
                           name="Developed_By" />
+                        <outputColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[est5las_Sales_Is_Correct]"
+                          dataType="numeric"
+                          lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[est5las_Sales_Is_Correct]"
+                          name="est5las_Sales_Is_Correct"
+                          precision="18"
+                          scale="5" />
+                        <outputColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[est5las_Purchase_Is_Correct]"
+                          dataType="numeric"
+                          lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[est5las_Purchase_Is_Correct]"
+                          name="est5las_Purchase_Is_Correct"
+                          precision="18"
+                          scale="5" />
                         <outputColumn
                           refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1482,6 +1530,22 @@
                           cachedName="Developed_By"
                           externalMetadataColumnId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[Developed_By]"
                           lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[Developed_By]" />
+                        <inputColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].Columns[est5las_Sales_Is_Correct]"
+                          cachedDataType="numeric"
+                          cachedName="est5las_Sales_Is_Correct"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[est5las_Sales_Is_Correct]"
+                          lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[est5las_Sales_Is_Correct]" />
+                        <inputColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].Columns[est5las_Purchase_Is_Correct]"
+                          cachedDataType="numeric"
+                          cachedName="est5las_Purchase_Is_Correct"
+                          cachedPrecision="18"
+                          cachedScale="5"
+                          externalMetadataColumnId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[est5las_Purchase_Is_Correct]"
+                          lineageId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[est5las_Purchase_Is_Correct]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1721,8 +1785,10 @@
                           name="Developed_By" />
                         <externalMetadataColumn
                           refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[est5las_Sales_Is_Correct]"
-                          dataType="bool"
-                          name="est5las_Sales_Is_Correct" />
+                          dataType="numeric"
+                          name="est5las_Sales_Is_Correct"
+                          precision="18"
+                          scale="5" />
                         <externalMetadataColumn
                           refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[Namozag_Name]"
                           dataType="i4"
@@ -1738,6 +1804,12 @@
                           dataType="numeric"
                           name="SalesTableNet"
                           precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[est5las_Purchase_Is_Correct]"
+                          dataType="numeric"
+                          name="est5las_Purchase_Is_Correct"
+                          precision="18"
+                          scale="5" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5600,6 +5672,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
       DTS:refId="Package\Dim_Invoices_STG_to_DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{DEF0B291-75BE-460C-BDEE-FCD5DB3DA542}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -14232,6 +14305,30 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                       dataType="str"
                       length="50"
                       name="Developed_By" />
+                    <externalMetadataColumn
+                      refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add.Inputs[OLE DB Destination Input].ExternalColumns[est5las_Sales_Is_Correct]"
+                      dataType="numeric"
+                      name="est5las_Sales_Is_Correct"
+                      precision="18"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add.Inputs[OLE DB Destination Input].ExternalColumns[est5las_Purchase_Is_Correct]"
+                      dataType="numeric"
+                      name="est5las_Purchase_Is_Correct"
+                      precision="18"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add.Inputs[OLE DB Destination Input].ExternalColumns[SalesNet]"
+                      dataType="numeric"
+                      name="SalesNet"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add.Inputs[OLE DB Destination Input].ExternalColumns[SalesTableNet]"
+                      dataType="numeric"
+                      name="SalesTableNet"
+                      precision="18"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -17067,6 +17164,91 @@ where scd.Version&lt;&gt;1</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\The Deletion Logic\Delete Dim_NonTable_Purchases_Details_Jason"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{17C4BF9B-0D12-41A1-8EE9-CB3F77126024}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Dim_NonTable_Purchases_Details_Jason"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="delete del&#xA;from Dim_NonTable_Purchases_Details_Jason del where del.FK_ID in (select ID from Staging_Area_Increment.dbo.Declarations_To_Delete)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\The Deletion Logic\Delete Dim_NonTable_Sales_Details_Jason"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{36E1338E-1745-46BD-8B83-B5F97F7CA257}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Dim_NonTable_Sales_Details_Jason"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="delete del&#xA;from Dim_NonTable_Sales_Details_Jason del where del.FK_ID in (select ID from Staging_Area_Increment.dbo.Declarations_To_Delete)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\The Deletion Logic\Delete Dim_Table_Purchases_Details_Jason"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C865387C-45C4-47E6-B713-6BC456340A4E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Dim_Table_Purchases_Details_Jason"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="delete del&#xA;from Dim_Table_Purchases_Details_Jason del where del.FK_ID in (select ID from Staging_Area_Increment.dbo.Declarations_To_Delete)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\The Deletion Logic\Delete Dim_Table_Sales_Details_Jason"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ED45232A-72BC-40F2-BEE3-2C397102E2FE}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Dim_Table_Sales_Details_Jason"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="delete del&#xA;from Dim_Table_Sales_Details_Jason del where del.FK_ID in (select ID from Staging_Area_Increment.dbo.Declarations_To_Delete)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\The Deletion Logic\Delete Dim_Table_Tax_Details_Jason"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6F0EB484-46B2-4B3C-8D8C-C0BD40F0D123}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete Dim_Table_Tax_Details_Jason"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="delete del&#xA;from Dim_Table_Tax_Details_Jason del where del.FK_ID in (select ID from Staging_Area_Increment.dbo.Declarations_To_Delete)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\The Deletion Logic\Delete DWH Dim_Declarations"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -17120,6 +17302,46 @@ where scd.Version&lt;&gt;1</property>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\The Deletion Logic\Delete DWH Dim_Invoices" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\The Deletion Logic.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{74FB39B3-A1AF-45F3-899A-148A8E358EF3}"
+          DTS:From="Package\The Deletion Logic\Delete Dim_NonTable_Purchases_Details_Jason"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\The Deletion Logic\Delete Dim_NonTable_Sales_Details_Jason" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\The Deletion Logic.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{E0B63E71-D38D-4F8E-B2EE-88FED6EA25EC}"
+          DTS:From="Package\The Deletion Logic\Delete Dim_NonTable_Sales_Details_Jason"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\The Deletion Logic\Delete Dim_Table_Purchases_Details_Jason" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\The Deletion Logic.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{EE79B1B4-C3A9-403E-AEC1-5E8FD9D10262}"
+          DTS:From="Package\The Deletion Logic\Delete DWH Dim_Invoices"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\The Deletion Logic\Delete Dim_NonTable_Purchases_Details_Jason" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\The Deletion Logic.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{15976575-FB10-418B-9AAC-748839BBA525}"
+          DTS:From="Package\The Deletion Logic\Delete Dim_Table_Purchases_Details_Jason"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\The Deletion Logic\Delete Dim_Table_Sales_Details_Jason" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\The Deletion Logic.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{C93842C9-3765-45F2-A28E-1ABF89A190D2}"
+          DTS:From="Package\The Deletion Logic\Delete Dim_Table_Sales_Details_Jason"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\The Deletion Logic\Delete Dim_Table_Tax_Details_Jason" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -17143,6 +17365,7 @@ where scd.Version&lt;&gt;1</property>
       DTS:refId="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{981C4FFB-34D9-4418-AB0B-2D755C5590BF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -17160,6 +17383,7 @@ where scd.Version&lt;&gt;1</property>
       DTS:refId="Package\Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{3D446FB6-F213-4FE7-93DC-6482FFB7CE1A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -17293,7 +17517,7 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH"
@@ -17304,7 +17528,7 @@ where scd.Version&lt;&gt;1</property>
           PanelSize="321.6,176"
           Size="306.4,43.2"
           Id="Package\Dim_Declarations_Increment STG_to_DWH"
-          TopLeft="35.657143382637,265.141178761387" />
+          TopLeft="36.228571963797,265.141178761387" />
         <NodeLayout
           Size="255.2,41.6"
           Id="Package\Dim_Declarations_SCD Logic\Fix_UniqueTaxIDs of the Declarations"
@@ -17340,7 +17564,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17362,7 +17588,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17384,7 +17612,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -17492,16 +17722,16 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="333,173.6"
+          PanelSize="332.8,173.6"
           Size="332.8,43.2"
           Id="Package\Filter Inovices_Details Based on Invoices Staging"
           TopLeft="338.971433077053,623.576473925765" />
         <NodeLayout
-          Size="218,42"
+          Size="217.6,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG"
           TopLeft="42.8571488322045,12.5176494783184" />
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG"
           TopLeft="48.5714346438037,103.435297206364" />
         <EdgeLayout
@@ -17531,8 +17761,8 @@ where scd.Version&lt;&gt;1</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="False"
-          PanelSize="338,200"
-          Size="337.6,43.2"
+          PanelSize="338.4,200"
+          Size="338.4,43.2"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
           TopLeft="334.400005245209,549.176474071622" />
         <NodeLayout
@@ -17621,7 +17851,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17643,7 +17875,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17677,14 +17911,16 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="287.2,313.6"
-          Size="287.2,43.2"
+          Size="255.2,43.2"
           Id="Package\Fix The Sent Tables (On the Fly)"
           TopLeft="47.0857150058357,411.764710232296" />
         <NodeLayout
@@ -17699,6 +17935,26 @@ where scd.Version&lt;&gt;1</property>
           Size="260.8,41.6"
           Id="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG"
           TopLeft="7.7857143246398,23.2411767194015" />
+        <NodeLayout
+          Size="304,41.6"
+          Id="Package\The Deletion Logic\Delete Dim_NonTable_Purchases_Details_Jason"
+          TopLeft="49.828579525072,221.694120632819" />
+        <NodeLayout
+          Size="280.8,41.6"
+          Id="Package\The Deletion Logic\Delete Dim_NonTable_Sales_Details_Jason"
+          TopLeft="33.2571506714335,286.541180365803" />
+        <NodeLayout
+          Size="284.8,41.6"
+          Id="Package\The Deletion Logic\Delete Dim_Table_Purchases_Details_Jason"
+          TopLeft="50.4000081062316,353.035297206364" />
+        <NodeLayout
+          Size="262.4,41.6"
+          Id="Package\The Deletion Logic\Delete Dim_Table_Sales_Details_Jason"
+          TopLeft="55.7714366192722,433.694121653811" />
+        <NodeLayout
+          Size="255.2,41.6"
+          Id="Package\The Deletion Logic\Delete Dim_Table_Tax_Details_Jason"
+          TopLeft="64.3428653366715,508.329413755212" />
         <NodeLayout
           Size="222.4,41.6"
           Id="Package\The Deletion Logic\Delete DWH Dim_Declarations"
@@ -17751,13 +18007,153 @@ where scd.Version&lt;&gt;1</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\The Deletion Logic.PrecedenceConstraints[Constraint 2]"
+          TopLeft="201.828579525072,263.294120632819">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.1714288536385,23.2470597329847"
+              Start="0,0"
+              End="-28.1714288536385,15.7470597329847">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.62352986649233" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.62352986649233"
+                    Point2="0,11.6235298664923"
+                    Point3="-4,11.6235298664923" />
+                  <mssgle:LineSegment
+                    End="-24.1714288536385,11.6235298664923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.1714288536385,11.6235298664923"
+                    Point2="-28.1714288536385,11.6235298664923"
+                    Point3="-28.1714288536385,15.6235298664923" />
+                  <mssgle:LineSegment
+                    End="-28.1714288536385,15.7470597329847" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\The Deletion Logic.PrecedenceConstraints[Constraint 3]"
+          TopLeft="173.657150671433,328.141180365803">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.1428574347981,24.8941168405605"
+              Start="0,0"
+              End="19.1428574347981,17.3941168405605">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.44705842028026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.44705842028026"
+                    Point2="0,12.4470584202803"
+                    Point3="4,12.4470584202803" />
+                  <mssgle:LineSegment
+                    End="15.1428574347981,12.4470584202803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.1428574347981,12.4470584202803"
+                    Point2="19.1428574347981,12.4470584202803"
+                    Point3="19.1428574347981,16.4470584202803" />
+                  <mssgle:LineSegment
+                    End="19.1428574347981,17.3941168405605" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\The Deletion Logic.PrecedenceConstraints[Constraint 4]"
+          TopLeft="234.17143525688,186.776473488197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.3428557318082,34.9176471446216"
+              Start="0,0"
+              End="-32.3428557318082,27.4176471446216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-28.3428557318082,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.3428557318082,0"
+                    Point2="-32.3428557318082,0"
+                    Point3="-32.3428557318082,4" />
+                  <mssgle:LineSegment
+                    End="-32.3428557318082,27.4176471446216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\The Deletion Logic.PrecedenceConstraints[Constraint 5]"
+          TopLeft="189.885722362752,394.635297206364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0588244474471"
+              Start="0,0"
+              End="0,31.5588244474471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5588244474471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\The Deletion Logic.PrecedenceConstraints[Constraint 6]"
+          TopLeft="189.457150977972,475.294121653811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.0352921014012"
+              Start="0,0"
+              End="0,25.5352921014012">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5352921014012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="271.2,220"
+          PanelSize="365.6,604.8"
           Size="189.6,43.2"
           Id="Package\The Deletion Logic"
-          TopLeft="468.000007969992,263.305880096462" />
+          TopLeft="468.000007969991,263.305880096462" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Truncate STG_Tables"
@@ -17946,9 +18342,9 @@ where scd.Version&lt;&gt;1</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="186.304766137907,142.223526074234"
+              EndConnector="186.304766137906,142.223526074235"
               Start="0,0"
-              End="186.304766137907,134.723526074234">
+              End="186.304766137906,134.723526074235">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -17959,13 +18355,13 @@ where scd.Version&lt;&gt;1</property>
                     Point2="0,57.460207189858"
                     Point3="4,57.460207189858" />
                   <mssgle:LineSegment
-                    End="182.304766137907,57.460207189858" />
+                    End="182.304766137906,57.460207189858" />
                   <mssgle:CubicBezierSegment
-                    Point1="182.304766137907,57.460207189858"
-                    Point2="186.304766137907,57.460207189858"
-                    Point3="186.304766137907,61.460207189858" />
+                    Point1="182.304766137906,57.460207189858"
+                    Point2="186.304766137906,57.460207189858"
+                    Point3="186.304766137906,61.460207189858" />
                   <mssgle:LineSegment
-                    End="186.304766137907,134.723526074234" />
+                    End="186.304766137906,134.723526074235" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17976,7 +18372,7 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="192.085714869597,198.04706104569">
+          TopLeft="192.371429160177,198.04706104569">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18000,31 +18396,31 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="468.000007969992,285.823529428924">
+          TopLeft="468.000007969991,285.823529428925">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-125.942864587355,0"
+              EndConnector="-125.371436006194,0"
               Start="0,0"
-              End="-118.442864587355,0">
+              End="-117.871436006194,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-118.442864587355,0" />
+                    End="-117.871436006194,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-84.5258854186774,5,50.60890625,11.609375"
+              BoundingBox="-84.240171128097,5,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="185.285714563058,308.341178761387">
+          TopLeft="185.571428853638,308.341178761387">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18046,24 +18442,30 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="334.285715005836,433.364710232296">
+          TopLeft="302.285715005836,433.364710232296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="190.25714781041,26.152940558727"
+              EndConnector="42.6571478104103,47.7529405587271"
               Start="0,0"
-              End="190.25714781041,18.652940558727">
+              End="35.1571478104103,47.7529405587271">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="186.25714781041,0" />
+                    End="17.3285739052052,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="186.25714781041,0"
-                    Point2="190.25714781041,0"
-                    Point3="190.25714781041,4" />
+                    Point1="17.3285739052052,0"
+                    Point2="21.3285739052052,0"
+                    Point3="21.3285739052052,4" />
                   <mssgle:LineSegment
-                    End="190.25714781041,18.652940558727" />
+                    End="21.3285739052052,43.7529405587271" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.3285739052052,43.7529405587271"
+                    Point2="21.3285739052052,47.7529405587271"
+                    Point3="25.3285739052052,47.7529405587271" />
+                  <mssgle:LineSegment
+                    End="35.1571478104103,47.7529405587271" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18074,30 +18476,18 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="181.71428574348,379.529413025932">
+          TopLeft="178.200000374658,379.529413025932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.9714292623558,32.235297206364"
+              EndConnector="0,32.235297206364"
               Start="0,0"
-              End="8.9714292623558,24.735297206364">
+              End="0,24.735297206364">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.117648603182" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.117648603182"
-                    Point2="0,16.117648603182"
-                    Point3="4,16.117648603182" />
-                  <mssgle:LineSegment
-                    End="4.9714292623558,16.117648603182" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.9714292623558,16.117648603182"
-                    Point2="8.9714292623558,16.117648603182"
-                    Point3="8.9714292623558,20.117648603182" />
-                  <mssgle:LineSegment
-                    End="8.9714292623558,24.735297206364" />
+                    End="0,24.735297206364" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18112,9 +18502,9 @@ where scd.Version&lt;&gt;1</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-21.342857571037,46.4588232805989"
+              EndConnector="-20.9428575710371,46.4588232805989"
               Start="0,0"
-              End="-21.342857571037,38.9588232805989">
+              End="-20.9428575710371,38.9588232805989">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -18125,13 +18515,13 @@ where scd.Version&lt;&gt;1</property>
                     Point2="0,23.2294116402995"
                     Point3="-4,23.2294116402995" />
                   <mssgle:LineSegment
-                    End="-17.342857571037,23.2294116402995" />
+                    End="-16.9428575710371,23.2294116402995" />
                   <mssgle:CubicBezierSegment
-                    Point1="-17.342857571037,23.2294116402995"
-                    Point2="-21.342857571037,23.2294116402995"
-                    Point3="-21.342857571037,27.2294116402995" />
+                    Point1="-16.9428575710371,23.2294116402995"
+                    Point2="-20.9428575710371,23.2294116402995"
+                    Point3="-20.9428575710371,27.2294116402995" />
                   <mssgle:LineSegment
-                    End="-21.342857571037,38.9588232805989" />
+                    End="-20.9428575710371,38.9588232805989" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18142,18 +18532,18 @@ where scd.Version&lt;&gt;1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="504.435719161131,592.176474071622">
+          TopLeft="504.485719161131,592.376474071622">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.3999998541429"
+              EndConnector="0,31.1999998541429"
               Start="0,0"
-              End="0,23.8999998541429">
+              End="0,23.6999998541429">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.8999998541429" />
+                    End="0,23.6999998541429" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18171,16 +18561,16 @@ where scd.Version&lt;&gt;1</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add"
-          TopLeft="241.6,38.4" />
-        <NodeLayout
           Size="160.8,41.6"
           Id="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations"
           TopLeft="264,144" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add"
+          TopLeft="242.4,38.4" />
         <EdgeLayout
           Id="Package\Dim_Declarations_Increment STG_to_DWH\Dim_Declarations_STG_to_DWH.Paths[OLE DB Source Output]"
-          TopLeft="341.8,80">
+          TopLeft="342.2,80">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18233,7 +18623,7 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH\STG_Declarations_SCD"
@@ -18261,7 +18651,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18368,15 +18760,15 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="306.4,41.6"
-          Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases\Join_Purchase_Master_&amp;_STG_Purchase_Details"
-          TopLeft="259.2,66.4" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases\Dim_Invoices"
           TopLeft="252.8,240" />
+        <NodeLayout
+          Size="306.4,41.6"
+          Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases\Join_Purchase_Master_&amp;_STG_Purchase_Details"
+          TopLeft="259.2,66.4" />
         <EdgeLayout
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases.Paths[OLE DB Source Output]"
           TopLeft="412.4,108">
@@ -18408,7 +18800,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18439,15 +18833,15 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="232,41.6"
-          Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales\Join_Sales_Master_Sales_Details"
-          TopLeft="266.4,57.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales\Dim_Invoices"
           TopLeft="331.2,174.4" />
+        <NodeLayout
+          Size="232,41.6"
+          Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales\Join_Sales_Master_Sales_Details"
+          TopLeft="266.4,57.6" />
         <EdgeLayout
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales.Paths[OLE DB Source Output]"
           TopLeft="382.4,99.2">
@@ -18479,7 +18873,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18512,13 +18908,13 @@ where scd.Version&lt;&gt;1</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details"
-          TopLeft="165.6,95.2" />
-        <NodeLayout
           Size="219.2,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details_Stg"
           TopLeft="172,204.8" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details"
+          TopLeft="165.6,95.2" />
         <EdgeLayout
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details.Paths[OLE DB Source Output]"
           TopLeft="264.8,136.8">
@@ -18581,15 +18977,15 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details"
-          TopLeft="256.8,73.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="201.6,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details_Stg"
           TopLeft="237.6,210.4" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details"
+          TopLeft="256.8,73.6" />
         <EdgeLayout
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details.Paths[OLE DB Source Output]"
           TopLeft="346.8,115.2">
@@ -18621,7 +19017,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18652,15 +19050,15 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices"
-          TopLeft="292.8,76.8" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="228,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
           TopLeft="291.2,189.6" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices"
+          TopLeft="292.8,76.8" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Derived Column"
@@ -18696,7 +19094,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18730,7 +19130,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18766,7 +19168,11 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
+          TopLeft="244,185.6" />
         <NodeLayout
           Size="147.2,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices"
@@ -18806,13 +19212,11 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209.6,41.6"
-          Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
-          TopLeft="244,185.6" />
         <EdgeLayout
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG.Paths[Derived Column Output]"
           TopLeft="136.4,144.8">
@@ -18844,7 +19248,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18875,7 +19281,7 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices\SentPurchasesInvoices"
@@ -18913,7 +19319,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18947,7 +19355,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18978,19 +19388,19 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices"
           TopLeft="340,45.6" />
         <NodeLayout
-          Size="195.2,41.6"
-          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage"
-          TopLeft="343.2,196" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\Derived Column"
           TopLeft="56,90.4" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices\SentSalesInvoices_Stage"
+          TopLeft="343.2,196" />
         <EdgeLayout
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentSalesInvoices.Paths[OLE DB Source Output]"
           TopLeft="340,66.4">
@@ -19022,7 +19432,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19056,7 +19468,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19089,11 +19503,11 @@ where scd.Version&lt;&gt;1</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="178,42"
+          Size="177.6,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add"
           TopLeft="286.4,174.4" />
         <NodeLayout
-          Size="298,42"
+          Size="297.6,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Final Declarations from STG_SCD_Declarations"
           TopLeft="236,41.6" />
         <EdgeLayout
@@ -19158,7 +19572,7 @@ where scd.Version&lt;&gt;1</property>
     design-time-name="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190,42"
           Id="Package\The Deletion Logic\Declarations_TO_Delete_ STG_to_STG\Declarations_To_Delete"
@@ -19186,7 +19600,9 @@ where scd.Version&lt;&gt;1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
