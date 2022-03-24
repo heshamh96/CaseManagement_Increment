@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{E40CBAF6-B559-49F4-A143-38172A4CCD66}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{582F5850-AA50-4C0C-910C-48C111855CCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Declarations' Json Vat to STG"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{B9A7B7A0-ADBC-4179-8C5E-B3D80CFCC7CA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -14500,6 +14501,7 @@ where Namozag_Name=101</property>
       DTS:refId="Package\Declarations_Add_STG_to_DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{A00C992B-7B6C-48C3-8477-7E4988835EE9}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -18126,6 +18128,7 @@ where scd.Version&lt;&gt;1</property>
       DTS:refId="Package\Declaration_Jasons_STG_to_DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{7144d2f8-82b7-40bc-92cb-71e653f334d3}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -22610,6 +22613,7 @@ SELECT
 ,10 as Namozag_Name               
 ,'Excel Systems' as Developed_By             
 FROM [TaxVAT].[dbo].[NonTableVatTax]
+where SendDate is not null
 --where TaxPeriod=201901
 
 union all
@@ -22666,6 +22670,7 @@ SELECT
 ,101 as Namozag_Name                  
 ,'Excel Systems' as Developed_By               
 FROM [TaxVAT].[dbo].[TableVatTax]
+where SendDate is not null
 --where TaxPeriod=201901
 
 ------------------------------------------------------------------------------------------------
@@ -22725,6 +22730,7 @@ SELECT
 ,10 as Namozag_Name               
 ,'IBM' as Developed_By             
 FROM Coexistence_GTA.[dbo].[NonTableVatTax]
+where SendDate is not null
 --where TaxPeriod=201901
 
 union all
@@ -22781,6 +22787,7 @@ SELECT
 ,101 as Namozag_Name                  
 ,'IBM' as Developed_By               
 FROM Coexistence_GTA.[dbo].[TableVatTax]
+where SendDate is not null
 --where TaxPeriod=201901
 
 ) as declarations ) as scd</property>
@@ -25198,7 +25205,7 @@ FROM Coexistence_GTA.[dbo].[TableVatTax]
 ,pid.[InvoiceDate]
 ,pid.[PurchasesInvoicesDetails_Id]
 ,pms.[Developed_By]
-from [Staging_Area].dbo.Purchase_Master_Stage pms join Purchase_Invoice_Details_Stg pid
+from [Staging_Area_Increment].dbo.Purchase_Invoices_Master_STG pms join Purchase_Invoice_Details_Stg pid
 on pms.PurchaseInvoice_Id=pid.Fk_PurchasesInvoices_Id</property>
                     <property
                       dataType="System.String"
@@ -26720,7 +26727,7 @@ on pms.PurchaseInvoice_Id=pid.Fk_PurchasesInvoices_Id</property>
 ,sinvd.[SalesInvoicesDetails_Id]
 ,sms.[Developed_By]
 
-from [Staging_Area].dbo.[Sales_Master_Stage] sms join Sales_Invoice_Details_Stg sinvd
+from [Staging_Area_Increment].dbo.Sales_Invoices_Master_STG sms join Sales_Invoice_Details_Stg sinvd
 on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
                     <property
                       dataType="System.String"
@@ -27604,6 +27611,41 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
           DTS:ObjectName="Constraint"
           DTS:To="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales" />
       </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DWH Indexies Creation"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{29308BCA-178D-482D-977F-AFFD059F8B0D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DWH Indexies Creation"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[FK_Inv_Type_ID] ASC,&#xA;&#x9;[Company_Unique_Tax_Id] ASC&#xA;)&#xA;INCLUDE([Product_Total_Net],[FK_Sub_inv_type],[TaxPeriod]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;CREATE NONCLUSTERED INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[Company_Unique_Tax_Id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[FK_TaxPeriod_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[ID] ASC,&#xA;&#x9;[Namozag_Name] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[Namozag_Name] ASC&#xA;)&#xA;INCLUDE([ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[est5las_Sales_Is_Correct] ASC&#xA;)&#xA;INCLUDE([TaxPeriod],[Developed_By]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;(&#xA;&#x9;[FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;(&#xA;&#x9;[FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;(&#xA;&#x9;[TotalValue] ASC&#xA;)&#xA;INCLUDE([FK_ID],[Tax]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DWH_Indexies_Drop"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{36C1A122-95B8-49FA-90CC-D910C8CCB70A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DWH_Indexies_Drop"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;DROP INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;DROP INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;DROP INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;GO&#xA;DROP INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;GO&#xA;DROP INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Filter Inovices_Details Based on Invoices Staging"
@@ -34306,6 +34348,7 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Post_Excution_Updates_On_Staging"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{FD60FDF2-B390-4E4D-8FEB-1E9A9E4E9CF6}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -34487,6 +34530,7 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\The Deletion Logic (DWH)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{2726E6BC-81E9-41C6-977C-4BE4E4408F33}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -34686,13 +34730,12 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{981C4FFB-34D9-4418-AB0B-2D755C5590BF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_(Purchases_National_ID) in Invoices(relativily Light)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -34704,13 +34747,12 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3D446FB6-F213-4FE7-93DC-6482FFB7CE1A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -34793,6 +34835,30 @@ and dwh.SendDate is null</property>
       DTS:ObjectName="Constraint 16"
       DTS:To="Package\The Deletion Logic (DWH)" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 17]"
+      DTS:CreationName=""
+      DTS:DTSID="{636366E0-061F-4532-9147-F51E87452CE5}"
+      DTS:From="Package\Declaration_Jasons_STG_to_DWH"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 17"
+      DTS:To="Package\DWH Indexies Creation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 18]"
+      DTS:CreationName=""
+      DTS:DTSID="{2BED85A6-9D23-4A97-A170-36B502A00537}"
+      DTS:From="Package\DWH_Indexies_Drop"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 18"
+      DTS:To="Package\Declarations_Add_STG_to_DWH" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 19]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD8E152E-FD9D-4E02-A7EA-F29FA25DA05C}"
+      DTS:From="Package\DWH Indexies Creation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 19"
+      DTS:To="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{62483680-DC27-4A68-8B26-FD990F10E859}"
@@ -34811,12 +34877,11 @@ and dwh.SendDate is null</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{810DD6F5-C049-4019-902D-72C4326660B5}"
+      DTS:DTSID="{3623D6E1-C285-43CF-8A06-A8FBEA58F7E2}"
       DTS:From="Package\The Deletion Logic (DWH)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Declarations_Add_STG_to_DWH"
-      DTS:Value="2" />
+      DTS:To="Package\DWH_Indexies_Drop" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -34877,10 +34942,10 @@ and dwh.SendDate is null</property>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="280,81.6"
+          PanelSize="280,106.4"
           Size="254.4,43.2"
           Id="Package\Declarations_Add_STG_to_DWH"
-          TopLeft="108.22857318995,1132.10588622242" />
+          TopLeft="213.371432123379,1103.96470935716" />
         <NodeLayout
           Size="255.2,41.6"
           Id="Package\Dim_Declarations_SCD Logic\Fix_UniqueTaxIDs of the Declarations"
@@ -34916,9 +34981,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34940,9 +35003,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34964,9 +35025,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -34975,7 +35034,7 @@ and dwh.SendDate is null</property>
           PanelSize="271.2,316"
           Size="237.6,43.2"
           Id="Package\Dim_Declarations_SCD Logic"
-          TopLeft="257.714290103134,77.2705893077653" />
+          TopLeft="303.42857659593,77.2705893077653" />
         <NodeLayout
           Size="194.4,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases"
@@ -35010,9 +35069,9 @@ and dwh.SendDate is null</property>
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="263.2,185.6"
-          Size="263.2,43.2"
+          Size="236,43.2"
           Id="Package\Dim_Invoices_STG_to_DWH"
-          TopLeft="61.8285720319169,1215.68235723106" />
+          TopLeft="2.39999959128295,1229.14118094923" />
         <NodeLayout
           Size="223.2,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details"
@@ -35052,9 +35111,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -35063,7 +35120,7 @@ and dwh.SendDate is null</property>
           PanelSize="332.8,173.6"
           Size="332.8,43.2"
           Id="Package\Filter Inovices_Details Based on Invoices Staging"
-          TopLeft="377.828576595929,623.576473925765" />
+          TopLeft="423.542863088725,623.576473925765" />
         <NodeLayout
           Size="217.6,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG"
@@ -35091,18 +35148,16 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
-          HeaderHeight="43"
+          HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="338.4,200"
           Size="338.4,43.2"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
-          TopLeft="373.257148764085,549.176474071622" />
+          TopLeft="422.971435325,556.517650645167" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices"
@@ -35141,7 +35196,7 @@ and dwh.SendDate is null</property>
           PanelSize="359.2,179.2"
           Size="359.2,43.2"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
-          TopLeft="383.800006335122,458.905886076561" />
+          TopLeft="429.514292827918,458.905886076561" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Fix The Sent Tables (On the Fly)\Sent_Purchases"
@@ -35260,15 +35315,15 @@ and dwh.SendDate is null</property>
           PanelSize="287.2,313.6"
           Size="255.2,43.2"
           Id="Package\Fix The Sent Tables (On the Fly)"
-          TopLeft="85.9428585247118,411.764710232296" />
+          TopLeft="131.657145017507,411.764710232296" />
         <NodeLayout
           Size="360,41.6"
           Id="Package\IBM_Transferes_to Staging (Sent,Invoices,Invoices_Details)"
-          TopLeft="40.5714292623559,337.929413025932" />
+          TopLeft="86.2857157551513,337.929413025932" />
         <NodeLayout
           Size="315.2,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)"
-          TopLeft="62.8571439275936,144.211766756448" />
+          TopLeft="108.571430420389,144.211766756448" />
         <NodeLayout
           Size="304,41.6"
           Id="Package\The Deletion Logic (DWH)\Delete Dim_NonTable_Purchases_Details_Jason"
@@ -35481,24 +35536,24 @@ and dwh.SendDate is null</property>
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="365.6,604.8"
-          Size="365.6,43.2"
+          Size="225.6,43.2"
           Id="Package\The Deletion Logic (DWH)"
-          TopLeft="493.142865541028,1164.95293968359" />
+          TopLeft="538.857152033824,1164.95293968359" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Truncate STG_Tables"
-          TopLeft="582.857152783141,7.95294128800758" />
+          TopLeft="628.571439275936,7.95294128800758" />
         <NodeLayout
-          Size="361.6,41.6"
+          Size="362.4,41.6"
           Id="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
-          TopLeft="78.9714294667141,1402.02353526317" />
+          TopLeft="124.68571595951,1402.02353526317" />
         <NodeLayout
           Size="471.2,41.6"
           Id="Package\Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
-          TopLeft="57.828571963797,1475.67059426687" />
+          TopLeft="103.542858456592,1475.67059426687" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="672.457152783141,49.5529412880076">
+          TopLeft="718.171439275936,49.5529412880076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -35532,30 +35587,30 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="338.247623436467,120.470589307765">
+          TopLeft="422.22857659593,120.470589307765">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-117.790479508874,23.7411774486823"
+              EndConnector="-156.057146175541,23.7411774486823"
               Start="0,0"
-              End="-117.790479508874,16.2411774486823">
+              End="-156.057146175541,16.2411774486823">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.5917532969927" />
+                    End="0,7.87058872434114" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,5.5917532969927"
-                    Point2="0,9.5917532969927"
-                    Point3="-4,9.5917532969927" />
+                    Point1="0,7.87058872434114"
+                    Point2="0,11.8705887243411"
+                    Point3="-4,11.8705887243411" />
                   <mssgle:LineSegment
-                    End="-113.790479508874,9.5917532969927" />
+                    End="-152.057146175541,11.8705887243411" />
                   <mssgle:CubicBezierSegment
-                    Point1="-113.790479508874,9.5917532969927"
-                    Point2="-117.790479508874,9.5917532969927"
-                    Point3="-117.790479508874,13.5917532969927" />
+                    Point1="-152.057146175541,11.8705887243411"
+                    Point2="-156.057146175541,11.8705887243411"
+                    Point3="-156.057146175541,15.8705887243411" />
                   <mssgle:LineSegment
-                    End="-117.790479508874,16.2411774486823" />
+                    End="-156.057146175541,16.2411774486823" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35566,13 +35621,13 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="259.771429466714,1443.62353526317">
+          TopLeft="305.88571595951,1443.62353526317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33.6571424970829,32.0470590037039"
+              EndConnector="33.2571424970829,32.0470590037039"
               Start="0,0"
-              End="33.6571424970829,24.5470590037039">
+              End="33.2571424970829,24.5470590037039">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -35583,13 +35638,13 @@ and dwh.SendDate is null</property>
                     Point2="0,16.023529501852"
                     Point3="4,16.023529501852" />
                   <mssgle:LineSegment
-                    End="29.6571424970829,16.023529501852" />
+                    End="29.2571424970829,16.023529501852" />
                   <mssgle:CubicBezierSegment
-                    Point1="29.6571424970829,16.023529501852"
-                    Point2="33.6571424970829,16.023529501852"
-                    Point3="33.6571424970829,20.023529501852" />
+                    Point1="29.2571424970829,16.023529501852"
+                    Point2="33.2571424970829,16.023529501852"
+                    Point3="33.2571424970829,20.023529501852" />
                   <mssgle:LineSegment
-                    End="33.6571424970829,24.5470590037039" />
+                    End="33.2571424970829,24.5470590037039" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35599,44 +35654,8 @@ and dwh.SendDate is null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="493.142865541028,1186.55293968359">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-130.514292351079,-32.847053461174"
-              Start="0,0"
-              End="-123.014292351079,-32.847053461174">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-61.2571461755393,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-61.2571461755393,0"
-                    Point2="-65.2571461755393,0"
-                    Point3="-65.2571461755393,-4" />
-                  <mssgle:LineSegment
-                    End="-65.2571461755393,-28.847053461174" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-65.2571461755393,-28.847053461174"
-                    Point2="-65.2571461755393,-32.847053461174"
-                    Point3="-69.2571461755393,-32.847053461174" />
-                  <mssgle:LineSegment
-                    End="-123.014292351079,-32.847053461174" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-90.5615993005393,1,50.60890625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="341.142858524712,433.364710232296">
+          TopLeft="386.857145017507,433.364710232296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -35670,7 +35689,7 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="217.057143893534,379.529413025932">
+          TopLeft="262.771430386329,379.529413025932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -35692,30 +35711,30 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="563.400006335122,502.105886076561">
+          TopLeft="609.114292827918,502.105886076561">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-20.942857571037,47.0705879950611"
+              EndConnector="-16.9428575029173,54.4117645686066"
               Start="0,0"
-              End="-20.942857571037,39.5705879950611">
+              End="-16.9428575029173,46.9117645686066">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5352939975306" />
+                    End="0,23.2058822843033" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5352939975306"
-                    Point2="0,23.5352939975306"
-                    Point3="-4,23.5352939975306" />
+                    Point1="0,23.2058822843033"
+                    Point2="0,27.2058822843033"
+                    Point3="-4,27.2058822843033" />
                   <mssgle:LineSegment
-                    End="-16.942857571037,23.5352939975306" />
+                    End="-12.9428575029173,27.2058822843033" />
                   <mssgle:CubicBezierSegment
-                    Point1="-16.942857571037,23.5352939975306"
-                    Point2="-20.942857571037,23.5352939975306"
-                    Point3="-20.942857571037,27.5352939975306" />
+                    Point1="-12.9428575029173,27.2058822843033"
+                    Point2="-16.9428575029173,27.2058822843033"
+                    Point3="-16.9428575029173,31.2058822843033" />
                   <mssgle:LineSegment
-                    End="-20.942857571037,39.5705879950611" />
+                    End="-16.9428575029173,46.9117645686066" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35726,18 +35745,18 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="543.342862680007,592.376474071622">
+          TopLeft="591.057149206863,599.717650645168">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.1999998541429"
+              EndConnector="0,23.8588232805974"
               Start="0,0"
-              End="0,23.6999998541429">
+              End="0,16.3588232805974">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6999998541429" />
+                    End="0,16.3588232805974" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35749,33 +35768,33 @@ and dwh.SendDate is null</property>
         <NodeLayout
           Size="260.8,41.6"
           Id="Package\Declarations_TO_Delete_ STG_to_STG"
-          TopLeft="518.642857911636,139.994115236144" />
+          TopLeft="564.357144404431,139.994115236144" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="495.314290103134,98.8705893077653">
+          TopLeft="541.02857659593,98.8705893077653">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.3285678085016,61.9235259283783"
+              EndConnector="23.3285678085015,61.9235259283783"
               Start="0,0"
-              End="15.8285678085016,61.9235259283783">
+              End="15.8285678085015,61.9235259283783">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="7.66428390425079,0" />
+                    End="7.66428390425074,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="7.66428390425079,0"
-                    Point2="11.6642839042508,0"
-                    Point3="11.6642839042508,4" />
+                    Point1="7.66428390425074,0"
+                    Point2="11.6642839042507,0"
+                    Point3="11.6642839042507,4" />
                   <mssgle:LineSegment
-                    End="11.6642839042508,57.9235259283783" />
+                    End="11.6642839042507,57.9235259283783" />
                   <mssgle:CubicBezierSegment
-                    Point1="11.6642839042508,57.9235259283783"
-                    Point2="11.6642839042508,61.9235259283783"
-                    Point3="15.6642839042508,61.9235259283783" />
+                    Point1="11.6642839042507,57.9235259283783"
+                    Point2="11.6642839042507,61.9235259283783"
+                    Point3="15.6642839042507,61.9235259283783" />
                   <mssgle:LineSegment
-                    End="15.8285678085016,61.9235259283783" />
+                    End="15.8285678085015,61.9235259283783" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35786,30 +35805,30 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="235.42857318995,1175.30588622242">
+          TopLeft="340.571432123379,1147.16470935716">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-42.0000011580329,40.3764710086443"
+              EndConnector="-220.171432532096,81.9764715920687"
               Start="0,0"
-              End="-42.0000011580329,32.8764710086443">
+              End="-220.171432532096,74.4764715920687">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.1882355043222" />
+                    End="0,36.9882357960344" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.1882355043222"
-                    Point2="0,20.1882355043222"
-                    Point3="-4,20.1882355043222" />
+                    Point1="0,36.9882357960344"
+                    Point2="0,40.9882357960344"
+                    Point3="-4,40.9882357960344" />
                   <mssgle:LineSegment
-                    End="-38.0000011580329,20.1882355043222" />
+                    End="-216.171432532096,40.9882357960344" />
                   <mssgle:CubicBezierSegment
-                    Point1="-38.0000011580329,20.1882355043222"
-                    Point2="-42.0000011580329,20.1882355043222"
-                    Point3="-42.0000011580329,24.1882355043222" />
+                    Point1="-216.171432532096,40.9882357960344"
+                    Point2="-220.171432532096,40.9882357960344"
+                    Point3="-220.171432532096,44.9882357960344" />
                   <mssgle:LineSegment
-                    End="-42.0000011580329,32.8764710086443" />
+                    End="-220.171432532096,74.4764715920687" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35898,10 +35917,10 @@ and dwh.SendDate is null</property>
           PanelSize="242.4,232"
           Size="242.4,43.2"
           Id="Package\Declarations' Json Vat to STG"
-          TopLeft="87.3142871739914,248.941177448682" />
+          TopLeft="133.028573666787,248.941177448682" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="208.514287173991,292.141177448682">
+          TopLeft="254.228573666787,292.141177448682">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -35936,7 +35955,7 @@ and dwh.SendDate is null</property>
         <NodeLayout
           Size="248.8,41.6"
           Id="Package\Post_Excution_Updates_On_Staging"
-          TopLeft="172.114288468264,788.470591641462" />
+          TopLeft="217.828574961059,788.470591641462" />
         <NodeLayout
           Size="244,41.6"
           Id="Package\Staging Indexies Creation\Create Index Sales Invoices Details"
@@ -36023,10 +36042,10 @@ and dwh.SendDate is null</property>
           PanelSize="367.2,278.4"
           Size="367.2,43.2"
           Id="Package\Staging Indexies Creation"
-          TopLeft="381.714291738004,716.000002041985" />
+          TopLeft="427.4285782308,716.000002041985" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="544.228576595929,666.776473925765">
+          TopLeft="589.942863088725,666.776473925765">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -36060,7 +36079,7 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="565.314291738004,759.200002041985">
+          TopLeft="611.0285782308,759.200002041985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -36172,10 +36191,10 @@ and dwh.SendDate is null</property>
           PanelSize="380,260"
           Size="380,43.2"
           Id="Package\Staging Index Drop"
-          TopLeft="401.714292010483,208.329413317644" />
+          TopLeft="447.428578503278,208.329413317644" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="220.457143927594,185.811766756448">
+          TopLeft="266.171430420389,185.811766756448">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -36209,7 +36228,7 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="401.714292010483,229.929413317644">
+          TopLeft="447.428578503278,229.929413317644">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -36243,30 +36262,30 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="296.514288468264,830.070591641462">
+          TopLeft="342.228574961059,830.070591641462">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="379.428577072765,334.882348042129"
+              EndConnector="273.161910406098,334.882348042129"
               Start="0,0"
-              End="379.428577072765,327.382348042129">
+              End="273.161910406098,327.382348042129">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,163.441174021064" />
+                    End="0,195.514412988479" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,163.441174021064"
-                    Point2="0,167.441174021064"
-                    Point3="4,167.441174021064" />
+                    Point1="0,195.514412988479"
+                    Point2="0,199.514412988479"
+                    Point3="4,199.514412988479" />
                   <mssgle:LineSegment
-                    End="375.428577072765,167.441174021064" />
+                    End="269.161910406098,199.514412988479" />
                   <mssgle:CubicBezierSegment
-                    Point1="375.428577072765,167.441174021064"
-                    Point2="379.428577072765,167.441174021064"
-                    Point3="379.428577072765,171.441174021064" />
+                    Point1="269.161910406098,199.514412988479"
+                    Point2="273.161910406098,199.514412988479"
+                    Point3="273.161910406098,203.514412988479" />
                   <mssgle:LineSegment
-                    End="379.428577072765,327.382348042129" />
+                    End="273.161910406098,327.382348042129" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36307,31 +36326,163 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="262.4,145.6"
-          Size="262.4,188.8"
+          Size="262.4,43.2"
           Id="Package\Declaration_Jasons_STG_to_DWH"
-          TopLeft="86.6285724406339,1278.68235533493" />
+          TopLeft="106.057144200072,1293.97647319648" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="325.028572031917,1237.28235723106">
+          TopLeft="238.399999591283,1250.74118094923">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-107.199999591283,41.3999981038708"
+              EndConnector="-1.14285539121101,43.2352922472569"
               Start="0,0"
-              End="-107.199999591283,33.8999981038708">
+              End="-1.14285539121101,35.7352922472569">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-103.199999591283,0" />
+                    End="2.85714460878899,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-103.199999591283,0"
-                    Point2="-107.199999591283,0"
-                    Point3="-107.199999591283,4" />
+                    Point1="2.85714460878899,0"
+                    Point2="-1.14285539121101,0"
+                    Point3="-1.14285539121101,4" />
                   <mssgle:LineSegment
-                    End="-107.199999591283,33.8999981038708" />
+                    End="-1.14285539121101,35.7352922472569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\DWH_Indexies_Drop"
+          TopLeft="433.142864519236,1035.15294012116" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="687.92381870049,1164.95293968359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138.780954181254,-88.1999995624317"
+              Start="0,0"
+              End="-138.780954181254,-80.6999995624317">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-39.9920054694047" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-39.9920054694047"
+                    Point2="0,-43.9920054694047"
+                    Point3="-4,-43.9920054694047" />
+                  <mssgle:LineSegment
+                    End="-134.780954181254,-43.9920054694047" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134.780954181254,-43.9920054694047"
+                    Point2="-138.780954181254,-43.9920054694047"
+                    Point3="-138.780954181254,-47.9920054694047" />
+                  <mssgle:LineSegment
+                    End="-138.780954181254,-80.6999995624317" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 18]"
+          TopLeft="493.142864519236,1076.75294012116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-152.571432395857,27.211769236"
+              Start="0,0"
+              End="-152.571432395857,19.711769236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.03179833891892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.03179833891892"
+                    Point2="0,11.0317983389189"
+                    Point3="-4,11.0317983389189" />
+                  <mssgle:LineSegment
+                    End="-148.571432395857,11.0317983389189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-148.571432395857,11.0317983389189"
+                    Point2="-152.571432395857,11.0317983389189"
+                    Point3="-152.571432395857,15.0317983389189" />
+                  <mssgle:LineSegment
+                    End="-152.571432395857,19.711769236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\DWH Indexies Creation"
+          TopLeft="506.514294054071,1301.22352928307" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="368.457144200072,1318.80000123978">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.057149853999,0"
+              Start="0,0"
+              End="130.557149853999,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="130.557149853999,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 19]"
+          TopLeft="600.514294054071,1342.82352928307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-294.628578094561,59.2000059800996"
+              Start="0,0"
+              End="-294.628578094561,51.7000059800996">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6000029900498" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6000029900498"
+                    Point2="0,29.6000029900498"
+                    Point3="-4,29.6000029900498" />
+                  <mssgle:LineSegment
+                    End="-290.628578094561,29.6000029900498" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-290.628578094561,29.6000029900498"
+                    Point2="-294.628578094561,29.6000029900498"
+                    Point3="-294.628578094561,33.6000029900498" />
+                  <mssgle:LineSegment
+                    End="-294.628578094561,51.7000059800996" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36619,7 +36770,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales\Dim_Invoices"
@@ -36659,9 +36810,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -36836,7 +36985,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="228,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
@@ -36880,9 +37029,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36916,9 +37063,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -37287,15 +37432,15 @@ and dwh.SendDate is null</property>
     design-time-name="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add"
-          TopLeft="286.4,174.4" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="297.6,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Final Declarations from STG_SCD_Declarations"
           TopLeft="236,41.6" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add"
+          TopLeft="286.4,174.4" />
         <EdgeLayout
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial).Paths[OLE DB Source Output]"
           TopLeft="385.2,83.2">
@@ -37327,7 +37472,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/22/2022 10:12:16 AM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Post_Excution_Increment"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{19A27AF9-3697-4921-A908-740E99A1E091}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{41AA919F-184C-4CB4-A456-BA868954C5F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,6 +31,7 @@
           DTS:refId="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update NonTable_Declarations (SalesNet &amp; SalesTableNet)"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{0ae86963-2033-4467-b31b-ce55ef74f7e1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -41,7 +42,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
-              SQLTask:SqlStatementSource="update  dec&#xA;set dec.[SalesNet]=(select sum(nsdj.TotalValue) from [dbo].[json_NonTable_Sales_Details] nsdj &#xA;where nsdj.FK_ID=dec.ID ),&#xA;dec.SalesTableNet=0&#xA;--select dec.*&#xA;from [dbo].Declarations_To_Add dec&#xA;--join Get_TotalValue g&#xA;--on dec.[ID]=g.[FK_ID]&#xA;where  dec.[Namozag_Name]=10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="update  dec&#xA;set dec.[SalesNet]=(select sum(convert(Numeric(18,2),nsdj.TotalValue)) from [dbo].[json_NonTable_Sales_Details] nsdj &#xA;where nsdj.FK_ID=dec.ID ),&#xA;dec.SalesTableNet=0&#xA;--select dec.*&#xA;from [dbo].Declarations_To_Add dec&#xA;--join Get_TotalValue g&#xA;--on dec.[ID]=g.[FK_ID]&#xA;where  dec.[Namozag_Name]=10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -58,7 +59,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
-              SQLTask:SqlStatementSource="update  dec&#xA;set dec.[SalesNet]=(&#xA;select sum(TaxContainer) as tax&#xA;from [dbo].[json_Table_Sales_Details] vat&#xA;where vat.FK_ID=dec.ID),&#xA;&#xA;dec.SalesTableNet=(&#xA;select sum(TotalValue) as tbl&#xA;from [dbo].[json_Table_Tax_Details] tbl&#xA;where tbl.FK_ID=dec.ID)&#xA;&#xA;--select ID,isnull(tax.tax,0)+isnull(tbl.tbl,0) as lol&#xA;from [dbo].Declarations_To_Add dec&#xA;--join Get_Total_TaxValue tax&#xA;--on dec.[ID]=tax.FK_ID&#xA;--left join Get_Total_TableValue tbl&#xA;--on dec.[ID]=tbl.[FK_ID]&#xA;where  dec.[Namozag_Name]=101" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="update  dec&#xA;set dec.[SalesNet]=(&#xA;select sum(convert(Numeric(18,2),TaxContainer)) as tax&#xA;from [dbo].[json_Table_Sales_Details] vat&#xA;where vat.FK_ID=dec.ID),&#xA;&#xA;dec.SalesTableNet=(&#xA;select sum(convert(Numeric(18,2),TotalValue)) as tbl&#xA;from [dbo].[json_Table_Tax_Details] tbl&#xA;where tbl.FK_ID=dec.ID)&#xA;&#xA;--select ID,isnull(tax.tax,0)+isnull(tbl.tbl,0) as lol&#xA;from [dbo].Declarations_To_Add dec&#xA;--join Get_Total_TaxValue tax&#xA;--on dec.[ID]=tax.FK_ID&#xA;--left join Get_Total_TableValue tbl&#xA;--on dec.[ID]=tbl.[FK_ID]&#xA;where  dec.[Namozag_Name]=101" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -95,6 +96,7 @@
       DTS:refId="Package\Update_Declarations(est5las_Sales_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1f010a43-d4cd-4abc-a447-034e24fa8c46}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -146,16 +148,16 @@
         <NodeLayout
           Size="512.8,41.6"
           Id="Package\Update_Declarations(est5las_Sales_Is_Correct) (for nontable &amp; Table) (New Numeric Value)"
-          TopLeft="50.285714120281,19.6235288455" />
+          TopLeft="50.857142701441,19.6235288455" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="306.685714120281,61.2235288455">
+          TopLeft="307.257142701441,61.2235288455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.0571434507571,64.141178032106"
+              EndConnector="43.485714869597,64.141178032106"
               Start="0,0"
-              End="44.0571434507571,56.641178032106">
+              End="43.485714869597,56.641178032106">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -166,13 +168,13 @@
                     Point2="0,32.070589016053"
                     Point3="4,32.070589016053" />
                   <mssgle:LineSegment
-                    End="40.0571434507571,32.070589016053" />
+                    End="39.485714869597,32.070589016053" />
                   <mssgle:CubicBezierSegment
-                    Point1="40.0571434507571,32.070589016053"
-                    Point2="44.0571434507571,32.070589016053"
-                    Point3="44.0571434507571,36.070589016053" />
+                    Point1="39.485714869597,32.070589016053"
+                    Point2="43.485714869597,32.070589016053"
+                    Point3="43.485714869597,36.070589016053" />
                   <mssgle:LineSegment
-                    End="44.0571434507571,56.641178032106" />
+                    End="43.485714869597,56.641178032106" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -225,9 +227,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="389.6,165.6"
-          Size="389.6,43.2"
+          Size="389.6,208.8"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
           TopLeft="188.000003201621,205.552944059273" />
         <EdgeLayout

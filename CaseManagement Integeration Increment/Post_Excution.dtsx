@@ -1,0 +1,250 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/24/2022 12:58:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TXBI-DWA-01"
+  DTS:CreatorName="CLOUD\Excel_admin3"
+  DTS:DTSID="{B17F1132-D02A-4AC7-96AF-F7A1DF88A1B9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Post_Excution"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{BB168300-352E-4CBF-848C-B635E810BC07}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update_Registered_TaxPayers"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{536814e5-c985-472a-9969-1ee6ae89f28d}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update_Registered_TaxPayers">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update_Registered_TaxPayers\Set them with Null at first"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{acd47080-5aff-42df-84e8-beb2984fd2a2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set them with Null at first"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="update lol&#xA;set is_not_sending_Declarations=null&#xA;,is_Dummy_Company=null&#xA;,is_sent_Zero_or_NoValue_Dec_3times=null&#xA;from Dim_Registered_TaxPayers lol" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is Dummy_Company)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5363323c-a62d-40ce-b8cd-c1a5111d3995}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Dim_Registered_Tax_Payers(is Dummy_Company)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="with is_Dummy_Company  as (&#xA;select tp.Unique_Tax_Id,1 as flag&#xA;from Dim_Registered_TaxPayers tp join Dim_Dummy_Companies dc&#xA;on tp.Unique_Tax_Id = dc.Unique_Tax_ID&#xA;&#xA;)&#xA;&#xA;&#xA;&#xA;update tpr&#xA;set tpr.is_Dummy_Company= cte.flag&#xA;from Dim_Registered_TaxPayers tpr join is_Dummy_Company cte&#xA;on tpr.Unique_Tax_Id = cte.Unique_Tax_Id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is not sending declarations)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{bf64c9be-f39e-4935-b7b6-3979e43f3262}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Dim_Registered_Tax_Payers(is not sending declarations)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="with is_not_sending_Declarations  as (&#xA;select tp.Unique_Tax_Id,1 as flag&#xA;from Dim_Registered_TaxPayers tp left join Dim_Declarations dc&#xA;on tp.Unique_Tax_Id = dc.UniqueTaxID&#xA;where dc.UniqueTaxID is null&#xA;)&#xA;&#xA;&#xA;&#xA;update tpr&#xA;set tpr.is_not_sending_Declarations= cte.flag&#xA;from Dim_Registered_TaxPayers tpr join is_not_sending_Declarations cte&#xA;on tpr.Unique_Tax_Id = cte.Unique_Tax_Id" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is sent Zero or NoValue Dec 3times)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ba394e7e-af46-4091-a887-4df0d362a444}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Dim_Registered_Tax_Payers(is sent Zero or NoValue Dec 3times)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+              SQLTask:SqlStatementSource="with is_sent_Zero_or_NoValue_Dec_3times as(&#xA;select UniqueTaxID,sum(Degree) as flag from(&#xA;select *&#xA;,case when datediff(M,[pervious Period], Converted_TaxPeriod)  =1 and datediff(M, [prevpervious Period],[pervious Period])=1 then 1 else 0 end Degree &#xA;from(&#xA;&#xA;select *&#xA;,lag(Converted_TaxPeriod,1,0) over(partition by UniqueTaxID order by Converted_TaxPeriod) as 'pervious Period'&#xA;,lag(Converted_TaxPeriod,2,0) over(partition by UniqueTaxID order by Converted_TaxPeriod) as 'prevpervious Period'&#xA;from (  &#xA;&#xA;&#xA;SELECT &#xA;UniqueTaxID,&#xA;convert(datetime,convert(varchar(10),dec.[Fk_TaxPeriod_ID] ))Converted_TaxPeriod&#xA;FROM Dim_Declarations dec&#xA;where dec.DeclarationTypeID=2 or &#xA;(dec.DeclarationTypeID !=2 and&#xA;PurchaseVat=0 &#xA;and PurchaseAdjustment=0&#xA;and PurchaseTotal=0&#xA;and SalesVat=0 &#xA;and SalesAdjustment=0&#xA;and SalesTotal=0&#xA;and RecivableTax=0 &#xA;and TotalTaxValue=0  &#xA;--and TableTaxTotal=0 &#xA;--and TableTaxAdjustment=0&#xA;--and TableTaxVat=0&#xA;)&#xA;&#xA;                                         ) a&#xA;                                        )b&#xA;                                      )c&#xA;group by UniqueTaxID&#xA;    &#xA;    )&#xA;&#xA;update tp &#xA;set tp.is_sent_Zero_or_NoValue_Dec_3times=flag&#xA;from Dim_Registered_TaxPayers tp join is_sent_Zero_or_NoValue_Dec_3times cte&#xA;on tp.Unique_Tax_Id=cte.UniqueTaxID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_Registered_TaxPayers.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{eb4d1059-e049-43e9-b678-ab9a927814e6}"
+          DTS:From="Package\Update_Registered_TaxPayers\Set them with Null at first"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is not sending declarations)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_Registered_TaxPayers.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{1c4f8fe2-306f-4a8a-af44-b7a59e8560f4}"
+          DTS:From="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is not sending declarations)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is Dummy_Company)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update_Registered_TaxPayers.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{f23f6862-1495-49e0-8d9b-e73bb45cfa95}"
+          DTS:From="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is Dummy_Company)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is sent Zero or NoValue Dec 3times)" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Update_Registered_TaxPayers\Set them with Null at first"
+          TopLeft="106.057146107421,28.6117647144621" />
+        <NodeLayout
+          Size="354.4,41.6"
+          Id="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is Dummy_Company)"
+          TopLeft="49.490477130364,164.909807939761" />
+        <NodeLayout
+          Size="383.2,41.6"
+          Id="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is not sending declarations)"
+          TopLeft="15.547619218728,99.4823566476368" />
+        <NodeLayout
+          Size="423.2,41.6"
+          Id="Package\Update_Registered_TaxPayers\Update Dim_Registered_Tax_Payers(is sent Zero or NoValue Dec 3times)"
+          TopLeft="5.5,219.443141005692" />
+        <EdgeLayout
+          Id="Package\Update_Registered_TaxPayers.PrecedenceConstraints[Constraint]"
+          TopLeft="206.402382663074,70.2117647144621">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2705919331747"
+              Start="0,0"
+              End="0,21.7705919331747">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7705919331747" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update_Registered_TaxPayers.PrecedenceConstraints[Constraint 5]"
+          TopLeft="207.147619218728,141.082356647637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.542857911636,23.8274512921241"
+              Start="0,0"
+              End="19.542857911636,16.3274512921241">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.91372564606203" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.91372564606203"
+                    Point2="0,11.913725646062"
+                    Point3="4,11.913725646062" />
+                  <mssgle:LineSegment
+                    End="15.542857911636,11.913725646062" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.542857911636,11.913725646062"
+                    Point2="19.542857911636,11.913725646062"
+                    Point3="19.542857911636,15.913725646062" />
+                  <mssgle:LineSegment
+                    End="19.542857911636,16.3274512921241" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update_Registered_TaxPayers.PrecedenceConstraints[Constraint 6]"
+          TopLeft="49.490477130364,185.709807939761">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.609522869636,33.7333330659305"
+              Start="0,0"
+              End="167.609522869636,26.2333330659305">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="163.609522869636,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.609522869636,0"
+                    Point2="167.609522869636,0"
+                    Point3="167.609522869636,4" />
+                  <mssgle:LineSegment
+                    End="167.609522869636,26.2333330659305" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="433.6,316"
+          Size="245.6,43.2"
+          Id="Package\Update_Registered_TaxPayers"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
