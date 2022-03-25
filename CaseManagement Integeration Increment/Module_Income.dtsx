@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="TXBI-DWA-01"
   DTS:CreatorName="CLOUD\Excel_admin3"
-  DTS:DTSID="{E69AB709-DC1F-484C-94A2-C3AB641F9B26}"
+  DTS:DTSID="{C78BCCF2-5EE6-4C5C-BFD6-5226F5E3D09F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Module_Income"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{BC281384-E98C-4318-9929-0963E6DDD72F}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{5547102E-A824-454E-8B02-3EC7394275F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -14617,7 +14617,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="452,408"
-          Size="452,43.2"
+          Size="312,43.2"
           Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)"
           TopLeft="210.857146448019,500.235296331228" />
         <EdgeLayout
@@ -14626,9 +14626,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-134.514288400144,39.1999997082879"
+              EndConnector="-204.514288400144,39.1999997082879"
               Start="0,0"
-              End="-134.514288400144,31.6999997082879">
+              End="-204.514288400144,31.6999997082879">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14639,13 +14639,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     Point2="0,19.5999998541439"
                     Point3="-4,19.5999998541439" />
                   <mssgle:LineSegment
-                    End="-130.514288400144,19.5999998541439" />
+                    End="-200.514288400144,19.5999998541439" />
                   <mssgle:CubicBezierSegment
-                    Point1="-130.514288400144,19.5999998541439"
-                    Point2="-134.514288400144,19.5999998541439"
-                    Point3="-134.514288400144,23.5999998541439" />
+                    Point1="-200.514288400144,19.5999998541439"
+                    Point2="-204.514288400144,19.5999998541439"
+                    Point3="-204.514288400144,23.5999998541439" />
                   <mssgle:LineSegment
-                    End="-134.514288400144,31.6999997082879" />
+                    End="-204.514288400144,31.6999997082879" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

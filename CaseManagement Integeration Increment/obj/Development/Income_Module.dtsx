@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{BC281384-E98C-4318-9929-0963E6DDD72F}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{5A541055-8602-4944-B7F3-701F432125DF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -10219,7 +10219,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete DWH_Dime_Income_102 overlapping with 106"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -10236,7 +10236,7 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete DWH_Dime_Income_106 overlapping with 102"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13756,7 +13756,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           DTS:LocaleID="-1"
           DTS:ObjectName="Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13773,7 +13773,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           DTS:LocaleID="-1"
           DTS:ObjectName="Update_IncomeTax_102(Vat_DEC_Sales_Adjustment)"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13791,7 +13791,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           DTS:LocaleID="-1"
           DTS:ObjectName="Update_IncomeTax_102(Vat_Net_Sales)"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13808,7 +13808,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           DTS:LocaleID="-1"
           DTS:ObjectName="Update_IncomeTax_106(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales)"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13825,7 +13825,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           DTS:LocaleID="-1"
           DTS:ObjectName="Update_IncomeTax_106(Vat_DEC_Sales_Adjustment)"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -13843,7 +13843,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           DTS:LocaleID="-1"
           DTS:ObjectName="Update_IncomeTax_106(Vat_Net_Sales)"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -14617,7 +14617,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="452,408"
-          Size="452,43.2"
+          Size="312,43.2"
           Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)"
           TopLeft="210.857146448019,500.235296331228" />
         <EdgeLayout
@@ -14626,9 +14626,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-134.514288400144,39.1999997082879"
+              EndConnector="-204.514288400144,39.1999997082879"
               Start="0,0"
-              End="-134.514288400144,31.6999997082879">
+              End="-204.514288400144,31.6999997082879">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14639,13 +14639,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     Point2="0,19.5999998541439"
                     Point3="-4,19.5999998541439" />
                   <mssgle:LineSegment
-                    End="-130.514288400144,19.5999998541439" />
+                    End="-200.514288400144,19.5999998541439" />
                   <mssgle:CubicBezierSegment
-                    Point1="-130.514288400144,19.5999998541439"
-                    Point2="-134.514288400144,19.5999998541439"
-                    Point3="-134.514288400144,23.5999998541439" />
+                    Point1="-200.514288400144,19.5999998541439"
+                    Point2="-204.514288400144,19.5999998541439"
+                    Point3="-204.514288400144,23.5999998541439" />
                   <mssgle:LineSegment
-                    End="-134.514288400144,31.6999997082879" />
+                    End="-204.514288400144,31.6999997082879" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

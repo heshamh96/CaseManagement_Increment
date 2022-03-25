@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="TXBI-DWA-01"
   DTS:CreatorName="CLOUD\Excel_admin3"
-  DTS:DTSID="{5285F40A-BA23-4251-8BBD-7A0DBEB76162}"
+  DTS:DTSID="{5980A785-CF46-42E6-9F58-E5409A306470}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
-  DTS:ObjectName="VAT_Module"
+  DTS:ObjectName="Module_VAT"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{582F5850-AA50-4C0C-910C-48C111855CCA}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{22647E8D-AC20-4780-8B54-635EE66C5B4E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\Declarations' Json Vat to STG"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{B9A7B7A0-ADBC-4179-8C5E-B3D80CFCC7CA}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -16399,7 +16398,6 @@ where Namozag_Name=101</property>
       DTS:refId="Package\Declarations_TO_Delete_ STG_to_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{F1BC79D1-E029-4F29-9FF1-8337549D2833}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -20729,7 +20727,6 @@ SELECT  [TaxPeriod]
       DTS:refId="Package\Dim_Declarations_SCD Logic"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{2DA0AC23-20FC-439B-8506-586CD423FBFD}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -20757,7 +20754,6 @@ SELECT  [TaxPeriod]
           DTS:refId="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{DBDCBE15-1E9E-4B34-93FE-A3FC289BA83F}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -24505,7 +24501,6 @@ where SendDate is not null
           DTS:refId="Package\Dim_Declarations_SCD Logic\Truncate DWH_Dim_Declarations_SCD"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{E604546F-28AD-45F7-8605-4F1DBD5B6329}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -24551,6 +24546,7 @@ where SendDate is not null
       DTS:refId="Package\Dim_Invoices_STG_to_DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{DEF0B291-75BE-460C-BDEE-FCD5DB3DA542}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -27616,6 +27612,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       DTS:refId="Package\DWH Indexies Creation"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{29308BCA-178D-482D-977F-AFFD059F8B0D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -27626,7 +27623,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
-          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;&#xA;SET ANSI_PADDING ON&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[FK_Inv_Type_ID] ASC,&#xA;&#x9;[Company_Unique_Tax_Id] ASC&#xA;)&#xA;INCLUDE([Product_Total_Net],[FK_Sub_inv_type],[TaxPeriod]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;CREATE NONCLUSTERED INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[Company_Unique_Tax_Id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[FK_TaxPeriod_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[ID] ASC,&#xA;&#x9;[Namozag_Name] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[Namozag_Name] ASC&#xA;)&#xA;INCLUDE([ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[est5las_Sales_Is_Correct] ASC&#xA;)&#xA;INCLUDE([TaxPeriod],[Developed_By]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;(&#xA;&#x9;[FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;(&#xA;&#x9;[FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;(&#xA;&#x9;[TotalValue] ASC&#xA;)&#xA;INCLUDE([FK_ID],[Tax]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[FK_Inv_Type_ID] ASC,&#xA;&#x9;[Company_Unique_Tax_Id] ASC&#xA;)&#xA;INCLUDE([Product_Total_Net],[FK_Sub_inv_type],[TaxPeriod]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;CREATE NONCLUSTERED INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[Company_Unique_Tax_Id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[FK_TaxPeriod_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[ID] ASC,&#xA;&#x9;[Namozag_Name] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[Namozag_Name] ASC&#xA;)&#xA;INCLUDE([ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;(&#xA;&#x9;[est5las_Sales_Is_Correct] ASC&#xA;)&#xA;INCLUDE([TaxPeriod],[Developed_By]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;(&#xA;&#x9;[FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;(&#xA;&#x9;[FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;(&#xA;&#x9;[TotalValue] ASC&#xA;)&#xA;INCLUDE([FK_ID],[Tax]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -27651,7 +27648,6 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       DTS:refId="Package\Filter Inovices_Details Based on Invoices Staging"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{EE032310-48CA-4C82-AA2A-41C56788B7FE}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -29661,7 +29657,6 @@ and det.IsDeleted=0</property>
       DTS:refId="Package\Filter_Invoices_Based On Sent Invoices in Staging"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{E6B4245F-99E8-4EFA-AEE9-0E19A671FFD7}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -31644,7 +31639,6 @@ sinv.IsDeleted=0</property>
       DTS:refId="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{384FC62D-CC86-401B-91B6-02A18D63101E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -32465,7 +32459,6 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
       DTS:refId="Package\Fix The Sent Tables (On the Fly)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{41E5136A-536D-4DF6-B1CD-04F5FC1B8016}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -32574,7 +32567,6 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
       DTS:refId="Package\IBM_Transferes_to Staging (Sent,Invoices,Invoices_Details)"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{25DE84FE-7A96-44A2-BA52-0CC75860DC36}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -32584,7 +32576,7 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>IBM_Transferes.dtsx</PackageName>
+          <PackageName>VAT_IBM_Transferes.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -32592,7 +32584,6 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
       DTS:refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3DF94154-0FDF-4C99-940A-0223185BBC35}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -34348,7 +34339,6 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Post_Excution_Updates_On_Staging"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{FD60FDF2-B390-4E4D-8FEB-1E9A9E4E9CF6}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -34358,7 +34348,7 @@ and dwh.SendDate is null</property>
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Post_Excution_Increment.dtsx</PackageName>
+          <PackageName>VAT_Post_Excution_Increment.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -34366,7 +34356,6 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Staging Index Drop"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{6AAAEF2B-C937-4B1E-9F48-D4714633592E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -34448,7 +34437,6 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Staging Indexies Creation"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{3F85E2B1-01DA-4749-BFCB-DF9FF5AF21EF}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -34712,7 +34700,6 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Truncate STG_Tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{83106B35-B5FB-4D03-8B66-3319EF15A4DF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -34730,6 +34717,7 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{981C4FFB-34D9-4418-AB0B-2D755C5590BF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -34747,6 +34735,7 @@ and dwh.SendDate is null</property>
       DTS:refId="Package\Update_(Sales_National_ID) in Invoices (relativily Light &amp;  Optional inside the loop)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{3D446FB6-F213-4FE7-93DC-6482FFB7CE1A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -35915,18 +35904,18 @@ and dwh.SendDate is null</property>
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="242.4,232"
-          Size="242.4,43.2"
+          Size="240.8,43.2"
           Id="Package\Declarations' Json Vat to STG"
           TopLeft="133.028573666787,248.941177448682" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="254.228573666787,292.141177448682">
+          TopLeft="253.428573666787,292.141177448682">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.0571420883645,45.78823557725"
+              EndConnector="12.8571420883645,45.78823557725"
               Start="0,0"
-              End="12.0571420883645,38.28823557725">
+              End="12.8571420883645,38.28823557725">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -35937,13 +35926,13 @@ and dwh.SendDate is null</property>
                     Point2="0,22.894117788625"
                     Point3="4,22.894117788625" />
                   <mssgle:LineSegment
-                    End="8.05714208836451,22.894117788625" />
+                    End="8.8571420883645,22.894117788625" />
                   <mssgle:CubicBezierSegment
-                    Point1="8.05714208836451,22.894117788625"
-                    Point2="12.0571420883645,22.894117788625"
-                    Point3="12.0571420883645,26.894117788625" />
+                    Point1="8.8571420883645,22.894117788625"
+                    Point2="12.8571420883645,22.894117788625"
+                    Point3="12.8571420883645,26.894117788625" />
                   <mssgle:LineSegment
-                    End="12.0571420883645,38.28823557725" />
+                    End="12.8571420883645,38.28823557725" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36189,7 +36178,7 @@ and dwh.SendDate is null</property>
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="380,260"
-          Size="380,43.2"
+          Size="193.6,43.2"
           Id="Package\Staging Index Drop"
           TopLeft="447.428578503278,208.329413317644" />
         <EdgeLayout
@@ -36198,9 +36187,9 @@ and dwh.SendDate is null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="371.257148082889,22.5176465611966"
+              EndConnector="278.057148082889,22.5176465611966"
               Start="0,0"
-              End="371.257148082889,15.0176465611966">
+              End="278.057148082889,15.0176465611966">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -36211,13 +36200,13 @@ and dwh.SendDate is null</property>
                     Point2="0,11.2588232805983"
                     Point3="4,11.2588232805983" />
                   <mssgle:LineSegment
-                    End="367.257148082889,11.2588232805983" />
+                    End="274.057148082889,11.2588232805983" />
                   <mssgle:CubicBezierSegment
-                    Point1="367.257148082889,11.2588232805983"
-                    Point2="371.257148082889,11.2588232805983"
-                    Point3="371.257148082889,15.2588232805983" />
+                    Point1="274.057148082889,11.2588232805983"
+                    Point2="278.057148082889,11.2588232805983"
+                    Point3="278.057148082889,15.2588232805983" />
                   <mssgle:LineSegment
-                    End="371.257148082889,15.0176465611966" />
+                    End="278.057148082889,15.0176465611966" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36232,26 +36221,26 @@ and dwh.SendDate is null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.0000048364912,40.6117641310378"
+              EndConnector="-73.6000048364911,40.6117641310378"
               Start="0,0"
-              End="-64.5000048364912,40.6117641310378">
+              End="-66.1000048364911,40.6117641310378">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-32.0000024182456,0" />
+                    End="-32.8000024182456,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-32.0000024182456,0"
-                    Point2="-36.0000024182456,0"
-                    Point3="-36.0000024182456,4" />
+                    Point1="-32.8000024182456,0"
+                    Point2="-36.8000024182456,0"
+                    Point3="-36.8000024182456,4" />
                   <mssgle:LineSegment
-                    End="-36.0000024182456,36.6117641310378" />
+                    End="-36.8000024182456,36.6117641310378" />
                   <mssgle:CubicBezierSegment
-                    Point1="-36.0000024182456,36.6117641310378"
-                    Point2="-36.0000024182456,40.6117641310378"
-                    Point3="-40.0000024182456,40.6117641310378" />
+                    Point1="-36.8000024182456,36.6117641310378"
+                    Point2="-36.8000024182456,40.6117641310378"
+                    Point3="-40.8000024182456,40.6117641310378" />
                   <mssgle:LineSegment
-                    End="-64.5000048364912,40.6117641310378" />
+                    End="-66.1000048364911,40.6117641310378" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36330,27 +36319,33 @@ and dwh.SendDate is null</property>
           PanelSize="262.4,145.6"
           Size="262.4,43.2"
           Id="Package\Declaration_Jasons_STG_to_DWH"
-          TopLeft="106.057144200072,1293.97647319648" />
+          TopLeft="98.6285726449927,1296.42353205433" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="238.399999591283,1250.74118094923">
+          TopLeft="120.399999591283,1272.34118094923">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-1.14285539121101,43.2352922472569"
+              EndConnector="109.42857305371,24.0823511051051"
               Start="0,0"
-              End="-1.14285539121101,35.7352922472569">
+              End="109.42857305371,16.5823511051051">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="2.85714460878899,0" />
+                    End="0,8.04117555255255" />
                   <mssgle:CubicBezierSegment
-                    Point1="2.85714460878899,0"
-                    Point2="-1.14285539121101,0"
-                    Point3="-1.14285539121101,4" />
+                    Point1="0,8.04117555255255"
+                    Point2="0,12.0411755525525"
+                    Point3="4,12.0411755525525" />
                   <mssgle:LineSegment
-                    End="-1.14285539121101,35.7352922472569" />
+                    End="105.42857305371,12.0411755525525" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105.42857305371,12.0411755525525"
+                    Point2="109.42857305371,12.0411755525525"
+                    Point3="109.42857305371,16.0411755525525" />
+                  <mssgle:LineSegment
+                    End="109.42857305371,16.5823511051051" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36437,18 +36432,18 @@ and dwh.SendDate is null</property>
           TopLeft="506.514294054071,1301.22352928307" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="368.457144200072,1318.80000123978">
+          TopLeft="361.028572644993,1320.0235306687">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.057149853999,0"
+              EndConnector="145.485721409078,0"
               Start="0,0"
-              End="130.557149853999,0">
+              End="137.985721409078,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="130.557149853999,0" />
+                    End="137.985721409078,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

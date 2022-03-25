@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SSAS_Processing"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{00BF9123-F648-486E-9F4D-53FAF453DBF7}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{6CE35FE1-8EED-4AF0-A92C-55D2896459D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -41,7 +41,7 @@
             <ASDdlData
               ConnectionName="TaxVat_All_in"
               SourceType="DirectInput"
-              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -58,7 +58,7 @@
             <ASDdlData
               ConnectionName="TaxVat_All_in"
               SourceType="DirectInput"
-              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -75,7 +75,7 @@
             <ASDdlData
               ConnectionName="TaxVat_All_in"
               SourceType="DirectInput"
-              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -92,7 +92,7 @@
             <ASDdlData
               ConnectionName="TaxVat_All_in"
               SourceType="DirectInput"
-              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;automatic&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1366,9 +1366,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1390,9 +1388,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1414,9 +1410,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1438,9 +1432,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1462,9 +1454,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1486,9 +1476,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1510,9 +1498,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1534,9 +1520,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1558,9 +1542,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1582,9 +1564,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1606,9 +1586,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -1955,9 +1933,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="178.942860074432,93.988237218131"
+              EndConnector="178.942860074432,93.9882372181311"
               Start="0,0"
-              End="178.942860074432,86.488237218131">
+              End="178.942860074432,86.4882372181311">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1974,7 +1952,7 @@
                     Point2="178.942860074432,46.9941186090655"
                     Point3="178.942860074432,50.9941186090655" />
                   <mssgle:LineSegment
-                    End="178.942860074432,86.488237218131" />
+                    End="178.942860074432,86.4882372181311" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1985,7 +1963,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="361.428577583663,194.3294134635">
+          TopLeft="361.428577583663,194.329413463501">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

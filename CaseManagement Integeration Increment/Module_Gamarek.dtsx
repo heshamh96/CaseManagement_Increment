@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="TXBI-DWA-01"
   DTS:CreatorName="CLOUD\Excel_admin3"
-  DTS:DTSID="{50B89B98-142D-4771-8EE5-2D40122D79BB}"
+  DTS:DTSID="{5AB1874F-132C-4D4A-A3B8-53E9131635BA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Gamarek_Module"
+  DTS:ObjectName="Module_Gamarek"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{14BCD1F1-5BF6-491B-A6A3-BA907D76CE28}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{D3496F2A-9962-48F0-8369-5EDF99E0082F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -46,7 +46,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Data Flow Task"
           TopLeft="99,30" />
       </GraphLayout>
