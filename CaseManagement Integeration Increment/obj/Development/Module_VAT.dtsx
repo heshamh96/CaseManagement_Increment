@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/27/2022 3:57:12 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_VAT"
   DTS:PackageType="5"
-  DTS:VersionBuild="97"
-  DTS:VersionGUID="{4A718041-A070-4206-B90D-AABA7773D994}">
+  DTS:VersionBuild="96"
+  DTS:VersionGUID="{CF8C1686-B07A-48B7-B11C-78A166E3FFA2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5101,11 +5101,12 @@ where Namozag_Name=10</property>
                           externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
                           lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1.Outputs[JsonParserTransformOutput].Columns[Tax]" />
                         <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[ID]"
-                          cachedDataType="guid"
-                          cachedName="ID"
+                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[NonTableVatID]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="NonTableVatID"
                           externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1.Outputs[JsonParserTransformOutput].Columns[ID]" />
+                          lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1.Outputs[JsonParserTransformOutput].Columns[NonTableVatID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -15730,7 +15731,7 @@ where Namozag_Name=101</property>
                     <connection
                       refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -18212,7 +18213,7 @@ where scd.Version&lt;&gt;1</property>
                     <connection
                       refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -18423,7 +18424,7 @@ where scd.Version&lt;&gt;1</property>
                     <connection
                       refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -19237,7 +19238,7 @@ SELECT  [TaxPeriod]
                     <connection
                       refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -19448,7 +19449,7 @@ SELECT  [TaxPeriod]
                     <connection
                       refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -19639,7 +19640,7 @@ SELECT  [TaxPeriod]
                     <connection
                       refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -20807,7 +20808,7 @@ SELECT  [TaxPeriod]
                     <connection
                       refId="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH\DWH_Dim_Declarations_SCD.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -24610,7 +24611,7 @@ where SendDate is not null
                     <connection
                       refId="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases\Dim_Invoices.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -26131,7 +26132,7 @@ on pms.PurchaseInvoice_Id=pid.Fk_PurchasesInvoices_Id</property>
                     <connection
                       refId="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales\Dim_Invoices.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -34973,9 +34974,9 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="262.4,145.6"
-          Size="262.4,43.2"
+          Size="262.4,188.8"
           Id="Package\Declaration_Jasons_STG_to_DWH"
           TopLeft="98.6285726449927,1296.42353205433" />
         <NodeLayout
@@ -36163,18 +36164,30 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="361.028572644993,1320.0235306687">
+          TopLeft="361.028572644993,1390.82353205433">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="145.485721409078,0"
+              EndConnector="145.485721409078,-68.8000027712601"
               Start="0,0"
-              End="137.985721409078,0">
+              End="137.985721409078,-68.8000027712601">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="137.985721409078,0" />
+                    End="68.7428607045392,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.7428607045392,0"
+                    Point2="72.7428607045392,0"
+                    Point3="72.7428607045392,-4" />
+                  <mssgle:LineSegment
+                    End="72.7428607045392,-64.8000027712601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.7428607045392,-64.8000027712601"
+                    Point2="72.7428607045392,-68.8000027712601"
+                    Point3="76.7428607045392,-68.8000027712601" />
+                  <mssgle:LineSegment
+                    End="137.985721409078,-68.8000027712601" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

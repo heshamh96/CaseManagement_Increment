@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="2/27/2022 3:43:00 PM"
@@ -10789,7 +10789,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\102_stg__to_DWH\Dim_Income_102_Inserts.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -11077,7 +11077,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\102_stg__to_DWH\DWH_102_Updates.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -11452,7 +11452,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\102_stg__to_DWH\Slowly Changing Dimension.Connections[LookupConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="Defines the connection to use for lookups in the dimension table"
                       name="LookupConnection" />
                   </connections>
@@ -12470,7 +12470,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -12799,7 +12799,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Connections[OleDbConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -13250,7 +13250,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <connection
                       refId="Package\Staging to DWH\106_stg_to_DWH\Slowly Changing Dimension.Connections[LookupConnection]"
                       connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost.DWH_TAX]"
                       description="Defines the connection to use for lookups in the dimension table"
                       name="LookupConnection" />
                   </connections>

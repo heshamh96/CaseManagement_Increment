@@ -11,26 +11,26 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AA_Deployment_Version"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{56B3425B-E0ED-4521-BC2C-E8CB77ED537E}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{B7895BE9-DCD6-4443-B1C8-D3874330060A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Income_Increment_Excution"
+      DTS:refId="Package\Income_Module_Excution"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{53AF8BBC-2C09-4A6C-A5C2-0D35A9093BF6}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Income_Increment_Excution"
+      DTS:ObjectName="Income_Module_Excution"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Income_Module.dtsx</PackageName>
+          <PackageName>Module_Income.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -52,19 +52,19 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\VAT_Increment_Excution"
+      DTS:refId="Package\VAT_Module_Excution"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{FFC8C673-F701-4438-A846-1FAB91D7ECE5}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="VAT_Increment_Excution"
+      DTS:ObjectName="VAT_Module_Excution"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>VAT_Module.dtsx</PackageName>
+          <PackageName>Module_VAT.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -74,15 +74,15 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{BDEAE0A2-0CDB-40F1-9CB1-54D45248B017}"
-      DTS:From="Package\VAT_Increment_Excution"
+      DTS:From="Package\VAT_Module_Excution"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Income_Increment_Excution" />
+      DTS:To="Package\Income_Module_Excution" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{1DADCF07-CAB2-418B-AB8E-DD023524848F}"
-      DTS:From="Package\Income_Increment_Excution"
+      DTS:From="Package\Income_Module_Excution"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Post_Execution_DWH" />
@@ -100,16 +100,16 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197.6,41.6"
-          Id="Package\VAT_Increment_Excution"
+          Size="183.2,41.6"
+          Id="Package\VAT_Module_Excution"
           TopLeft="58.8571438594741,47.1058830135834" />
         <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Income_Increment_Excution"
+          Size="199.2,41.6"
+          Id="Package\Income_Module_Excution"
           TopLeft="262.857147333573,121.1294134635" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="157.657143859474,88.7058830135834">
+          TopLeft="150.457143859474,88.7058830135834">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -147,13 +147,13 @@
           TopLeft="455.428579184474,203.717649915887" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="369.657147333573,162.7294134635">
+          TopLeft="362.457147333573,162.7294134635">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="175.371431850901,40.9882364523864"
+              EndConnector="182.571431850901,40.9882364523864"
               Start="0,0"
-              End="175.371431850901,33.4882364523864">
+              End="182.571431850901,33.4882364523864">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -164,13 +164,13 @@
                     Point2="0,20.4941182261932"
                     Point3="4,20.4941182261932" />
                   <mssgle:LineSegment
-                    End="171.371431850901,20.4941182261932" />
+                    End="178.571431850901,20.4941182261932" />
                   <mssgle:CubicBezierSegment
-                    Point1="171.371431850901,20.4941182261932"
-                    Point2="175.371431850901,20.4941182261932"
-                    Point3="175.371431850901,24.4941182261932" />
+                    Point1="178.571431850901,20.4941182261932"
+                    Point2="182.571431850901,20.4941182261932"
+                    Point3="182.571431850901,24.4941182261932" />
                   <mssgle:LineSegment
-                    End="175.371431850901,33.4882364523864" />
+                    End="182.571431850901,33.4882364523864" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
