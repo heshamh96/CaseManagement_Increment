@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SSAS_Processing"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{6CE35FE1-8EED-4AF0-A92C-55D2896459D0}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{9BDEF9B1-F20D-487A-8455-001BB104A698}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Dim_Declarations"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{43718A48-20C4-400F-866C-F952AD085F47}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -507,6 +508,7 @@
           DTS:refId="Package\Dim_Invoices_Portal\2021_Q3"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{C8F6AE5D-FB69-4782-B025-2B09A11484FB}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -524,6 +526,7 @@
           DTS:refId="Package\Dim_Invoices_Portal\2021_Q4"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{9687E002-725B-4895-82A6-4EF88FCFCC43}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -813,6 +816,7 @@
           DTS:refId="Package\Dim_Invoices_Real\2021_Q3"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{873C7014-28B2-413E-9195-26AFB8C1FD9A}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -830,6 +834,7 @@
           DTS:refId="Package\Dim_Invoices_Real\2021_Q4"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{301500A5-6759-4F5E-8B2F-2B96DC6DF707}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -965,7 +970,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Dim_Declarations\2019_Q1"
@@ -1296,9 +1301,9 @@
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="321.6,832.8"
-          Size="184.8,43.2"
+          Size="321.6,43.2"
           Id="Package\Dim_Declarations"
-          TopLeft="189.285717509231,35.482353438803" />
+          TopLeft="191.000003252711,33.6470592954166" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Dim_Invoices_Portal\2019_Q1"
@@ -1591,11 +1596,11 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="198.4,846.4"
-          Size="198.4,43.2"
+          Size="198.4,889.6"
           Id="Package\Dim_Invoices_Portal"
-          TopLeft="361.428577583663,172.670590656934" />
+          TopLeft="386.5714351547,154.31764922307" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Dim_Invoices_Real\2019_Q1"
@@ -1663,9 +1668,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1687,9 +1690,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1711,9 +1712,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1735,9 +1734,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1759,9 +1756,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1783,9 +1778,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1819,9 +1812,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1843,9 +1834,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1867,9 +1856,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1891,9 +1878,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1915,44 +1900,42 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="192,846.4"
-          Size="192,43.2"
+          Size="192,889.6"
           Id="Package\Dim_Invoices_Real"
-          TopLeft="50.1428579967849,172.788236270067" />
+          TopLeft="0.428571435869941,160.552941980825" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="281.685717509231,78.682353438803">
+          TopLeft="351.800003252711,76.8470592954166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="178.942860074432,93.9882372181311"
+              EndConnector="133.971431901989,77.4705899276538"
               Start="0,0"
-              End="178.942860074432,86.4882372181311">
+              End="133.971431901989,69.9705899276538">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.9941186090655" />
+                    End="0,34.7352949638269" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.9941186090655"
-                    Point2="0,46.9941186090655"
-                    Point3="4,46.9941186090655" />
+                    Point1="0,34.7352949638269"
+                    Point2="0,38.7352949638269"
+                    Point3="4,38.7352949638269" />
                   <mssgle:LineSegment
-                    End="174.942860074432,46.9941186090655" />
+                    End="129.971431901989,38.7352949638269" />
                   <mssgle:CubicBezierSegment
-                    Point1="174.942860074432,46.9941186090655"
-                    Point2="178.942860074432,46.9941186090655"
-                    Point3="178.942860074432,50.9941186090655" />
+                    Point1="129.971431901989,38.7352949638269"
+                    Point2="133.971431901989,38.7352949638269"
+                    Point3="133.971431901989,42.7352949638269" />
                   <mssgle:LineSegment
-                    End="178.942860074432,86.4882372181311" />
+                    End="133.971431901989,69.9705899276538" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1963,18 +1946,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="361.428577583663,194.329413463501">
+          TopLeft="386.5714351547,602.235295601947">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-119.285719586878,0"
+              EndConnector="-194.14286371883,0"
               Start="0,0"
-              End="-111.785719586878,0">
+              End="-186.64286371883,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-111.785719586878,0" />
+                    End="-186.64286371883,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

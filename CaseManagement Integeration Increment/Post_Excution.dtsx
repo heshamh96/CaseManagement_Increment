@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Post_Excution"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{163EBF50-CDD5-4EB1-948C-69851DB81491}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{97E10E2E-9B61-45F7-B065-AA0D106B7935}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -238,9 +238,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="433.6,316"
-          Size="433.6,359.2"
+          Size="433.6,43.2"
           Id="Package\Update_Registered_TaxPayers"
           TopLeft="60,60" />
       </GraphLayout>
