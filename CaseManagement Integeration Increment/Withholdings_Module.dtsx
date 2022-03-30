@@ -7,12 +7,12 @@
   DTS:CreatorName="CLOUD\Excel_admin3"
   DTS:DTSID="{A24D8FE4-DAA3-44E5-A45F-2B94562A4AB4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.68"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
   DTS:LocaleID="1033"
   DTS:ObjectName="Withholdings_Module"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{58800582-99BF-4AA4-83F0-AA54ABC431FB}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{628CFD58-C07D-4602-94C1-1CFBE198F7DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -56,7 +56,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -883,9 +883,9 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select *
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
 from Withholding.dbo.TransactionsData
-where closed =1 or Closed_Date is not null
+where (closed =1 or Closed_Date is not null)
 and TransactionData_Id not in
 ( select distinct TransactionData_Id from [Excel_Withholdings_Transations_Mapping].[dbo].[Excel_El_Masla7a_Mapped_Withholding]
 )</property>
@@ -914,7 +914,7 @@ and TransactionData_Id not in
               <connections>
                 <connection
                   refId="Package\Namozag41_Increment_Flattening\Namozag41_Src (Transaction Data).Connections[OleDbConnection]"
-                  connectionManagerID="{104B1C42-DD1E-485B-B21B-C8991B24A0F7}:external"
+                  connectionManagerID="{A8E02F49-DCFD-44DE-9379-B45507E59FE6}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Withholding]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
@@ -2825,7 +2825,7 @@ and TransactionData_Id not in
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3291,7 +3291,7 @@ and TransactionData_Id not in
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3869,7 +3869,7 @@ and TransactionData_Id not in
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -4848,7 +4848,7 @@ and TransactionData_Id not in
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4882,7 +4882,7 @@ and TransactionData_Id not in
               <connections>
                 <connection
                   refId="Package\Trasfer The increment to Elmasla7a data\Excel Mapped Elmasla7a Data.Connections[OleDbConnection]"
-                  connectionManagerID="{4F7600FD-7CC2-4EC0-8F34-F61AB38CA02F}:external"
+                  connectionManagerID="{6C1E2DFC-B5E7-4809-9376-C21A73FB9FC4}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Excel_Withholdings_Transations_Mapping]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
@@ -5525,13 +5525,29 @@ and TransactionData_Id not in
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="241,42"
+          Size="240.8,41.6"
           Id="Package\Namozag41_Increment_Flattening"
           TopLeft="148,86" />
         <NodeLayout
-          Size="187,42"
+          Size="273.6,41.6"
+          Id="Package\Namzag41_Flattened_Currency Cleansing"
+          TopLeft="115,156" />
+        <NodeLayout
+          Size="187.2,41.6"
           Id="Package\Prepare_For_The_logic"
           TopLeft="167,16" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Transfer Withholding Data To DWH"
+          TopLeft="535,316" />
+        <NodeLayout
+          Size="271.2,41.6"
+          Id="Package\Trasfer The increment to Elmasla7a data"
+          TopLeft="86,280" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Truncate DWH"
+          TopLeft="402,276" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="260.5,58">
@@ -5566,10 +5582,6 @@ and TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="274,42"
-          Id="Package\Namzag41_Flattened_Currency Cleansing"
-          TopLeft="115,156" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="268.5,128">
@@ -5604,10 +5616,6 @@ and TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="271,42"
-          Id="Package\Trasfer The increment to Elmasla7a data"
-          TopLeft="86,280" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="252,198">
@@ -5642,14 +5650,6 @@ and TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="246,42"
-          Id="Package\Transfer Withholding Data To DWH"
-          TopLeft="535,316" />
-        <NodeLayout
-          Size="148,42"
-          Id="Package\Truncate DWH"
-          TopLeft="402,276" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="357,299">
@@ -5709,45 +5709,17 @@ and TransactionData_Id not in
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="246,42"
-          Id="Package\Namozag41_Increment_Flattening\Namozag41_Src (Transaction Data)"
-          TopLeft="90,39" />
+          Size="183.2,41.6"
+          Id="Package\Namozag41_Increment_Flattening\XML Parser Transform"
+          TopLeft="105,102" />
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Namozag41_Increment_Flattening\Namozag41_Flattened"
           TopLeft="115,210" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\Namozag41_Increment_Flattening\XML Parser Transform"
-          TopLeft="105,102" />
-        <EdgeLayout
-          Id="Package\Namozag41_Increment_Flattening.Paths[OLE DB Source Output]"
-          TopLeft="213,81">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="75,42"
-              Start="0,0"
-              End="67.5,42">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38"
-                    Point2="0,42"
-                    Point3="4,42" />
-                  <mssgle:LineSegment
-                    End="67.5,42" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="246.4,41.6"
+          Id="Package\Namozag41_Increment_Flattening\Namozag41_Src (Transaction Data)"
+          TopLeft="90,39" />
         <EdgeLayout
           Id="Package\Namozag41_Increment_Flattening.Paths[XmlParserTransformOutput]"
           TopLeft="196.5,144">
@@ -5782,17 +5754,37 @@ and TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag41_Increment_Flattening.Paths[OLE DB Source Output]"
+          TopLeft="213,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75,42"
+              Start="0,0"
+              End="67.5,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="4,42" />
+                  <mssgle:LineSegment
+                    End="67.5,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag41_Increment_Flattening\Namozag41_Src (Transaction Data)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Namozag41_Increment_Flattening\Namozag41_Flattened">
     <Properties>
@@ -5806,79 +5798,11 @@ and TransactionData_Id not in
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Trasfer The increment to Elmasla7a data">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Trasfer The increment to Elmasla7a data\Elmasla7a Mapping VW"
-          TopLeft="102,35" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Trasfer The increment to Elmasla7a data\Excel Mapped Elmasla7a Data"
-          TopLeft="122,192" />
-        <EdgeLayout
-          Id="Package\Trasfer The increment to Elmasla7a data.Paths[OLE DB Source Output]"
-          TopLeft="196.5,77">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="35.5,115"
-              Start="0,0"
-              End="35.5,107.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,53.5"
-                    Point2="0,57.5"
-                    Point3="4,57.5" />
-                  <mssgle:LineSegment
-                    End="31.5,57.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.5,57.5"
-                    Point2="35.5,57.5"
-                    Point3="35.5,61.5" />
-                  <mssgle:LineSegment
-                    End="35.5,107.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Trasfer The increment to Elmasla7a data\Elmasla7a Mapping VW">
+    design-time-name="Package\Namozag41_Increment_Flattening\Namozag41_Src (Transaction Data)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Trasfer The increment to Elmasla7a data\Excel Mapped Elmasla7a Data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -5933,6 +5857,19 @@ and TransactionData_Id not in
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Transfer Withholding Data To DWH\Dim_Invoices_5asm_w_Ta7seel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Transfer Withholding Data To DWH\IBM &amp; Excel Data Combined">
     <Properties>
       <Property>
@@ -5945,8 +5882,71 @@ and TransactionData_Id not in
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Trasfer The increment to Elmasla7a data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Trasfer The increment to Elmasla7a data\Elmasla7a Mapping VW"
+          TopLeft="102,35" />
+        <NodeLayout
+          Size="220,41.6"
+          Id="Package\Trasfer The increment to Elmasla7a data\Excel Mapped Elmasla7a Data"
+          TopLeft="122,192" />
+        <EdgeLayout
+          Id="Package\Trasfer The increment to Elmasla7a data.Paths[OLE DB Source Output]"
+          TopLeft="196.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.5,115"
+              Start="0,0"
+              End="35.5,107.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.5"
+                    Point2="0,57.5"
+                    Point3="4,57.5" />
+                  <mssgle:LineSegment
+                    End="31.5,57.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.5,57.5"
+                    Point2="35.5,57.5"
+                    Point3="35.5,61.5" />
+                  <mssgle:LineSegment
+                    End="35.5,107.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Transfer Withholding Data To DWH\Dim_Invoices_5asm_w_Ta7seel">
+    design-time-name="Package\Trasfer The increment to Elmasla7a data\Elmasla7a Mapping VW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Trasfer The increment to Elmasla7a data\Excel Mapped Elmasla7a Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
