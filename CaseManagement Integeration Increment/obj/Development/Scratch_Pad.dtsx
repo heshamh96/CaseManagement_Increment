@@ -1,0 +1,1973 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/27/2022 3:02:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TXBI-DWA-01"
+  DTS:CreatorName="CLOUD\Excel_admin3"
+  DTS:DTSID="{CDBE6E2F-BBAC-4537-873D-08255B73A641}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Scratch_Pad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{709C1720-F254-4513-B898-D0D66A3E731F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Declarations"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{ded92753-82fa-40c7-b7ef-889373c3c60f}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Declarations">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2019_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{63b18d71-647f-47f7-86eb-a8f45085e720}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2019_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{ff32c068-685b-4fcb-95fd-562a3a48a5fb}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2019_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{4b71ccca-105d-4bc4-b818-410305b5c531}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2019_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{8fcbb8f6-0ae6-4f0f-b4ea-70d3e936d104}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2019_Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2020_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{a87df112-5ea4-4525-ac99-85337b2e5250}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2020_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{1fdd5c19-4afe-40f8-946b-f260147eba6a}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2020_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{e1c3fcbe-ccae-44ab-bc36-367b7a958126}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2020_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{b5124348-d512-4332-ba06-f5fe3d25597d}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2020_Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2021_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{9bc2900a-5bb2-4fb6-807b-7f371a49e69f}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2021_Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2021_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{cbec8160-3d9f-4931-b7f2-ce910c0d730f}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2021_Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2021_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{17240c66-cf28-448c-ad08-f5f7a0358128}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2021_Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Declarations\2021_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{b709226d-560e-4b8b-9c1b-89f00d179b64}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;C_Dim_Declarations&quot;,&#xA;        &quot;partition&quot;: &quot;C_Dim_Declarations_2021_Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1d72b708-3161-49c0-88e1-724093c44d7d}"
+          DTS:From="Package\Dim_Declarations\2021_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Dim_Declarations\2021_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{211f336a-2ddd-4e2b-b182-0084de53020a}"
+          DTS:From="Package\Dim_Declarations\2021_Q1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Dim_Declarations\2020_Q4" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{1c19da76-518d-4c91-a3d8-cb390d1de2f8}"
+          DTS:From="Package\Dim_Declarations\2019_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\Dim_Declarations\2019_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{8a0387ff-b6c6-4336-9049-58c0e88e033c}"
+          DTS:From="Package\Dim_Declarations\2020_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Dim_Declarations\2020_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{ccda9485-f8ba-4a1b-821f-6dfaacfa7244}"
+          DTS:From="Package\Dim_Declarations\2020_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Dim_Declarations\2020_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{2fe9ff8d-5250-4f7e-814b-b6e9e89dedf9}"
+          DTS:From="Package\Dim_Declarations\2020_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Dim_Declarations\2020_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{d712c330-fa14-4726-b0cc-8ce55640cd28}"
+          DTS:From="Package\Dim_Declarations\2021_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Dim_Declarations\2021_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{f90018e9-7703-446d-8266-73d2f4cc0a4a}"
+          DTS:From="Package\Dim_Declarations\2021_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Dim_Declarations\2021_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{876ce0b5-f196-4763-98c2-40fb39b1ab13}"
+          DTS:From="Package\Dim_Declarations\2020_Q1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Dim_Declarations\2019_Q4" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{5624308a-8770-4dc9-b74b-3fcf77b4b0fe}"
+          DTS:From="Package\Dim_Declarations\2019_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Dim_Declarations\2019_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Declarations.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{3e0907b5-7f29-4905-bd79-477b9e27cd5d}"
+          DTS:From="Package\Dim_Declarations\2019_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\Dim_Declarations\2019_Q2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Invoices_Portal"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{336e177e-4cdd-428e-ab7b-208a1d9adafe}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Invoices_Portal">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2019_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{bfba89ea-7d47-4cfe-99e9-99c1a499a072}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2019-Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2019_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{36b45e6f-2fbf-4015-8896-6ffe000cd5f7}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2019-Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2019_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{1964cecf-b4b9-4527-a4e8-172ec5093b22}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2019-Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2019_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{58601626-bc7a-4caa-8175-919f05ff0c1d}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2019-Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2020_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{586a55af-0e35-4270-859e-09b365cfe353}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2020-Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2020_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{216c3de1-5a5a-40db-8820-50dd968eb3e8}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2020-Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2020_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{be836626-e897-491a-9cc0-e95055e4a45a}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2020-Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2020_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{a22e8cc1-fff3-4e04-8e44-de61584e4cd3}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2020-Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2021_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{9bc2d4b7-0169-42c2-812c-a38976406103}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2021-Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2021_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{9797a8cd-acde-47d0-bb72-e7f29996c03f}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2021-Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2021_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{26dc8caf-1287-4f89-b153-f9bfaf947992}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2021-Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Portal\2021_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{dc72804d-b77d-4c0f-abc6-1a48846bcdf6}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_PORTAL&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Portal_2021-Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{a4892162-6b21-4b5d-8869-b72663ee6c29}"
+          DTS:From="Package\Dim_Invoices_Portal\2021_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Dim_Invoices_Portal\2021_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{16efcb2d-5d7c-47b3-8a30-b1aa27f1cb62}"
+          DTS:From="Package\Dim_Invoices_Portal\2021_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Dim_Invoices_Portal\2021_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{d878bde3-56ff-4a39-a455-e4f56181bded}"
+          DTS:From="Package\Dim_Invoices_Portal\2020_Q1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\Dim_Invoices_Portal\2019_Q4" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{a942dfa0-a04d-4f1d-986d-b084fccb9c3f}"
+          DTS:From="Package\Dim_Invoices_Portal\2021_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Dim_Invoices_Portal\2021_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{41dc9236-7356-469c-b44c-e646ac9b3b13}"
+          DTS:From="Package\Dim_Invoices_Portal\2021_Q1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Dim_Invoices_Portal\2020_Q4" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{8a16e947-6e09-4c57-82bb-e5e6322c7ee5}"
+          DTS:From="Package\Dim_Invoices_Portal\2020_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Dim_Invoices_Portal\2020_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{4c3e2718-fb3b-45a1-aa28-f2faa59bf066}"
+          DTS:From="Package\Dim_Invoices_Portal\2020_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Dim_Invoices_Portal\2020_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{f2341ec5-e2b5-4e6a-91e7-2ceee827e8cb}"
+          DTS:From="Package\Dim_Invoices_Portal\2020_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Dim_Invoices_Portal\2020_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{2726159a-052f-4206-86a6-e3034feb6c01}"
+          DTS:From="Package\Dim_Invoices_Portal\2019_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Dim_Invoices_Portal\2019_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{a7e5453e-a04f-44dd-93b9-aefc8de0eb7d}"
+          DTS:From="Package\Dim_Invoices_Portal\2019_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Dim_Invoices_Portal\2019_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{f6824b11-ab58-40e8-8ae4-59f2204ea25c}"
+          DTS:From="Package\Dim_Invoices_Portal\2019_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\Dim_Invoices_Portal\2019_Q1" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Invoices_Real"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{16cf57bf-3217-499d-8957-d60f9bf2a5ab}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Invoices_Real">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2019_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{ad132b46-c5a9-465c-bef7-61017875d305}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2019-Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2019_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{6aa6a7ce-fabb-4106-9361-4349e3642ee7}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2019-Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2019_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{f42dcb3a-529e-4aef-898e-d122be8b861f}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2019-Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2019_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{c2562cc6-29ab-4be2-8e4f-bb0f1788baf5}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2019_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2019-Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2020_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{89851f07-c2c4-4596-a79b-6cf7cf7cc8e0}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2020-Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2020_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{4ae5f1b4-9ab7-4eb7-bac0-ca63afbe897e}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2020-Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2020_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{6a8a5cb9-67e2-4b7b-b62f-5eb0f6c359dc}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2020-Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2020_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{ca56c3ef-bf36-449b-99dc-c9885c65c5da}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2020_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2020-Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2021_Q1"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{06730bcf-75d5-4715-ae10-098ad844d530}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2021-Q1&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2021_Q2"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:DTSID="{f8f286ce-ac9a-497c-a769-273813dd8791}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2021-Q2&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2021_Q3"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{e35b6410-d2c3-4afe-81d0-90bee0267ed7}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q3"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2021-Q3&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim_Invoices_Real\2021_Q4"
+          DTS:CreationName="Microsoft.ASExecuteDDLTask"
+          DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{c99bed51-ffd8-4f22-a585-080baf8a2256}"
+          DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="2021_Q4"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ASDdlData
+              ConnectionName="TaxVat_All_in"
+              SourceType="DirectInput"
+              Source="&lt;Statement xmln=&quot;urn:schemas-microsoft-com:xml-analysis&quot;&gt;&#xA;&#xA;&#xA;{&#xA;  &quot;refresh&quot;: {&#xA;    &quot;type&quot;: &quot;clearValues&quot;,&#xA;    &quot;objects&quot;: [&#xA;      {&#xA;        &quot;database&quot;: &quot;TaxVat_All_in&quot;,&#xA;        &quot;table&quot;: &quot;D_Dim_Invoices_Real&quot;,&#xA;        &quot;partition&quot;: &quot;D_Dim_Invoices_Real_2021-Q4&quot;&#xA;      }&#xA;    ]&#xA;  }&#xA;}&#xA;&#xA;&lt;/Statement&gt;" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{46950a0d-a736-40eb-9ac1-4a267d780cb5}"
+          DTS:From="Package\Dim_Invoices_Real\2021_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Dim_Invoices_Real\2021_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{a9718af4-f448-4d00-8204-34988125ccb5}"
+          DTS:From="Package\Dim_Invoices_Real\2021_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Dim_Invoices_Real\2021_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 10]"
+          DTS:CreationName=""
+          DTS:DTSID="{15e20278-e5e9-48dc-a574-992df7784976}"
+          DTS:From="Package\Dim_Invoices_Real\2020_Q1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 10"
+          DTS:To="Package\Dim_Invoices_Real\2019_Q4" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{b86baa02-83eb-4563-b469-5b7caaa270f4}"
+          DTS:From="Package\Dim_Invoices_Real\2021_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Dim_Invoices_Real\2021_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{501d87c9-7e2f-418a-ab9b-d6ce9cc084f5}"
+          DTS:From="Package\Dim_Invoices_Real\2021_Q1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Dim_Invoices_Real\2020_Q4" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{717bfcf0-728e-4a27-8de7-c92a7ae59f18}"
+          DTS:From="Package\Dim_Invoices_Real\2020_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Dim_Invoices_Real\2020_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{e0d86d86-e351-4297-b5fe-b5db8101897a}"
+          DTS:From="Package\Dim_Invoices_Real\2020_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Dim_Invoices_Real\2020_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{71c0fddb-7e89-44eb-a176-28aa7cb1fbf1}"
+          DTS:From="Package\Dim_Invoices_Real\2020_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Dim_Invoices_Real\2020_Q1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{5621fbaf-8cf5-4779-971a-1d6350e9e48d}"
+          DTS:From="Package\Dim_Invoices_Real\2019_Q4"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Dim_Invoices_Real\2019_Q3" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{451ce223-4841-4e84-82cb-12ce40465235}"
+          DTS:From="Package\Dim_Invoices_Real\2019_Q3"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Dim_Invoices_Real\2019_Q2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{27ffabc2-8450-41cb-b869-da96930fc8f5}"
+          DTS:From="Package\Dim_Invoices_Real\2019_Q2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\Dim_Invoices_Real\2019_Q1" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{bcff89b0-6b91-46ee-b2e6-794b7247d41c}"
+      DTS:From="Package\Dim_Declarations"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Dim_Invoices_Portal" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7234125d-7cf3-495c-9ad9-1d2c91324a68}"
+      DTS:From="Package\Dim_Invoices_Portal"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Dim_Invoices_Real" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2019_Q1"
+          TopLeft="85.8000050578798,736.270590328757" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2019_Q2"
+          TopLeft="79.5142906651205,671.988237910947" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2019_Q3"
+          TopLeft="76.6571477593208,601.588238348515" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2019_Q4"
+          TopLeft="80.6571478274404,533.02353292947" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2020_Q1"
+          TopLeft="88.5142898647154,469.188236780562" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2020_Q2"
+          TopLeft="82.228575471956,404.905884362752" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2020_Q3"
+          TopLeft="79.3714325661563,334.50588480032" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2020_Q4"
+          TopLeft="83.3714326342759,265.941179381275" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2021_Q1"
+          TopLeft="77.6571477763508,199.211768105616" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2021_Q2"
+          TopLeft="75.9428610791967,121.941180548123" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2021_Q3"
+          TopLeft="74.5142896262968,64.4941174604485" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Declarations\2021_Q4"
+          TopLeft="57.3714321914986,3.49411600188779" />
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint]"
+          TopLeft="137.200004427774,163.541180548123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6705875574924"
+              Start="0,0"
+              End="0,28.1705875574924">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1705875574924" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 1]"
+          TopLeft="140.914290205313,240.811768105616">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.129411275659"
+              Start="0,0"
+              End="0,17.629411275659">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.629411275659" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 10]"
+          TopLeft="143.0571478615,713.588237910947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6823524178097"
+              Start="0,0"
+              End="0,15.1823524178097">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1823524178097" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 2]"
+          TopLeft="141.771432600216,307.541179381275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.9647054190454"
+              Start="0,0"
+              End="0,19.4647054190454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4647054190454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 3]"
+          TopLeft="141.200004019056,376.10588480032">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7999995624318"
+              Start="0,0"
+              End="0,21.2999995624318">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2999995624318" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 4]"
+          TopLeft="145.771432668336,446.505884362752">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6823524178105"
+              Start="0,0"
+              End="0,15.1823524178105">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1823524178105" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 5]"
+          TopLeft="74.5142896262968,85.2941174604485">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="1.42857145289986,57.4470630876749"
+              Start="0,0"
+              End="-6.07142854710014,57.4470630876749">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,53.4470630876749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,53.4470630876749"
+                    Point2="-22.5,57.4470630876749"
+                    Point3="-18.5,57.4470630876749" />
+                  <mssgle:LineSegment
+                    End="-6.07142854710014,57.4470630876749" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 6]"
+          TopLeft="57.3714321914986,24.2941160018878">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.1428574347983,55.4000014585607"
+              Start="0,0"
+              End="9.64285743479825,55.4000014585607">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,51.4000014585607" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,51.4000014585607"
+                    Point2="-22.5,55.4000014585607"
+                    Point3="-18.5,55.4000014585607" />
+                  <mssgle:LineSegment
+                    End="9.64285743479825,55.4000014585607" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 7]"
+          TopLeft="209.314289864715,489.988236780562">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-7.85714203727503,63.8352961489074"
+              Start="0,0"
+              End="-0.357142037275025,63.8352961489074">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,59.8352961489074" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,59.8352961489074"
+                    Point2="22.5,63.8352961489074"
+                    Point3="18.5,63.8352961489074" />
+                  <mssgle:LineSegment
+                    End="-0.357142037275025,63.8352961489074" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 8]"
+          TopLeft="139.057147793381,574.62353292947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.9647054190456"
+              Start="0,0"
+              End="0,19.4647054190456">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4647054190456" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Declarations.PrecedenceConstraints[Constraint 9]"
+          TopLeft="138.485719212221,643.188238348515">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7999995624317"
+              Start="0,0"
+              End="0,21.2999995624317">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2999995624317" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="321.6,832.8"
+          Size="321.6,43.2"
+          Id="Package\Dim_Declarations"
+          TopLeft="250.571431816841,60" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2019_Q1"
+          TopLeft="30.0571459711817,749.552940522264" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2019_Q2"
+          TopLeft="28.6285745182821,685.423529283068" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2019_Q3"
+          TopLeft="29.3428602447321,620.529412150795" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2019_Q4"
+          TopLeft="30.0571459711819,545.694118408513" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2020_Q1"
+          TopLeft="28,473.90588760805" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2020_Q2"
+          TopLeft="26.5714285471003,409.776476368855" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2020_Q3"
+          TopLeft="28.7142857264503,345.64706512966" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2020_Q4"
+          TopLeft="28.0000000000002,270.0470654943" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2021_Q1"
+          TopLeft="32.9142888769814,203.964707351638" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2021_Q2"
+          TopLeft="32.9142888769815,138.305884326288" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2021_Q3"
+          TopLeft="32.2000031505316,72.6470613009378" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Portal\2021_Q4"
+          TopLeft="32.2000031505316,6.98823827558738" />
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint]"
+          TopLeft="92.6000031505316,48.5882382755874">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588230253504"
+              Start="0,0"
+              End="0,16.5588230253504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588230253504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 1]"
+          TopLeft="92.9571460137566,114.247061300938">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588230253504"
+              Start="0,0"
+              End="0,16.5588230253504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588230253504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 10]"
+          TopLeft="89.428572985591,515.50588760805">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.1882308004634"
+              Start="0,0"
+              End="0,22.6882308004634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6882308004634" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 2]"
+          TopLeft="93.3142888769814,179.905884326288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588230253502"
+              Start="0,0"
+              End="0,16.5588230253502">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588230253502" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 3]"
+          TopLeft="90.8571444384908,245.564707351638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.4823581426615"
+              Start="0,0"
+              End="0,16.9823581426615">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9823581426615" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 4]"
+          TopLeft="88.7571428632253,311.6470654943">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.99999963536"
+              Start="0,0"
+              End="0,26.49999963536">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.49999963536" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 5]"
+          TopLeft="88.0428571367753,387.24706512966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.529411239195"
+              Start="0,0"
+              End="0,15.029411239195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.029411239195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 6]"
+          TopLeft="87.6857142735502,451.376476368855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5294112391947"
+              Start="0,0"
+              End="0,15.0294112391947">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0294112391947" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 7]"
+          TopLeft="90.100003107957,587.294118408513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.2352937422821"
+              Start="0,0"
+              End="0,25.7352937422821">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7352937422821" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 8]"
+          TopLeft="89.385717381507,662.129412150796">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.2941171322728"
+              Start="0,0"
+              End="0,15.7941171322728">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7941171322728" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Portal.PrecedenceConstraints[Constraint 9]"
+          TopLeft="89.7428602447319,727.023529283068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.529411239195"
+              Start="0,0"
+              End="0,15.029411239195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.029411239195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="198.4,846.4"
+          Size="198.4,889.6"
+          Id="Package\Dim_Invoices_Portal"
+          TopLeft="446.14286371883,180.670589927654" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2019_Q1"
+          TopLeft="30.0571459711817,749.552940522264" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2019_Q2"
+          TopLeft="28.6285745182821,685.423529283068" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2019_Q3"
+          TopLeft="29.3428602447321,620.529412150795" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2019_Q4"
+          TopLeft="30.0571459711819,545.694118408513" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2020_Q1"
+          TopLeft="28,473.90588760805" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2020_Q2"
+          TopLeft="26.5714285471003,409.776476368855" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2020_Q3"
+          TopLeft="28.1428571452904,346.870594558584" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2020_Q4"
+          TopLeft="27.4285714188403,271.270594923224" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2021_Q1"
+          TopLeft="32.9142888769814,203.964707351638" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2021_Q2"
+          TopLeft="32.9142888769815,138.305884326288" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2021_Q3"
+          TopLeft="32.2000031505316,72.6470613009378" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Dim_Invoices_Real\2021_Q4"
+          TopLeft="32.2000031505316,6.98823827558738" />
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint]"
+          TopLeft="92.6000031505316,48.5882382755874">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588230253504"
+              Start="0,0"
+              End="0,16.5588230253504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588230253504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 1]"
+          TopLeft="92.9571460137566,114.247061300938">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588230253504"
+              Start="0,0"
+              End="0,16.5588230253504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588230253504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 10]"
+          TopLeft="89.428572985591,515.50588760805">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.1882308004634"
+              Start="0,0"
+              End="0,22.6882308004634">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6882308004634" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 2]"
+          TopLeft="93.3142888769814,179.905884326288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588230253502"
+              Start="0,0"
+              End="0,16.5588230253502">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588230253502" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 3]"
+          TopLeft="90.5714301479108,245.564707351638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.7058875715863"
+              Start="0,0"
+              End="0,18.2058875715863">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2058875715863" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 4]"
+          TopLeft="88.1857142820653,312.870594923224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.9999996353598"
+              Start="0,0"
+              End="0,26.4999996353598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4999996353598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 5]"
+          TopLeft="148.94285714529,367.670594558584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-1.57142859819007,62.9058818102708"
+              Start="0,0"
+              End="5.92857140180993,62.9058818102708">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,58.9058818102708" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,58.9058818102708"
+                    Point2="22.5,62.9058818102708"
+                    Point3="18.5,62.9058818102708" />
+                  <mssgle:LineSegment
+                    End="5.92857140180993,62.9058818102708" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 6]"
+          TopLeft="87.6857142735502,451.376476368855">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5294112391947"
+              Start="0,0"
+              End="0,15.0294112391947">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0294112391947" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 7]"
+          TopLeft="90.100003107957,587.294118408513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.2352937422821"
+              Start="0,0"
+              End="0,25.7352937422821">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7352937422821" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 8]"
+          TopLeft="89.385717381507,662.129412150796">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.2941171322728"
+              Start="0,0"
+              End="0,15.7941171322728">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7941171322728" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim_Invoices_Real.PrecedenceConstraints[Constraint 9]"
+          TopLeft="89.7428602447319,727.023529283068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.529411239195"
+              Start="0,0"
+              End="0,15.029411239195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.029411239195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="192,846.4"
+          Size="192,889.6"
+          Id="Package\Dim_Invoices_Real"
+          TopLeft="60,186.905882685408" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="411.371431816841,103.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.971431901989,77.470589927654"
+              Start="0,0"
+              End="133.971431901989,69.970589927654">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.735294963827" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.735294963827"
+                    Point2="0,38.735294963827"
+                    Point3="4,38.735294963827" />
+                  <mssgle:LineSegment
+                    End="129.971431901989,38.735294963827" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.971431901989,38.735294963827"
+                    Point2="133.971431901989,38.735294963827"
+                    Point3="133.971431901989,42.735294963827" />
+                  <mssgle:LineSegment
+                    End="133.971431901989,69.970589927654" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="446.14286371883,628.588236306531">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.14286371883,0"
+              Start="0,0"
+              End="-186.64286371883,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-186.64286371883,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
