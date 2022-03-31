@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="LocalHost.Withholding"
-  DTS:DTSID="{A8E02F49-DCFD-44DE-9379-B45507E59FE6}"
+  DTS:ObjectName="Withholding"
+  DTS:DTSID="{9C5986DD-7A53-4DEE-8EB4-E6F40331A6A6}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager

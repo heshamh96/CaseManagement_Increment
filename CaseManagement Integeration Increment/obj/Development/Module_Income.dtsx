@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Income"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{8D9C397B-0164-4927-B309-A0CB26A83814}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{4D88098C-9929-4DA9-BBB2-1221130B28B3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\Deleting Overlapping Records (Spooky)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{055A752C-4CDD-4206-8903-9482A7084B0B}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -128,7 +127,6 @@
       DTS:refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{D55E4A75-CF1E-4A55-B27D-7C47A7ED3D3E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -8470,7 +8468,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:refId="Package\Flattened_to_STG"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{D123EC6B-A103-481F-B26F-0A9A27F13E19}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -10203,7 +10200,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:refId="Package\Post_Load_Deletions"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{C696E756-BE07-4320-9B45-B4F70C76EA54}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -10260,7 +10256,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:refId="Package\Staging to DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{DCF6EA0E-1C78-4ABD-B4A2-AC4F615F26D9}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -13724,7 +13719,6 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       DTS:refId="Package\Trunacte_IncomeFlattened"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{D1607997-A6B9-470A-820C-CAD67A1EA48E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -14322,7 +14316,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14356,7 +14352,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14390,7 +14388,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14418,7 +14418,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14452,7 +14454,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
