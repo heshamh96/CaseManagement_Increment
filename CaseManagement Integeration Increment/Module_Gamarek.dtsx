@@ -11,28 +11,2060 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Gamarek"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{D3496F2A-9962-48F0-8369-5EDF99E0082F}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{996908E1-3CF5-4774-9F52-DE2C1818B948}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Dim_Gamarek_Invoices_Details"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A0B5085-A621-432B-8C1A-644CF5B75D32}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim_Gamarek_Invoices_Details"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Gamarek_Invoices_Details"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Gamarek_Invoices_Details]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Connections[OleDbConnection]"
+                  connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[DCRTNIsn]"
+                      cachedDataType="i8"
+                      cachedName="DCRTNIsn"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[DCRTNIsn]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[DDBIdentification]"
+                      cachedDataType="i4"
+                      cachedName="DDBIdentification"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[DDBIdentification]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[DDBIdentification]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[INVITIsn]"
+                      cachedDataType="i8"
+                      cachedName="INVITIsn"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITIsn]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[INVITDDB]"
+                      cachedDataType="i4"
+                      cachedName="INVITDDB"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITDDB]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITDDB]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[valueOfItem]"
+                      cachedDataType="r8"
+                      cachedName="valueOfItem"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[valueOfItem]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[valueOfItem]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[INVITKgNet]"
+                      cachedDataType="r8"
+                      cachedName="INVITKgNet"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITKgNet]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITKgNet]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[INVITLineItemQuantity]"
+                      cachedDataType="r8"
+                      cachedName="INVITLineItemQuantity"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITLineItemQuantity]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITLineItemQuantity]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[UOMArabicName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="UOMArabicName"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[UOMArabicName]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[UOMArabicName]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[TRFNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="TRFNumber"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TRFNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TRFNumber]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[TDESCShortDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TDESCShortDescription"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TDESCShortDescription]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TDESCShortDescription]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[ImportFeesPeremptory]"
+                      cachedDataType="r8"
+                      cachedName="ImportFeesPeremptory"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[ImportFeesPeremptory]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[ImportFeesPeremptory]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[importExempt]"
+                      cachedDataType="r8"
+                      cachedName="importExempt"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[importExempt]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[importExempt]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[importRate]"
+                      cachedDataType="r8"
+                      cachedName="importRate"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[importRate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[importRate]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[ImportFeesTemp]"
+                      cachedDataType="r8"
+                      cachedName="ImportFeesTemp"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[ImportFeesTemp]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[ImportFeesTemp]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[TaxFeesPeremptory]"
+                      cachedDataType="r8"
+                      cachedName="TaxFeesPeremptory"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TaxFeesPeremptory]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxFeesPeremptory]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[TaxExempt]"
+                      cachedDataType="r8"
+                      cachedName="TaxExempt"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TaxExempt]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxExempt]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[TaxFeesTemp]"
+                      cachedDataType="r8"
+                      cachedName="TaxFeesTemp"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TaxFeesTemp]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxFeesTemp]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[Tax_37_Exempt]"
+                      cachedDataType="r8"
+                      cachedName="Tax_37_Exempt"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[Tax_37_Exempt]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Exempt]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[Tax_37_Peremptory]"
+                      cachedDataType="r8"
+                      cachedName="Tax_37_Peremptory"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[Tax_37_Peremptory]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Peremptory]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].Columns[Tax_37_Temp]"
+                      cachedDataType="r8"
+                      cachedName="Tax_37_Temp"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[Tax_37_Temp]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Temp]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNIsn]"
+                      dataType="i8"
+                      name="DCRTNIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[DDBIdentification]"
+                      dataType="i4"
+                      name="DDBIdentification" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITIsn]"
+                      dataType="i8"
+                      name="INVITIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITDDB]"
+                      dataType="i4"
+                      name="INVITDDB" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[valueOfItem]"
+                      dataType="r8"
+                      name="valueOfItem" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITKgNet]"
+                      dataType="r8"
+                      name="INVITKgNet" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[INVITLineItemQuantity]"
+                      dataType="r8"
+                      name="INVITLineItemQuantity" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[UOMArabicName]"
+                      dataType="wstr"
+                      length="40"
+                      name="UOMArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TRFNumber]"
+                      dataType="wstr"
+                      length="10"
+                      name="TRFNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TDESCShortDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="TDESCShortDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[ImportFeesPeremptory]"
+                      dataType="r8"
+                      name="ImportFeesPeremptory" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[importExempt]"
+                      dataType="r8"
+                      name="importExempt" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[importRate]"
+                      dataType="r8"
+                      name="importRate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[ImportFeesTemp]"
+                      dataType="r8"
+                      name="ImportFeesTemp" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TaxFeesPeremptory]"
+                      dataType="r8"
+                      name="TaxFeesPeremptory" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TaxExempt]"
+                      dataType="r8"
+                      name="TaxExempt" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[TaxFeesTemp]"
+                      dataType="r8"
+                      name="TaxFeesTemp" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[Tax_37_Exempt]"
+                      dataType="r8"
+                      name="Tax_37_Exempt" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[Tax_37_Peremptory]"
+                      dataType="r8"
+                      name="Tax_37_Peremptory" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[Tax_37_Temp]"
+                      dataType="r8"
+                      name="Tax_37_Temp" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      codePage="1256"
+                      dataType="str"
+                      length="101"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Gamarek_Invoices_Details"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Custom_Detail]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Connections[OleDbConnection]"
+                  connectionManagerID="{C75AF3C8-456D-4E17-AC5F-2CBFFDD155B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[VatCustomDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[DCRTNIsn]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[DCRTNIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[DCRTNIsn]"
+                      name="DCRTNIsn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[DDBIdentification]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[DDBIdentification]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[DDBIdentification]"
+                      name="DDBIdentification"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITIsn]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITIsn]"
+                      name="INVITIsn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITDDB]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITDDB]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITDDB]"
+                      name="INVITDDB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[valueOfItem]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[valueOfItem]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[valueOfItem]"
+                      name="valueOfItem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITKgNet]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITKgNet]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITKgNet]"
+                      name="INVITKgNet"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITLineItemQuantity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITLineItemQuantity]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[INVITLineItemQuantity]"
+                      name="INVITLineItemQuantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[UOMArabicName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[UOMArabicName]"
+                      length="40"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[UOMArabicName]"
+                      name="UOMArabicName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TRFNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TRFNumber]"
+                      length="10"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TRFNumber]"
+                      name="TRFNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TDESCShortDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TDESCShortDescription]"
+                      length="255"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TDESCShortDescription]"
+                      name="TDESCShortDescription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[ImportFeesPeremptory]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[ImportFeesPeremptory]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[ImportFeesPeremptory]"
+                      name="ImportFeesPeremptory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[importExempt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[importExempt]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[importExempt]"
+                      name="importExempt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[importRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[importRate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[importRate]"
+                      name="importRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[ImportFeesTemp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[ImportFeesTemp]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[ImportFeesTemp]"
+                      name="ImportFeesTemp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxFeesPeremptory]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TaxFeesPeremptory]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxFeesPeremptory]"
+                      name="TaxFeesPeremptory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxExempt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TaxExempt]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxExempt]"
+                      name="TaxExempt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxFeesTemp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TaxFeesTemp]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[TaxFeesTemp]"
+                      name="TaxFeesTemp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Exempt]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[Tax_37_Exempt]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Exempt]"
+                      name="Tax_37_Exempt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Peremptory]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[Tax_37_Peremptory]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Peremptory]"
+                      name="Tax_37_Peremptory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Temp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[Tax_37_Temp]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].Columns[Tax_37_Temp]"
+                      name="Tax_37_Temp"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[DCRTNIsn]"
+                      dataType="i8"
+                      name="DCRTNIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[DDBIdentification]"
+                      dataType="i4"
+                      name="DDBIdentification" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITIsn]"
+                      dataType="i8"
+                      name="INVITIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITDDB]"
+                      dataType="i4"
+                      name="INVITDDB" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[valueOfItem]"
+                      dataType="r8"
+                      name="valueOfItem" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITKgNet]"
+                      dataType="r8"
+                      name="INVITKgNet" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[INVITLineItemQuantity]"
+                      dataType="r8"
+                      name="INVITLineItemQuantity" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[UOMArabicName]"
+                      dataType="wstr"
+                      length="40"
+                      name="UOMArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TRFNumber]"
+                      dataType="wstr"
+                      length="10"
+                      name="TRFNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TDESCShortDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="TDESCShortDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[ImportFeesPeremptory]"
+                      dataType="r8"
+                      name="ImportFeesPeremptory" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[importExempt]"
+                      dataType="r8"
+                      name="importExempt" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[importRate]"
+                      dataType="r8"
+                      name="importRate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[ImportFeesTemp]"
+                      dataType="r8"
+                      name="ImportFeesTemp" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TaxFeesPeremptory]"
+                      dataType="r8"
+                      name="TaxFeesPeremptory" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TaxExempt]"
+                      dataType="r8"
+                      name="TaxExempt" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[TaxFeesTemp]"
+                      dataType="r8"
+                      name="TaxFeesTemp" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[Tax_37_Exempt]"
+                      dataType="r8"
+                      name="Tax_37_Exempt" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[Tax_37_Peremptory]"
+                      dataType="r8"
+                      name="Tax_37_Peremptory" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output].ExternalColumns[Tax_37_Temp]"
+                      dataType="r8"
+                      name="Tax_37_Temp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[DCRTNIsn]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[DCRTNIsn]"
+                      name="DCRTNIsn" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[DDBIdentification]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[DDBIdentification]"
+                      name="DDBIdentification" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITIsn]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITIsn]"
+                      name="INVITIsn" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITDDB]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITDDB]"
+                      name="INVITDDB" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[valueOfItem]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[valueOfItem]"
+                      name="valueOfItem" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITKgNet]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITKgNet]"
+                      name="INVITKgNet" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITLineItemQuantity]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[INVITLineItemQuantity]"
+                      name="INVITLineItemQuantity" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[UOMArabicName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[UOMArabicName]"
+                      name="UOMArabicName" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TRFNumber]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TRFNumber]"
+                      name="TRFNumber" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TDESCShortDescription]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TDESCShortDescription]"
+                      name="TDESCShortDescription" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ImportFeesPeremptory]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ImportFeesPeremptory]"
+                      name="ImportFeesPeremptory" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[importExempt]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[importExempt]"
+                      name="importExempt" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[importRate]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[importRate]"
+                      name="importRate" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ImportFeesTemp]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ImportFeesTemp]"
+                      name="ImportFeesTemp" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TaxFeesPeremptory]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TaxFeesPeremptory]"
+                      name="TaxFeesPeremptory" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TaxExempt]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TaxExempt]"
+                      name="TaxExempt" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TaxFeesTemp]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[TaxFeesTemp]"
+                      name="TaxFeesTemp" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[Tax_37_Exempt]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[Tax_37_Exempt]"
+                      name="Tax_37_Exempt" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[Tax_37_Peremptory]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[Tax_37_Peremptory]"
+                      name="Tax_37_Peremptory" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[Tax_37_Temp]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[Tax_37_Temp]"
+                      name="Tax_37_Temp" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Gamarek_Invoices_Details.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim_Gamarek_Invoices_Master"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{EF3BB2E6-495F-4982-A7FE-9BBD034F30EC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Dim_Gamarek_Invoices_Master"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Gamarek_Invoices_Master"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Gamarek_Invoices_Master]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Connections[OleDbConnection]"
+                  connectionManagerID="{068F4831-1A8B-4B42-B2CD-D1490B358D46}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNIsn]"
+                      cachedDataType="i8"
+                      cachedName="DCRTNIsn"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNIsn]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DDBIdentification]"
+                      cachedDataType="i4"
+                      cachedName="DDBIdentification"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DDBIdentification]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DDBIdentification]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNMainType]"
+                      cachedDataType="i2"
+                      cachedName="DCRTNMainType"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNMainType]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNMainType]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNYear]"
+                      cachedDataType="i2"
+                      cachedName="DCRTNYear"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNYear]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNYear]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CCPXIsn]"
+                      cachedDataType="i8"
+                      cachedName="CCPXIsn"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CCPXIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXIsn]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CCPXCode]"
+                      cachedDataType="i8"
+                      cachedName="CCPXCode"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CCPXCode]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXCode]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNRegBook]"
+                      cachedDataType="i8"
+                      cachedName="DCRTNRegBook"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNRegBook]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegBook]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNRegistrationNumber]"
+                      cachedDataType="i8"
+                      cachedName="DCRTNRegistrationNumber"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNRegistrationNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegistrationNumber]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNRegistrationDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DCRTNRegistrationDate"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNRegistrationDate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegistrationDate]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CSVPCode]"
+                      cachedDataType="i4"
+                      cachedName="CSVPCode"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CSVPCode]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CSVPCode]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CSVPName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CSVPName"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CSVPName]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CSVPName]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNStatedValue]"
+                      cachedDataType="r8"
+                      cachedName="DCRTNStatedValue"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNStatedValue]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNStatedValue]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CCPXName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CCPXName"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CCPXName]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXName]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CUSTCode]"
+                      cachedDataType="i8"
+                      cachedName="CUSTCode"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CUSTCode]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CUSTCode]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CUSTArabicName]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="CUSTArabicName"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CUSTArabicName]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CUSTArabicName]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CDLRNumber]"
+                      cachedDataType="i8"
+                      cachedName="CDLRNumber"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CDLRNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRNumber]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CDLRArabicName]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="CDLRArabicName"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CDLRArabicName]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRArabicName]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[CDLRAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="CDLRAddress"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CDLRAddress]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRAddress]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[appdealernum]"
+                      cachedDataType="i8"
+                      cachedName="appdealernum"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[appdealernum]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealernum]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[appdealername]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="appdealername"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[appdealername]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealername]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[appdealeraddress]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="appdealeraddress"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[appdealeraddress]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealeraddress]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[valueOfInvoice]"
+                      cachedDataType="numeric"
+                      cachedName="valueOfInvoice"
+                      cachedPrecision="38"
+                      cachedScale="12"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[valueOfInvoice]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[valueOfInvoice]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[finalValue]"
+                      cachedDataType="r8"
+                      cachedName="finalValue"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[finalValue]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[finalValue]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[importReceiptNumber]"
+                      cachedDataType="i8"
+                      cachedName="importReceiptNumber"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[importReceiptNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[importReceiptNumber]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[importReceiptDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="importReceiptDate"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[importReceiptDate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[importReceiptDate]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[LoadingPORTArabicName]"
+                      cachedCodepage="1256"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LoadingPORTArabicName"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[LoadingPORTArabicName]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[LoadingPORTArabicName]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[TaxReceiptNumber]"
+                      cachedDataType="i8"
+                      cachedName="TaxReceiptNumber"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxReceiptNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxReceiptNumber]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[TaxReceiptDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TaxReceiptDate"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxReceiptDate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxReceiptDate]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[TaxFlag]"
+                      cachedDataType="i4"
+                      cachedName="TaxFlag"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxFlag]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxFlag]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[recieve_date]"
+                      cachedDataType="dbTimeStamp2"
+                      cachedName="recieve_date"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[recieve_date]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[recieve_date]" />
+                    <inputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].Columns[DCRTNCrs]"
+                      cachedDataType="i2"
+                      cachedName="DCRTNCrs"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNCrs]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNCrs]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNIsn]"
+                      dataType="i8"
+                      name="DCRTNIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DDBIdentification]"
+                      dataType="i4"
+                      name="DDBIdentification" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNMainType]"
+                      dataType="i2"
+                      name="DCRTNMainType" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNYear]"
+                      dataType="i2"
+                      name="DCRTNYear" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CCPXIsn]"
+                      dataType="i8"
+                      name="CCPXIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CCPXCode]"
+                      dataType="i8"
+                      name="CCPXCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNRegBook]"
+                      dataType="i8"
+                      name="DCRTNRegBook" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNRegistrationNumber]"
+                      dataType="i8"
+                      name="DCRTNRegistrationNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNRegistrationDate]"
+                      dataType="dbTimeStamp"
+                      name="DCRTNRegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CSVPCode]"
+                      dataType="i4"
+                      name="CSVPCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CSVPName]"
+                      dataType="wstr"
+                      length="100"
+                      name="CSVPName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNStatedValue]"
+                      dataType="r8"
+                      name="DCRTNStatedValue" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CCPXName]"
+                      dataType="wstr"
+                      length="255"
+                      name="CCPXName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CUSTCode]"
+                      dataType="i8"
+                      name="CUSTCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CUSTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      length="40"
+                      name="CUSTArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CDLRNumber]"
+                      dataType="i8"
+                      name="CDLRNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CDLRArabicName]"
+                      dataType="wstr"
+                      length="80"
+                      name="CDLRArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[CDLRAddress]"
+                      dataType="wstr"
+                      length="150"
+                      name="CDLRAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[appdealernum]"
+                      dataType="i8"
+                      name="appdealernum" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[appdealername]"
+                      dataType="wstr"
+                      length="80"
+                      name="appdealername" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[appdealeraddress]"
+                      dataType="wstr"
+                      length="150"
+                      name="appdealeraddress" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[valueOfInvoice]"
+                      dataType="numeric"
+                      name="valueOfInvoice"
+                      precision="38"
+                      scale="12" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[finalValue]"
+                      dataType="r8"
+                      name="finalValue" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[importReceiptNumber]"
+                      dataType="i8"
+                      name="importReceiptNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[importReceiptDate]"
+                      dataType="dbTimeStamp"
+                      name="importReceiptDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[LoadingPORTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      length="255"
+                      name="LoadingPORTArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxReceiptNumber]"
+                      dataType="i8"
+                      name="TaxReceiptNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxReceiptDate]"
+                      dataType="dbTimeStamp"
+                      name="TaxReceiptDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxFlag]"
+                      dataType="i4"
+                      name="TaxFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[recieve_date]"
+                      dataType="dbTimeStamp2"
+                      name="recieve_date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[DCRTNCrs]"
+                      dataType="i2"
+                      name="DCRTNCrs" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[TaxLoss]"
+                      dataType="numeric"
+                      name="TaxLoss"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[taxperiod]"
+                      codePage="1256"
+                      dataType="str"
+                      length="6"
+                      name="taxperiod" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      codePage="1256"
+                      dataType="str"
+                      length="101"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[FK_Taxperiod]"
+                      codePage="1256"
+                      dataType="str"
+                      length="8"
+                      name="FK_Taxperiod" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[FK_Artificial_Key]"
+                      codePage="1256"
+                      dataType="str"
+                      length="37"
+                      name="FK_Artificial_Key" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input].ExternalColumns[ID_Gamarek]"
+                      dataType="i4"
+                      name="ID_Gamarek" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Gamarek_Invoices_Header"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Custom_Header]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Connections[OleDbConnection]"
+                  connectionManagerID="{C75AF3C8-456D-4E17-AC5F-2CBFFDD155B6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[VatCustomDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNIsn]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNIsn]"
+                      name="DCRTNIsn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DDBIdentification]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DDBIdentification]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DDBIdentification]"
+                      name="DDBIdentification"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNMainType]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNMainType]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNMainType]"
+                      name="DCRTNMainType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      length="50"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNYear]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNYear]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNYear]"
+                      name="DCRTNYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXIsn]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CCPXIsn]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXIsn]"
+                      name="CCPXIsn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXCode]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CCPXCode]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXCode]"
+                      name="CCPXCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegBook]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNRegBook]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegBook]"
+                      name="DCRTNRegBook"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegistrationNumber]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNRegistrationNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegistrationNumber]"
+                      name="DCRTNRegistrationNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegistrationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNRegistrationDate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNRegistrationDate]"
+                      name="DCRTNRegistrationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CSVPCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CSVPCode]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CSVPCode]"
+                      name="CSVPCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CSVPName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CSVPName]"
+                      length="100"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CSVPName]"
+                      name="CSVPName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNStatedValue]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNStatedValue]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNStatedValue]"
+                      name="DCRTNStatedValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CCPXName]"
+                      length="255"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CCPXName]"
+                      name="CCPXName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CUSTCode]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CUSTCode]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CUSTCode]"
+                      name="CUSTCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CUSTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CUSTArabicName]"
+                      length="40"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CUSTArabicName]"
+                      name="CUSTArabicName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRNumber]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CDLRNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRNumber]"
+                      name="CDLRNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRArabicName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CDLRArabicName]"
+                      length="80"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRArabicName]"
+                      name="CDLRArabicName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CDLRAddress]"
+                      length="150"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[CDLRAddress]"
+                      name="CDLRAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealernum]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[appdealernum]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealernum]"
+                      name="appdealernum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealername]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[appdealername]"
+                      length="80"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealername]"
+                      name="appdealername"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealeraddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[appdealeraddress]"
+                      length="150"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[appdealeraddress]"
+                      name="appdealeraddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[valueOfInvoice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[valueOfInvoice]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[valueOfInvoice]"
+                      name="valueOfInvoice"
+                      precision="38"
+                      scale="12"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[finalValue]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[finalValue]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[finalValue]"
+                      name="finalValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[importReceiptNumber]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[importReceiptNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[importReceiptNumber]"
+                      name="importReceiptNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[importReceiptDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[importReceiptDate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[importReceiptDate]"
+                      name="importReceiptDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[LoadingPORTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[LoadingPORTArabicName]"
+                      length="255"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[LoadingPORTArabicName]"
+                      name="LoadingPORTArabicName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxReceiptNumber]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[TaxReceiptNumber]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxReceiptNumber]"
+                      name="TaxReceiptNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxReceiptDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[TaxReceiptDate]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxReceiptDate]"
+                      name="TaxReceiptDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxFlag]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[TaxFlag]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[TaxFlag]"
+                      name="TaxFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[recieve_date]"
+                      dataType="dbTimeStamp2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[recieve_date]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[recieve_date]"
+                      name="recieve_date"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNCrs]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNCrs]"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].Columns[DCRTNCrs]"
+                      name="DCRTNCrs"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNIsn]"
+                      dataType="i8"
+                      name="DCRTNIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DDBIdentification]"
+                      dataType="i4"
+                      name="DDBIdentification" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNMainType]"
+                      dataType="i2"
+                      name="DCRTNMainType" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="50"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNYear]"
+                      dataType="i2"
+                      name="DCRTNYear" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CCPXIsn]"
+                      dataType="i8"
+                      name="CCPXIsn" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CCPXCode]"
+                      dataType="i8"
+                      name="CCPXCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNRegBook]"
+                      dataType="i8"
+                      name="DCRTNRegBook" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNRegistrationNumber]"
+                      dataType="i8"
+                      name="DCRTNRegistrationNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNRegistrationDate]"
+                      dataType="dbTimeStamp"
+                      name="DCRTNRegistrationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CSVPCode]"
+                      dataType="i4"
+                      name="CSVPCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CSVPName]"
+                      dataType="wstr"
+                      length="100"
+                      name="CSVPName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNStatedValue]"
+                      dataType="r8"
+                      name="DCRTNStatedValue" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CCPXName]"
+                      dataType="wstr"
+                      length="255"
+                      name="CCPXName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CUSTCode]"
+                      dataType="i8"
+                      name="CUSTCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CUSTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      length="40"
+                      name="CUSTArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CDLRNumber]"
+                      dataType="i8"
+                      name="CDLRNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CDLRArabicName]"
+                      dataType="wstr"
+                      length="80"
+                      name="CDLRArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[CDLRAddress]"
+                      dataType="wstr"
+                      length="150"
+                      name="CDLRAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[appdealernum]"
+                      dataType="i8"
+                      name="appdealernum" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[appdealername]"
+                      dataType="wstr"
+                      length="80"
+                      name="appdealername" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[appdealeraddress]"
+                      dataType="wstr"
+                      length="150"
+                      name="appdealeraddress" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[valueOfInvoice]"
+                      dataType="numeric"
+                      name="valueOfInvoice"
+                      precision="38"
+                      scale="12" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[finalValue]"
+                      dataType="r8"
+                      name="finalValue" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[importReceiptNumber]"
+                      dataType="i8"
+                      name="importReceiptNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[importReceiptDate]"
+                      dataType="dbTimeStamp"
+                      name="importReceiptDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[LoadingPORTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      length="255"
+                      name="LoadingPORTArabicName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[TaxReceiptNumber]"
+                      dataType="i8"
+                      name="TaxReceiptNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[TaxReceiptDate]"
+                      dataType="dbTimeStamp"
+                      name="TaxReceiptDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[TaxFlag]"
+                      dataType="i4"
+                      name="TaxFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[recieve_date]"
+                      dataType="dbTimeStamp2"
+                      name="recieve_date"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output].ExternalColumns[DCRTNCrs]"
+                      dataType="i2"
+                      name="DCRTNCrs" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNIsn]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNIsn]"
+                      name="DCRTNIsn" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DDBIdentification]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DDBIdentification]"
+                      name="DDBIdentification" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNMainType]"
+                      dataType="i2"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNMainType]"
+                      name="DCRTNMainType" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNYear]"
+                      dataType="i2"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNYear]"
+                      name="DCRTNYear" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CCPXIsn]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CCPXIsn]"
+                      name="CCPXIsn" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CCPXCode]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CCPXCode]"
+                      name="CCPXCode" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNRegBook]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNRegBook]"
+                      name="DCRTNRegBook" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNRegistrationNumber]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNRegistrationNumber]"
+                      name="DCRTNRegistrationNumber" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNRegistrationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNRegistrationDate]"
+                      name="DCRTNRegistrationDate" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CSVPCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CSVPCode]"
+                      name="CSVPCode" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CSVPName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CSVPName]"
+                      name="CSVPName" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNStatedValue]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNStatedValue]"
+                      name="DCRTNStatedValue" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CCPXName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CCPXName]"
+                      name="CCPXName" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CUSTCode]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CUSTCode]"
+                      name="CUSTCode" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CUSTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CUSTArabicName]"
+                      name="CUSTArabicName" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CDLRNumber]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CDLRNumber]"
+                      name="CDLRNumber" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CDLRArabicName]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CDLRArabicName]"
+                      name="CDLRArabicName" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CDLRAddress]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[CDLRAddress]"
+                      name="CDLRAddress" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[appdealernum]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[appdealernum]"
+                      name="appdealernum" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[appdealername]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[appdealername]"
+                      name="appdealername" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[appdealeraddress]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[appdealeraddress]"
+                      name="appdealeraddress" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[valueOfInvoice]"
+                      dataType="numeric"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[valueOfInvoice]"
+                      name="valueOfInvoice"
+                      precision="38"
+                      scale="12" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[finalValue]"
+                      dataType="r8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[finalValue]"
+                      name="finalValue" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[importReceiptNumber]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[importReceiptNumber]"
+                      name="importReceiptNumber" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[importReceiptDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[importReceiptDate]"
+                      name="importReceiptDate" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[LoadingPORTArabicName]"
+                      codePage="1256"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[LoadingPORTArabicName]"
+                      name="LoadingPORTArabicName" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[TaxReceiptNumber]"
+                      dataType="i8"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[TaxReceiptNumber]"
+                      name="TaxReceiptNumber" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[TaxReceiptDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[TaxReceiptDate]"
+                      name="TaxReceiptDate" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[TaxFlag]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[TaxFlag]"
+                      name="TaxFlag" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[recieve_date]"
+                      dataType="dbTimeStamp2"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[recieve_date]"
+                      name="recieve_date"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNCrs]"
+                      dataType="i2"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[DCRTNCrs]"
+                      name="DCRTNCrs" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim_Gamarek_Invoices_Master.Paths[OLE DB Source Output]"
+              endId="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate_Gamarek_Invoices"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0217DD64-EF28-4C01-BD49-3957C2A02D8E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate_Gamarek_Invoices"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
+          SQLTask:SqlStatementSource="truncate table [dbo].[Dim_Gamarek_Invoices_Master]&#xA;truncate table [dbo].[Dim_Gamarek_Invoices_Details]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{ECD19CFF-23FA-43E6-BE47-02E424FF1F82}"
+      DTS:From="Package\Dim_Gamarek_Invoices_Master"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Dim_Gamarek_Invoices_Details" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{675648A7-FDE8-41FB-A5DA-C46D29051E6A}"
+      DTS:From="Package\Truncate_Gamarek_Invoices"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Dim_Gamarek_Invoices_Master" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -44,13 +2076,229 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Data Flow Task"
+          Size="228,42"
+          Id="Package\Dim_Gamarek_Invoices_Master"
           TopLeft="99,30" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Dim_Gamarek_Invoices_Details"
+          TopLeft="149,120" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="213,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50,48"
+              Start="0,0"
+              End="50,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="46,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46,24"
+                    Point2="50,24"
+                    Point3="50,28" />
+                  <mssgle:LineSegment
+                    End="50,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Truncate_Gamarek_Invoices"
+          TopLeft="462,66" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="462,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135,-36"
+              Start="0,0"
+              End="-127.5,-36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-63.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.5,0"
+                    Point2="-67.5,0"
+                    Point3="-67.5,-4" />
+                  <mssgle:LineSegment
+                    End="-67.5,-32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.5,-32"
+                    Point2="-67.5,-36"
+                    Point3="-71.5,-36" />
+                  <mssgle:LineSegment
+                    End="-127.5,-36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Dim_Gamarek_Invoices_Master">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header"
+          TopLeft="119,55" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master"
+          TopLeft="112,141" />
+        <EdgeLayout
+          Id="Package\Dim_Gamarek_Invoices_Master.Paths[OLE DB Source Output]"
+          TopLeft="223.75,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim_Gamarek_Invoices_Details">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details"
+          TopLeft="98,48" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details"
+          TopLeft="123,138" />
+        <EdgeLayout
+          Id="Package\Dim_Gamarek_Invoices_Details.Paths[OLE DB Source Output]"
+          TopLeft="199.5,90">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.5,48"
+              Start="0,0"
+              End="37.5,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="33.5,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.5,24"
+                    Point2="37.5,24"
+                    Point3="37.5,28" />
+                  <mssgle:LineSegment
+                    End="37.5,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
