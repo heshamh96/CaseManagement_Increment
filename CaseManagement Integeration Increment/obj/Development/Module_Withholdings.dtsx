@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{110B7EAA-C7AF-4DBA-98CE-8263C54C4768}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{C794AA6C-FAAF-4E3A-9E15-C26AD4ABDA29}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3860,7 +3860,7 @@ and TransactionData_Id not in
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[EL_Masla7a_Mapping_Final]</property>
+                  name="OpenRowset">[dbo].[EL_Masla7a_Mapping_Final_Namozag_41]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."

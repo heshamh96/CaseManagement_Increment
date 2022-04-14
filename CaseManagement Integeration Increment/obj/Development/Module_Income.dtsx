@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Income"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{4D88098C-9929-4DA9-BBB2-1221130B28B3}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{A04E2F1B-B250-4B5F-8B9D-80E9DAE50EB5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -14316,9 +14316,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14352,9 +14350,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14388,9 +14384,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14418,9 +14412,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14454,9 +14446,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_VAT_Watcher"
   DTS:PackageType="5"
-  DTS:VersionBuild="100"
-  DTS:VersionGUID="{F0A26653-8838-41EE-9B02-EA019587B422}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{6FBC45DE-9B94-40EF-B071-B5EDC273A6AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -27104,7 +27104,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27138,7 +27140,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27187,9 +27191,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27211,9 +27213,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27235,9 +27235,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27364,7 +27362,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27484,9 +27484,9 @@ and dwh.SendDate is null</property>
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="287.2,313.6"
-          Size="255.2,43.2"
+          Size="287.2,43.2"
           Id="Package\Fix The Sent Tables (On the Fly)"
-          TopLeft="131.657145017507,411.764710232296" />
+          TopLeft="132.228573598667,411.152945517834" />
         <NodeLayout
           Size="360,41.6"
           Id="Package\IBM_Transferes_to Staging (Sent,Invoices,Invoices_Details)"
@@ -27973,30 +27973,24 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="386.857145017507,433.364710232296">
+          TopLeft="419.428573598667,432.752945517834">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42.6571478104109,47.141175844265"
+              EndConnector="189.685719229251,26.152940558727"
               Start="0,0"
-              End="35.1571478104109,47.141175844265">
+              End="189.685719229251,18.652940558727">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="17.3285739052055,0" />
+                    End="185.685719229251,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.3285739052055,0"
-                    Point2="21.3285739052055,0"
-                    Point3="21.3285739052055,4" />
+                    Point1="185.685719229251,0"
+                    Point2="189.685719229251,0"
+                    Point3="189.685719229251,4" />
                   <mssgle:LineSegment
-                    End="21.3285739052055,43.141175844265" />
-                  <mssgle:CubicBezierSegment
-                    Point1="21.3285739052055,43.141175844265"
-                    Point2="21.3285739052055,47.141175844265"
-                    Point3="25.3285739052055,47.141175844265" />
-                  <mssgle:LineSegment
-                    End="35.1571478104109,47.141175844265" />
+                    End="189.685719229251,18.652940558727" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28007,18 +28001,30 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="262.771430386329,379.529413025932">
+          TopLeft="266.285715755151,379.529413025932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.235297206364"
+              EndConnector="9.54285784351561,31.6235324919019"
               Start="0,0"
-              End="0,24.735297206364">
+              End="9.54285784351561,24.1235324919019">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.735297206364" />
+                    End="0,11.811766245951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.811766245951"
+                    Point2="0,15.811766245951"
+                    Point3="4,15.811766245951" />
+                  <mssgle:LineSegment
+                    End="5.54285784351561,15.811766245951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.54285784351561,15.811766245951"
+                    Point2="9.54285784351561,15.811766245951"
+                    Point3="9.54285784351561,19.811766245951" />
+                  <mssgle:LineSegment
+                    End="9.54285784351561,24.1235324919019" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
