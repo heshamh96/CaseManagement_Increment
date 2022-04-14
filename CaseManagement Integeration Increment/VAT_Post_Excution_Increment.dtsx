@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Post_Excution_Increment"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{330710A9-AA17-4424-813B-1070A7D6E990}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{3B0CE51B-602C-412C-844E-46D442D271A5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -182,9 +182,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="389.6,165.6"
-          Size="389.6,43.2"
+          Size="389.6,208.8"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
           TopLeft="189.142860363941,200.847061629114" />
         <NodeLayout
