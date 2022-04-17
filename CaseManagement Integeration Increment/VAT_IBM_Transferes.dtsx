@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_IBM_Transferes"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{3FE503D9-D5B8-4245-A9F1-3A7C2E56BB54}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{1BCC492E-8A61-4608-9FD5-D92203E3832B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5046,7 +5046,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="223.2,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details"
@@ -5117,7 +5117,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="337.6,200"
+          PanelSize="338.4,200"
           Size="338.4,43.2"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
           TopLeft="121.142859205908,258.211766902303" />
@@ -5160,9 +5160,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -5178,9 +5176,9 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.3142862203174,94.494118153265"
+              EndConnector="19.3142862203174,94.4941181532649"
               Start="0,0"
-              End="19.3142862203174,86.994118153265">
+              End="19.3142862203174,86.9941181532649">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5197,7 +5195,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
                     Point2="19.3142862203174,47.2470590766325"
                     Point3="19.3142862203174,51.2470590766325" />
                   <mssgle:LineSegment
-                    End="19.3142862203174,86.994118153265" />
+                    End="19.3142862203174,86.9941181532649" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5348,7 +5346,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-29.31953125,52.6,50.2390625,11.228515625"
+              BoundingBox="-29.31953125,52.6,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5525,7 +5523,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54.25849609375,-17.2431640625,50.1169921875,11.2431640625"
+              BoundingBox="-54.25849609375,-17.2431640625,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5561,7 +5559,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="78.3748828125,25.4,55.650234375,11.228515625"
+              BoundingBox="78.3748828125,25.4,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5625,7 +5623,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-29.5183573977585,-15.568359375,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5655,7 +5653,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="113.117837760302,-15.568359375,30.9071875,9.568359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

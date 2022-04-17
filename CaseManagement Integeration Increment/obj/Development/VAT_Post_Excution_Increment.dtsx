@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Post_Excution_Increment"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{3B0CE51B-602C-412C-844E-46D442D271A5}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{B5552170-B7C1-4451-8BF4-AFB96BCE99C1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
