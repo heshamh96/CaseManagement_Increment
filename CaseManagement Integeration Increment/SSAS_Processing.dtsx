@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SSAS_Processing"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{DFEFD317-6B83-4EB5-BA1E-82DF801BC4A1}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{D514BBBC-573A-434D-91B9-0EA3C7DD2E6E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Dim_Declarations"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{43718A48-20C4-400F-866C-F952AD085F47}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -711,6 +712,7 @@
           DTS:refId="Package\Dim_Invoices\2018_and_Before_Clear_Portal"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{686c6317-a927-457c-996f-1afd711c2798}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -728,6 +730,7 @@
           DTS:refId="Package\Dim_Invoices\2018_and_Before_Clear_Real"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{d02613df-ee3b-4e5b-b6d4-c344f8da96c3}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -745,6 +748,7 @@
           DTS:refId="Package\Dim_Invoices\2018_and_Before_Portal"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{f99dcb28-18d5-4fb0-a8be-614a3faafd9b}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -762,6 +766,7 @@
           DTS:refId="Package\Dim_Invoices\2018_and_Before_Real"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{c62e2eec-eb3b-4318-aeaa-4794d319c947}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -1283,7 +1288,6 @@
           DTS:refId="Package\Dim_Invoices\2020_Q4_Clear_Portal"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{41421348-d9a8-4ef0-a3d0-21a640f8e0cf}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -1301,7 +1305,6 @@
           DTS:refId="Package\Dim_Invoices\2020_Q4_Clear_Real"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{b864cf3c-0609-414b-b4c4-0c394e1c9e41}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -1319,7 +1322,6 @@
           DTS:refId="Package\Dim_Invoices\2020_Q4_Portal"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{931316B9-07A5-4A33-BA8B-F41B9C2B3F32}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -1337,7 +1339,6 @@
           DTS:refId="Package\Dim_Invoices\2020_Q4_Real"
           DTS:CreationName="Microsoft.ASExecuteDDLTask"
           DTS:Description="Analysis Services Execute DDL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{25be0946-8f87-4d45-b4bf-966be20104c3}"
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
@@ -2874,11 +2875,11 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="520.8,993.6"
-          Size="520.8,1036.8"
+          Size="520.8,43.2"
           Id="Package\Dim_Declarations"
-          TopLeft="1319.44355747352,58.007843580543" />
+          TopLeft="1319.44355747352,58.0078435805429" />
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\Dim_Invoices\2019_Q1_Clear_Portal"
@@ -4355,37 +4356,25 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="915.2,947.2"
-          Size="915.2,990.4"
+          Size="165.6,43.2"
           Id="Package\Dim_Invoices"
           TopLeft="30.2448980655328,63.7249304954565" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1319.44355747352,576.407843580543">
+          TopLeft="1319.44355747352,82.4663870379997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-373.998659407991,-17.4829130850865"
+              EndConnector="-1123.59865940799,0"
               Start="0,0"
-              End="-366.498659407991,-17.4829130850865">
+              End="-1116.09865940799,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-182.999329703995,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-182.999329703995,0"
-                    Point2="-186.999329703995,0"
-                    Point3="-186.999329703995,-4" />
-                  <mssgle:LineSegment
-                    End="-186.999329703995,-13.4829130850865" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-186.999329703995,-13.4829130850865"
-                    Point2="-186.999329703995,-17.4829130850865"
-                    Point3="-190.999329703995,-17.4829130850865" />
-                  <mssgle:LineSegment
-                    End="-366.498659407991,-17.4829130850865" />
+                    End="-1116.09865940799,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

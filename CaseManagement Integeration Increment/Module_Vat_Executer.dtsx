@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{41586AB8-6869-498E-B53F-CE811BEE4698}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{162AC5D2-170C-474A-975D-881DCCD47057}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -7581,7 +7581,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
-          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;(&#xA; [FK_Inv_Type_ID] ASC,&#xA; [Company_Unique_Tax_Id] ASC&#xA;)&#xA;INCLUDE([Product_Total_Net],[FK_Sub_inv_type],[TaxPeriod]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;CREATE NONCLUSTERED INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;(&#xA; [Company_Unique_Tax_Id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [FK_TaxPeriod_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [ID] ASC,&#xA; [Namozag_Name] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [Namozag_Name] ASC&#xA;)&#xA;INCLUDE([ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [est5las_Sales_Is_Correct] ASC&#xA;)&#xA;INCLUDE([TaxPeriod],[Developed_By]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;(&#xA; [FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;(&#xA; [FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;(&#xA; [TotalValue] ASC&#xA;)&#xA;INCLUDE([FK_ID],[Tax]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;(&#xA; [FK_Inv_Type_ID] ASC,&#xA; [Company_Unique_Tax_Id] ASC&#xA;)&#xA;INCLUDE([Product_Total_Net],[FK_Sub_inv_type],[TaxPeriod]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;CREATE NONCLUSTERED INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;(&#xA; [Company_Unique_Tax_Id] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [FK_TaxPeriod_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [ID] ASC,&#xA; [Namozag_Name] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [Namozag_Name] ASC&#xA;)&#xA;INCLUDE([ID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:05:16 PM ******/&#xA;CREATE NONCLUSTERED INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;(&#xA; [est5las_Sales_Is_Correct] ASC&#xA;)&#xA;INCLUDE([TaxPeriod],[Developed_By]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;(&#xA; [FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;&#xA;CREATE NONCLUSTERED INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;(&#xA; [FK_ID] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;CREATE NONCLUSTERED INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;(&#xA; [TotalValue] ASC&#xA;)&#xA;INCLUDE([FK_ID],[Tax]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]&#xA;GO&#xA;&#xA;&#xA;CREATE NONCLUSTERED INDEX [NonClusteredIndex-Tax_Period] ON [dbo].[Dim_Invoices]&#xA;(&#xA;&#x9;[TaxPeriod] ASC&#xA;)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)&#xA;&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -7599,7 +7599,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
-          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;DROP INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;DROP INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;DROP INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;GO&#xA;DROP INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;GO&#xA;DROP INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;GO&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="USE [DWH_TAX]&#xA;GO&#xA;&#xA;&#xA;/****** Object:  Index [Sales_Accurcy_Report]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [Sales_Accurcy_Report] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_Update_Namozag_Name_&amp;_ID]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_Update_Namozag_Name_&amp;_ID] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_ID&amp;Namozag_Name]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_ID&amp;Namozag_Name] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_FK_TaxPeriod_ID]    Script Date: 3/23/2022 1:04:36 PM ******/&#xA;DROP INDEX [IDX_FK_TaxPeriod_ID] ON [dbo].[Dim_Declarations]&#xA;GO&#xA;&#xA;/****** Object:  Index [IDX_for_update_Income]    Script Date: 3/23/2022 1:03:21 PM ******/&#xA;DROP INDEX [IDX_for_update_Income] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;&#xA;&#xA;&#xA;/****** Object:  Index [NonClusteredIndex-20220316-193625]    Script Date: 3/23/2022 1:03:34 PM ******/&#xA;DROP INDEX [NonClusteredIndex-20220316-193625] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;DROP INDEX [IDX_FK_ID] ON [dbo].[Dim_Table_Sales_Details_Jason]&#xA;GO&#xA;DROP INDEX [IDX_FK_ID] ON [dbo].[Dim_NonTable_Sales_Details_Jason]&#xA;GO&#xA;DROP INDEX [IDX_UPDATE_TotalValue&amp;FK_ID&amp;Tax] ON [dbo].[Dim_Table_Tax_Details_Jason]&#xA;GO&#xA;&#xA;DROP INDEX [NonClusteredIndex-Tax_Period] ON [dbo].[Dim_Invoices]&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -7888,7 +7888,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="160,41.6"
           Id="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons"
@@ -7916,7 +7916,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -7964,7 +7966,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8041,7 +8045,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8075,7 +8081,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8109,7 +8117,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8143,7 +8153,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8165,7 +8177,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8187,7 +8201,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
