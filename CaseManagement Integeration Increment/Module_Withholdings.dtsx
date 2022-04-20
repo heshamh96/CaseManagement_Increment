@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{998CD232-BAEE-4705-AB53-3773EFABB6E9}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{815204EA-E7D0-41D8-92FD-03E83F0E4648}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2768,22 +2768,6 @@ from Withholding.dbo.TransactionsData
         <SQLTask:SqlTaskData
           SQLTask:Connection="{513EE09D-9304-42ED-9BA5-37E02F38C0C8}"
           SQLTask:SqlStatementSource="Exec [dbo].[Currency_Cleansing] &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Prepare_For_The_logic"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9F9746D1-1DB4-44EA-80CB-077BAD7DA21A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Prepare_For_The_logic"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{513EE09D-9304-42ED-9BA5-37E02F38C0C8}"
-          SQLTask:SqlStatementSource="truncate table [dbo].[Namozag_41]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -7321,6 +7305,22 @@ and nmz.TransactionData_Id not in
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Truncate Namozag 41 to Prepare for The Logic"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9F9746D1-1DB4-44EA-80CB-077BAD7DA21A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Namozag 41 to Prepare for The Logic"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{513EE09D-9304-42ED-9BA5-37E02F38C0C8}"
+          SQLTask:SqlStatementSource="truncate table [dbo].[Namozag_41]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Truncate_Not_Closed_Data"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -7343,7 +7343,7 @@ and nmz.TransactionData_Id not in
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{991E5429-DF5A-4719-B886-32108F3A9546}"
-      DTS:From="Package\Prepare_For_The_logic"
+      DTS:From="Package\Truncate Namozag 41 to Prepare for The Logic"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Namozag41_Increment_Flattening" />
@@ -7417,8 +7417,8 @@ and nmz.TransactionData_Id not in
           Id="Package\Namzag41_Flattened_Currency Cleansing"
           TopLeft="334.200002997262,156" />
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Prepare_For_The_logic"
+          Size="299.2,41.6"
+          Id="Package\Truncate Namozag 41 to Prepare for The Logic"
           TopLeft="386.200002997262,16" />
         <NodeLayout
           Size="246.4,41.6"
@@ -7442,30 +7442,30 @@ and nmz.TransactionData_Id not in
           TopLeft="101.600000885555,178.729412150795" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="479.700002997262,58">
+          TopLeft="535.800002997262,57.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8,28"
+              EndConnector="-48.2,28.4"
               Start="0,0"
-              End="8,20.5">
+              End="-48.2,20.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10" />
+                    End="0,10.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
+                    Point1="0,10.2"
+                    Point2="0,14.2"
+                    Point3="-4,14.2" />
                   <mssgle:LineSegment
-                    End="4,14" />
+                    End="-44.2,14.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="4,14"
-                    Point2="8,14"
-                    Point3="8,18" />
+                    Point1="-44.2,14.2"
+                    Point2="-48.2,14.2"
+                    Point3="-48.2,18.2" />
                   <mssgle:LineSegment
-                    End="8,20.5" />
+                    End="-48.2,20.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
