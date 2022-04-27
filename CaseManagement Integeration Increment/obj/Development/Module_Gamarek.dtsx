@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Gamarek"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{996908E1-3CF5-4774-9F52-DE2C1818B948}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{D954BEB9-01EB-4F8B-9865-4B97F6F5331D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2078,39 +2078,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="228,42"
+          Size="228,41.6"
+          Id="Package\Dim_Gamarek_Invoices_Details"
+          TopLeft="149,120" />
+        <NodeLayout
+          Size="227.2,41.6"
           Id="Package\Dim_Gamarek_Invoices_Master"
           TopLeft="99,30" />
         <NodeLayout
-          Size="228,42"
-          Id="Package\Dim_Gamarek_Invoices_Details"
-          TopLeft="149,120" />
+          Size="212.8,41.6"
+          Id="Package\Truncate_Gamarek_Invoices"
+          TopLeft="462,66" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="213,72">
+          TopLeft="212.6,71.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50,48"
+              EndConnector="50.4,48.4"
               Start="0,0"
-              End="50,40.5">
+              End="50.4,40.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20" />
+                    End="0,20.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="4,24" />
+                    Point1="0,20.2"
+                    Point2="0,24.2"
+                    Point3="4,24.2" />
                   <mssgle:LineSegment
-                    End="46,24" />
+                    End="46.4,24.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="46,24"
-                    Point2="50,24"
-                    Point3="50,28" />
+                    Point1="46.4,24.2"
+                    Point2="50.4,24.2"
+                    Point3="50.4,28.2" />
                   <mssgle:LineSegment
-                    End="50,40.5" />
+                    End="50.4,40.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2119,36 +2123,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="213,42"
-          Id="Package\Truncate_Gamarek_Invoices"
-          TopLeft="462,66" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="462,87">
+          TopLeft="462,86.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-135,-36"
+              EndConnector="-135.8,-36"
               Start="0,0"
-              End="-127.5,-36">
+              End="-128.3,-36">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-63.5,0" />
+                    End="-63.9,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-63.5,0"
-                    Point2="-67.5,0"
-                    Point3="-67.5,-4" />
+                    Point1="-63.9,0"
+                    Point2="-67.9,0"
+                    Point3="-67.9,-4" />
                   <mssgle:LineSegment
-                    End="-67.5,-32" />
+                    End="-67.9,-32" />
                   <mssgle:CubicBezierSegment
-                    Point1="-67.5,-32"
-                    Point2="-67.5,-36"
-                    Point3="-71.5,-36" />
+                    Point1="-67.9,-32"
+                    Point2="-67.9,-36"
+                    Point3="-71.9,-36" />
                   <mssgle:LineSegment
-                    End="-127.5,-36" />
+                    End="-128.3,-36" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2161,80 +2161,16 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Dim_Gamarek_Invoices_Master">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header"
-          TopLeft="119,55" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master"
-          TopLeft="112,141" />
-        <EdgeLayout
-          Id="Package\Dim_Gamarek_Invoices_Master.Paths[OLE DB Source Output]"
-          TopLeft="223.75,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Dim_Gamarek_Invoices_Details">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="203,42"
+          Size="203.2,41.6"
           Id="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details"
           TopLeft="98,48" />
         <NodeLayout
-          Size="228,42"
+          Size="228,41.6"
           Id="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details"
           TopLeft="123,138" />
         <EdgeLayout
@@ -2275,7 +2211,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details">
+    design-time-name="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2288,7 +2224,71 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details">
+    design-time-name="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim_Gamarek_Invoices_Master">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header"
+          TopLeft="119,55" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master"
+          TopLeft="112,141" />
+        <EdgeLayout
+          Id="Package\Dim_Gamarek_Invoices_Master.Paths[OLE DB Source Output]"
+          TopLeft="223.75,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Gamarek_Invoices_Master\Dim_Gamarek_Invoices_Master">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Gamarek_Invoices_Master\Gamarek_Invoices_Header">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

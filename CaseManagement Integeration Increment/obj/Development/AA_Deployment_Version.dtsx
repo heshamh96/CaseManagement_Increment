@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AA_Deployment_Version"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{9ED30A07-6872-4A49-80C0-53309CC71FCD}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{A99256AC-D1DC-4AEF-99F4-B096C01280A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -39,7 +39,6 @@
       DTS:refId="Package\Gamarek_Module"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{C7185562-108A-4CEF-9DA8-3A5ED2CD8F39}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
