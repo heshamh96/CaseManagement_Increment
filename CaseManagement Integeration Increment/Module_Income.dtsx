@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Income"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{11E99E20-A04D-49B8-92F7-DAFF2C515099}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{E151CF79-FCD1-47CA-ACC9-C071B6FB0F43}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -8477,7 +8477,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
           DTS:refId="Package\Flattened_to_STG\102_Stg_DWH"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{222A603E-9BC9-4845-A79C-DCD36E75B028}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -9487,14 +9486,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
                           cachedName="is_Motada5el"
                           externalMetadataColumnId="Package\Flattened_to_STG\106_Stg_DWH\Dim_Dec_IncomeTax_106.Inputs[OLE DB Destination Input].ExternalColumns[is_Motada5el]"
                           lineageId="Package\Flattened_to_STG\106_Stg_DWH\VW_106.Outputs[OLE DB Source Output].Columns[is_Motada5el]" />
-                        <inputColumn
-                          refId="Package\Flattened_to_STG\106_Stg_DWH\Dim_Dec_IncomeTax_106.Inputs[OLE DB Destination Input].Columns[Artifical_Key]"
-                          cachedCodepage="1256"
-                          cachedDataType="str"
-                          cachedLength="40"
-                          cachedName="Artifical_Key"
-                          externalMetadataColumnId="Package\Flattened_to_STG\106_Stg_DWH\Dim_Dec_IncomeTax_106.Inputs[OLE DB Destination Input].ExternalColumns[Artifical_Key]"
-                          lineageId="Package\Flattened_to_STG\106_Stg_DWH\VW_106.Outputs[OLE DB Source Output].Columns[Artifical_Key]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -9601,11 +9592,11 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
                           dataType="i8"
                           name="rn" />
                         <externalMetadataColumn
-                          refId="Package\Flattened_to_STG\106_Stg_DWH\Dim_Dec_IncomeTax_106.Inputs[OLE DB Destination Input].ExternalColumns[Artifical_Key]"
+                          refId="Package\Flattened_to_STG\106_Stg_DWH\Dim_Dec_IncomeTax_106.Inputs[OLE DB Destination Input].ExternalColumns[Artificial_Key]"
                           codePage="1256"
                           dataType="str"
                           length="40"
-                          name="Artifical_Key" />
+                          name="Artificial_Key" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -11889,7 +11880,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select inc.*
 from [Staging_Area_Increment].[dbo].[106_temp_result] inc
 left join DWH_TAX.dbo.Dim_Dec_IncomeTax_106 dw
-on inc.Artifical_Key=dw.Artificial_Key
+on inc.Artificial_Key=dw.Artificial_Key
 where 
 inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</property>
                     <property
@@ -12121,17 +12112,6 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           name="VAT_Net_Sales"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artifical_Key]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].ExternalColumns[Artifical_Key]"
-                          length="40"
-                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artifical_Key]"
-                          name="Artifical_Key"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[is_Motada5el]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
@@ -12139,6 +12119,17 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].ExternalColumns[is_Motada5el]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[is_Motada5el]"
                           name="is_Motada5el"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artificial_Key]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].ExternalColumns[Artificial_Key]"
+                          length="40"
+                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artificial_Key]"
+                          name="Artificial_Key"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -12242,15 +12233,15 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           dataType="i4"
                           name="VAT_Net_Sales" />
                         <externalMetadataColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].ExternalColumns[Artifical_Key]"
-                          codePage="1252"
-                          dataType="str"
-                          length="40"
-                          name="Artifical_Key" />
-                        <externalMetadataColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].ExternalColumns[is_Motada5el]"
                           dataType="i4"
                           name="is_Motada5el" />
+                        <externalMetadataColumn
+                          refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].ExternalColumns[Artificial_Key]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="Artificial_Key" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -12376,12 +12367,12 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Error Output].Columns[VAT_Net_Sales]"
                           name="VAT_Net_Sales" />
                         <outputColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Error Output].Columns[Artifical_Key]"
+                          refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Error Output].Columns[Artificial_Key]"
                           codePage="1252"
                           dataType="str"
                           length="40"
-                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Error Output].Columns[Artifical_Key]"
-                          name="Artifical_Key" />
+                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Error Output].Columns[Artificial_Key]"
+                          name="Artificial_Key" />
                         <outputColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Error Output].Columns[is_Motada5el]"
                           dataType="i4"
@@ -12607,13 +12598,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts.Inputs[OLE DB Destination Input].ExternalColumns[SalesWaste_705_13]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[SalesWaste_705_13]" />
                         <inputColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts.Inputs[OLE DB Destination Input].Columns[Artifical_Key]"
+                          refId="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts.Inputs[OLE DB Destination Input].Columns[Artificial_Key]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="40"
-                          cachedName="Artifical_Key"
+                          cachedName="Artificial_Key"
                           externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts.Inputs[OLE DB Destination Input].ExternalColumns[Artificial_Key]"
-                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artifical_Key]" />
+                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artificial_Key]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -12783,7 +12774,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Dec_IncomeTax_106] SET [_TaxPeriodFrom] = ?,[_TaxPeriodTo] = ?,[CapitalProfit_705_2] = ?,[CreationDate] = ?,[DeclarationNum] = ?,[DeclarationType] = ?,[DeclarationYear] = ?,[DistrictName] = ?,[Income_Net_Sales] = ?,[is_Motada5el] = ?,[mm_from] = ?,[mm_to] = ?,[NetIncome_101] = ?,[SalesWaste_705_13] = ?,[VariousIncome_705_1] = ?,[yy_from] = ?,[yy_to] = ? WHERE [Artificial_Key] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Dec_IncomeTax_106] SET [_TaxPeriodFrom] = ?,[_TaxPeriodTo] = ?,[CapitalProfit_705_2] = ?,[CreationDate] = ?,[DeclarationNum] = ?,[DeclarationType] = ?,[DeclarationYear] = ?,[DistrictName] = ?,[Income_Net_Sales] = ?,[is_Motada5el] = ?,[mm_from] = ?,[mm_to] = ?,[NetIncome_101] = ?,[SalesWaste_705_13] = ?,[Unique_Tax_ID] = ?,[VariousIncome_705_1] = ?,[yy_from] = ?,[yy_to] = ? WHERE [Artificial_Key] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12818,13 +12809,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[_TaxPeriodTo]" />
                         <inputColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[Artifical_Key]"
+                          refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[Artificial_Key]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="40"
-                          cachedName="Artifical_Key"
-                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artifical_Key]" />
+                          cachedName="Artificial_Key"
+                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artificial_Key]" />
                         <inputColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[CapitalProfit_705_2]"
                           cachedDataType="numeric"
@@ -12913,11 +12904,19 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[SalesWaste_705_13]" />
                         <inputColumn
+                          refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[Unique_Tax_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="Unique_Tax_ID"
+                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Unique_Tax_ID]" />
+                        <inputColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[VariousIncome_705_1]"
                           cachedDataType="numeric"
                           cachedName="VariousIncome_705_1"
                           cachedPrecision="18"
-                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[VariousIncome_705_1]" />
                         <inputColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[yy_from]"
@@ -12925,7 +12924,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           cachedDataType="str"
                           cachedLength="4"
                           cachedName="yy_from"
-                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[yy_from]" />
                         <inputColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].Columns[yy_to]"
@@ -12933,7 +12932,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           cachedDataType="str"
                           cachedLength="4"
                           cachedName="yy_to"
-                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                          externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                           lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[yy_to]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -13109,27 +13108,27 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="Param_14">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                           dataType="numeric"
-                          name="Param_14"
+                          name="Param_15"
                           precision="18">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
                               name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                          codePage="1252"
-                          dataType="str"
-                          length="4"
-                          name="Param_15">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
@@ -13149,8 +13148,21 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="4"
                           name="Param_17">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_18">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -13217,7 +13229,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
-                      name="FailOnFixedAttributeChange">true</property>
+                      name="FailOnFixedAttributeChange">false</property>
                     <property
                       dataType="System.String"
                       description="Specifies the column name for the inferred member."
@@ -13280,13 +13292,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Staging to DWH\106_stg_to_DWH\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Artifical_Key]"
+                          refId="Package\Staging to DWH\106_stg_to_DWH\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Artificial_Key]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="40"
-                          cachedName="Artifical_Key"
+                          cachedName="Artificial_Key"
                           externalMetadataColumnId="Package\Staging to DWH\106_stg_to_DWH\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Artificial_Key]"
-                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artifical_Key]">
+                          lineageId="Package\Staging to DWH\106_stg_to_DWH\106.Outputs[OLE DB Source Output].Columns[Artificial_Key]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -13477,7 +13489,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                             <property
                               dataType="System.Int32"
                               name="ColumnType"
-                              typeConverter="ColumnType">4</property>
+                              typeConverter="ColumnType">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -14161,7 +14173,9 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -14210,16 +14224,14 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="206.4,184.8"
-          Size="206.4,43.2"
+          Size="186.4,43.2"
           Id="Package\Flattened_to_STG"
           TopLeft="318.999996576991,219.541178469674" />
         <NodeLayout
@@ -14312,6 +14324,59 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="222.4,171.2"
+          Size="222.4,214.4"
+          Id="Package\Staging to DWH"
+          TopLeft="418.142864297848,314.223532637758" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Trunacte_IncomeFlattened"
+          TopLeft="26.7142845684168,16.7176469987651" />
+        <NodeLayout
+          Size="356,41.6"
+          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update NonTable_Declarations (SalesNet &amp; SalesTableNet)"
+          TopLeft="6.07142858116026,5.5" />
+        <NodeLayout
+          Size="336.8,41.6"
+          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update Table_Declarations (SalesNet &amp; SalesTableNet)"
+          TopLeft="5.5,68.8882406822133" />
+        <EdgeLayout
+          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet).PrecedenceConstraints[Constraint 5]"
+          TopLeft="362.07142858116,26.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.7714285811603,63.3882406822133"
+              Start="0,0"
+              End="-12.2714285811603,63.3882406822133">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,59.3882406822133" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,59.3882406822133"
+                    Point2="22.5,63.3882406822133"
+                    Point3="18.5,63.3882406822133" />
+                  <mssgle:LineSegment
+                    End="-12.2714285811603,63.3882406822133" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
@@ -14320,14 +14385,10 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="222.4,171.2"
-          Size="222.4,43.2"
-          Id="Package\Staging to DWH"
-          TopLeft="418.142864297848,314.223532637758" />
-        <NodeLayout
-          Size="206.4,41.6"
-          Id="Package\Trunacte_IncomeFlattened"
-          TopLeft="26.7142845684168,16.7176469987651" />
+          PanelSize="389.6,165.6"
+          Size="389.6,43.2"
+          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
+          TopLeft="0,507.082353803444" />
         <NodeLayout
           Size="417.6,41.6"
           Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)\Update_IncomeTax_102(Vat_DEC_NET_Sales &amp; Vat_DEC_Table_Sales )"
@@ -14553,30 +14614,30 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="198.200000255449,196.2">
+          TopLeft="198.200000255448,196.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="223.999996321542,23.341178469674"
+              EndConnector="213.999996321543,23.341178469674"
               Start="0,0"
-              End="223.999996321542,15.841178469674">
+              End="213.999996321543,15.841178469674">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.67058923483701" />
+                    End="0,7.67058923483702" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,7.67058923483701"
+                    Point1="0,7.67058923483702"
                     Point2="0,11.670589234837"
                     Point3="4,11.670589234837" />
                   <mssgle:LineSegment
-                    End="219.999996321542,11.670589234837" />
+                    End="209.999996321543,11.670589234837" />
                   <mssgle:CubicBezierSegment
-                    Point1="219.999996321542,11.670589234837"
-                    Point2="223.999996321542,11.670589234837"
-                    Point3="223.999996321542,15.670589234837" />
+                    Point1="209.999996321543,11.670589234837"
+                    Point2="213.999996321543,11.670589234837"
+                    Point3="213.999996321543,15.670589234837" />
                   <mssgle:LineSegment
-                    End="223.999996321542,15.841178469674" />
+                    End="213.999996321543,15.841178469674" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14615,13 +14676,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="422.199996576991,262.741178469674">
+          TopLeft="412.199996576991,262.741178469674">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.142867720857,51.482354168084"
+              EndConnector="117.142867720857,51.482354168084"
               Start="0,0"
-              End="107.142867720857,43.982354168084">
+              End="117.142867720857,43.982354168084">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -14632,13 +14693,13 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
                     Point2="0,25.741177084042"
                     Point3="4,25.741177084042" />
                   <mssgle:LineSegment
-                    End="103.142867720857,25.741177084042" />
+                    End="113.142867720857,25.741177084042" />
                   <mssgle:CubicBezierSegment
-                    Point1="103.142867720857,25.741177084042"
-                    Point2="107.142867720857,25.741177084042"
-                    Point3="107.142867720857,29.741177084042" />
+                    Point1="113.142867720857,25.741177084042"
+                    Point2="117.142867720857,25.741177084042"
+                    Point3="117.142867720857,29.741177084042" />
                   <mssgle:LineSegment
-                    End="107.142867720857,43.982354168084" />
+                    End="117.142867720857,43.982354168084" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14649,30 +14710,24 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="529.342864297847,357.423532637758">
+          TopLeft="418.142864297848,440.33529662294">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.0285708057631,60.411763985182"
+              EndConnector="168.228570805763,-22.5"
               Start="0,0"
-              End="57.0285708057631,52.911763985182">
+              End="168.228570805763,-15">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.205881992591" />
+                    End="164.228570805763,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.205881992591"
-                    Point2="0,30.205881992591"
-                    Point3="4,30.205881992591" />
+                    Point1="164.228570805763,0"
+                    Point2="168.228570805763,0"
+                    Point3="168.228570805763,-4" />
                   <mssgle:LineSegment
-                    End="53.0285708057631,30.205881992591" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.0285708057631,30.205881992591"
-                    Point2="57.0285708057631,30.205881992591"
-                    Point3="57.0285708057631,34.205881992591" />
-                  <mssgle:LineSegment
-                    End="57.0285708057631,52.911763985182" />
+                    End="168.228570805763,-15" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14681,55 +14736,6 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="356,41.6"
-          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update NonTable_Declarations (SalesNet &amp; SalesTableNet)"
-          TopLeft="6.07142858116026,5.5" />
-        <NodeLayout
-          Size="336.8,41.6"
-          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update Table_Declarations (SalesNet &amp; SalesTableNet)"
-          TopLeft="5.5,68.8882406822133" />
-        <EdgeLayout
-          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet).PrecedenceConstraints[Constraint 5]"
-          TopLeft="362.07142858116,26.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.7714285811603,63.3882406822133"
-              Start="0,0"
-              End="-12.2714285811603,63.3882406822133">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,59.3882406822133" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,59.3882406822133"
-                    Point2="22.5,63.3882406822133"
-                    Point3="18.5,63.3882406822133" />
-                  <mssgle:LineSegment
-                    End="-12.2714285811603,63.3882406822133" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43.2"
-          IsExpanded="False"
-          PanelSize="389.6,165.6"
-          Size="389.6,43.2"
-          Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
-          TopLeft="0,507.082353803444" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="586.371435103611,461.03529662294">
@@ -15458,96 +15464,16 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates"
-          TopLeft="428.3,196.7" />
-        <NodeLayout
-          Size="200,41.6"
-          Id="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts"
-          TopLeft="43.9,195.1" />
-        <NodeLayout
           Size="96,41.6"
           Id="Package\Staging to DWH\106_stg_to_DWH\106"
-          TopLeft="262.7,5.49999999999995" />
+          TopLeft="262.7,5.49999999999984" />
         <NodeLayout
           Size="208,41.6"
           Id="Package\Staging to DWH\106_stg_to_DWH\Slowly Changing Dimension"
           TopLeft="206.7,107.1" />
         <EdgeLayout
-          Id="Package\Staging to DWH\106_stg_to_DWH.Paths[New Output]"
-          TopLeft="277.366666666667,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-133.466666666667,46.4"
-              Start="0,0"
-              End="-133.466666666667,38.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.7725190839695" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.7725190839695"
-                    Point2="0,18.7725190839695"
-                    Point3="-4,18.7725190839695" />
-                  <mssgle:LineSegment
-                    End="-129.466666666667,18.7725190839695" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-129.466666666667,18.7725190839695"
-                    Point2="-133.466666666667,18.7725190839695"
-                    Point3="-133.466666666667,22.7725190839695" />
-                  <mssgle:LineSegment
-                    End="-133.466666666667,38.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-93.8247200520835,23.7725190839695,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Staging to DWH\106_stg_to_DWH.Paths[Changing Attribute Updates Output]"
-          TopLeft="344.033333333333,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="169.066666666667,48"
-              Start="0,0"
-              End="169.066666666667,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.4198473282443" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.4198473282443"
-                    Point2="0,19.4198473282443"
-                    Point3="4,19.4198473282443" />
-                  <mssgle:LineSegment
-                    End="165.066666666667,19.4198473282443" />
-                  <mssgle:CubicBezierSegment
-                    Point1="165.066666666667,19.4198473282443"
-                    Point2="169.066666666667,19.4198473282443"
-                    Point3="169.066666666667,23.4198473282443" />
-                  <mssgle:LineSegment
-                    End="169.066666666667,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="5.99942708333347,24.4198473282443,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Staging to DWH\106_stg_to_DWH.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
+          TopLeft="310.7,47.0999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15564,8 +15490,86 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Staging to DWH\106_stg_to_DWH\Dim_Income_106_Inserts"
+          TopLeft="5.5000000000001,208.7" />
+        <EdgeLayout
+          Id="Package\Staging to DWH\106_stg_to_DWH.Paths[New Output]"
+          TopLeft="277.366666666667,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.866666666667,60.0000000000001"
+              Start="0,0"
+              End="-171.866666666667,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-167.866666666667,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.866666666667,24.2748091603054"
+                    Point2="-171.866666666667,24.2748091603054"
+                    Point3="-171.866666666667,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-171.866666666667,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-113.024720052083,29.2748091603054,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Staging to DWH\106_stg_to_DWH\DWH_106_Updates"
+          TopLeft="228.3,208.7" />
+        <EdgeLayout
+          Id="Package\Staging to DWH\106_stg_to_DWH.Paths[Changing Attribute Updates Output]"
+          TopLeft="344.033333333333,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.9333333333333,60"
+              Start="0,0"
+              End="-30.9333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-26.9333333333333,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.9333333333333,24.2748091603054"
+                    Point2="-30.9333333333333,24.2748091603054"
+                    Point3="-30.9333333333333,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-30.9333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.0005729166667,29.2748091603054,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15609,7 +15613,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;106.Outputs[OLE DB Source Output].Columns[Artifical_Key]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;106.Outputs[OLE DB Source Output].Columns[Artificial_Key]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Artificial_Key&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
@@ -15690,7 +15694,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
       &lt;IdentificationString&gt;106.Outputs[OLE DB Source Output].Columns[Unique_Tax_ID]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Unique_Tax_ID&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;106.Outputs[OLE DB Source Output].Columns[VariousIncome_705_1]&lt;/IdentificationString&gt;
@@ -15715,7 +15719,7 @@ inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</prop
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn /&gt;
