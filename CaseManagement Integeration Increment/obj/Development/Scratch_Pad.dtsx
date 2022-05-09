@@ -11,12 +11,119 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Scratch_Pad"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{9FB29347-A6E2-49D5-85E4-A88CFF5B9C97}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{56EDC139-EDAA-4CF8-947B-E7E2FD479BF5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Deleting Overlapping Records (Spooky)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{6e1fe669-f650-4aef-b59d-699dad9fce4d}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Deleting Overlapping Records (Spooky)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f33cf5fd-a172-476c-aa22-45db0b8d4e2c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete dwh_102_that over laps with 106"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [DWH_TAX].dbo.Dim_Dec_IncomeTax_102 inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.Artificial_Key=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=102 and del.db='dwh'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7116d7eb-c617-4402-973b-20ec271b3e27}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete dwh_106_that over laps with 102"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [DWH_TAX].dbo.Dim_Dec_IncomeTax_106 inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.Artificial_Key=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=106 and del.db='dwh'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4dc81c4e-35e4-477b-9111-5544b090fd73}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete STG_102_that over laps with 106"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [102_temp_result] inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.[Artificial_Key]=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=102 and del.db='stg'&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{df5b55ec-cd7d-426b-b90b-615ca6515aa1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete STG_106_that over laps with 102"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="delete inc&#xA; FROM &#xA; [106_temp_result] inc join &#xA; [Staging_Area_Increment].[dbo].[vw_Income_Duplicates_of_102_106_Spooky] del&#xA; on inc.Artifical_Key=del.AK &#xA;and del.CreationDate=inc.CreationDate&#xA; where del.type=106 and del.db='stg'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{879ca17f-7300-476b-bc15-fd02f53faa89}"
+          DTS:From="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{fd2037b0-8dfb-4982-b9c0-c843537865a5}"
+          DTS:From="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{54a107fc-6081-4e4b-8ce2-3a3771237de7}"
+          DTS:From="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Dim_Declarations CLear"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -36,7 +143,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -53,7 +160,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -70,7 +177,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -87,7 +194,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -104,7 +211,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -121,7 +228,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -138,7 +245,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -155,7 +262,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -172,7 +279,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -189,7 +296,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -206,7 +313,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -223,7 +330,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -342,7 +449,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -359,7 +466,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -376,7 +483,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -393,7 +500,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -410,7 +517,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -427,7 +534,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -444,7 +551,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -461,7 +568,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -478,7 +585,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -495,7 +602,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -513,7 +620,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -531,7 +638,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -650,7 +757,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -667,7 +774,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -684,7 +791,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -701,7 +808,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2019_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -718,7 +825,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -735,7 +842,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -752,7 +859,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -769,7 +876,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2020_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -786,7 +893,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -803,7 +910,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q2"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -821,7 +928,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q3"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -839,7 +946,7 @@
           DTS:ExecutableType="Microsoft.ASExecuteDDLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="2021_Q4"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ASDdlData
@@ -970,7 +1077,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Dim_Declarations CLear\2019_Q1"
@@ -1038,7 +1145,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1060,7 +1169,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1082,7 +1193,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1104,7 +1217,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1126,7 +1241,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1148,7 +1265,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1182,7 +1301,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1216,7 +1337,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1250,7 +1373,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1272,7 +1397,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1294,7 +1421,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -1371,7 +1500,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1393,7 +1524,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1415,7 +1548,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1437,7 +1572,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1459,7 +1596,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1481,7 +1620,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1503,7 +1644,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1525,7 +1668,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1547,7 +1692,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1569,7 +1716,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1591,13 +1740,15 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="198.4,846.4"
+          PanelSize="228,846.4"
           Size="228,43.2"
           Id="Package\Dim_Invoices_Portal_Clear"
           TopLeft="427.285720540552,168.435295638412" />
@@ -1668,7 +1819,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1690,7 +1843,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1712,7 +1867,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1734,7 +1891,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1756,7 +1915,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1778,7 +1939,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1812,7 +1975,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1834,7 +1999,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1856,7 +2023,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1878,7 +2047,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1900,13 +2071,15 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="192,846.4"
+          PanelSize="221.6,846.4"
           Size="221.6,43.2"
           Id="Package\Dim_Invoices_Real_Clear"
           TopLeft="60,186.905882685408" />
@@ -1978,6 +2151,125 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          TopLeft="27.4285714188401,133.505883742864" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102"
+          TopLeft="33.1428572304396,198.494121362099" />
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          TopLeft="28,3.10588520142437" />
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          TopLeft="37.1428572985591,65.505886076561" />
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 2]"
+          TopLeft="28,23.9058852014244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.14285729855905,62.4000008751366"
+              Start="0,0"
+              End="1.64285729855905,62.4000008751366">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,58.4000008751366" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,58.4000008751366"
+                    Point2="-22.5,62.4000008751366"
+                    Point3="-18.5,62.4000008751366" />
+                  <mssgle:LineSegment
+                    End="1.64285729855905,62.4000008751366" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 3]"
+          TopLeft="171.542857298559,107.105886076561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.31428587971897,26.3999976663028"
+              Start="0,0"
+              End="-9.31428587971897,18.8999976663028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.19999883315138" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.19999883315138"
+                    Point2="0,13.1999988331514"
+                    Point3="-4,13.1999988331514" />
+                  <mssgle:LineSegment
+                    End="-5.31428587971897,13.1999988331514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.31428587971897,13.1999988331514"
+                    Point2="-9.31428587971897,13.1999988331514"
+                    Point3="-9.31428587971897,17.1999988331514" />
+                  <mssgle:LineSegment
+                    End="-9.31428587971897,18.8999976663028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 4]"
+          TopLeft="165.08571432464,175.105883742864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.388237619235"
+              Start="0,0"
+              End="0,15.888237619235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.888237619235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="350.4,295.2"
+          Size="287.2,43.2"
+          Id="Package\Deleting Overlapping Records (Spooky)"
+          TopLeft="60,290.105882685408" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

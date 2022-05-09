@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">TXBI-DWA-01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAmUuqGUZ2EyXKtvHgeHGBwAAAAACAAAAAAADZgAAwAAAABAAAAD5UHUvmYKGsFUrGTEWBfI/AAAAAASAAACgAAAAEAAAALlnQMetYPBB9PjuDVmr9v+IAAAAnVEh3ZcWge+i77ZETtPJak896Ant4D5Q/+sfqYQ8U9tdaWl9YpviPYup9FmB5dPLZxMXJIg9jIxQP/ZA3SK6t+U1BX5lWh1ZOoHkhqPEObiRHUwY2VCYlQT6hpOabkChvMMjxBfGD99KxdHgea0/n+u6uNfLimf4zych7VYOQeBvyJketox+0BQAAAB055KjalgxeO0cz8RtcQdN6acVPA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAmUuqGUZ2EyXKtvHgeHGBwAAAAACAAAAAAADZgAAwAAAABAAAABqBBBkgrBpsh1/Z2PzMQDfAAAAAASAAACgAAAAEAAAAHgAvykYdd/0BZBUggJybOSIAAAAapDsoLkrYvJmbKFNCMypY8k+d+4xfs4SZ912fFRvHrm+AhreAy4orGtUUQf28bkLFVns1wOgU7KvB0X9DSxtjYmi/TJz92yq+B92heOVjR4kamkBTiLlF1ZXluh3E7IENIXff6jvu3ar4Px+TCfnmoipT2+2EPXyjWfVPI7C1UUH8sZjewrXnxQAAADkvadkNktESpFUGt2cqM9NxcPwGw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -1313,10 +1313,10 @@
                 <SSIS:Property SSIS:Name="Name">Module_Income</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">66</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A04E2F1B-B250-4B5F-8B9D-80E9DAE50EB5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F398C88E-0630-4B21-9DDD-D1EC41BDBBC4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1330,10 +1330,10 @@
                 <SSIS:Property SSIS:Name="Name">Scratch_Pad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9FB29347-A6E2-49D5-85E4-A88CFF5B9C97}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{56EDC139-EDAA-4CF8-947B-E7E2FD479BF5}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
