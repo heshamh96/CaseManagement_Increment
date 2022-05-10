@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{D8A93CDC-D51C-4106-8D28-EE17FBACE2BA}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{B7C0EFD4-B5E4-4E69-8E8E-38CF2BF90E9E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -15573,9 +15573,9 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="987.2,402.4"
-          Size="987.2,445.6"
+          Size="188.8,43.2"
           Id="Package\Namozag 41 Logic"
           TopLeft="305.102046012183,192.094120341107" />
         <NodeLayout
@@ -15636,9 +15636,9 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="267.2,277.6"
-          Size="267.2,320.8"
+          Size="214.4,43.2"
           Id="Package\Namozag 46 &amp; 47 Logic"
           TopLeft="269.959188270847,302.124373985079" />
         <EdgeLayout
@@ -15647,9 +15647,9 @@ and nmz.TransactionData_Id not in
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="277.485712826008,90.7294139010689"
+              EndConnector="-121.714287173992,90.7294139010689"
               Start="0,0"
-              End="277.485712826008,83.2294139010689">
+              End="-121.714287173992,83.2294139010689">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15658,15 +15658,15 @@ and nmz.TransactionData_Id not in
                   <mssgle:CubicBezierSegment
                     Point1="0,41.3647069505345"
                     Point2="0,45.3647069505345"
-                    Point3="4,45.3647069505345" />
+                    Point3="-4,45.3647069505345" />
                   <mssgle:LineSegment
-                    End="273.485712826008,45.3647069505345" />
+                    End="-117.714287173992,45.3647069505345" />
                   <mssgle:CubicBezierSegment
-                    Point1="273.485712826008,45.3647069505345"
-                    Point2="277.485712826008,45.3647069505345"
-                    Point3="277.485712826008,49.3647069505345" />
+                    Point1="-117.714287173992,45.3647069505345"
+                    Point2="-121.714287173992,45.3647069505345"
+                    Point3="-121.714287173992,49.3647069505345" />
                   <mssgle:LineSegment
-                    End="277.485712826008,83.2294139010689" />
+                    End="-121.714287173992,83.2294139010689" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15677,24 +15677,30 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="305.102046012183,414.894120341107">
+          TopLeft="399.502046012183,235.294120341107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98.4571422586639,-112.769746356028"
+              EndConnector="-22.3428577413361,66.8302536439722"
               Start="0,0"
-              End="98.4571422586639,-105.269746356028">
+              End="-22.3428577413361,59.3302536439722">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="94.4571422586639,0" />
+                    End="0,29.4151268219861" />
                   <mssgle:CubicBezierSegment
-                    Point1="94.4571422586639,0"
-                    Point2="98.4571422586639,0"
-                    Point3="98.4571422586639,-4" />
+                    Point1="0,29.4151268219861"
+                    Point2="0,33.4151268219861"
+                    Point3="-4,33.4151268219861" />
                   <mssgle:LineSegment
-                    End="98.4571422586639,-105.269746356028" />
+                    End="-18.3428577413361,33.4151268219861" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.3428577413361,33.4151268219861"
+                    Point2="-22.3428577413361,33.4151268219861"
+                    Point3="-22.3428577413361,37.4151268219861" />
+                  <mssgle:LineSegment
+                    End="-22.3428577413361,59.3302536439722" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
