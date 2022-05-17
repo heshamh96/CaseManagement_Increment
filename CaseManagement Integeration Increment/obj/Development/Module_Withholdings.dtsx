@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{7986D4B7-A488-445A-AEA7-8B807BB812BD}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{B7C0EFD4-B5E4-4E69-8E8E-38CF2BF90E9E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -9610,7 +9610,7 @@ and nmz.TransactionData_Id not in
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Excel_El_Masla7a_Mapped_Withholding_Not_CLosed]</property>
+                      name="OpenRowset">[dbo].[Excel_El_Masla7a_Mapped_Withholding_Not_CLosed_NMZ_41]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -10374,7 +10374,7 @@ where geha.Unique_Tax_Id!='561964467'
 --and nmz.Closed=1
 and (nmz.Closed =1 or nmz.Closed_Date is not null)
 and nmz.TransactionData_Id not in
-( select distinct TransactionData_Id from [Excel_Withholdings_Transations_Mapping].[dbo].Excel_El_Masla7a_Mapped_Withholding_CLosed
+( select distinct TransactionData_Id from [Excel_Withholdings_Transations_Mapping].[dbo].[Excel_El_Masla7a_Mapped_Withholding_CLosed_NMZ_41]
 )</property>
                     <property
                       dataType="System.String"
@@ -11345,7 +11345,7 @@ and nmz.TransactionData_Id not in
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[Excel_El_Masla7a_Mapped_Withholding_CLosed]</property>
+                      name="OpenRowset">[dbo].[Excel_El_Masla7a_Mapped_Withholding_CLosed_NMZ_41]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -15211,11 +15211,146 @@ and nmz.TransactionData_Id not in
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables"
+          TopLeft="28,131.811767194015" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps"
+          TopLeft="44.6040772813401,199.805045791905" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables"
+          TopLeft="38.1061217121757,61.2142864956576" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Truncate ALL LKPs"
+          TopLeft="45.6979644247119,3.07226981456722" />
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables.PrecedenceConstraints[Constraint]"
+          TopLeft="117.053060856088,102.814286495658">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.9974806983578"
+              Start="0,0"
+              End="0,21.4974806983578">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4974806983578" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables.PrecedenceConstraints[Constraint 1]"
+          TopLeft="118.70203864067,173.411767194015">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.3932785978898"
+              Start="0,0"
+              End="0,18.8932785978898">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8932785978898" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables.PrecedenceConstraints[Constraint 2]"
+          TopLeft="211.297964424712,23.8722698145672">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.3918427125362,58.1420166810903"
+              Start="0,0"
+              End="-4.89184271253623,58.1420166810903">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,54.1420166810903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,54.1420166810903"
+                    Point2="22.5,58.1420166810903"
+                    Point3="18.5,58.1420166810903" />
+                  <mssgle:LineSegment
+                    End="-4.89184271253623,58.1420166810903" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="61.6"
+          IsExpanded="False"
+          PanelSize="260.8,300"
+          Size="260.8,61.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables"
+          TopLeft="390.816333186175,39.764706440038" />
         <NodeLayout
           Size="240.8,41.6"
           Id="Package\Namozag 41 Logic\Namozag41_Increment_Flattening"
           TopLeft="348.871432600216,75.5000000000001" />
+        <NodeLayout
+          Size="273.6,41.6"
+          Id="Package\Namozag 41 Logic\Namzag41_Flattened_Currency Cleansing"
+          TopLeft="315.871432600216,145.5" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Namozag 41 Logic\Transfer Withholding Data To DWH"
+          TopLeft="735.871432600215,305.5" />
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\Namozag 41 Logic\Trasfer Not Closed data to Elmasla7a"
+          TopLeft="5.5,266.394115673712" />
+        <NodeLayout
+          Size="271.2,41.6"
+          Id="Package\Namozag 41 Logic\Trasfer The increment to Elmasla7a data"
+          TopLeft="286.871432600216,269.5" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Namozag 41 Logic\Truncate DWH"
+          TopLeft="602.871432600216,265.5" />
+        <NodeLayout
+          Size="299.2,41.6"
+          Id="Package\Namozag 41 Logic\Truncate Namozag 41 to Prepare for The Logic"
+          TopLeft="367.871432600216,5.5" />
+        <NodeLayout
+          Size="207.2,41.6"
+          Id="Package\Namozag 41 Logic\Truncate_Not_Closed_Data"
+          TopLeft="83.2714304885088,168.229412150795" />
         <EdgeLayout
           Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint]"
           TopLeft="517.471432600216,47.1">
@@ -15284,10 +15419,6 @@ and nmz.TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="273.6,41.6"
-          Id="Package\Namozag 41 Logic\Namzag41_Flattened_Currency Cleansing"
-          TopLeft="315.871432600216,145.5" />
         <EdgeLayout
           Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 2]"
           TopLeft="452.871432600216,187.5">
@@ -15314,6 +15445,90 @@ and nmz.TransactionData_Id not in
                     Point3="-30.5,45" />
                   <mssgle:LineSegment
                     End="-30.5,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 3]"
+          TopLeft="557.871432600216,288.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45,0"
+              Start="0,0"
+              End="37.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 4]"
+          TopLeft="750.871432600215,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108,22.5"
+              Start="0,0"
+              End="108,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104,0"
+                    Point2="108,0"
+                    Point3="108,4" />
+                  <mssgle:LineSegment
+                    End="108,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 5]"
+          TopLeft="186.871430488509,209.829412150795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-54.9714304885088,56.5647035229165"
+              Start="0,0"
+              End="-54.9714304885088,49.0647035229165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2823517614582" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2823517614582"
+                    Point2="0,28.2823517614582"
+                    Point3="-4,28.2823517614582" />
+                  <mssgle:LineSegment
+                    End="-50.9714304885088,28.2823517614582" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.9714304885088,28.2823517614582"
+                    Point2="-54.9714304885088,28.2823517614582"
+                    Point3="-54.9714304885088,32.2823517614582" />
+                  <mssgle:LineSegment
+                    End="-54.9714304885088,49.0647035229165" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15356,260 +15571,13 @@ and nmz.TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="299.2,41.6"
-          Id="Package\Namozag 41 Logic\Truncate Namozag 41 to Prepare for The Logic"
-          TopLeft="367.871432600216,5.5" />
-        <NodeLayout
-          Size="246.4,41.6"
-          Id="Package\Namozag 41 Logic\Transfer Withholding Data To DWH"
-          TopLeft="735.871432600215,305.5" />
-        <EdgeLayout
-          Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 4]"
-          TopLeft="750.871432600215,283">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108,22.5"
-              Start="0,0"
-              End="108,15">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="104,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="104,0"
-                    Point2="108,0"
-                    Point3="108,4" />
-                  <mssgle:LineSegment
-                    End="108,15" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="252.8,41.6"
-          Id="Package\Namozag 41 Logic\Trasfer Not Closed data to Elmasla7a"
-          TopLeft="5.5,266.394115673712" />
-        <EdgeLayout
-          Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 5]"
-          TopLeft="186.871430488509,209.829412150795">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-54.9714304885088,56.5647035229165"
-              Start="0,0"
-              End="-54.9714304885088,49.0647035229165">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2823517614582" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.2823517614582"
-                    Point2="0,28.2823517614582"
-                    Point3="-4,28.2823517614582" />
-                  <mssgle:LineSegment
-                    End="-50.9714304885088,28.2823517614582" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.9714304885088,28.2823517614582"
-                    Point2="-54.9714304885088,28.2823517614582"
-                    Point3="-54.9714304885088,32.2823517614582" />
-                  <mssgle:LineSegment
-                    End="-54.9714304885088,49.0647035229165" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="271.2,41.6"
-          Id="Package\Namozag 41 Logic\Trasfer The increment to Elmasla7a data"
-          TopLeft="286.871432600216,269.5" />
-        <EdgeLayout
-          Id="Package\Namozag 41 Logic.PrecedenceConstraints[Constraint 3]"
-          TopLeft="557.871432600216,288.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45,0"
-              Start="0,0"
-              End="37.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="37.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Namozag 41 Logic\Truncate DWH"
-          TopLeft="602.871432600216,265.5" />
-        <NodeLayout
-          Size="207.2,41.6"
-          Id="Package\Namozag 41 Logic\Truncate_Not_Closed_Data"
-          TopLeft="83.2714304885088,168.229412150795" />
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="987.2,402.4"
           Size="188.8,43.2"
           Id="Package\Namozag 41 Logic"
-          TopLeft="305.102046012183,192.705885055569" />
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables"
-          TopLeft="38.1061217121757,61.2142864956576" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables"
-          TopLeft="28,131.811767194015" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables.PrecedenceConstraints[Constraint]"
-          TopLeft="117.053060856088,102.814286495658">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.9974806983578"
-              Start="0,0"
-              End="0,21.4974806983578">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.4974806983578" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps"
-          TopLeft="44.6040772813401,199.805045791905" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables.PrecedenceConstraints[Constraint 1]"
-          TopLeft="118.70203864067,173.411767194015">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.3932785978898"
-              Start="0,0"
-              End="0,18.8932785978898">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.8932785978898" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Truncate ALL LKPs"
-          TopLeft="45.6979644247119,3.07226981456722" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables.PrecedenceConstraints[Constraint 2]"
-          TopLeft="211.297964424712,23.8722698145672">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-12.3918427125362,58.1420166810903"
-              Start="0,0"
-              End="-4.89184271253623,58.1420166810903">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,54.1420166810903" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,54.1420166810903"
-                    Point2="22.5,58.1420166810903"
-                    Point3="18.5,58.1420166810903" />
-                  <mssgle:LineSegment
-                    End="-4.89184271253623,58.1420166810903" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="61.6"
-          IsExpanded="False"
-          PanelSize="260.8,300"
-          Size="260.8,61.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables"
-          TopLeft="390.816333186175,39.764706440038" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="521.216333186175,101.364706440038">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-121.714287173992,91.3411786155306"
-              Start="0,0"
-              End="-121.714287173992,83.8411786155306">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.6705893077653" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.6705893077653"
-                    Point2="0,45.6705893077653"
-                    Point3="-4,45.6705893077653" />
-                  <mssgle:LineSegment
-                    End="-117.714287173992,45.6705893077653" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-117.714287173992,45.6705893077653"
-                    Point2="-121.714287173992,45.6705893077653"
-                    Point3="-121.714287173992,49.6705893077653" />
-                  <mssgle:LineSegment
-                    End="-121.714287173992,83.8411786155306" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Namozag 46 &amp; 47 Logic\Truncate 46 &amp; 47"
-          TopLeft="55.2979647166528,21.3109294930957" />
+          TopLeft="305.102046012183,192.094120341107" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer"
@@ -15618,6 +15586,10 @@ and nmz.TransactionData_Id not in
           Size="185.6,41.6"
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer"
           TopLeft="52.8489850831103,181.176475613529" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Namozag 46 &amp; 47 Logic\Truncate 46 &amp; 47"
+          TopLeft="55.2979647166528,21.3109294930957" />
         <EdgeLayout
           Id="Package\Namozag 46 &amp; 47 Logic.PrecedenceConstraints[Constraint]"
           TopLeft="138.224495266339,62.9109294930957">
@@ -15663,26 +15635,72 @@ and nmz.TransactionData_Id not in
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
-          HeaderHeight="43"
+          HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="267.2,277.6"
-          Size="267.2,43.2"
+          Size="214.4,43.2"
           Id="Package\Namozag 46 &amp; 47 Logic"
-          TopLeft="269.387759689687,301.512609270617" />
+          TopLeft="269.959188270847,302.124373985079" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="401.244902850935,235.905885055569">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="521.216333186175,101.364706440038">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.6067242150487"
+              EndConnector="-121.714287173992,90.7294139010689"
               Start="0,0"
-              End="0,58.1067242150487">
+              End="-121.714287173992,83.2294139010689">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.1067242150487" />
+                    End="0,41.3647069505345" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.3647069505345"
+                    Point2="0,45.3647069505345"
+                    Point3="-4,45.3647069505345" />
+                  <mssgle:LineSegment
+                    End="-117.714287173992,45.3647069505345" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.714287173992,45.3647069505345"
+                    Point2="-121.714287173992,45.3647069505345"
+                    Point3="-121.714287173992,49.3647069505345" />
+                  <mssgle:LineSegment
+                    End="-121.714287173992,83.2294139010689" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="399.502046012183,235.294120341107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.3428577413361,66.8302536439722"
+              Start="0,0"
+              End="-22.3428577413361,59.3302536439722">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4151268219861" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.4151268219861"
+                    Point2="0,33.4151268219861"
+                    Point3="-4,33.4151268219861" />
+                  <mssgle:LineSegment
+                    End="-18.3428577413361,33.4151268219861" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.3428577413361,33.4151268219861"
+                    Point2="-22.3428577413361,33.4151268219861"
+                    Point3="-22.3428577413361,37.4151268219861" />
+                  <mssgle:LineSegment
+                    End="-22.3428577413361,59.3302536439722" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15695,10 +15713,862 @@ and nmz.TransactionData_Id not in
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayerCategories"
+          TopLeft="616.8,177.6" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha_Type"
+          TopLeft="396.8,169.6" />
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\GehaType"
+          TopLeft="381.6,72" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Gehat"
+          TopLeft="103.9,150.3" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayer_Categories"
+          TopLeft="632,64" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha"
+          TopLeft="172,72" />
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables.Paths[OLE DB Source Output2]"
+          TopLeft="720.4,105.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.9999999999999,72"
+              Start="0,0"
+              End="-17.9999999999999,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="-4,36" />
+                  <mssgle:LineSegment
+                    End="-13.9999999999999,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.9999999999999,36"
+                    Point2="-17.9999999999999,36"
+                    Point3="-17.9999999999999,40" />
+                  <mssgle:LineSegment
+                    End="-17.9999999999999,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables.Paths[OLE DB Source Output1]"
+          TopLeft="444.4,113.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18,56"
+              Start="0,0"
+              End="18,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="4,28" />
+                  <mssgle:LineSegment
+                    End="14,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14,28"
+                    Point2="18,28"
+                    Point3="18,32" />
+                  <mssgle:LineSegment
+                    End="18,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables.Paths[OLE DB Source Output]"
+          TopLeft="223.2,113.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-66.1,36.7"
+              Start="0,0"
+              End="-66.1,29.2">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.35"
+                    Point2="0,18.35"
+                    Point3="-4,18.35" />
+                  <mssgle:LineSegment
+                    End="-62.1,18.35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.1,18.35"
+                    Point2="-66.1,18.35"
+                    Point3="-66.1,22.35" />
+                  <mssgle:LineSegment
+                    End="-66.1,29.2" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayerCategories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha_Type">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\GehaType">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Gehat">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayer_Categories">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\District_Details"
+          TopLeft="29.6,40" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\DistrictDetails"
+          TopLeft="1.4210854715202E-14,151.2" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Reserved_Rates_42_44"
+          TopLeft="419.2,38.4" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Payment_Methods"
+          TopLeft="674.399999999999,52" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Currency_Types"
+          TopLeft="862.399999999999,52.8" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\ReservedRates_42_44"
+          TopLeft="410.4,159.2" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Record_Types24_44"
+          TopLeft="175.2,156.8" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\CurrencyTypes"
+          TopLeft="859.199999999999,153.6" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\PaymentMethods"
+          TopLeft="667.999999999999,149.6" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\RecordTypes42_44"
+          TopLeft="191.2,37.6" />
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output3]"
+          TopLeft="936.199999999999,94.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.2"
+              Start="0,0"
+              End="0,51.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output2]"
+          TopLeft="756.799999999999,93.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.19999999999993,56"
+              Start="0,0"
+              End="-9.19999999999993,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="-4,28" />
+                  <mssgle:LineSegment
+                    End="-5.19999999999993,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.19999999999993,28"
+                    Point2="-9.19999999999993,28"
+                    Point3="-9.19999999999993,32" />
+                  <mssgle:LineSegment
+                    End="-9.19999999999993,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output1]"
+          TopLeft="513.6,80">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.9999999999999,79.2"
+              Start="0,0"
+              End="-11.9999999999999,71.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.6"
+                    Point2="0,39.6"
+                    Point3="-4,39.6" />
+                  <mssgle:LineSegment
+                    End="-7.99999999999994,39.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.99999999999994,39.6"
+                    Point2="-11.9999999999999,39.6"
+                    Point3="-11.9999999999999,43.6" />
+                  <mssgle:LineSegment
+                    End="-11.9999999999999,71.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output]"
+          TopLeft="275.2,79.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.2,77.6"
+              Start="0,0"
+              End="-13.2,70.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.8"
+                    Point2="0,38.8"
+                    Point3="-4,38.8" />
+                  <mssgle:LineSegment
+                    End="-9.19999999999999,38.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.19999999999999,38.8"
+                    Point2="-13.2,38.8"
+                    Point3="-13.2,42.8" />
+                  <mssgle:LineSegment
+                    End="-13.2,70.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output4]"
+          TopLeft="104,81.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.4,69.6"
+              Start="0,0"
+              End="-32.4,62.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.8"
+                    Point2="0,34.8"
+                    Point3="-4,34.8" />
+                  <mssgle:LineSegment
+                    End="-28.4,34.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.4,34.8"
+                    Point2="-32.4,34.8"
+                    Point3="-32.4,38.8" />
+                  <mssgle:LineSegment
+                    End="-32.4,62.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\District_Details">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\DistrictDetails">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Reserved_Rates_42_44">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Payment_Methods">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Currency_Types">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\ReservedRates_42_44">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Record_Types24_44">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\CurrencyTypes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\PaymentMethods">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\RecordTypes42_44">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="113.6,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque"
+          TopLeft="255.2,185.6" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry Payments"
+          TopLeft="736,83.2" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic Payments"
+          TopLeft="531.2,75.2" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque Payemnts"
+          TopLeft="299.2,65.6" />
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic"
+          TopLeft="516.8,184" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash Payments"
+          TopLeft="78.4,64.8" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry"
+          TopLeft="697.6,184" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash"
+          TopLeft="39.2,182.4" />
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output3]"
+          TopLeft="814,124.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.1999999999999,59.2"
+              Start="0,0"
+              End="-63.1999999999999,51.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6"
+                    Point2="0,29.6"
+                    Point3="-4,29.6" />
+                  <mssgle:LineSegment
+                    End="-59.1999999999999,29.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.1999999999999,29.6"
+                    Point2="-63.1999999999999,29.6"
+                    Point3="-63.1999999999999,33.6" />
+                  <mssgle:LineSegment
+                    End="-63.1999999999999,51.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output2]"
+          TopLeft="617.6,116.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38.8,67.2"
+              Start="0,0"
+              End="-38.8,59.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.6"
+                    Point2="0,33.6"
+                    Point3="-4,33.6" />
+                  <mssgle:LineSegment
+                    End="-34.8,33.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.8,33.6"
+                    Point2="-38.8,33.6"
+                    Point3="-38.8,37.6" />
+                  <mssgle:LineSegment
+                    End="-38.8,59.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output1]"
+          TopLeft="380.4,107.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.3999999999999,78.4"
+              Start="0,0"
+              End="-68.3999999999999,70.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.2"
+                    Point2="0,39.2"
+                    Point3="-4,39.2" />
+                  <mssgle:LineSegment
+                    End="-64.3999999999999,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.3999999999999,39.2"
+                    Point2="-68.3999999999999,39.2"
+                    Point3="-68.3999999999999,43.2" />
+                  <mssgle:LineSegment
+                    End="-68.3999999999999,70.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output]"
+          TopLeft="153.6,106.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-64,76"
+              Start="0,0"
+              End="-64,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="-4,38" />
+                  <mssgle:LineSegment
+                    End="-60,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60,38"
+                    Point2="-64,38"
+                    Point3="-64,42" />
+                  <mssgle:LineSegment
+                    End="-64,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry Payments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic Payments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque Payemnts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash Payments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Namozag 41 Logic\Namozag41_Increment_Flattening">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\Namozag 41 Logic\Namozag41_Increment_Flattening\XML Parser Transform"
@@ -15742,7 +16612,9 @@ and nmz.TransactionData_Id not in
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15770,7 +16642,9 @@ and nmz.TransactionData_Id not in
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15801,7 +16675,7 @@ and nmz.TransactionData_Id not in
     design-time-name="Package\Namozag 41 Logic\Transfer Withholding Data To DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="211.2,41.6"
           Id="Package\Namozag 41 Logic\Transfer Withholding Data To DWH\IBM &amp; Excel Data Combined"
@@ -15841,7 +16715,9 @@ and nmz.TransactionData_Id not in
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16014,846 +16890,18 @@ and nmz.TransactionData_Id not in
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash Payments"
-          TopLeft="78.4,64.8" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque Payemnts"
-          TopLeft="299.2,65.6" />
-        <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic Payments"
-          TopLeft="531.2,75.2" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry Payments"
-          TopLeft="736,83.2" />
-        <NodeLayout
-          Size="100.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash"
-          TopLeft="39.2,182.4" />
-        <NodeLayout
-          Size="113.6,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque"
-          TopLeft="255.2,185.6" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry"
-          TopLeft="697.6,184" />
-        <NodeLayout
-          Size="124,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic"
-          TopLeft="516.8,184" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output]"
-          TopLeft="153.6,106.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-64,76"
-              Start="0,0"
-              End="-64,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="-4,38" />
-                  <mssgle:LineSegment
-                    End="-60,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-60,38"
-                    Point2="-64,38"
-                    Point3="-64,42" />
-                  <mssgle:LineSegment
-                    End="-64,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output1]"
-          TopLeft="380.4,107.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.3999999999999,78.4"
-              Start="0,0"
-              End="-68.3999999999999,70.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.2"
-                    Point2="0,39.2"
-                    Point3="-4,39.2" />
-                  <mssgle:LineSegment
-                    End="-64.3999999999999,39.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.3999999999999,39.2"
-                    Point2="-68.3999999999999,39.2"
-                    Point3="-68.3999999999999,43.2" />
-                  <mssgle:LineSegment
-                    End="-68.3999999999999,70.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output2]"
-          TopLeft="617.6,116.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-38.8,67.2"
-              Start="0,0"
-              End="-38.8,59.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.6"
-                    Point2="0,33.6"
-                    Point3="-4,33.6" />
-                  <mssgle:LineSegment
-                    End="-34.8,33.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-34.8,33.6"
-                    Point2="-38.8,33.6"
-                    Point3="-38.8,37.6" />
-                  <mssgle:LineSegment
-                    End="-38.8,59.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables.Paths[OLE DB Source Output3]"
-          TopLeft="814,124.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-63.1999999999999,59.2"
-              Start="0,0"
-              End="-63.1999999999999,51.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6"
-                    Point2="0,29.6"
-                    Point3="-4,29.6" />
-                  <mssgle:LineSegment
-                    End="-59.1999999999999,29.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.1999999999999,29.6"
-                    Point2="-63.1999999999999,29.6"
-                    Point3="-63.1999999999999,33.6" />
-                  <mssgle:LineSegment
-                    End="-63.1999999999999,51.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash Payments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque Payemnts">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic Payments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry Payments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="102.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha"
-          TopLeft="172,72" />
-        <NodeLayout
-          Size="125.6,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\GehaType"
-          TopLeft="381.6,72" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Gehat"
-          TopLeft="103.9,150.3" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables.Paths[OLE DB Source Output]"
-          TopLeft="223.2,113.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-66.1,36.7"
-              Start="0,0"
-              End="-66.1,29.2">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.35"
-                    Point2="0,18.35"
-                    Point3="-4,18.35" />
-                  <mssgle:LineSegment
-                    End="-62.1,18.35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62.1,18.35"
-                    Point2="-66.1,18.35"
-                    Point3="-66.1,22.35" />
-                  <mssgle:LineSegment
-                    End="-66.1,29.2" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha_Type"
-          TopLeft="396.8,169.6" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables.Paths[OLE DB Source Output1]"
-          TopLeft="444.4,113.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18,56"
-              Start="0,0"
-              End="18,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
-                  <mssgle:LineSegment
-                    End="14,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,28"
-                    Point2="18,28"
-                    Point3="18,32" />
-                  <mssgle:LineSegment
-                    End="18,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayerCategories"
-          TopLeft="616.8,177.6" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayer_Categories"
-          TopLeft="632,64" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables.Paths[OLE DB Source Output2]"
-          TopLeft="720.4,105.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.9999999999999,72"
-              Start="0,0"
-              End="-17.9999999999999,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32"
-                    Point2="0,36"
-                    Point3="-4,36" />
-                  <mssgle:LineSegment
-                    End="-13.9999999999999,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.9999999999999,36"
-                    Point2="-17.9999999999999,36"
-                    Point3="-17.9999999999999,40" />
-                  <mssgle:LineSegment
-                    End="-17.9999999999999,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\GehaType">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Gehat">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\Geha_Type">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="168,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\RecordTypes42_44"
-          TopLeft="191.2,37.6" />
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Record_Types24_44"
-          TopLeft="175.2,156.8" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output]"
-          TopLeft="275.2,79.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-13.2,77.6"
-              Start="0,0"
-              End="-13.2,70.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.8"
-                    Point2="0,38.8"
-                    Point3="-4,38.8" />
-                  <mssgle:LineSegment
-                    End="-9.19999999999999,38.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.19999999999999,38.8"
-                    Point2="-13.2,38.8"
-                    Point3="-13.2,42.8" />
-                  <mssgle:LineSegment
-                    End="-13.2,70.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Reserved_Rates_42_44"
-          TopLeft="419.2,38.4" />
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\ReservedRates_42_44"
-          TopLeft="410.4,159.2" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output1]"
-          TopLeft="513.6,80">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.9999999999999,79.2"
-              Start="0,0"
-              End="-11.9999999999999,71.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.6"
-                    Point2="0,39.6"
-                    Point3="-4,39.6" />
-                  <mssgle:LineSegment
-                    End="-7.99999999999994,39.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.99999999999994,39.6"
-                    Point2="-11.9999999999999,39.6"
-                    Point3="-11.9999999999999,43.6" />
-                  <mssgle:LineSegment
-                    End="-11.9999999999999,71.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Payment_Methods"
-          TopLeft="674.399999999999,52" />
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\PaymentMethods"
-          TopLeft="667.999999999999,149.6" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output2]"
-          TopLeft="756.799999999999,93.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.19999999999993,56"
-              Start="0,0"
-              End="-9.19999999999993,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="-4,28" />
-                  <mssgle:LineSegment
-                    End="-5.19999999999993,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.19999999999993,28"
-                    Point2="-9.19999999999993,28"
-                    Point3="-9.19999999999993,32" />
-                  <mssgle:LineSegment
-                    End="-9.19999999999993,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Currency_Types"
-          TopLeft="862.399999999999,52.8" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\CurrencyTypes"
-          TopLeft="859.199999999999,153.6" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output3]"
-          TopLeft="936.199999999999,94.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.2"
-              Start="0,0"
-              End="0,51.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\District_Details"
-          TopLeft="29.6,40" />
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\DistrictDetails"
-          TopLeft="1.4210854715202E-14,151.2" />
-        <EdgeLayout
-          Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps.Paths[OLE DB Source Output4]"
-          TopLeft="104,81.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-32.4,69.6"
-              Start="0,0"
-              End="-32.4,62.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.8"
-                    Point2="0,34.8"
-                    Point3="-4,34.8" />
-                  <mssgle:LineSegment
-                    End="-28.4,34.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28.4,34.8"
-                    Point2="-32.4,34.8"
-                    Point3="-32.4,38.8" />
-                  <mssgle:LineSegment
-                    End="-32.4,62.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayerCategories">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayer_Categories">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\RecordTypes42_44">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Record_Types24_44">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Reserved_Rates_42_44">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\ReservedRates_42_44">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Payment_Methods">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\PaymentMethods">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Currency_Types">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\CurrencyTypes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\District_Details">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\DistrictDetails">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="274.4,41.6"
-          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer\EL_Masla7a_Mapping_Final_Namozag_46"
-          TopLeft="314.4,80" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="310.4,41.6"
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_46"
           TopLeft="256,212.8" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer\EL_Masla7a_Mapping_Final_Namozag_46"
+          TopLeft="314.4,80" />
         <EdgeLayout
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer.Paths[OLE DB Source Output]"
           TopLeft="451.6,121.6">
@@ -16885,57 +16933,9 @@ and nmz.TransactionData_Id not in
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="274.4,41.6"
-          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47"
-          TopLeft="335.2,82.4" />
-        <NodeLayout
-          Size="310.4,41.6"
-          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47"
-          TopLeft="358.4,227.2" />
-        <EdgeLayout
-          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer.Paths[OLE DB Source Output]"
-          TopLeft="472.4,124">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41.2,103.2"
-              Start="0,0"
-              End="41.2,95.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.6"
-                    Point2="0,51.6"
-                    Point3="4,51.6" />
-                  <mssgle:LineSegment
-                    End="37.2,51.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.2,51.6"
-                    Point2="41.2,51.6"
-                    Point3="41.2,55.6" />
-                  <mssgle:LineSegment
-                    End="41.2,95.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16967,6 +16967,58 @@ and nmz.TransactionData_Id not in
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="310.4,41.6"
+          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47"
+          TopLeft="358.4,227.2" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47"
+          TopLeft="335.2,82.4" />
+        <EdgeLayout
+          Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer.Paths[OLE DB Source Output]"
+          TopLeft="472.4,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.2,103.2"
+              Start="0,0"
+              End="41.2,95.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.6"
+                    Point2="0,51.6"
+                    Point3="4,51.6" />
+                  <mssgle:LineSegment
+                    End="37.2,51.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.2,51.6"
+                    Point2="41.2,51.6"
+                    Point3="41.2,55.6" />
+                  <mssgle:LineSegment
+                    End="41.2,95.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47">
     <Properties>
