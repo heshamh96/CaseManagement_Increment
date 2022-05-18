@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{473A956F-3259-4CBE-A09F-5318D147DF58}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{65B081A4-20DF-422D-97CC-664852E8121E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -15148,6 +15148,7 @@ and nmz.TransactionData_Id not in
           DTS:refId="Package\Namozag 46 &amp; 47 Logic\Namzag46_Flattened_Currency Cleansing"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{379530F0-B010-47AF-B431-9C7170FD201E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -15165,6 +15166,7 @@ and nmz.TransactionData_Id not in
           DTS:refId="Package\Namozag 46 &amp; 47 Logic\Namzag47_Flattened_Currency Cleansing"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{e429f58f-b81f-4bee-b3dd-e8bf9e176c45}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
