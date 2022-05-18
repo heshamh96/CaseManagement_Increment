@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <ServerName>.</ServerName>
+        <ServerName>TXBI-DWA-01\TXBIDB</ServerName>
         <PathOnServer>/SSISDB/DWH_VAT_BI_Increment_Project_Deployment/CaseManagement Integeration Increment</PathOnServer>
         <UserIDs />
         <UserPasswords />

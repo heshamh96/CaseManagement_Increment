@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Income"
   DTS:PackageType="5"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{AA8E16AA-5F09-4807-A0EF-E3772A810B34}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{D9F20D95-7110-4988-A7BF-79808DD8D34D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{D55E4A75-CF1E-4A55-B27D-7C47A7ED3D3E}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -8362,7 +8361,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:refId="Package\Flattened_to_STG"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{D123EC6B-A103-481F-B26F-0A9A27F13E19}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -10150,7 +10148,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:refId="Package\Post_Load_Deletions"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{C696E756-BE07-4320-9B45-B4F70C76EA54}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -10207,7 +10204,6 @@ not in (select inc.Artificial_Key+'_'+convert(varchar,b.[CreationDate]) from DWH
       DTS:refId="Package\Staging to DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:Disabled="True"
       DTS:DTSID="{DCF6EA0E-1C78-4ABD-B4A2-AC4F615F26D9}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -14393,7 +14389,6 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
       DTS:refId="Package\Trunacte_IncomeFlattened"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{D1607997-A6B9-470A-820C-CAD67A1EA48E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -14410,6 +14405,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
       DTS:refId="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{5c1dda82-b7e4-4836-9300-6a4d7c985583}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -14958,7 +14954,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Trunacte_IncomeFlattened"
-          TopLeft="26.7142845684168,16.105882284303" />
+          TopLeft="95.2857143076099,65.0470594412728" />
         <NodeLayout
           Size="356,41.6"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update NonTable_Declarations (SalesNet &amp; SalesTableNet)"
@@ -15192,37 +15188,25 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="452,408"
-          Size="452,451.2"
+          Size="312,43.2"
           Id="Package\Update_IncomeTax_Dim_Tables(102 &amp; 106)"
           TopLeft="310.000005279269,595.670591787319" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="129.914284568417,57.705882284303">
+          TopLeft="198.342857281529,106.647059441273">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="68.2857156870317,95.294117715697"
+              EndConnector="0,46.3529405587272"
               Start="0,0"
-              End="68.2857156870317,87.794117715697">
+              End="0,38.8529405587272">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.6470588578485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.6470588578485"
-                    Point2="0,47.6470588578485"
-                    Point3="4,47.6470588578485" />
-                  <mssgle:LineSegment
-                    End="64.2857156870317,47.6470588578485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="64.2857156870317,47.6470588578485"
-                    Point2="68.2857156870317,47.6470588578485"
-                    Point3="68.2857156870317,51.6470588578485" />
-                  <mssgle:LineSegment
-                    End="68.2857156870317,87.794117715697" />
+                    End="0,38.8529405587272" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15373,9 +15357,9 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="359.200005279269,45.388237983875"
+              EndConnector="289.200005279269,45.388237983875"
               Start="0,0"
-              End="359.200005279269,37.888237983875">
+              End="289.200005279269,37.888237983875">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15386,13 +15370,13 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
                     Point2="0,22.6941189919375"
                     Point3="4,22.6941189919375" />
                   <mssgle:LineSegment
-                    End="355.200005279269,22.6941189919375" />
+                    End="285.200005279269,22.6941189919375" />
                   <mssgle:CubicBezierSegment
-                    Point1="355.200005279269,22.6941189919375"
-                    Point2="359.200005279269,22.6941189919375"
-                    Point3="359.200005279269,26.6941189919375" />
+                    Point1="285.200005279269,22.6941189919375"
+                    Point2="289.200005279269,22.6941189919375"
+                    Point3="289.200005279269,26.6941189919375" />
                   <mssgle:LineSegment
-                    End="359.200005279269,37.888237983875" />
+                    End="289.200005279269,37.888237983875" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

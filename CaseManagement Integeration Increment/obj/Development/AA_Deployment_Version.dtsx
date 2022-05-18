@@ -11,35 +11,16 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AA_Deployment_Version"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{CB745AA0-E82A-43A9-847E-C459280B4A71}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{2CD04FD1-D311-4F45-AB42-5890323A1D76}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\CLear Analysis"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{E5262524-78EA-4830-BAF4-7412E03FDF0C}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="CLear Analysis"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Scratch_Pad.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Gamarek_Module"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{C7185562-108A-4CEF-9DA8-3A5ED2CD8F39}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -57,7 +38,6 @@
       DTS:refId="Package\Income_Module_Excution"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{53AF8BBC-2C09-4A6C-A5C2-0D35A9093BF6}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -92,7 +72,6 @@
       DTS:refId="Package\Process Analysis"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{0BBCCC6B-F4B6-442D-A694-CF971F8AA215}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -127,7 +106,6 @@
       DTS:refId="Package\VAT_Module_Watcher"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{225fda22-89c0-4548-8a9d-c450cd01a65f}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -145,7 +123,6 @@
       DTS:refId="Package\WithHoldings_Module"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{B4CF8DA8-A26B-49B0-9E84-E6094B5A18C1}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -188,8 +165,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{0D861127-47D5-432B-AAB8-4519EB64E1AA}"
-      DTS:From="Package\CLear Analysis"
+      DTS:DTSID="{21E43117-F386-4DD0-8070-25B2C9CB8424}"
+      DTS:From="Package\Gamarek_Module"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Process Analysis" />
@@ -201,14 +178,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Gamarek_Module" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{B9A0F98F-4354-48B4-8823-FB21FB2AB917}"
-      DTS:From="Package\Gamarek_Module"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:To="Package\CLear Analysis" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
@@ -231,10 +200,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="146.4,41.6"
-          Id="Package\CLear Analysis"
-          TopLeft="274.857147537932,276.752944788553" />
-        <NodeLayout
           Size="160,41.6"
           Id="Package\Gamarek_Module"
           TopLeft="386.857149445281,388.00000335469" />
@@ -249,7 +214,7 @@
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Process Analysis"
-          TopLeft="93.1428587290706,335.952944788553" />
+          TopLeft="143.428573871146,410.588239952932" />
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\VAT_Module_Excution"
@@ -365,40 +330,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="274.857147537932,297.552944788553">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.5142888088615,59.2"
-              Start="0,0"
-              End="-19.0142888088615,59.2">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-9.25714440443075,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.25714440443075,0"
-                    Point2="-13.2571444044307,0"
-                    Point3="-13.2571444044307,4" />
-                  <mssgle:LineSegment
-                    End="-13.2571444044307,55.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.2571444044307,55.2"
-                    Point2="-13.2571444044307,59.2"
-                    Point3="-17.2571444044307,59.2" />
-                  <mssgle:LineSegment
-                    End="-19.0142888088615,59.2" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="530.000007493155,357.223532054334">
           <EdgeLayout.Curve>
@@ -433,40 +364,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="441.523816111948,388.00000335469">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-93.4666685740155,-69.6470585661367"
-              Start="0,0"
-              End="-93.4666685740155,-62.1470585661367">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-24.2725683288278" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-24.2725683288278"
-                    Point2="0,-28.2725683288278"
-                    Point3="-4,-28.2725683288278" />
-                  <mssgle:LineSegment
-                    End="-89.4666685740155,-28.2725683288278" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-89.4666685740155,-28.2725683288278"
-                    Point2="-93.4666685740155,-28.2725683288278"
-                    Point3="-93.4666685740155,-32.2725683288278" />
-                  <mssgle:LineSegment
-                    End="-93.4666685740155,-62.1470585661367" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="45.1428579116354,30.588235431394">
           <EdgeLayout.Curve>
@@ -492,6 +389,40 @@
                     Point3="-18.5,61.4117652978864" />
                   <mssgle:LineSegment
                     End="6.21428594783869,61.4117652978864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="386.857149445281,408.80000335469">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-88.2285755741355,22.5882365982418"
+              Start="0,0"
+              End="-80.7285755741355,22.5882365982418">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-40.1142877870678,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-40.1142877870678,0"
+                    Point2="-44.1142877870678,0"
+                    Point3="-44.1142877870678,4" />
+                  <mssgle:LineSegment
+                    End="-44.1142877870678,18.5882365982418" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.1142877870678,18.5882365982418"
+                    Point2="-44.1142877870678,22.5882365982418"
+                    Point3="-48.1142877870678,22.5882365982418" />
+                  <mssgle:LineSegment
+                    End="-80.7285755741355,22.5882365982418" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
