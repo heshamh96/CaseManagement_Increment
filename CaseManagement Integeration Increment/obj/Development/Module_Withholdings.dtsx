@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{65B081A4-20DF-422D-97CC-664852E8121E}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{F3C49746-B753-40F2-AF50-E8DE0F7705EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -14059,6 +14059,16 @@ and nmz.TransactionData_Id not in
                           lineageId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].Columns[Insertion_Date]"
                           name="Insertion_Date"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].Columns[National_ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].ExternalColumns[National_ID]"
+                          length="1000"
+                          lineageId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].Columns[National_ID]"
+                          name="National_ID"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -14268,6 +14278,11 @@ and nmz.TransactionData_Id not in
                           refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].ExternalColumns[Insertion_Date]"
                           dataType="dbDate"
                           name="Insertion_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].ExternalColumns[National_ID]"
+                          dataType="wstr"
+                          length="1000"
+                          name="National_ID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -14489,6 +14504,12 @@ and nmz.TransactionData_Id not in
                           length="8"
                           lineageId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Error Output].Columns[kst_uid]"
                           name="kst_uid" />
+                        <outputColumn
+                          refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Error Output].Columns[National_ID]"
+                          dataType="wstr"
+                          length="1000"
+                          lineageId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Error Output].Columns[National_ID]"
+                          name="National_ID" />
                         <outputColumn
                           refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Error Output].Columns[kst_reg]"
                           codePage="1256"
@@ -14896,6 +14917,13 @@ and nmz.TransactionData_Id not in
                           cachedName="Insertion_Date"
                           externalMetadataColumnId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47.Inputs[OLE DB Destination Input].ExternalColumns[Insertion_Date]"
                           lineageId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].Columns[Insertion_Date]" />
+                        <inputColumn
+                          refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47.Inputs[OLE DB Destination Input].Columns[National_ID]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="National_ID"
+                          externalMetadataColumnId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47.Inputs[OLE DB Destination Input].ExternalColumns[National_ID]"
+                          lineageId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\EL_Masla7a_Mapping_Final_Namozag_47.Outputs[OLE DB Source Output].Columns[National_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -15105,6 +15133,11 @@ and nmz.TransactionData_Id not in
                           refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47.Inputs[OLE DB Destination Input].ExternalColumns[Insertion_Date]"
                           dataType="dbDate"
                           name="Insertion_Date" />
+                        <externalMetadataColumn
+                          refId="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47.Inputs[OLE DB Destination Input].ExternalColumns[National_ID]"
+                          dataType="wstr"
+                          length="1000"
+                          name="National_ID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -17095,7 +17128,7 @@ and nmz.TransactionData_Id not in
     design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="310.4,41.6"
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47"
@@ -17135,9 +17168,7 @@ and nmz.TransactionData_Id not in
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
