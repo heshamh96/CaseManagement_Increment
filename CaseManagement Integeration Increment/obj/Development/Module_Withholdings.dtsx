@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{F3C49746-B753-40F2-AF50-E8DE0F7705EE}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{D67356D6-7A2A-43CC-88AE-C19A34D6066E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -15181,7 +15181,6 @@ and nmz.TransactionData_Id not in
           DTS:refId="Package\Namozag 46 &amp; 47 Logic\Namzag46_Flattened_Currency Cleansing"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{379530F0-B010-47AF-B431-9C7170FD201E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -15199,7 +15198,6 @@ and nmz.TransactionData_Id not in
           DTS:refId="Package\Namozag 46 &amp; 47 Logic\Namzag47_Flattened_Currency Cleansing"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{e429f58f-b81f-4bee-b3dd-e8bf9e176c45}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -15652,11 +15650,11 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="987.2,402.4"
-          Size="987.2,445.6"
+          Size="987.2,43.2"
           Id="Package\Namozag 41 Logic"
-          TopLeft="663.959194980627,234.305885638993" />
+          TopLeft="665.102052142947,234.305885638993" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer"
@@ -15791,20 +15789,20 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="316,538.4"
-          Size="316,581.6"
+          Size="316,43.2"
           Id="Package\Namozag 46 &amp; 47 Logic"
-          TopLeft="53.8956925278156,237.277314252094" />
+          TopLeft="53.8956925278156,236.053784823169" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="1030.81634136053,109.317647728046">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126.7428536201,124.988237910947"
+              EndConnector="127.88571078242,124.988237910947"
               Start="0,0"
-              End="126.7428536201,117.488237910947">
+              End="127.88571078242,117.488237910947">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15815,13 +15813,13 @@ and nmz.TransactionData_Id not in
                     Point2="0,62.4941189554737"
                     Point3="4,62.4941189554737" />
                   <mssgle:LineSegment
-                    End="122.7428536201,62.4941189554737" />
+                    End="123.88571078242,62.4941189554737" />
                   <mssgle:CubicBezierSegment
-                    Point1="122.7428536201,62.4941189554737"
-                    Point2="126.7428536201,62.4941189554737"
-                    Point3="126.7428536201,66.4941189554737" />
+                    Point1="123.88571078242,62.4941189554737"
+                    Point2="127.88571078242,62.4941189554737"
+                    Point3="127.88571078242,66.4941189554737" />
                   <mssgle:LineSegment
-                    End="126.7428536201,117.488237910947" />
+                    End="127.88571078242,117.488237910947" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15832,30 +15830,18 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="663.959194980627,457.105885638993">
+          TopLeft="665.102052142947,256.779835231081">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-294.063502452812,70.9714286131006"
+              EndConnector="-295.206359615131,0"
               Start="0,0"
-              End="-286.563502452812,70.9714286131006">
+              End="-287.706359615131,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-143.031751226406,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-143.031751226406,0"
-                    Point2="-147.031751226406,0"
-                    Point3="-147.031751226406,4" />
-                  <mssgle:LineSegment
-                    End="-147.031751226406,66.9714286131006" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-147.031751226406,66.9714286131006"
-                    Point2="-147.031751226406,70.9714286131006"
-                    Point3="-151.031751226406,70.9714286131006" />
-                  <mssgle:LineSegment
-                    End="-286.563502452812,70.9714286131006" />
+                    End="-287.706359615131,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
