@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{5DA29261-9065-49E5-96B7-15B619EAC7F3}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{FE685835-DF94-480B-A8A5-FAC93B28D154}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -7852,7 +7852,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{068F4831-1A8B-4B42-B2CD-D1490B358D46}"
-          SQLTask:SqlStatementSource="update Dim_Declarations&#xA;set Submission_Delay=case when rs.SendDate=dc.SendDate then datediff(month,TRY_CAST(TRY_CAST([FK_TaxPeriod_ID] AS [varchar](8)) AS [date]),rs.[SendDate])&#xA;else Submission_Delay_CC end&#xA;from Dim_Declarations dc join (&#xA;SELECT Artificial_Key&#xA;      ,max([Version]) Version ,min(SendDate) SendDate&#xA;  FROM [DWH_TAX].[dbo].[Dim_Declarations_SCD]&#xA;  group by Artificial_Key) as rs on rs.Artificial_Key=dc.Artificial_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update Dim_Declarations&#xA;set Submission_Delay=case when rs.SendDate=dc.SendDate then Submission_Delay_CC&#xA;else datediff(month,TRY_CAST(TRY_CAST([FK_TaxPeriod_ID] AS [varchar](8)) AS [date]),rs.[SendDate]) end&#xA;from Dim_Declarations dc join (&#xA;SELECT Artificial_Key&#xA;      ,max([Version]) Version ,min(SendDate) SendDate&#xA;  FROM [DWH_TAX].[dbo].[Dim_Declarations_SCD]&#xA;  group by Artificial_Key) as rs on rs.Artificial_Key=dc.Artificial_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
