@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SSAS_Processing"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{8EFE7297-5ACA-4B82-B407-1CE563B6C691}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{1E460B28-1F87-4BA7-8B12-B19C1E1D2AB8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4347,9 +4347,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="915.2,947.2"
-          Size="915.2,990.4"
+          Size="915.2,43.2"
           Id="Package\Dim_Invoices"
           TopLeft="7.24081591850802,220.692999907736" />
         <EdgeLayout
@@ -4358,9 +4358,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-73.8190625818384,192.096921770936"
+              EndConnector="-73.8190625818384,-281.503078229064"
               Start="0,0"
-              End="-66.3190625818384,192.096921770936">
+              End="-66.3190625818384,-281.503078229064">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4369,15 +4369,15 @@
                   <mssgle:CubicBezierSegment
                     Point1="-32.9095312909192,0"
                     Point2="-36.9095312909192,0"
-                    Point3="-36.9095312909192,4" />
+                    Point3="-36.9095312909192,-4" />
                   <mssgle:LineSegment
-                    End="-36.9095312909192,188.096921770936" />
+                    End="-36.9095312909192,-277.503078229064" />
                   <mssgle:CubicBezierSegment
-                    Point1="-36.9095312909192,188.096921770936"
-                    Point2="-36.9095312909192,192.096921770936"
-                    Point3="-40.9095312909192,192.096921770936" />
+                    Point1="-36.9095312909192,-277.503078229064"
+                    Point2="-36.9095312909192,-281.503078229064"
+                    Point3="-40.9095312909192,-281.503078229064" />
                   <mssgle:LineSegment
-                    End="-66.3190625818384,192.096921770936" />
+                    End="-66.3190625818384,-281.503078229064" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

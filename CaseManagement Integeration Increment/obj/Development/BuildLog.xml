@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CaseManagement Integeration Increment</Name>
-    <LastWriteTime>2022-03-31T11:24:30.4498437Z</LastWriteTime>
+    <LastWriteTime>2022-05-25T15:13:25.9173324Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>SSAS_Processing.dtsx</Name>
-      <LastWriteTime>2022-05-19T14:03:28.8908977Z</LastWriteTime>
+      <LastWriteTime>2022-05-25T15:13:25.871326Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -53,12 +53,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_Vat_Executer.dtsx</Name>
-      <LastWriteTime>2022-05-16T08:03:27.7693241Z</LastWriteTime>
+      <LastWriteTime>2022-05-24T16:05:22.8586516Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_VAT_Watcher.dtsx</Name>
       <LastWriteTime>2022-05-17T08:22:27.9458348Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Module_PayRoll.dtsx</Name>
+      <LastWriteTime>2022-05-25T16:08:26.4121715Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
