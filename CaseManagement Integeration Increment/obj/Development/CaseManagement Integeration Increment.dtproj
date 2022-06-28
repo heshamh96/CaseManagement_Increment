@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">TXBI-DWA-01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAikWT3swcREOSs8zGQKJwZgAAAAACAAAAAAADZgAAwAAAABAAAAA/HqV01YyRmucqNNKkzfHMAAAAAASAAACgAAAAEAAAAJieAMNM8GpehwhkTNCYo7GIAAAAwJB82e/PkCLsCa6mbgyDYi47QzwH5emdDpzs2LV3HPSPf2yyqS74qZP1dWcA4vz3VvjQ3h3+9ibGYoQI+qKfiWTfCzsXVHTWw8SzuEcAx5Ybyh480YSLCmeprN5orWtY6w8ENKNUKp3Rs3zPeoWoCiPHQwfR5JTJ1eRMXDinRaRiy2UBiVOhlRQAAABXlw9LeBIzgCtCjaK0pe95SLjW5w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAikWT3swcREOSs8zGQKJwZgAAAAACAAAAAAADZgAAwAAAABAAAADiTG/EDASkHc/t+uwjsb6aAAAAAASAAACgAAAAEAAAAKRUviJNbpA8SSQdJ0ZlHiKIAAAAFfpl5mFS8zT0t4EJhKWKYMi9ldh0oz4yFyVNqfMwd7W9ar5xhKWrmB4F5QIUka5YvP/68DUodlkiZ3XbaLQ7IPbjGiKBZ2gfhY6cqS6VSTIN/LqvhgyQOwHSQbXU8eNCKar+Ob856C49/nb7CMA+MA+DcvTmo2K0y+JwP5C2YvmOkba7k8pxdhQAAABD089/sGGq3GmHqAVO2QVJS29rRQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,6 +42,7 @@
           <SSIS:Package SSIS:Name="Module_Vat_Executer.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Module_VAT_Watcher.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Module_PayRoll.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Module_Payments.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="stg.conmgr" />
@@ -1407,10 +1408,10 @@
                 <SSIS:Property SSIS:Name="Name">AA_Deployment_Version</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">16</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2CD04FD1-D311-4F45-AB42-5890323A1D76}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{39EE0FD3-C5AE-4336-AF5C-4CA43DB2C07A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1581,6 +1582,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{40C4789E-22D3-45EA-9655-9DA1031D57E9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Module_Payments.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{57F0B08D-5D58-4EF1-BAE8-8385C228F87E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Module_Payments</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{176BDA7E-C561-4F1E-9E87-97920CFA7360}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
