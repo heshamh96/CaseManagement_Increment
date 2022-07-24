@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{56DA5FA9-7D88-441F-B239-763C662C7740}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{15037E9E-1998-4680-A514-857A15124984}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -19842,7 +19842,7 @@ and nmz.TransactionData_Id not in
           HeaderHeight="61.6"
           IsExpanded="False"
           PanelSize="320,300"
-          Size="320,62"
+          Size="320,62.4"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables"
           TopLeft="870.244912779367,47.1058830135835" />
         <NodeLayout
@@ -20115,55 +20115,21 @@ and nmz.TransactionData_Id not in
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="987.2,402.4"
-          Size="189,43"
+          Size="188.8,43.2"
           Id="Package\Namozag 41 Logic"
           TopLeft="665.102052142947,234.305885638993" />
         <NodeLayout
-          Size="290,42"
+          Size="200.8,41.6"
+          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer"
+          TopLeft="106,437" />
+        <NodeLayout
+          Size="289.6,41.6"
           Id="Package\Namozag 42-44 Logic\Namzag42-44_Flattened_Currency Cleansing"
           TopLeft="37.8285729855907,31.2000023336971" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Namozag 42-44 Logic\Truncate 42-44"
           TopLeft="43.8693930934539,281.92269785396" />
-        <EdgeLayout
-          Id="Package\Namozag 42-44 Logic.PrecedenceConstraints[Constraint 2]"
-          TopLeft="182.828572985591,73.2000023336971">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-63.4591798921368,208.722695520263"
-              Start="0,0"
-              End="-63.4591798921368,201.222695520263">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,100.361347760131" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,100.361347760131"
-                    Point2="0,104.361347760131"
-                    Point3="-4,104.361347760131" />
-                  <mssgle:LineSegment
-                    End="-59.4591798921368,104.361347760131" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.4591798921368,104.361347760131"
-                    Point2="-63.4591798921368,104.361347760131"
-                    Point3="-63.4591798921368,108.361347760131" />
-                  <mssgle:LineSegment
-                    End="-63.4591798921368,201.222695520263" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer"
-          TopLeft="106,437" />
         <EdgeLayout
           Id="Package\Namozag 42-44 Logic.PrecedenceConstraints[Constraint]"
           TopLeft="119.369393093454,323.92269785396">
@@ -20198,13 +20164,191 @@ and nmz.TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag 42-44 Logic.PrecedenceConstraints[Constraint 2]"
+          TopLeft="182.828572985591,73.2000023336971">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.4591798921368,208.722695520263"
+              Start="0,0"
+              End="-63.4591798921368,201.222695520263">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.361347760131" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,100.361347760131"
+                    Point2="0,104.361347760131"
+                    Point3="-4,104.361347760131" />
+                  <mssgle:LineSegment
+                    End="-59.4591798921368,104.361347760131" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.4591798921368,104.361347760131"
+                    Point2="-63.4591798921368,104.361347760131"
+                    Point3="-63.4591798921368,108.361347760131" />
+                  <mssgle:LineSegment
+                    End="-63.4591798921368,201.222695520263" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="333,538"
-          Size="204,43"
+          PanelSize="332.8,537.6"
+          Size="204,43.2"
           Id="Package\Namozag 42-44 Logic"
           TopLeft="53.8956925278156,339.053784823169" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Namozag 43 Logic\Namozag 43 Transefer"
+          TopLeft="93,154" />
+        <NodeLayout
+          Size="273.6,41.6"
+          Id="Package\Namozag 43 Logic\Namzag43_Flattened_Currency Cleansing"
+          TopLeft="19,15.5" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Namozag 43 Logic\Truncate 43"
+          TopLeft="94,92" />
+        <EdgeLayout
+          Id="Package\Namozag 43 Logic.PrecedenceConstraints[Constraint]"
+          TopLeft="159,57.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5"
+              Start="0,0"
+              End="0,27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag 43 Logic.PrecedenceConstraints[Constraint 1]"
+          TopLeft="230,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44,41"
+              Start="0,0"
+              End="-44,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-40,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-40,0"
+                    Point2="-44,0"
+                    Point3="-44,4" />
+                  <mssgle:LineSegment
+                    End="-44,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="313.6,251.2"
+          Size="313.6,43.2"
+          Id="Package\Namozag 43 Logic"
+          TopLeft="145.57142858116,407" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Namozag 45 Logic\Namozag 45 Transefer"
+          TopLeft="105,129" />
+        <NodeLayout
+          Size="273.6,41.6"
+          Id="Package\Namozag 45 Logic\Namzag45_Flattened_Currency Cleansing"
+          TopLeft="34,12.5" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Namozag 45 Logic\Truncate 45"
+          TopLeft="29,68" />
+        <EdgeLayout
+          Id="Package\Namozag 45 Logic.PrecedenceConstraints[Constraint]"
+          TopLeft="171,54.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-6,34.5"
+              Start="0,0"
+              End="1.5,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="1.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Namozag 45 Logic.PrecedenceConstraints[Constraint 1]"
+          TopLeft="165,94.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33,34.3333333333333"
+              Start="0,0"
+              End="33,26.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,0"
+                    Point2="33,0"
+                    Point3="33,4" />
+                  <mssgle:LineSegment
+                    End="33,26.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="312.8,225.6"
+          Size="312.8,43.2"
+          Id="Package\Namozag 45 Logic"
+          TopLeft="266.142858184114,487.247059149561" />
         <NodeLayout
           Size="186,42"
           Id="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer"
@@ -20349,7 +20493,7 @@ and nmz.TransactionData_Id not in
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="316,538"
-          Size="214,43"
+          Size="214.4,43.2"
           Id="Package\Namozag 46 &amp; 47 Logic"
           TopLeft="53.8956925278156,236.053784823169" />
         <EdgeLayout
@@ -20410,18 +20554,18 @@ and nmz.TransactionData_Id not in
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="158.395692527816,279.053784823169">
+          TopLeft="158.495692527816,279.253784823169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,59.7999999999999"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.2999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.2999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20430,101 +20574,32 @@ and nmz.TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="274,42"
-          Id="Package\Namozag 43 Logic\Namzag43_Flattened_Currency Cleansing"
-          TopLeft="19,15.5" />
-        <NodeLayout
-          Size="136,42"
-          Id="Package\Namozag 43 Logic\Truncate 43"
-          TopLeft="94,92" />
-        <EdgeLayout
-          Id="Package\Namozag 43 Logic.PrecedenceConstraints[Constraint]"
-          TopLeft="159,57.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.5"
-              Start="0,0"
-              End="0,27">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Namozag 43 Logic\Namozag 43 Transefer"
-          TopLeft="93,154" />
-        <EdgeLayout
-          Id="Package\Namozag 43 Logic.PrecedenceConstraints[Constraint 1]"
-          TopLeft="230,113">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-44,41"
-              Start="0,0"
-              End="-44,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-40,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-40,0"
-                    Point2="-44,0"
-                    Point3="-44,4" />
-                  <mssgle:LineSegment
-                    End="-44,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="314,251"
-          Size="314,43"
-          Id="Package\Namozag 43 Logic"
-          TopLeft="145,407" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="155.895692527816,382.053784823169">
+          TopLeft="155.895692527816,382.253784823169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.104307472184,24.9462151768309"
+              EndConnector="146.475736053344,24.7462151768311"
               Start="0,0"
-              End="146.104307472184,17.4462151768309">
+              End="146.475736053344,17.2462151768311">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.47310758841547" />
+                    End="0,8.37310758841556" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.47310758841547"
-                    Point2="0,12.4731075884155"
-                    Point3="4,12.4731075884155" />
+                    Point1="0,8.37310758841556"
+                    Point2="0,12.3731075884156"
+                    Point3="4,12.3731075884156" />
                   <mssgle:LineSegment
-                    End="142.104307472184,12.4731075884155" />
+                    End="142.475736053344,12.3731075884156" />
                   <mssgle:CubicBezierSegment
-                    Point1="142.104307472184,12.4731075884155"
-                    Point2="146.104307472184,12.4731075884155"
-                    Point3="146.104307472184,16.4731075884155" />
+                    Point1="142.475736053344,12.3731075884156"
+                    Point2="146.475736053344,12.3731075884156"
+                    Point3="146.475736053344,16.3731075884156" />
                   <mssgle:LineSegment
-                    End="146.104307472184,17.4462151768309" />
+                    End="146.475736053344,17.2462151768311" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20533,101 +20608,32 @@ and nmz.TransactionData_Id not in
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="274,42"
-          Id="Package\Namozag 45 Logic\Namzag45_Flattened_Currency Cleansing"
-          TopLeft="34,12.5" />
-        <NodeLayout
-          Size="136,42"
-          Id="Package\Namozag 45 Logic\Truncate 45"
-          TopLeft="29,68" />
-        <EdgeLayout
-          Id="Package\Namozag 45 Logic.PrecedenceConstraints[Constraint]"
-          TopLeft="171,54.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-6,34.5"
-              Start="0,0"
-              End="1.5,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.5"
-                    Point2="0,34.5"
-                    Point3="-4,34.5" />
-                  <mssgle:LineSegment
-                    End="1.5,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Namozag 45 Logic\Namozag 45 Transefer"
-          TopLeft="105,129" />
-        <EdgeLayout
-          Id="Package\Namozag 45 Logic.PrecedenceConstraints[Constraint 1]"
-          TopLeft="165,94.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33,34.3333333333333"
-              Start="0,0"
-              End="33,26.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="29,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29,0"
-                    Point2="33,0"
-                    Point3="33,4" />
-                  <mssgle:LineSegment
-                    End="33,26.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="313,226"
-          Size="313,43"
-          Id="Package\Namozag 45 Logic"
-          TopLeft="205,464" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="459,428.5">
+          TopLeft="302.37142858116,450.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-97.5,35.5"
+              EndConnector="120.171429602954,37.0470591495607"
               Start="0,0"
-              End="-97.5,28">
+              End="120.171429602954,29.5470591495607">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-93.5,0" />
+                    End="0,14.5235295747804" />
                   <mssgle:CubicBezierSegment
-                    Point1="-93.5,0"
-                    Point2="-97.5,0"
-                    Point3="-97.5,4" />
+                    Point1="0,14.5235295747804"
+                    Point2="0,18.5235295747804"
+                    Point3="4,18.5235295747804" />
                   <mssgle:LineSegment
-                    End="-97.5,28" />
+                    End="116.171429602954,18.5235295747804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.171429602954,18.5235295747804"
+                    Point2="120.171429602954,18.5235295747804"
+                    Point3="120.171429602954,22.5235295747804" />
+                  <mssgle:LineSegment
+                    End="120.171429602954,29.5470591495607" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21821,6 +21827,234 @@ and nmz.TransactionData_Id not in
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="326.4,41.6"
+          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_42-44"
+          TopLeft="157,229" />
+        <NodeLayout
+          Size="289.6,41.6"
+          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\EL_Masla7a_Mapping_Final_Namozag_42-44"
+          TopLeft="144,123" />
+        <EdgeLayout
+          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer.Paths[OLE DB Source Output]"
+          TopLeft="289,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,64"
+              Start="0,0"
+              End="31,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="27,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,32"
+                    Point2="31,32"
+                    Point3="31,36" />
+                  <mssgle:LineSegment
+                    End="31,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\EL_Masla7a_Mapping_Final_Namozag_42-44">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_42-44">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Namozag 43 Logic\Namozag 43 Transefer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="275.2,41.6"
+          Id="Package\Namozag 43 Logic\Namozag 43 Transefer\EL_Masla7a_Mapping_Final_Namozag_43"
+          TopLeft="115,41" />
+        <NodeLayout
+          Size="311.2,41.6"
+          Id="Package\Namozag 43 Logic\Namozag 43 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_43"
+          TopLeft="152,168" />
+        <EdgeLayout
+          Id="Package\Namozag 43 Logic\Namozag 43 Transefer.Paths[OLE DB Source Output]"
+          TopLeft="252.5,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55,85"
+              Start="0,0"
+              End="55,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5"
+                    Point2="0,42.5"
+                    Point3="4,42.5" />
+                  <mssgle:LineSegment
+                    End="51,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51,42.5"
+                    Point2="55,42.5"
+                    Point3="55,46.5" />
+                  <mssgle:LineSegment
+                    End="55,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Namozag 43 Logic\Namozag 43 Transefer\EL_Masla7a_Mapping_Final_Namozag_43">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Namozag 43 Logic\Namozag 43 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_43">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Namozag 45 Logic\Namozag 45 Transefer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="311.2,41.6"
+          Id="Package\Namozag 45 Logic\Namozag 45 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_45"
+          TopLeft="216,194" />
+        <NodeLayout
+          Size="275.2,41.6"
+          Id="Package\Namozag 45 Logic\Namozag 45 Transefer\EL_Masla7a_Mapping_Final_Namozag_45"
+          TopLeft="204,62" />
+        <EdgeLayout
+          Id="Package\Namozag 45 Logic\Namozag 45 Transefer.Paths[OLE DB Source Output]"
+          TopLeft="341.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30,90"
+              Start="0,0"
+              End="30,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41"
+                    Point2="0,45"
+                    Point3="4,45" />
+                  <mssgle:LineSegment
+                    End="26,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26,45"
+                    Point2="30,45"
+                    Point3="30,49" />
+                  <mssgle:LineSegment
+                    End="30,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Namozag 45 Logic\Namozag 45 Transefer\EL_Masla7a_Mapping_Final_Namozag_45">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Namozag 45 Logic\Namozag 45 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_45">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 46 Transefer">
     <LayoutInfo>
       <GraphLayout
@@ -21965,234 +22199,6 @@ and nmz.TransactionData_Id not in
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Namozag 46 &amp; 47 Logic\Namozag 47 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_47">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="290,42"
-          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\EL_Masla7a_Mapping_Final_Namozag_42-44"
-          TopLeft="144,123" />
-        <NodeLayout
-          Size="326,42"
-          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_42-44"
-          TopLeft="157,229" />
-        <EdgeLayout
-          Id="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer.Paths[OLE DB Source Output]"
-          TopLeft="289,165">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="31,64"
-              Start="0,0"
-              End="31,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="4,32" />
-                  <mssgle:LineSegment
-                    End="27,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27,32"
-                    Point2="31,32"
-                    Point3="31,36" />
-                  <mssgle:LineSegment
-                    End="31,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\EL_Masla7a_Mapping_Final_Namozag_42-44">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag 42-44 Logic\Namozag 42-44 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_42-44">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Namozag 43 Logic\Namozag 43 Transefer">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="275,42"
-          Id="Package\Namozag 43 Logic\Namozag 43 Transefer\EL_Masla7a_Mapping_Final_Namozag_43"
-          TopLeft="115,41" />
-        <NodeLayout
-          Size="311,42"
-          Id="Package\Namozag 43 Logic\Namozag 43 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_43"
-          TopLeft="152,168" />
-        <EdgeLayout
-          Id="Package\Namozag 43 Logic\Namozag 43 Transefer.Paths[OLE DB Source Output]"
-          TopLeft="252.5,83">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="55,85"
-              Start="0,0"
-              End="55,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.5"
-                    Point2="0,42.5"
-                    Point3="4,42.5" />
-                  <mssgle:LineSegment
-                    End="51,42.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="51,42.5"
-                    Point2="55,42.5"
-                    Point3="55,46.5" />
-                  <mssgle:LineSegment
-                    End="55,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag 43 Logic\Namozag 43 Transefer\EL_Masla7a_Mapping_Final_Namozag_43">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag 43 Logic\Namozag 43 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_43">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Namozag 45 Logic\Namozag 45 Transefer">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="275,42"
-          Id="Package\Namozag 45 Logic\Namozag 45 Transefer\EL_Masla7a_Mapping_Final_Namozag_45"
-          TopLeft="204,62" />
-        <NodeLayout
-          Size="311,42"
-          Id="Package\Namozag 45 Logic\Namozag 45 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_45"
-          TopLeft="216,194" />
-        <EdgeLayout
-          Id="Package\Namozag 45 Logic\Namozag 45 Transefer.Paths[OLE DB Source Output]"
-          TopLeft="341.5,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30,90"
-              Start="0,0"
-              End="30,82.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="4,45" />
-                  <mssgle:LineSegment
-                    End="26,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26,45"
-                    Point2="30,45"
-                    Point3="30,49" />
-                  <mssgle:LineSegment
-                    End="30,82.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag 45 Logic\Namozag 45 Transefer\EL_Masla7a_Mapping_Final_Namozag_45">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Namozag 45 Logic\Namozag 45 Transefer\Excel_El_Masla7a_Mapped_Withholding_NMZ_45">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
