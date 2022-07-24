@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CaseManagement Integeration Increment</Name>
-    <LastWriteTime>2022-05-25T15:13:25.9173324Z</LastWriteTime>
+    <LastWriteTime>2022-06-21T11:00:09.3453188Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>AA_Deployment_Version.dtsx</Name>
-      <LastWriteTime>2022-05-17T08:25:52.9750244Z</LastWriteTime>
+      <LastWriteTime>2022-06-21T11:00:02.3826747Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -48,7 +48,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_Withholdings.dtsx</Name>
-      <LastWriteTime>2022-05-19T14:00:12.3975716Z</LastWriteTime>
+      <LastWriteTime>2022-07-24T10:39:15.9891008Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -64,6 +64,11 @@
     <ProjectBuildItemInfo>
       <Name>Module_PayRoll.dtsx</Name>
       <LastWriteTime>2022-06-19T14:28:39.1619324Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Module_Payments.dtsx</Name>
+      <LastWriteTime>2022-06-21T11:00:08.6160302Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
