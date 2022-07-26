@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{6406A1B0-58DA-44C2-BDF3-ABE3B1DD12EE}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{3B856060-FC73-433A-BE1B-60C3A955D5D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -12005,7 +12005,7 @@ and nmz.TransactionData_Id not in
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FA4FF168-47BF-403C-B352-17F537A16DDE}"
-              SQLTask:SqlStatementSource="truncate TABLE [dbo].[Excel_El_Masla7a_Mapped_Withholding_Not_CLosed]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="truncate TABLE [dbo].[Excel_El_Masla7a_Mapped_Withholding_Not_CLosed_NMZ_41]&#xA;                     " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -21467,9 +21467,9 @@ SELECT
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="False"
+          IsExpanded="True"
           PanelSize="987,402"
-          Size="188,43"
+          Size="987,446"
           Id="Package\Namozag 41 Logic"
           TopLeft="665.102052142947,234.305885638993" />
         <NodeLayout
@@ -21836,9 +21836,9 @@ SELECT
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-213.14286063642,134.200002625409"
+              EndConnector="186.35713936358,134.200002625409"
               Start="0,0"
-              End="-213.14286063642,126.700002625409">
+              End="186.35713936358,126.700002625409">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -21847,15 +21847,15 @@ SELECT
                   <mssgle:CubicBezierSegment
                     Point1="0,63.1000013127047"
                     Point2="0,67.1000013127047"
-                    Point3="-4,67.1000013127047" />
+                    Point3="4,67.1000013127047" />
                   <mssgle:LineSegment
-                    End="-209.14286063642,67.1000013127047" />
+                    End="182.35713936358,67.1000013127047" />
                   <mssgle:CubicBezierSegment
-                    Point1="-209.14286063642,67.1000013127047"
-                    Point2="-213.14286063642,67.1000013127047"
-                    Point3="-213.14286063642,71.1000013127047" />
+                    Point1="182.35713936358,67.1000013127047"
+                    Point2="186.35713936358,67.1000013127047"
+                    Point3="186.35713936358,71.1000013127047" />
                   <mssgle:LineSegment
-                    End="-213.14286063642,126.700002625409" />
+                    End="186.35713936358,126.700002625409" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21866,18 +21866,30 @@ SELECT
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="665.102052142947,258.179835231081">
+          TopLeft="665.102052142947,457.305885638993">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-299.206359615131,0"
+              EndConnector="-299.206359615131,-196.752100815824"
               Start="0,0"
-              End="-291.706359615131,0">
+              End="-291.706359615131,-196.752100815824">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-291.706359615131,0" />
+                    End="-145.603179807566,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-145.603179807566,0"
+                    Point2="-149.603179807566,0"
+                    Point3="-149.603179807566,-4" />
+                  <mssgle:LineSegment
+                    End="-149.603179807566,-192.752100815824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-149.603179807566,-192.752100815824"
+                    Point2="-149.603179807566,-196.752100815824"
+                    Point3="-153.603179807566,-196.752100815824" />
+                  <mssgle:LineSegment
+                    End="-291.706359615131,-196.752100815824" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21995,7 +22007,7 @@ SELECT
     design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Geha Related Tables\TaxPayerCategories"
@@ -22051,9 +22063,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22087,9 +22097,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22123,9 +22131,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -22213,45 +22219,45 @@ SELECT
     design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148.8,41.6"
+          Size="149,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\District_Details"
           TopLeft="29.6,40" />
         <NodeLayout
-          Size="143.2,41.6"
+          Size="143,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\DistrictDetails"
           TopLeft="1.4210854715202E-14,151.2" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Reserved_Rates_42_44"
           TopLeft="419.2,38.4" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Payment_Methods"
           TopLeft="674.399999999999,52" />
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Currency_Types"
           TopLeft="862.399999999999,52.8" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\ReservedRates_42_44"
           TopLeft="410.4,159.2" />
         <NodeLayout
-          Size="173.6,41.6"
+          Size="174,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\Record_Types24_44"
           TopLeft="175.2,156.8" />
         <NodeLayout
-          Size="148,41.6"
+          Size="148,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\CurrencyTypes"
           TopLeft="859.199999999999,153.6" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\PaymentMethods"
           TopLeft="667.999999999999,149.6" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Other LoopkUps\RecordTypes42_44"
           TopLeft="191.2,37.6" />
         <EdgeLayout
@@ -22273,9 +22279,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22309,9 +22313,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22345,9 +22347,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22381,9 +22381,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22417,9 +22415,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -22559,37 +22555,37 @@ SELECT
     design-time-name="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="113.6,41.6"
+          Size="114,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque"
           TopLeft="255.2,185.6" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry Payments"
           TopLeft="736,83.2" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="173,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic Payments"
           TopLeft="531.2,75.2" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cheque Payemnts"
           TopLeft="299.2,65.6" />
         <NodeLayout
-          Size="124,41.6"
+          Size="124,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Electronic"
           TopLeft="516.8,184" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash Payments"
           TopLeft="78.4,64.8" />
         <NodeLayout
-          Size="106.4,41.6"
+          Size="106,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Fawry"
           TopLeft="697.6,184" />
         <NodeLayout
-          Size="100.8,41.6"
+          Size="101,42"
           Id="Package\Initializing WithHoldings_Flattened LKP Tables\Payments_Tables\Cash"
           TopLeft="39.2,182.4" />
         <EdgeLayout
@@ -22623,9 +22619,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22659,9 +22653,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22695,9 +22687,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22731,9 +22721,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -22950,13 +22938,13 @@ SELECT
     design-time-name="Package\Namozag 41 Logic\Transfer Withholding Data To DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="211.2,41.6"
+          Size="211,42"
           Id="Package\Namozag 41 Logic\Transfer Withholding Data To DWH\IBM &amp; Excel Data Combined"
           TopLeft="55,28" />
         <NodeLayout
-          Size="228.8,41.6"
+          Size="229,42"
           Id="Package\Namozag 41 Logic\Transfer Withholding Data To DWH\Dim_Invoices_5asm_w_Ta7seel"
           TopLeft="82,146" />
         <EdgeLayout
@@ -22990,9 +22978,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -23094,13 +23080,13 @@ SELECT
     design-time-name="Package\Namozag 41 Logic\Trasfer The increment to Elmasla7a data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="281.6,41.6"
+          Size="282,42"
           Id="Package\Namozag 41 Logic\Trasfer The increment to Elmasla7a data\Elmasla7a Mapping VW_CLosed_Increment"
           TopLeft="102,35" />
         <NodeLayout
-          Size="220,41.6"
+          Size="220,42"
           Id="Package\Namozag 41 Logic\Trasfer The increment to Elmasla7a data\Excel Mapped Elmasla7a Data"
           TopLeft="122,192" />
         <EdgeLayout
@@ -23134,9 +23120,7 @@ SELECT
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
