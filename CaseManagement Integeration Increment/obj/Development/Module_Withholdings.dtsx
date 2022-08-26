@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Withholdings"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{336DDB60-89B4-4749-BF42-47B591EF0360}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{43449057-D08E-4F66-96DC-6D379978E577}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4683,6 +4683,7 @@
       DTS:refId="Package\Namozag 41 Logic"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{DD1EFDBB-CCDB-44A4-A269-32CFBF2DC214}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -21487,9 +21488,9 @@ where Taxpayer_Id !='5E07117B-59ED-429A-957D-5387109AD04B'</property>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="987.2,403.2"
-          Size="987.2,446.4"
+          Size="987.2,43.2"
           Id="Package\Namozag 41 Logic"
           TopLeft="665.102052142947,234.305885638993" />
         <NodeLayout
@@ -21726,9 +21727,9 @@ where Taxpayer_Id !='5E07117B-59ED-429A-957D-5387109AD04B'</property>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="312.8,225.6"
-          Size="312.8,268.8"
+          Size="188.8,43.2"
           Id="Package\Namozag 45 Logic"
           TopLeft="324.428573462428,497.035294580955" />
         <NodeLayout
@@ -21894,30 +21895,18 @@ where Taxpayer_Id !='5E07117B-59ED-429A-957D-5387109AD04B'</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="665.102052142947,457.505885638993">
+          TopLeft="665.102052142947,258.279835231081">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-400.806359615131,-196.852100815824"
+              EndConnector="-400.806359615131,0"
               Start="0,0"
-              End="-393.306359615131,-196.852100815824">
+              End="-393.306359615131,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-196.403179807566,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-196.403179807566,0"
-                    Point2="-200.403179807566,0"
-                    Point3="-200.403179807566,-4" />
-                  <mssgle:LineSegment
-                    End="-200.403179807566,-192.852100815824" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-200.403179807566,-192.852100815824"
-                    Point2="-200.403179807566,-196.852100815824"
-                    Point3="-204.403179807566,-196.852100815824" />
-                  <mssgle:LineSegment
-                    End="-393.306359615131,-196.852100815824" />
+                    End="-393.306359615131,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21988,9 +21977,9 @@ where Taxpayer_Id !='5E07117B-59ED-429A-957D-5387109AD04B'</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="239.857144881268,46.835294580955"
+              EndConnector="177.857144881268,46.835294580955"
               Start="0,0"
-              End="239.857144881268,39.335294580955">
+              End="177.857144881268,39.335294580955">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -22001,13 +21990,13 @@ where Taxpayer_Id !='5E07117B-59ED-429A-957D-5387109AD04B'</property>
                     Point2="0,23.4176472904775"
                     Point3="4,23.4176472904775" />
                   <mssgle:LineSegment
-                    End="235.857144881268,23.4176472904775" />
+                    End="173.857144881268,23.4176472904775" />
                   <mssgle:CubicBezierSegment
-                    Point1="235.857144881268,23.4176472904775"
-                    Point2="239.857144881268,23.4176472904775"
-                    Point3="239.857144881268,27.4176472904775" />
+                    Point1="173.857144881268,23.4176472904775"
+                    Point2="177.857144881268,23.4176472904775"
+                    Point3="177.857144881268,27.4176472904775" />
                   <mssgle:LineSegment
-                    End="239.857144881268,39.335294580955" />
+                    End="177.857144881268,39.335294580955" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

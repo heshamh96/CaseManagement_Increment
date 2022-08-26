@@ -11,12 +11,68 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Post_Excution_Increment"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{B5552170-B7C1-4451-8BF4-AFB96BCE99C1}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{59042A0A-4A53-42B2-9BE7-77A5A7FBB957}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{ddc8724f-d233-4d00-94d9-32ba282690d9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)\update Dim_Declaratioins (PurchasesNet_INV)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{edd07dc2-17f3-4a55-bc50-39befdf14818}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="update Dim_Declaratioins (PurchasesNet_INV)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="update Declarations_To_Add&#xA;set PurchasesNet_INV=(&#xA;select sum(Product_Total_Net) from&#xA;(&#xA;select case when FK_Sub_inv_type=3 then Product_Total_Net*-1&#xA;else Product_Total_Net end as Product_Total_Net,FK_Artificial_Key&#xA; from&#xA;Dim_Invoices&#xA;where FK_Inv_Type_ID=1 and Dim_Declarations.Artificial_Key=Dim_Invoices.FK_Artificial_Key&#xA;) as a &#xA;group by a.FK_Artificial_Key)&#xA;where DeclarationTypeID !=2 " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)\update Dim_Declaratioins (SalesNet_INV)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2e8f123a-97e5-403b-8805-fb69e40924e0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="update Dim_Declaratioins (SalesNet_INV)"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
+              SQLTask:SqlStatementSource="update Declarations_To_Add&#xA;set SalesNet_INV=(&#xA;select sum(Product_Total_Net) from&#xA;(&#xA;select case when FK_Sub_inv_type=3 then Product_Total_Net*-1&#xA;else Product_Total_Net end as Product_Total_Net,FK_Artificial_Key&#xA; from&#xA;Dim_Invoices&#xA;where FK_Inv_Type_ID=2 and Dim_Declarations.Artificial_Key=Dim_Invoices.FK_Artificial_Key&#xA;) as a &#xA;group by a.FK_Artificial_Key)&#xA;where DeclarationTypeID !=2 &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV).PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{22454494-d2e1-48c1-9442-64d4f4c3da3a}"
+          DTS:From="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)\update Dim_Declaratioins (PurchasesNet_INV)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)\update Dim_Declaratioins (SalesNet_INV)" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -125,6 +181,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3D21D8E3-CC35-4517-9305-8EC88E2453F1}"
+      DTS:From="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -137,7 +201,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="356,41.6"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update NonTable_Declarations (SalesNet &amp; SalesTableNet)"
@@ -145,33 +209,33 @@
         <NodeLayout
           Size="336.8,41.6"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)\Update Table_Declarations (SalesNet &amp; SalesTableNet)"
-          TopLeft="5.5,68.8882406822133" />
+          TopLeft="4.92857141884008,81.7352996859178" />
         <EdgeLayout
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet).PrecedenceConstraints[Constraint 5]"
-          TopLeft="362.07142858116,26.3">
+          TopLeft="184.07142858116,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-19.7714285811603,63.3882406822133"
+              EndConnector="-10.7428571623202,34.6352996859178"
               Start="0,0"
-              End="-12.2714285811603,63.3882406822133">
+              End="-10.7428571623202,27.1352996859178">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.5,0" />
+                    End="0,13.3176498429589" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
+                    Point1="0,13.3176498429589"
+                    Point2="0,17.3176498429589"
+                    Point3="-4,17.3176498429589" />
                   <mssgle:LineSegment
-                    End="22.5,59.3882406822133" />
+                    End="-6.74285716232018,17.3176498429589" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.5,59.3882406822133"
-                    Point2="22.5,63.3882406822133"
-                    Point3="18.5,63.3882406822133" />
+                    Point1="-6.74285716232018,17.3176498429589"
+                    Point2="-10.7428571623202,17.3176498429589"
+                    Point3="-10.7428571623202,21.3176498429589" />
                   <mssgle:LineSegment
-                    End="-12.2714285811603,63.3882406822133" />
+                    End="-10.7428571623202,27.1352996859178" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -182,9 +246,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
-          IsExpanded="True"
-          PanelSize="389.6,165.6"
-          Size="389.6,208.8"
+          IsExpanded="False"
+          PanelSize="389.6,178.4"
+          Size="389.6,43.2"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
           TopLeft="189.142860363941,200.847061629114" />
         <NodeLayout
@@ -255,6 +319,89 @@
                     Point3="33.200002792903,20.941177375754" />
                   <mssgle:LineSegment
                     End="33.200002792903,26.382354751508" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="297.6,41.6"
+          Id="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)\update Dim_Declaratioins (PurchasesNet_INV)"
+          TopLeft="43.3142906480906,3.67059003704571" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)\update Dim_Declaratioins (SalesNet_INV)"
+          TopLeft="42.7428620669305,79.5764720296366" />
+        <EdgeLayout
+          Id="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV).PrecedenceConstraints[Constraint]"
+          TopLeft="192.114290648091,45.2705900370457">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.1714285811601,34.3058819925909"
+              Start="0,0"
+              End="-12.1714285811601,26.8058819925909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1529409962954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1529409962954"
+                    Point2="0,17.1529409962954"
+                    Point3="-4,17.1529409962954" />
+                  <mssgle:LineSegment
+                    End="-8.17142858116006,17.1529409962954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.17142858116006,17.1529409962954"
+                    Point2="-12.1714285811601,17.1529409962954"
+                    Point3="-12.1714285811601,21.1529409962954" />
+                  <mssgle:LineSegment
+                    End="-12.1714285811601,26.8058819925909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="440,137.6"
+          Size="440,43.2"
+          Id="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)"
+          TopLeft="128.571429739193,280.800002479553" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="383.942860363941,244.047061629114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3714306247479,36.7529408504395"
+              Start="0,0"
+              End="-35.3714306247479,29.2529408504395">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3764704252197" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3764704252197"
+                    Point2="0,18.3764704252197"
+                    Point3="-4,18.3764704252197" />
+                  <mssgle:LineSegment
+                    End="-31.3714306247479,18.3764704252197" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3714306247479,18.3764704252197"
+                    Point2="-35.3714306247479,18.3764704252197"
+                    Point3="-35.3714306247479,22.3764704252197" />
+                  <mssgle:LineSegment
+                    End="-35.3714306247479,29.2529408504395" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
