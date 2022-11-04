@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Gamarek"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{D954BEB9-01EB-4F8B-9865-4B97F6F5331D}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{1D4ECC7C-21C0-4A11-8074-57EF8CAC0CC6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2078,15 +2078,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="228,41.6"
+          Size="228,42"
           Id="Package\Dim_Gamarek_Invoices_Details"
           TopLeft="149,120" />
         <NodeLayout
-          Size="227.2,41.6"
+          Size="227,42"
           Id="Package\Dim_Gamarek_Invoices_Master"
           TopLeft="99,30" />
         <NodeLayout
-          Size="212.8,41.6"
+          Size="213,42"
           Id="Package\Truncate_Gamarek_Invoices"
           TopLeft="462,66" />
         <EdgeLayout
@@ -2166,11 +2166,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="203.2,41.6"
+          Size="203,42"
           Id="Package\Dim_Gamarek_Invoices_Details\Gamarek_Invoices_Details"
           TopLeft="98,48" />
         <NodeLayout
-          Size="228,41.6"
+          Size="228,42"
           Id="Package\Dim_Gamarek_Invoices_Details\Dim_Gamarek_Invoices_Details"
           TopLeft="123,138" />
         <EdgeLayout

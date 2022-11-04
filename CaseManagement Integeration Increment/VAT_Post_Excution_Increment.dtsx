@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_Post_Excution_Increment"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{59042A0A-4A53-42B2-9BE7-77A5A7FBB957}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{DBD3D445-B229-4249-80B9-F2F2B32B0A08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -41,7 +41,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
-              SQLTask:SqlStatementSource="update Declarations_To_Add&#xA;set PurchasesNet_INV=(&#xA;select sum(Product_Total_Net) from&#xA;(&#xA;select case when FK_Sub_inv_type=3 then Product_Total_Net*-1&#xA;else Product_Total_Net end as Product_Total_Net,FK_Artificial_Key&#xA; from&#xA;Dim_Invoices&#xA;where FK_Inv_Type_ID=1 and Dim_Declarations.Artificial_Key=Dim_Invoices.FK_Artificial_Key&#xA;) as a &#xA;group by a.FK_Artificial_Key)&#xA;where DeclarationTypeID !=2 " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="update Declarations_To_Add&#xA;set PurchasesNet_INV=(&#xA;select sum(Product_Total_Net) from&#xA;(&#xA;select case when InvoiceType=3 then Product_Total_Net*-1&#xA;else Product_Total_Net end as Product_Total_Net,FK_Artificial_Key&#xA; from&#xA;(select Product_Total_Net,InvoiceType,&#xA;[Customer_Unique_Tax_Id]+'_'+convert(varchar(6),PM.Invoice_Date,112)  as FK_Artificial_Key&#xA;&#xA;from Purchase_Invoices_Master_STG PM join Purchase_Invoice_Details_Stg PD on PM.PurchaseInvoice_Id=PD.Fk_PurchasesInvoices_Id) as stg_inv&#xA;where  Declarations_To_Add.Artificial_Key=stg_inv.FK_Artificial_Key&#xA;) as a &#xA;group by a.FK_Artificial_Key)&#xA;--from Declarations_To_Add DTA&#xA;where DeclarationTypeID !=2 " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -58,7 +58,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FBF56239-FE81-403C-B6F1-EA3744C892CC}"
-              SQLTask:SqlStatementSource="update Declarations_To_Add&#xA;set SalesNet_INV=(&#xA;select sum(Product_Total_Net) from&#xA;(&#xA;select case when FK_Sub_inv_type=3 then Product_Total_Net*-1&#xA;else Product_Total_Net end as Product_Total_Net,FK_Artificial_Key&#xA; from&#xA;Dim_Invoices&#xA;where FK_Inv_Type_ID=2 and Dim_Declarations.Artificial_Key=Dim_Invoices.FK_Artificial_Key&#xA;) as a &#xA;group by a.FK_Artificial_Key)&#xA;where DeclarationTypeID !=2 &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="update Declarations_To_Add&#xA;set PurchasesNet_INV=(&#xA;select sum(Product_Total_Net) from&#xA;(&#xA;select case when InvoiceType=3 then Product_Total_Net*-1&#xA;else Product_Total_Net end as Product_Total_Net,FK_Artificial_Key&#xA; from&#xA;(select Product_Total_Net,InvoiceType,&#xA;[Customer_Unique_Tax_Id]+'_'+convert(varchar(6),SM.Invoice_Date,112)  as FK_Artificial_Key&#xA;&#xA;from Sales_Invoices_Master_STG SM join Sales_Invoice_Details_Stg SD on SM.SalesInvoice_Id=SD.Fk_SalesInvoices_Id) as stg_inv&#xA;where  Declarations_To_Add.Artificial_Key=stg_inv.FK_Artificial_Key&#xA;) as a &#xA;group by a.FK_Artificial_Key)&#xA;--from Declarations_To_Add DTA&#xA;where DeclarationTypeID !=2 " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -373,7 +373,7 @@
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="440,137.6"
-          Size="440,43.2"
+          Size="397.6,43.2"
           Id="Package\Update Dim_Declarations (PurchasesNet_INV &amp; SalesNet_INV)"
           TopLeft="128.571429739193,280.800002479553" />
         <EdgeLayout
@@ -382,9 +382,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-35.3714306247479,36.7529408504395"
+              EndConnector="-56.5714306247479,36.7529408504395"
               Start="0,0"
-              End="-35.3714306247479,29.2529408504395">
+              End="-56.5714306247479,29.2529408504395">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -395,13 +395,13 @@
                     Point2="0,18.3764704252197"
                     Point3="-4,18.3764704252197" />
                   <mssgle:LineSegment
-                    End="-31.3714306247479,18.3764704252197" />
+                    End="-52.5714306247479,18.3764704252197" />
                   <mssgle:CubicBezierSegment
-                    Point1="-31.3714306247479,18.3764704252197"
-                    Point2="-35.3714306247479,18.3764704252197"
-                    Point3="-35.3714306247479,22.3764704252197" />
+                    Point1="-52.5714306247479,18.3764704252197"
+                    Point2="-56.5714306247479,18.3764704252197"
+                    Point3="-56.5714306247479,22.3764704252197" />
                   <mssgle:LineSegment
-                    End="-35.3714306247479,29.2529408504395" />
+                    End="-56.5714306247479,29.2529408504395" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
