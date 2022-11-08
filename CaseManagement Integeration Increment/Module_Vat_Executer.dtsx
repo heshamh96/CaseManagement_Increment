@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{FE685835-DF94-480B-A8A5-FAC93B28D154}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{39375FE3-3D26-4B55-9BB4-DA372A9EFDAC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -8053,9 +8053,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8339,7 +8337,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8349,6 +8349,10 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
           Size="353.6,43.2"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
           TopLeft="221.942859137789,688.141180074091" />
+        <NodeLayout
+          Size="293.6,41.6"
+          Id="Package\Update Dim_Declarations (Submission_Delay)"
+          TopLeft="261.828575846614,773.788238786084" />
         <NodeLayout
           Size="362.4,41.6"
           Id="Package\Update_(Purchases_National_ID) in Invoices(relativily Light)"
@@ -8383,6 +8387,40 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
                     Point3="66.4000002724796,29.2294085043941" />
                   <mssgle:LineSegment
                     End="66.4000002724796,42.9588170087882" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="398.742859137789,731.341180074091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.8857167088251,42.4470587119924"
+              Start="0,0"
+              End="9.8857167088251,34.9470587119924">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2235293559962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2235293559962"
+                    Point2="0,21.2235293559962"
+                    Point3="4,21.2235293559962" />
+                  <mssgle:LineSegment
+                    End="5.8857167088251,21.2235293559962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.8857167088251,21.2235293559962"
+                    Point2="9.8857167088251,21.2235293559962"
+                    Point3="9.8857167088251,25.2235293559962" />
+                  <mssgle:LineSegment
+                    End="9.8857167088251,34.9470587119924" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8609,44 +8647,6 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
                     Point3="-196.742860704539,42.235294580955" />
                   <mssgle:LineSegment
                     End="-196.742860704539,68.97058916191" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="293.6,41.6"
-          Id="Package\Update Dim_Declarations (Submission_Delay)"
-          TopLeft="261.828575846614,773.788238786084" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="398.742859137789,731.341180074091">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.8857167088251,42.4470587119924"
-              Start="0,0"
-              End="9.8857167088251,34.9470587119924">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.2235293559962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2235293559962"
-                    Point2="0,21.2235293559962"
-                    Point3="4,21.2235293559962" />
-                  <mssgle:LineSegment
-                    End="5.8857167088251,21.2235293559962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.8857167088251,21.2235293559962"
-                    Point2="9.8857167088251,21.2235293559962"
-                    Point3="9.8857167088251,25.2235293559962" />
-                  <mssgle:LineSegment
-                    End="9.8857167088251,34.9470587119924" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8934,7 +8934,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
     design-time-name="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases\Dim_Invoices"
@@ -8974,9 +8974,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
