@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_VAT_Watcher"
   DTS:PackageType="5"
-  DTS:VersionBuild="122"
-  DTS:VersionGUID="{F4F158B3-E8CA-44FF-9770-B9753D76941B}">
+  DTS:VersionBuild="126"
+  DTS:VersionGUID="{BB6EB45F-2A77-45CC-847E-0632A50C62FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -22575,12 +22575,6 @@ pinv.IsDeleted=0</property>
                           dataType="bool"
                           name="IsAPI" />
                         <externalMetadataColumn
-                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
-                        <externalMetadataColumn
                           refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices.Outputs[OLE DB Source Output].ExternalColumns[FK_Inv_Type_ID]"
                           dataType="i4"
                           name="FK_Inv_Type_ID" />
@@ -23550,12 +23544,6 @@ sinv.IsDeleted=0</property>
                           refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[IsAPI]"
                           dataType="bool"
                           name="IsAPI" />
-                        <externalMetadataColumn
-                          refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                         <externalMetadataColumn
                           refId="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices.Outputs[OLE DB Source Output].ExternalColumns[FK_Inv_Type_ID]"
                           dataType="i4"
@@ -25692,6 +25680,18 @@ or TaxVatDecID in (select id from Staging_Area_Increment.[dbo].Declarations_To_A
                       name="SalesTableNet"
                       precision="18"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add.Inputs[OLE DB Destination Input].ExternalColumns[SalesNet_INV]"
+                      dataType="numeric"
+                      name="SalesNet_INV"
+                      precision="19"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add.Inputs[OLE DB Destination Input].ExternalColumns[PurchasesNet_INV]"
+                      dataType="numeric"
+                      name="PurchasesNet_INV"
+                      precision="18"
+                      scale="5" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -26801,7 +26801,7 @@ and dwh.SendDate is null</property>
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>VAT_Post_Excution_Increment.dtsx</PackageName>
+          <PackageName>VAT_Post_Excution_On_Staging.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -27119,7 +27119,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="160,41.6"
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons"
@@ -27132,6 +27132,86 @@ and dwh.SendDate is null</property>
           Size="180,41.6"
           Id="Package\Declarations' Json Vat to STG\truncate_STG_Jasons"
           TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="292.8,41.6"
+          Id="Package\Declarations' Json Vat to STG\Update NonTable_Decs (Sales Net) in staging"
+          TopLeft="99.3142875145892,203.670590766326" />
+        <NodeLayout
+          Size="351.2,41.6"
+          Id="Package\Declarations' Json Vat to STG\Update Table_Decs (SalesNet &amp; SalesTableNet) in staging"
+          TopLeft="53.028572440634,278.305885930705" />
+        <EdgeLayout
+          Id="Package\Declarations' Json Vat to STG.PrecedenceConstraints[Constraint]"
+          TopLeft="157.100003235681,176.829408066823">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.614284278908,26.841182699503"
+              Start="0,0"
+              End="88.614284278908,19.341182699503">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.42059134975149" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.42059134975149"
+                    Point2="0,13.4205913497515"
+                    Point3="4,13.4205913497515" />
+                  <mssgle:LineSegment
+                    End="84.614284278908,13.4205913497515" />
+                  <mssgle:CubicBezierSegment
+                    Point1="84.614284278908,13.4205913497515"
+                    Point2="88.614284278908,13.4205913497515"
+                    Point3="88.614284278908,17.4205913497515" />
+                  <mssgle:LineSegment
+                    End="88.614284278908,19.341182699503" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Declarations' Json Vat to STG.PrecedenceConstraints[Constraint 1]"
+          TopLeft="245.714287514589,245.270590766326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.0857150739552,33.0352951643789"
+              Start="0,0"
+              End="-17.0857150739552,25.5352951643789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5176475821895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5176475821895"
+                    Point2="0,16.5176475821895"
+                    Point3="-4,16.5176475821895" />
+                  <mssgle:LineSegment
+                    End="-13.0857150739552,16.5176475821895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.0857150739552,16.5176475821895"
+                    Point2="-17.0857150739552,16.5176475821895"
+                    Point3="-17.0857150739552,20.5176475821895" />
+                  <mssgle:LineSegment
+                    End="-17.0857150739552,25.5352951643789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Declarations' Json Vat to STG.PrecedenceConstraints[Constraint 13]"
           TopLeft="95.4999999999999,47.0999999999999">
@@ -27157,7 +27237,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27191,83 +27273,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="292.8,41.6"
-          Id="Package\Declarations' Json Vat to STG\Update NonTable_Decs (Sales Net) in staging"
-          TopLeft="99.3142875145892,203.670590766326" />
-        <EdgeLayout
-          Id="Package\Declarations' Json Vat to STG.PrecedenceConstraints[Constraint]"
-          TopLeft="157.100003235681,176.829408066823">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="88.614284278908,26.841182699503"
-              Start="0,0"
-              End="88.614284278908,19.341182699503">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.42059134975149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.42059134975149"
-                    Point2="0,13.4205913497515"
-                    Point3="4,13.4205913497515" />
-                  <mssgle:LineSegment
-                    End="84.614284278908,13.4205913497515" />
-                  <mssgle:CubicBezierSegment
-                    Point1="84.614284278908,13.4205913497515"
-                    Point2="88.614284278908,13.4205913497515"
-                    Point3="88.614284278908,17.4205913497515" />
-                  <mssgle:LineSegment
-                    End="88.614284278908,19.341182699503" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="351.2,41.6"
-          Id="Package\Declarations' Json Vat to STG\Update Table_Decs (SalesNet &amp; SalesTableNet) in staging"
-          TopLeft="53.028572440634,278.305885930705" />
-        <EdgeLayout
-          Id="Package\Declarations' Json Vat to STG.PrecedenceConstraints[Constraint 1]"
-          TopLeft="245.714287514589,245.270590766326">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.0857150739552,33.0352951643789"
-              Start="0,0"
-              End="-17.0857150739552,25.5352951643789">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.5176475821895" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5176475821895"
-                    Point2="0,16.5176475821895"
-                    Point3="-4,16.5176475821895" />
-                  <mssgle:LineSegment
-                    End="-13.0857150739552,16.5176475821895" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.0857150739552,16.5176475821895"
-                    Point2="-17.0857150739552,16.5176475821895"
-                    Point3="-17.0857150739552,20.5176475821895" />
-                  <mssgle:LineSegment
-                    End="-17.0857150739552,25.5352951643789" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27409,7 +27417,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27742,7 +27752,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27776,7 +27788,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -28743,7 +28757,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\Dim_Declarations_SCD Logic\SCD_Declarations STG_to_DWH\STG_Declarations_SCD"
@@ -28771,7 +28785,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29026,7 +29042,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="228,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
@@ -29070,9 +29086,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-59.7551171875,-17.228515625,61.110234375,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29106,9 +29120,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="93.0448828125,19,61.110234375,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29144,7 +29156,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
@@ -29188,9 +29200,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-63.71447265625,-17.228515625,69.0289453125,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29224,9 +29234,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="71.68552734375,25.4,69.0289453125,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29477,7 +29485,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="297.6,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Final Declarations from STG_SCD_Declarations"
@@ -29517,9 +29525,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-39.31447265625,50.6,69.0289453125,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

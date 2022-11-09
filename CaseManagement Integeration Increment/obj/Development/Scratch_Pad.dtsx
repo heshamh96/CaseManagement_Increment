@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Scratch_Pad"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{56EDC139-EDAA-4CF8-947B-E7E2FD479BF5}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{24CC6606-DD12-4F1B-BD6C-098E8192B76E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -435,6 +435,7 @@
       DTS:refId="Package\Dim_Invoices_Portal_Clear"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{336e177e-4cdd-428e-ab7b-208a1d9adafe}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -743,6 +744,7 @@
       DTS:refId="Package\Dim_Invoices_Real_Clear"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{16cf57bf-3217-499d-8957-d60f9bf2a5ab}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -1078,6 +1080,125 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
+          TopLeft="27.4285714188401,133.505883742864" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102"
+          TopLeft="33.1428572304396,198.494121362099" />
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
+          TopLeft="28,3.10588520142437" />
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
+          TopLeft="37.1428572985591,65.505886076561" />
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 2]"
+          TopLeft="28,23.9058852014244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.14285729855905,62.4000008751366"
+              Start="0,0"
+              End="1.64285729855905,62.4000008751366">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,58.4000008751366" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,58.4000008751366"
+                    Point2="-22.5,62.4000008751366"
+                    Point3="-18.5,62.4000008751366" />
+                  <mssgle:LineSegment
+                    End="1.64285729855905,62.4000008751366" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 3]"
+          TopLeft="171.542857298559,107.105886076561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.31428587971897,26.3999976663028"
+              Start="0,0"
+              End="-9.31428587971897,18.8999976663028">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.19999883315138" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.19999883315138"
+                    Point2="0,13.1999988331514"
+                    Point3="-4,13.1999988331514" />
+                  <mssgle:LineSegment
+                    End="-5.31428587971897,13.1999988331514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.31428587971897,13.1999988331514"
+                    Point2="-9.31428587971897,13.1999988331514"
+                    Point3="-9.31428587971897,17.1999988331514" />
+                  <mssgle:LineSegment
+                    End="-9.31428587971897,18.8999976663028" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 4]"
+          TopLeft="165.08571432464,175.105883742864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.388237619235"
+              Start="0,0"
+              End="0,15.888237619235">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.888237619235" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="False"
+          PanelSize="350.4,295.2"
+          Size="287.2,43.2"
+          Id="Package\Deleting Overlapping Records (Spooky)"
+          TopLeft="60,290.105882685408" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Dim_Declarations CLear\2019_Q1"
@@ -2151,125 +2272,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="269.6,41.6"
-          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_102_that over laps with 106"
-          TopLeft="27.4285714188401,133.505883742864" />
-        <NodeLayout
-          Size="269.6,41.6"
-          Id="Package\Deleting Overlapping Records (Spooky)\Delete dwh_106_that over laps with 102"
-          TopLeft="33.1428572304396,198.494121362099" />
-        <NodeLayout
-          Size="268.8,41.6"
-          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_102_that over laps with 106"
-          TopLeft="28,3.10588520142437" />
-        <NodeLayout
-          Size="268.8,41.6"
-          Id="Package\Deleting Overlapping Records (Spooky)\Delete STG_106_that over laps with 102"
-          TopLeft="37.1428572985591,65.505886076561" />
-        <EdgeLayout
-          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 2]"
-          TopLeft="28,23.9058852014244">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.14285729855905,62.4000008751366"
-              Start="0,0"
-              End="1.64285729855905,62.4000008751366">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,0"
-                    Point2="-22.5,0"
-                    Point3="-22.5,4" />
-                  <mssgle:LineSegment
-                    End="-22.5,58.4000008751366" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-22.5,58.4000008751366"
-                    Point2="-22.5,62.4000008751366"
-                    Point3="-18.5,62.4000008751366" />
-                  <mssgle:LineSegment
-                    End="1.64285729855905,62.4000008751366" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 3]"
-          TopLeft="171.542857298559,107.105886076561">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.31428587971897,26.3999976663028"
-              Start="0,0"
-              End="-9.31428587971897,18.8999976663028">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.19999883315138" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.19999883315138"
-                    Point2="0,13.1999988331514"
-                    Point3="-4,13.1999988331514" />
-                  <mssgle:LineSegment
-                    End="-5.31428587971897,13.1999988331514" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.31428587971897,13.1999988331514"
-                    Point2="-9.31428587971897,13.1999988331514"
-                    Point3="-9.31428587971897,17.1999988331514" />
-                  <mssgle:LineSegment
-                    End="-9.31428587971897,18.8999976663028" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Deleting Overlapping Records (Spooky).PrecedenceConstraints[Constraint 4]"
-          TopLeft="165.08571432464,175.105883742864">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23.388237619235"
-              Start="0,0"
-              End="0,15.888237619235">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.888237619235" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43.2"
-          IsExpanded="False"
-          PanelSize="350.4,295.2"
-          Size="287.2,43.2"
-          Id="Package\Deleting Overlapping Records (Spooky)"
-          TopLeft="60,290.105882685408" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

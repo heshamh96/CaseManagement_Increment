@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Payments"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{176BDA7E-C561-4F1E-9E87-97920CFA7360}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{03C30FF9-8D68-40D5-A952-E7CAFFBC2F06}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -424,13 +424,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\Truncate Payments"
-          TopLeft="201.1428605683,22.0235297206364" />
-        <NodeLayout
           Size="142.4,41.6"
           Id="Package\Dim_Paymets"
           TopLeft="194.28571759438,117.458825176727" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Truncate Payments"
+          TopLeft="201.1428605683,22.0235297206364" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="285.5428605683,63.6235297206364">
@@ -474,13 +474,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Dim_Paymets\STG_Dim_Payments"
-          TopLeft="214.285717934978,39.7647064400379" />
-        <NodeLayout
           Size="148.8,41.6"
           Id="Package\Dim_Paymets\Dim_Payments"
           TopLeft="196.00000333786,143.152943184137" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Dim_Paymets\STG_Dim_Payments"
+          TopLeft="214.285717934978,39.7647064400379" />
         <EdgeLayout
           Id="Package\Dim_Paymets.Paths[OLE DB Source Output]"
           TopLeft="301.085717934978,81.3647064400379">
@@ -519,19 +519,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Dim_Paymets\STG_Dim_Payments">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Dim_Paymets\Dim_Payments">
     <Properties>
       <Property>
@@ -541,6 +528,19 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim_Paymets\STG_Dim_Payments">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

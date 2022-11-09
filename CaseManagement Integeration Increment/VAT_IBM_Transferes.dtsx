@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="VAT_IBM_Transferes"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{1BCC492E-8A61-4608-9FD5-D92203E3832B}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{65D16FBF-C666-489F-A765-35A358628CEB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5176,9 +5176,9 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.3142862203174,94.4941181532649"
+              EndConnector="19.3142862203174,94.494118153265"
               Start="0,0"
-              End="19.3142862203174,86.9941181532649">
+              End="19.3142862203174,86.994118153265">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5195,7 +5195,7 @@ where a.TaxVatDecID in (select distinct ID from Staging_Area_Increment.dbo.Decla
                     Point2="19.3142862203174,47.2470590766325"
                     Point3="19.3142862203174,51.2470590766325" />
                   <mssgle:LineSegment
-                    End="19.3142862203174,86.9941181532649" />
+                    End="19.3142862203174,86.994118153265" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_PayRoll"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{40C4789E-22D3-45EA-9655-9DA1031D57E9}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{852FFADD-56C9-4070-8D0D-374D12A63510}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -30667,9 +30667,9 @@
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="313.6,618.4"
-          Size="313.6,661.6"
+          Size="313.6,43.2"
           Id="Package\PayRoll_Transasctions_Flattenning"
           TopLeft="86.8571443363112,216.564708919591" />
         <NodeLayout
