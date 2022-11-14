@@ -6,6 +6,7 @@
       <Options>
         <ServerName>TXBI-DWA-01\TXBIDB</ServerName>
         <PathOnServer>/SSISDB/DWH_VAT_BI_Increment_Project_Deployment/CaseManagement Integeration Increment</PathOnServer>
+        <StartObjectID>Module_VAT_Watcher.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>

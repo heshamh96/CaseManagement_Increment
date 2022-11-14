@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_PayRoll"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{852FFADD-56C9-4070-8D0D-374D12A63510}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{80571AFD-3FAA-45AF-B873-86DFF647793C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -27891,297 +27891,337 @@
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[ID]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[SeriesNum_1]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="SeriesNum_1"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[SeriesNum_1]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SeriesNum_1]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[taxTreatment_2]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="taxTreatment_2"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[taxTreatment_2]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[taxTreatment_2]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employeeCode_3]"
                           cachedDataType="wstr"
-                          cachedLength="20"
+                          cachedLength="1000"
                           cachedName="employeeCode_3"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeCode_3]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeCode_3]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[insuranceNum_4]"
                           cachedDataType="wstr"
-                          cachedLength="36"
+                          cachedLength="1000"
                           cachedName="insuranceNum_4"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[insuranceNum_4]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceNum_4]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[NID_5]"
                           cachedDataType="wstr"
-                          cachedLength="56"
+                          cachedLength="1000"
                           cachedName="NID_5"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[NID_5]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[NID_5]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[passportNum_6]"
                           cachedDataType="wstr"
-                          cachedLength="16"
+                          cachedLength="1000"
                           cachedName="passportNum_6"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[passportNum_6]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[passportNum_6]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employeeName_7]"
                           cachedDataType="wstr"
-                          cachedLength="120"
+                          cachedLength="1000"
                           cachedName="employeeName_7"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeName_7]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeName_7]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employeeJob_8]"
                           cachedDataType="wstr"
-                          cachedLength="52"
+                          cachedLength="1000"
                           cachedName="employeeJob_8"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeJob_8]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeJob_8]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employmentDuration_9]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="employmentDuration_9"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employmentDuration_9]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employmentDuration_9]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employmentSalary_10]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="employmentSalary_10"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employmentSalary_10]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employmentSalary_10]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[supplementalSalary_11]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="supplementalSalary_11"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[supplementalSalary_11]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[supplementalSalary_11]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[periodicBonus_12]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="periodicBonus_12"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[periodicBonus_12]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodicBonus_12]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[incentiveBonus_13]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="incentiveBonus_13"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[incentiveBonus_13]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[incentiveBonus_13]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[additionalSalary_14]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="additionalSalary_14"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[additionalSalary_14]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[additionalSalary_14]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[salaryTax_15]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="salaryTax_15"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[salaryTax_15]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[salaryTax_15]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[entitlementExemptAmounts_16]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="entitlementExemptAmounts_16"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[entitlementExemptAmounts_16]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[entitlementExemptAmounts_16]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[total_17]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="total_17"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[total_17]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[total_17]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[InkindBenefits_18]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="InkindBenefits_18"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[InkindBenefits_18]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[InkindBenefits_18]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[serviceFees_19]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="serviceFees_19"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[serviceFees_19]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[serviceFees_19]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[entitlementEmployeeShareInProfit_20]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="entitlementEmployeeShareInProfit_20"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[entitlementEmployeeShareInProfit_20]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[entitlementEmployeeShareInProfit_20]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[totalAccrual_21]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="totalAccrual_21"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[totalAccrual_21]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[totalAccrual_21]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[deductionExemptAmounts_22]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="deductionExemptAmounts_22"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[deductionExemptAmounts_22]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductionExemptAmounts_22]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[personalExemption_23]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="personalExemption_23"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[personalExemption_23]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[personalExemption_23]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employeeShareInInsurance_24]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="employeeShareInInsurance_24"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeShareInInsurance_24]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeShareInInsurance_24]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[installments_25]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="installments_25"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[installments_25]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[installments_25]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[employeeShareInInsuranceSub_26]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="employeeShareInInsuranceSub_26"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeShareInInsuranceSub_26]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeShareInInsuranceSub_26]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[deductionEmployeeShareInProfit_27]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="deductionEmployeeShareInProfit_27"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[deductionEmployeeShareInProfit_27]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductionEmployeeShareInProfit_27]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[relativeImprint_28]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="relativeImprint_28"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[relativeImprint_28]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[relativeImprint_28]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[totalExemption_29]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="totalExemption_29"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[totalExemption_29]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[totalExemption_29]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[netProfit_30]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="netProfit_30"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[netProfit_30]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[netProfit_30]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[insuranceSubs_31]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="insuranceSubs_31"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[insuranceSubs_31]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceSubs_31]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[insuranceInstallments_32]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="insuranceInstallments_32"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[insuranceInstallments_32]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceInstallments_32]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[exemptAmountsFromSub_33]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="exemptAmountsFromSub_33"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[exemptAmountsFromSub_33]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[exemptAmountsFromSub_33]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[periodBowl_34]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="periodBowl_34"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[periodBowl_34]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodBowl_34]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[yearlyBowl_35]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="yearlyBowl_35"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[yearlyBowl_35]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[yearlyBowl_35]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[yearlyTax_36]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="yearlyTax_36"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[yearlyTax_36]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[yearlyTax_36]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[periodTax_37]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="periodTax_37"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[periodTax_37]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodTax_37]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[deductedTax_38]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="deductedTax_38"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[deductedTax_38]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductedTax_38]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[paidTax_39]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="paidTax_39"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[paidTax_39]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[paidTax_39]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[diff1_40]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="diff1_40"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[diff1_40]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff1_40]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[symbioticContribution_41]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="symbioticContribution_41"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[symbioticContribution_41]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[symbioticContribution_41]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[symbioticContributionPaid_42]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="symbioticContributionPaid_42"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[symbioticContributionPaid_42]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[symbioticContributionPaid_42]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[diff2_43]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="diff2_43"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[diff2_43]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff2_43]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[martyrBoxContribution_44]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="martyrBoxContribution_44"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[martyrBoxContribution_44]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[martyrBoxContribution_44]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[martyrBoxContributionPaid_45]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="martyrBoxContributionPaid_45"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[martyrBoxContributionPaid_45]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[martyrBoxContributionPaid_45]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[diff3_46]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="diff3_46"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[diff3_46]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff3_46]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[gehaName_47]"
                           cachedDataType="wstr"
-                          cachedLength="124"
+                          cachedLength="1000"
                           cachedName="gehaName_47"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[gehaName_47]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[gehaName_47]" />
                         <inputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].Columns[FileName]"
                           cachedDataType="wstr"
-                          cachedLength="96"
+                          cachedLength="1000"
                           cachedName="FileName"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[FileName]" />
@@ -28324,203 +28364,243 @@
                           name="ID" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[SeriesNum_1]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="SeriesNum_1" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[taxTreatment_2]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="taxTreatment_2" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeCode_3]"
                           dataType="wstr"
-                          length="20"
+                          length="1000"
                           name="employeeCode_3" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[insuranceNum_4]"
                           dataType="wstr"
-                          length="36"
+                          length="1000"
                           name="insuranceNum_4" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[NID_5]"
                           dataType="wstr"
-                          length="56"
+                          length="1000"
                           name="NID_5" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[passportNum_6]"
                           dataType="wstr"
-                          length="16"
+                          length="1000"
                           name="passportNum_6" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeName_7]"
                           dataType="wstr"
-                          length="120"
+                          length="1000"
                           name="employeeName_7" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeJob_8]"
                           dataType="wstr"
-                          length="52"
+                          length="1000"
                           name="employeeJob_8" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employmentDuration_9]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employmentDuration_9" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employmentSalary_10]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employmentSalary_10" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[supplementalSalary_11]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="supplementalSalary_11" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[periodicBonus_12]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="periodicBonus_12" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[incentiveBonus_13]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="incentiveBonus_13" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[additionalSalary_14]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="additionalSalary_14" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[salaryTax_15]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="salaryTax_15" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[entitlementExemptAmounts_16]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="entitlementExemptAmounts_16" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[total_17]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="total_17" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[InkindBenefits_18]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="InkindBenefits_18" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[serviceFees_19]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="serviceFees_19" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[entitlementEmployeeShareInProfit_20]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="entitlementEmployeeShareInProfit_20" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[totalAccrual_21]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="totalAccrual_21" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[deductionExemptAmounts_22]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="deductionExemptAmounts_22" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[personalExemption_23]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="personalExemption_23" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeShareInInsurance_24]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employeeShareInInsurance_24" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[installments_25]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="installments_25" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[employeeShareInInsuranceSub_26]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employeeShareInInsuranceSub_26" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[deductionEmployeeShareInProfit_27]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="deductionEmployeeShareInProfit_27" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[relativeImprint_28]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="relativeImprint_28" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[totalExemption_29]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="totalExemption_29" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[netProfit_30]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="netProfit_30" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[insuranceSubs_31]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="insuranceSubs_31" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[insuranceInstallments_32]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="insuranceInstallments_32" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[exemptAmountsFromSub_33]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           name="exemptAmountsFromSub_33" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[periodBowl_34]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           name="periodBowl_34" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[yearlyBowl_35]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           name="yearlyBowl_35" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[yearlyTax_36]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="yearlyTax_36" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[periodTax_37]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="periodTax_37" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[deductedTax_38]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="deductedTax_38" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[paidTax_39]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="paidTax_39" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[diff1_40]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="diff1_40" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[symbioticContribution_41]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="symbioticContribution_41" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[symbioticContributionPaid_42]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="symbioticContributionPaid_42" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[diff2_43]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="diff2_43" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[martyrBoxContribution_44]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="martyrBoxContribution_44" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[martyrBoxContributionPaid_45]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="martyrBoxContributionPaid_45" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[diff3_46]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="diff3_46" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[gehaName_47]"
                           dataType="wstr"
-                          length="124"
+                          length="1000"
                           name="gehaName_47" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\Eight_Model.Inputs[OLE DB Destination Input].ExternalColumns[FileName]"
                           dataType="wstr"
-                          length="96"
+                          length="1000"
                           name="FileName" />
                       </externalMetadataColumns>
                     </input>
@@ -28746,7 +28826,7 @@
                       description="Metadata scan mode controls how data type and length is determined. By default few records scanned to determine datatype/length. Changing ScanMode affects length/datatype accuracy."
                       expressionType="Notify"
                       name="MetaDataScanMode"
-                      typeConverter="ZappySys.Common.Data.MetaDataScanMode">4</property>
+                      typeConverter="ZappySys.Common.Data.MetaDataScanMode">5</property>
                     <property
                       dataType="System.Int32"
                       description="Length for all string column. This option is only valid for MetaDataScanMode=Custom"
@@ -29340,298 +29420,338 @@
                           name="ID" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SeriesNum_1]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[SeriesNum_1]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SeriesNum_1]"
                           name="SeriesNum_1" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[taxTreatment_2]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[taxTreatment_2]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[taxTreatment_2]"
                           name="taxTreatment_2" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeCode_3]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeCode_3]"
-                          length="20"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeCode_3]"
                           name="employeeCode_3" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceNum_4]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[insuranceNum_4]"
-                          length="36"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceNum_4]"
                           name="insuranceNum_4" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[NID_5]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[NID_5]"
-                          length="56"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[NID_5]"
                           name="NID_5" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[passportNum_6]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[passportNum_6]"
-                          length="16"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[passportNum_6]"
                           name="passportNum_6" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeName_7]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeName_7]"
-                          length="120"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeName_7]"
                           name="employeeName_7" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeJob_8]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeJob_8]"
-                          length="52"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeJob_8]"
                           name="employeeJob_8" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employmentDuration_9]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employmentDuration_9]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employmentDuration_9]"
                           name="employmentDuration_9" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employmentSalary_10]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employmentSalary_10]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employmentSalary_10]"
                           name="employmentSalary_10" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[supplementalSalary_11]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[supplementalSalary_11]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[supplementalSalary_11]"
                           name="supplementalSalary_11" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodicBonus_12]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[periodicBonus_12]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodicBonus_12]"
                           name="periodicBonus_12" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[incentiveBonus_13]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[incentiveBonus_13]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[incentiveBonus_13]"
                           name="incentiveBonus_13" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[additionalSalary_14]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[additionalSalary_14]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[additionalSalary_14]"
                           name="additionalSalary_14" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[salaryTax_15]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[salaryTax_15]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[salaryTax_15]"
                           name="salaryTax_15" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[entitlementExemptAmounts_16]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[entitlementExemptAmounts_16]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[entitlementExemptAmounts_16]"
                           name="entitlementExemptAmounts_16" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[total_17]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[total_17]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[total_17]"
                           name="total_17" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[InkindBenefits_18]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[InkindBenefits_18]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[InkindBenefits_18]"
                           name="InkindBenefits_18" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[serviceFees_19]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[serviceFees_19]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[serviceFees_19]"
                           name="serviceFees_19" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[entitlementEmployeeShareInProfit_20]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[entitlementEmployeeShareInProfit_20]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[entitlementEmployeeShareInProfit_20]"
                           name="entitlementEmployeeShareInProfit_20" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[totalAccrual_21]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[totalAccrual_21]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[totalAccrual_21]"
                           name="totalAccrual_21" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductionExemptAmounts_22]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[deductionExemptAmounts_22]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductionExemptAmounts_22]"
                           name="deductionExemptAmounts_22" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[personalExemption_23]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[personalExemption_23]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[personalExemption_23]"
                           name="personalExemption_23" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeShareInInsurance_24]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeShareInInsurance_24]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeShareInInsurance_24]"
                           name="employeeShareInInsurance_24" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[installments_25]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[installments_25]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[installments_25]"
                           name="installments_25" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeShareInInsuranceSub_26]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeShareInInsuranceSub_26]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[employeeShareInInsuranceSub_26]"
                           name="employeeShareInInsuranceSub_26" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductionEmployeeShareInProfit_27]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[deductionEmployeeShareInProfit_27]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductionEmployeeShareInProfit_27]"
                           name="deductionEmployeeShareInProfit_27" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[relativeImprint_28]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[relativeImprint_28]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[relativeImprint_28]"
                           name="relativeImprint_28" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[totalExemption_29]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[totalExemption_29]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[totalExemption_29]"
                           name="totalExemption_29" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[netProfit_30]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[netProfit_30]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[netProfit_30]"
                           name="netProfit_30" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceSubs_31]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[insuranceSubs_31]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceSubs_31]"
                           name="insuranceSubs_31" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceInstallments_32]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[insuranceInstallments_32]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[insuranceInstallments_32]"
                           name="insuranceInstallments_32" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[exemptAmountsFromSub_33]"
-                          dataType="r8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[exemptAmountsFromSub_33]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[exemptAmountsFromSub_33]"
                           name="exemptAmountsFromSub_33" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodBowl_34]"
-                          dataType="r8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[periodBowl_34]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodBowl_34]"
                           name="periodBowl_34" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[yearlyBowl_35]"
-                          dataType="r8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[yearlyBowl_35]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[yearlyBowl_35]"
                           name="yearlyBowl_35" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[yearlyTax_36]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[yearlyTax_36]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[yearlyTax_36]"
                           name="yearlyTax_36" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodTax_37]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[periodTax_37]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[periodTax_37]"
                           name="periodTax_37" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductedTax_38]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[deductedTax_38]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[deductedTax_38]"
                           name="deductedTax_38" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[paidTax_39]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[paidTax_39]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[paidTax_39]"
                           name="paidTax_39" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff1_40]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[diff1_40]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff1_40]"
                           name="diff1_40" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[symbioticContribution_41]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[symbioticContribution_41]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[symbioticContribution_41]"
                           name="symbioticContribution_41" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[symbioticContributionPaid_42]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[symbioticContributionPaid_42]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[symbioticContributionPaid_42]"
                           name="symbioticContributionPaid_42" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff2_43]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[diff2_43]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff2_43]"
                           name="diff2_43" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[martyrBoxContribution_44]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[martyrBoxContribution_44]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[martyrBoxContribution_44]"
                           name="martyrBoxContribution_44" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[martyrBoxContributionPaid_45]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[martyrBoxContributionPaid_45]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[martyrBoxContributionPaid_45]"
                           name="martyrBoxContributionPaid_45" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff3_46]"
-                          dataType="i8"
+                          dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[diff3_46]"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[diff3_46]"
                           name="diff3_46" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[gehaName_47]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[gehaName_47]"
-                          length="124"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[gehaName_47]"
                           name="gehaName_47" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[FileName]"
                           dataType="wstr"
                           externalMetadataColumnId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[FileName]"
-                          length="96"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[FileName]"
                           name="FileName" />
                       </outputColumns>
@@ -29639,207 +29759,248 @@
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[id]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="id" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[SeriesNum_1]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="SeriesNum_1" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[taxTreatment_2]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="taxTreatment_2" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeCode_3]"
                           dataType="wstr"
-                          length="20"
+                          length="1000"
                           name="employeeCode_3" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[insuranceNum_4]"
                           dataType="wstr"
-                          length="36"
+                          length="1000"
                           name="insuranceNum_4" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[NID_5]"
                           dataType="wstr"
-                          length="56"
+                          length="1000"
                           name="NID_5" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[passportNum_6]"
                           dataType="wstr"
-                          length="16"
+                          length="1000"
                           name="passportNum_6" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeName_7]"
                           dataType="wstr"
-                          length="120"
+                          length="1000"
                           name="employeeName_7" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeJob_8]"
                           dataType="wstr"
-                          length="52"
+                          length="1000"
                           name="employeeJob_8" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employmentDuration_9]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employmentDuration_9" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employmentSalary_10]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employmentSalary_10" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[supplementalSalary_11]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="supplementalSalary_11" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[periodicBonus_12]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="periodicBonus_12" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[incentiveBonus_13]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="incentiveBonus_13" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[additionalSalary_14]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="additionalSalary_14" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[salaryTax_15]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="salaryTax_15" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[entitlementExemptAmounts_16]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="entitlementExemptAmounts_16" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[total_17]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="total_17" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[InkindBenefits_18]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="InkindBenefits_18" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[serviceFees_19]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="serviceFees_19" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[entitlementEmployeeShareInProfit_20]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="entitlementEmployeeShareInProfit_20" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[totalAccrual_21]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="totalAccrual_21" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[deductionExemptAmounts_22]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="deductionExemptAmounts_22" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[personalExemption_23]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="personalExemption_23" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeShareInInsurance_24]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employeeShareInInsurance_24" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[installments_25]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="installments_25" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[employeeShareInInsuranceSub_26]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="employeeShareInInsuranceSub_26" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[deductionEmployeeShareInProfit_27]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="deductionEmployeeShareInProfit_27" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[relativeImprint_28]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="relativeImprint_28" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[totalExemption_29]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="totalExemption_29" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[netProfit_30]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="netProfit_30" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[insuranceSubs_31]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="insuranceSubs_31" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[insuranceInstallments_32]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="insuranceInstallments_32" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[exemptAmountsFromSub_33]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           name="exemptAmountsFromSub_33" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[periodBowl_34]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           name="periodBowl_34" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[yearlyBowl_35]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           name="yearlyBowl_35" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[yearlyTax_36]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="yearlyTax_36" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[periodTax_37]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="periodTax_37" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[deductedTax_38]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="deductedTax_38" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[paidTax_39]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="paidTax_39" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[diff1_40]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="diff1_40" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[symbioticContribution_41]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="symbioticContribution_41" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[symbioticContributionPaid_42]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="symbioticContributionPaid_42" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[diff2_43]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="diff2_43" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[martyrBoxContribution_44]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="martyrBoxContribution_44" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[martyrBoxContributionPaid_45]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="martyrBoxContributionPaid_45" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[diff3_46]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           name="diff3_46" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[gehaName_47]"
                           dataType="wstr"
-                          length="124"
+                          length="1000"
                           name="gehaName_47" />
                         <externalMetadataColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransformOutput].ExternalColumns[FileName]"
                           dataType="wstr"
-                          length="96"
+                          length="1000"
                           name="FileName" />
                       </externalMetadataColumns>
                     </output>
@@ -30010,250 +30171,290 @@
                           name="ID" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[SeriesNum_1]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[SeriesNum_1]"
                           name="SeriesNum_1" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[taxTreatment_2]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[taxTreatment_2]"
                           name="taxTreatment_2" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeCode_3]"
                           dataType="wstr"
-                          length="20"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeCode_3]"
                           name="employeeCode_3" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[insuranceNum_4]"
                           dataType="wstr"
-                          length="36"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[insuranceNum_4]"
                           name="insuranceNum_4" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[NID_5]"
                           dataType="wstr"
-                          length="56"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[NID_5]"
                           name="NID_5" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[passportNum_6]"
                           dataType="wstr"
-                          length="16"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[passportNum_6]"
                           name="passportNum_6" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeName_7]"
                           dataType="wstr"
-                          length="120"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeName_7]"
                           name="employeeName_7" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeJob_8]"
                           dataType="wstr"
-                          length="52"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeJob_8]"
                           name="employeeJob_8" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employmentDuration_9]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employmentDuration_9]"
                           name="employmentDuration_9" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employmentSalary_10]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employmentSalary_10]"
                           name="employmentSalary_10" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[supplementalSalary_11]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[supplementalSalary_11]"
                           name="supplementalSalary_11" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[periodicBonus_12]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[periodicBonus_12]"
                           name="periodicBonus_12" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[incentiveBonus_13]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[incentiveBonus_13]"
                           name="incentiveBonus_13" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[additionalSalary_14]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[additionalSalary_14]"
                           name="additionalSalary_14" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[salaryTax_15]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[salaryTax_15]"
                           name="salaryTax_15" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[entitlementExemptAmounts_16]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[entitlementExemptAmounts_16]"
                           name="entitlementExemptAmounts_16" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[total_17]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[total_17]"
                           name="total_17" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[InkindBenefits_18]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[InkindBenefits_18]"
                           name="InkindBenefits_18" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[serviceFees_19]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[serviceFees_19]"
                           name="serviceFees_19" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[entitlementEmployeeShareInProfit_20]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[entitlementEmployeeShareInProfit_20]"
                           name="entitlementEmployeeShareInProfit_20" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[totalAccrual_21]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[totalAccrual_21]"
                           name="totalAccrual_21" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[deductionExemptAmounts_22]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[deductionExemptAmounts_22]"
                           name="deductionExemptAmounts_22" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[personalExemption_23]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[personalExemption_23]"
                           name="personalExemption_23" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeShareInInsurance_24]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeShareInInsurance_24]"
                           name="employeeShareInInsurance_24" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[installments_25]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[installments_25]"
                           name="installments_25" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeShareInInsuranceSub_26]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[employeeShareInInsuranceSub_26]"
                           name="employeeShareInInsuranceSub_26" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[deductionEmployeeShareInProfit_27]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[deductionEmployeeShareInProfit_27]"
                           name="deductionEmployeeShareInProfit_27" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[relativeImprint_28]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[relativeImprint_28]"
                           name="relativeImprint_28" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[totalExemption_29]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[totalExemption_29]"
                           name="totalExemption_29" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[netProfit_30]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[netProfit_30]"
                           name="netProfit_30" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[insuranceSubs_31]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[insuranceSubs_31]"
                           name="insuranceSubs_31" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[insuranceInstallments_32]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[insuranceInstallments_32]"
                           name="insuranceInstallments_32" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[exemptAmountsFromSub_33]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[exemptAmountsFromSub_33]"
                           name="exemptAmountsFromSub_33" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[periodBowl_34]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[periodBowl_34]"
                           name="periodBowl_34" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[yearlyBowl_35]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[yearlyBowl_35]"
                           name="yearlyBowl_35" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[yearlyTax_36]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[yearlyTax_36]"
                           name="yearlyTax_36" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[periodTax_37]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[periodTax_37]"
                           name="periodTax_37" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[deductedTax_38]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[deductedTax_38]"
                           name="deductedTax_38" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[paidTax_39]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[paidTax_39]"
                           name="paidTax_39" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[diff1_40]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[diff1_40]"
                           name="diff1_40" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[symbioticContribution_41]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[symbioticContribution_41]"
                           name="symbioticContribution_41" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[symbioticContributionPaid_42]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[symbioticContributionPaid_42]"
                           name="symbioticContributionPaid_42" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[diff2_43]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[diff2_43]"
                           name="diff2_43" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[martyrBoxContribution_44]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[martyrBoxContribution_44]"
                           name="martyrBoxContribution_44" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[martyrBoxContributionPaid_45]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[martyrBoxContributionPaid_45]"
                           name="martyrBoxContributionPaid_45" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[diff3_46]"
-                          dataType="i8"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[diff3_46]"
                           name="diff3_46" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[gehaName_47]"
                           dataType="wstr"
-                          length="124"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[gehaName_47]"
                           name="gehaName_47" />
                         <outputColumn
                           refId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[FileName]"
                           dataType="wstr"
-                          length="96"
+                          length="1000"
                           lineageId="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[FileName]"
                           name="FileName" />
                         <outputColumn
@@ -30637,26 +30838,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.4285716231988,36.4705881409167"
+              EndConnector="-11.4285716231988,36.4705881409159"
               Start="0,0"
-              End="-11.4285716231988,28.9705881409167">
+              End="-11.4285716231988,28.9705881409159">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.2352940704583" />
+                    End="0,14.235294070458" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.2352940704583"
-                    Point2="0,18.2352940704583"
-                    Point3="-4,18.2352940704583" />
+                    Point1="0,14.235294070458"
+                    Point2="0,18.235294070458"
+                    Point3="-4,18.235294070458" />
                   <mssgle:LineSegment
-                    End="-7.42857162319881,18.2352940704583" />
+                    End="-7.42857162319881,18.235294070458" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.42857162319881,18.2352940704583"
-                    Point2="-11.4285716231988,18.2352940704583"
-                    Point3="-11.4285716231988,22.2352940704583" />
+                    Point1="-7.42857162319881,18.235294070458"
+                    Point2="-11.4285716231988,18.235294070458"
+                    Point3="-11.4285716231988,22.235294070458" />
                   <mssgle:LineSegment
-                    End="-11.4285716231988,28.9705881409167" />
+                    End="-11.4285716231988,28.9705881409159" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -31087,7 +31288,7 @@
     design-time-name="Package\PayRoll_Transasctions_Flattenning\Model_4">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="146.4,41.6"
           Id="Package\PayRoll_Transasctions_Flattenning\Model_4\FourthModel 1"
@@ -31159,9 +31360,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31183,9 +31382,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31219,9 +31416,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31255,9 +31450,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31291,9 +31484,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31327,9 +31518,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31363,9 +31552,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31399,9 +31586,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31435,9 +31620,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -31892,7 +32075,7 @@
     design-time-name="Package\PayRoll_Transasctions_Flattenning\Model_8">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188,41.6"
           Id="Package\PayRoll_Transasctions_Flattenning\Model_8\JSON Parser Transform"
@@ -31936,9 +32119,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -31972,9 +32153,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

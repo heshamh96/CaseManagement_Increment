@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AA_Deployment_Version"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{39EE0FD3-C5AE-4336-AF5C-4CA43DB2C07A}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{D006A228-B2E1-469F-A60B-049A24B14EF4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -200,8 +200,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{21B4B7DF-9AAB-42A3-9630-513CFFB1BE8D}"
-      DTS:From="Package\Gamarek_Module (Total Truncate)"
+      DTS:DTSID="{242C5FB9-EC10-484A-981A-7E174B6D0904}"
+      DTS:From="Package\Payment_Module"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Payroll_Module (Total Truncate)" />
@@ -216,8 +216,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{4772F422-33B2-4B58-8916-BDFFAEB05ECB}"
-      DTS:From="Package\Payroll_Module (Total Truncate)"
+      DTS:DTSID="{783EB3A7-9DAC-46D6-8FBF-5482AF6ACBB8}"
+      DTS:From="Package\Gamarek_Module (Total Truncate)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Payment_Module" />
@@ -232,8 +232,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{2086D738-33E7-4BFC-AEE2-EBF6559E4574}"
-      DTS:From="Package\Payment_Module"
+      DTS:DTSID="{3911F4C8-D506-4427-B1F4-F4E9E8041530}"
+      DTS:From="Package\Payroll_Module (Total Truncate)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Process Analysis" />
@@ -258,6 +258,14 @@
           Size="267.2,41.6"
           Id="Package\Income_Module_Excution (Incremental)"
           TopLeft="264.571433077053,145.223531179197" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Payment_Module"
+          TopLeft="405.942864042399,465.458824447448" />
+        <NodeLayout
+          Size="288.8,41.6"
+          Id="Package\Payroll_Module (Total Truncate)"
+          TopLeft="290.857147810411,580.28235766863" />
         <NodeLayout
           Size="179.2,41.6"
           Id="Package\Post_Execution_DWH"
@@ -430,36 +438,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="288.8,41.6"
-          Id="Package\Payroll_Module (Total Truncate)"
-          TopLeft="221.714289490058,482.40000335469" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="508.571435188761,429.60000335469">
+          TopLeft="485.542864042399,507.058824447448">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-142.457145698703,52.7999999999997"
+              EndConnector="-50.2857162319883,73.223533221182"
               Start="0,0"
-              End="-142.457145698703,45.2999999999997">
+              End="-50.2857162319883,65.723533221182">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.3999999999998" />
+                    End="0,32.611766610591" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.3999999999998"
-                    Point2="0,26.3999999999998"
-                    Point3="-4,26.3999999999998" />
+                    Point1="0,32.611766610591"
+                    Point2="0,36.611766610591"
+                    Point3="-4,36.611766610591" />
                   <mssgle:LineSegment
-                    End="-138.457145698703,26.3999999999998" />
+                    End="-46.2857162319883,36.611766610591" />
                   <mssgle:CubicBezierSegment
-                    Point1="-138.457145698703,26.3999999999998"
-                    Point2="-142.457145698703,26.3999999999998"
-                    Point3="-142.457145698703,30.3999999999998" />
+                    Point1="-46.2857162319883,36.611766610591"
+                    Point2="-50.2857162319883,36.611766610591"
+                    Point3="-50.2857162319883,40.611766610591" />
                   <mssgle:LineSegment
-                    End="-142.457145698703,45.2999999999997" />
+                    End="-50.2857162319883,65.723533221182" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -468,36 +472,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Payment_Module"
-          TopLeft="259.657147265454,583.529414338637" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="366.114289490058,524.00000335469">
+          TopLeft="508.571435188761,429.60000335469">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-26.8571422246039,59.5294109839468"
+              EndConnector="-23.0285711463618,35.8588210927575"
               Start="0,0"
-              End="-26.8571422246039,52.0294109839468">
+              End="-23.0285711463618,28.3588210927575">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7647054919734" />
+                    End="0,13.9294105463787" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.7647054919734"
-                    Point2="0,29.7647054919734"
-                    Point3="-4,29.7647054919734" />
+                    Point1="0,13.9294105463787"
+                    Point2="0,17.9294105463787"
+                    Point3="-4,17.9294105463787" />
                   <mssgle:LineSegment
-                    End="-22.8571422246039,29.7647054919734" />
+                    End="-19.0285711463618,17.9294105463787" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.8571422246039,29.7647054919734"
-                    Point2="-26.8571422246039,29.7647054919734"
-                    Point3="-26.8571422246039,33.7647054919734" />
+                    Point1="-19.0285711463618,17.9294105463787"
+                    Point2="-23.0285711463618,17.9294105463787"
+                    Point3="-23.0285711463618,21.9294105463787" />
                   <mssgle:LineSegment
-                    End="-26.8571422246039,52.0294109839468" />
+                    End="-23.0285711463618,28.3588210927575" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -508,18 +508,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="259.657147265454,606.352944496841">
+          TopLeft="290.857147810411,604.729416161837">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-71.8857181393365,0"
+              EndConnector="-103.085718684294,0"
               Start="0,0"
-              End="-64.3857181393365,0">
+              End="-95.5857186842937,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-64.3857181393365,0" />
+                    End="-95.5857186842937,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

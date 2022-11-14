@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{5B96E5EA-0296-4947-A62F-AA378B25A629}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{C02CAB88-1039-4AFD-AABC-6F4C2EE00DE5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -607,6 +607,28 @@
                           precision="18"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[SalesNet_INV]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[SalesNet_INV]"
+                          lineageId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[SalesNet_INV]"
+                          name="SalesNet_INV"
+                          precision="19"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[PurchasesNet_INV]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[PurchasesNet_INV]"
+                          lineageId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].Columns[PurchasesNet_INV]"
+                          name="PurchasesNet_INV"
+                          precision="18"
+                          scale="5"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -860,6 +882,18 @@
                           name="SalesTableNet"
                           precision="18"
                           scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[SalesNet_INV]"
+                          dataType="numeric"
+                          name="SalesNet_INV"
+                          precision="19"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Output].ExternalColumns[PurchasesNet_INV]"
+                          dataType="numeric"
+                          name="PurchasesNet_INV"
+                          precision="18"
+                          scale="5" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1168,6 +1202,20 @@
                           name="SalesTableNet"
                           precision="18"
                           scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[SalesNet_INV]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[SalesNet_INV]"
+                          name="SalesNet_INV"
+                          precision="19"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[PurchasesNet_INV]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[PurchasesNet_INV]"
+                          name="PurchasesNet_INV"
+                          precision="18"
+                          scale="5" />
                         <outputColumn
                           refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -1885,6 +1933,10 @@
                           name="PurchasesNet_INV"
                           precision="18"
                           scale="5" />
+                        <externalMetadataColumn
+                          refId="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations.Inputs[OLE DB Destination Input].ExternalColumns[Submission_Delay_CC]"
+                          dataType="i4"
+                          name="Submission_Delay_CC" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2037,13 +2089,15 @@
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[UniqueTaxID]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Id"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[PurchaseTypeValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="PurchaseTypeValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTypeValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeValue]" />
@@ -2056,31 +2110,36 @@
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeName]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Local]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Local"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Local]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Local]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Exported]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Exported"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Exported]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Exported]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[TotalValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="TotalValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TotalValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Tax]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Tax"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[FK_ID]"
-                          cachedDataType="guid"
+                          cachedDataType="wstr"
+                          cachedLength="100"
                           cachedName="FK_ID"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]" />
@@ -2098,7 +2157,8 @@
                           name="UniqueTaxID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
@@ -2289,6 +2349,13 @@
                           cachedName="FK_ID"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]" />
+                        <inputColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2303,7 +2370,8 @@
                           name="UniqueTaxID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
@@ -2459,19 +2527,21 @@ SELECT  [TaxPeriod]
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
-                          dataType="i8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
                           name="Id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTypeValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeValue]"
                           name="PurchaseTypeValue"
                           truncationRowDisposition="FailComponent" />
@@ -2487,46 +2557,51 @@ SELECT  [TaxPeriod]
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Local]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Local]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Local]"
                           name="Local"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Exported]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Exported]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Exported]"
                           name="Exported"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TotalValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]"
                           name="TotalValue"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Tax]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
                           name="Tax"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
+                          length="100"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
                           name="FK_ID"
                           truncationRowDisposition="FailComponent" />
@@ -2579,7 +2654,8 @@ SELECT  [TaxPeriod]
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </output>
@@ -2601,7 +2677,8 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
                           name="FK_ID" />
                         <outputColumn
@@ -2691,8 +2768,8 @@ SELECT  [TaxPeriod]
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/****** Script for SelectTopNRows command from SSMS  ******/
 SELECT  [TaxPeriod]
       ,[UniqueTaxID]
-      
-      ,[Id] as [FK_ID]
+      ,[FK_ID]
+      ,[Id] 
       ,[TaxTypeValue]
       ,[TaxTypeName]
       --,[TaxContainer]
@@ -2820,6 +2897,16 @@ SELECT  [TaxPeriod]
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
                           name="FK_ID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          length="1000"
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2865,8 +2952,13 @@ SELECT  [TaxPeriod]
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
                           dataType="wstr"
-                          length="1000"
+                          length="100"
                           name="FK_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          dataType="wstr"
+                          length="1000"
+                          name="Id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2888,9 +2980,15 @@ SELECT  [TaxPeriod]
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
                           dataType="wstr"
-                          length="1000"
+                          length="100"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
                           name="FK_ID" />
+                        <outputColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          dataType="wstr"
+                          length="1000"
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          name="Id" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[TaxTypeValue]"
                           dataType="wstr"
@@ -3061,50 +3159,57 @@ SELECT  [TaxPeriod]
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[UniqueTaxID]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Id"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[PurchaseTypeValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="PurchaseTypeValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTypeValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[PurchaseTypeName]"
                           cachedDataType="wstr"
-                          cachedLength="140"
+                          cachedLength="1000"
                           cachedName="PurchaseTypeName"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[PurchaseTypeName]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeName]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Local]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Local"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Local]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Local]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Exported]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Exported"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Exported]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Exported]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[TotalValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="TotalValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TotalValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[Tax]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Tax"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].Columns[FK_ID]"
-                          cachedDataType="guid"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="FK_ID"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]" />
@@ -3122,7 +3227,8 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
@@ -3272,38 +3378,43 @@ SELECT  [TaxPeriod]
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[UniqueTaxID]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
-                          cachedDataType="i8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Id"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[Tax]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Tax"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[TaxTypeValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="TaxTypeValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TaxTypeValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[TaxTypeName]"
                           cachedDataType="wstr"
-                          cachedLength="50"
+                          cachedLength="1000"
                           cachedName="TaxTypeName"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TaxTypeName]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeName]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[TaxContainer]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="TaxContainer"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TaxContainer]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxContainer]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[FK_ID]"
-                          cachedDataType="guid"
+                          cachedDataType="wstr"
+                          cachedLength="100"
                           cachedName="FK_ID"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]" />
@@ -3321,7 +3432,8 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
@@ -3462,60 +3574,68 @@ SELECT  [TaxPeriod]
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[UniqueTaxID]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[UniqueTaxID]" />
                         <inputColumn
-                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
-                          cachedDataType="i8"
-                          cachedName="Id"
-                          externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]" />
-                        <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[TaxTypeValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="TaxTypeValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TaxTypeValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[TaxTypeName]"
                           cachedDataType="wstr"
-                          cachedLength="120"
+                          cachedLength="1000"
                           cachedName="TaxTypeName"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TaxTypeName]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeName]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[Quantity]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Quantity"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Quantity]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[ItemValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="ItemValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[ItemValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[ItemValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[ServiceValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="ServiceValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[ServiceValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[ServiceValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[TotalValue]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="TotalValue"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TotalValue]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[Tax]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="Tax"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]" />
                         <inputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[FK_ID]"
-                          cachedDataType="guid"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
                           cachedName="FK_ID"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]" />
+                        <inputColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[id]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3530,7 +3650,8 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
@@ -3690,19 +3811,21 @@ SELECT  [TaxPeriod]
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
-                          dataType="i8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
                           name="Id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTypeValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeValue]"
                           name="PurchaseTypeValue"
                           truncationRowDisposition="FailComponent" />
@@ -3712,52 +3835,57 @@ SELECT  [TaxPeriod]
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[PurchaseTypeName]"
-                          length="140"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[PurchaseTypeName]"
                           name="PurchaseTypeName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Local]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Local]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Local]"
                           name="Local"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Exported]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Exported]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Exported]"
                           name="Exported"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TotalValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]"
                           name="TotalValue"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Tax]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
                           name="Tax"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
                           name="FK_ID"
                           truncationRowDisposition="FailComponent" />
@@ -3810,7 +3938,8 @@ SELECT  [TaxPeriod]
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="1000"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </output>
@@ -3832,7 +3961,8 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
                           name="FK_ID" />
                         <outputColumn
@@ -3986,28 +4116,31 @@ SELECT  [TaxPeriod]
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
-                          dataType="i8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
                           name="Id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Tax]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
                           name="Tax"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TaxTypeValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeValue]"
                           name="TaxTypeValue"
                           truncationRowDisposition="FailComponent" />
@@ -4017,25 +4150,27 @@ SELECT  [TaxPeriod]
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TaxTypeName]"
-                          length="50"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeName]"
                           name="TaxTypeName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxContainer]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TaxContainer]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxContainer]"
                           name="TaxContainer"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
+                          length="100"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
                           name="FK_ID"
                           truncationRowDisposition="FailComponent" />
@@ -4078,7 +4213,8 @@ SELECT  [TaxPeriod]
                           name="TaxContainer" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </output>
@@ -4100,7 +4236,8 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
                           name="FK_ID" />
                         <outputColumn
@@ -4178,8 +4315,8 @@ SELECT  [TaxPeriod]
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/****** Script for SelectTopNRows command from SSMS  ******/
 SELECT  [TaxPeriod]
       ,[UniqueTaxID]
+      ,id
       ,[FK_ID]
-      ,[Id]
       --,[TableVatID]
       ,[TaxTypeValue]
       ,[TaxTypeName]
@@ -4244,20 +4381,12 @@ SELECT  [TaxPeriod]
                           name="UniqueTaxID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
-                          dataType="i8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
-                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Id]"
-                          name="Id"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TaxTypeValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeValue]"
                           name="TaxTypeValue"
                           truncationRowDisposition="FailComponent" />
@@ -4267,63 +4396,79 @@ SELECT  [TaxPeriod]
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TaxTypeName]"
-                          length="120"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TaxTypeName]"
                           name="TaxTypeName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Quantity]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Quantity]"
                           name="Quantity"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[ItemValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[ItemValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[ItemValue]"
                           name="ItemValue"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[ServiceValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[ServiceValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[ServiceValue]"
                           name="ServiceValue"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TotalValue]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[TotalValue]"
                           name="TotalValue"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Tax]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[Tax]"
                           name="Tax"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
+                          length="1000"
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[FK_ID]"
                           name="FK_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          length="1000"
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -4337,11 +4482,6 @@ SELECT  [TaxPeriod]
                           dataType="wstr"
                           length="9"
                           name="UniqueTaxID" />
-                        <externalMetadataColumn
-                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[Id]"
-                          dataType="wstr"
-                          length="1000"
-                          name="Id" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[TaxTypeValue]"
                           dataType="wstr"
@@ -4379,8 +4519,14 @@ SELECT  [TaxPeriod]
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="1000"
                           name="FK_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="wstr"
+                          length="1000"
+                          name="id" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -4400,16 +4546,17 @@ SELECT  [TaxPeriod]
                           lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[UniqueTaxID]"
                           name="UniqueTaxID" />
                         <outputColumn
-                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
-                          dataType="guid"
-                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
-                          name="FK_ID" />
-                        <outputColumn
-                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[Id]"
+                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[id]"
                           dataType="wstr"
                           length="1000"
-                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[Id]"
-                          name="Id" />
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
+                        <outputColumn
+                          refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
+                          dataType="wstr"
+                          length="1000"
+                          lineageId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[FK_ID]"
+                          name="FK_ID" />
                         <outputColumn
                           refId="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason.Outputs[OLE DB Source Error Output].Columns[TaxTypeValue]"
                           dataType="wstr"
@@ -7786,6 +7933,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
       DTS:refId="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
+      DTS:Disabled="True"
       DTS:DTSID="{0dcc3830-0584-4d83-8f28-7e524e1976ae}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -7975,7 +8123,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,41.6"
           Id="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons"
@@ -7986,35 +8134,33 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
           TopLeft="34.5142874464697,85.4117666105908" />
         <EdgeLayout
           Id="Package\Declaration_Jasons_STG_to_DWH.PrecedenceConstraints[Constraint]"
-          TopLeft="108.200001702989,56.6588244474469">
+          TopLeft="108.20000170299,56.658824447447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.7529421631439"
+              EndConnector="0,28.7529421631438"
               Start="0,0"
-              End="0,21.2529421631439">
+              End="0,21.2529421631438">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2529421631439" />
+                    End="0,21.2529421631438" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
-          PanelSize="262.4,145.6"
+          PanelSize="262.4,182.4"
           Size="262.4,43.2"
           Id="Package\Declaration_Jasons_STG_to_DWH"
-          TopLeft="155.65714447255,416.835300852763" />
+          TopLeft="155.08571589139,415.611771423839" />
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH"
@@ -8053,9 +8199,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8327,9 +8471,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -8338,7 +8480,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
           PanelSize="389.6,165.6"
           Size="353.6,43.2"
           Id="Package\Update Dim_Declarations (SalesNet &amp; SalesTableNet)"
-          TopLeft="221.942859137789,688.141180074091" />
+          TopLeft="221.371430556629,687.529415359629" />
         <NodeLayout
           Size="293.6,41.6"
           Id="Package\Update Dim_Declarations (Submission_Delay)"
@@ -8357,26 +8499,26 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.4000002724796,50.4588170087882"
+              EndConnector="65.8285716913201,49.8470522943259"
               Start="0,0"
-              End="66.4000002724796,42.9588170087882">
+              End="65.8285716913201,42.3470522943259">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.2294085043941" />
+                    End="0,20.9235261471629" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.2294085043941"
-                    Point2="0,25.2294085043941"
-                    Point3="4,25.2294085043941" />
+                    Point1="0,20.9235261471629"
+                    Point2="0,24.9235261471629"
+                    Point3="4,24.9235261471629" />
                   <mssgle:LineSegment
-                    End="62.4000002724796,25.2294085043941" />
+                    End="61.8285716913201,24.9235261471629" />
                   <mssgle:CubicBezierSegment
-                    Point1="62.4000002724796,25.2294085043941"
-                    Point2="66.4000002724796,25.2294085043941"
-                    Point3="66.4000002724796,29.2294085043941" />
+                    Point1="61.8285716913201,24.9235261471629"
+                    Point2="65.8285716913201,24.9235261471629"
+                    Point3="65.8285716913201,28.9235261471629" />
                   <mssgle:LineSegment
-                    End="66.4000002724796,42.9588170087882" />
+                    End="65.8285716913201,42.3470522943259" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8387,30 +8529,30 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="398.742859137789,731.341180074091">
+          TopLeft="398.171430556629,730.729415359629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.8857167088251,42.4470587119924"
+              EndConnector="10.457145289985,43.0588234264551"
               Start="0,0"
-              End="9.8857167088251,34.9470587119924">
+              End="10.457145289985,35.5588234264551">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.2235293559962" />
+                    End="0,17.5294117132275" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.2235293559962"
-                    Point2="0,21.2235293559962"
-                    Point3="4,21.2235293559962" />
+                    Point1="0,17.5294117132275"
+                    Point2="0,21.5294117132275"
+                    Point3="4,21.5294117132275" />
                   <mssgle:LineSegment
-                    End="5.8857167088251,21.2235293559962" />
+                    End="6.45714528998496,21.5294117132275" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.8857167088251,21.2235293559962"
-                    Point2="9.8857167088251,21.2235293559962"
-                    Point3="9.8857167088251,25.2235293559962" />
+                    Point1="6.45714528998496,21.5294117132275"
+                    Point2="10.457145289985,21.5294117132275"
+                    Point3="10.457145289985,25.5294117132275" />
                   <mssgle:LineSegment
-                    End="9.8857167088251,34.9470587119924" />
+                    End="10.457145289985,35.5588234264551" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8459,26 +8601,26 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.85714447255,24.0823511051"
+              EndConnector="108.28571589139,22.8588216761758"
               Start="0,0"
-              End="108.85714447255,16.5823511051">
+              End="108.28571589139,15.3588216761758">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.04117555255002" />
+                    End="0,7.4294108380879" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.04117555255002"
-                    Point2="0,12.04117555255"
-                    Point3="4,12.04117555255" />
+                    Point1="0,7.4294108380879"
+                    Point2="0,11.4294108380879"
+                    Point3="4,11.4294108380879" />
                   <mssgle:LineSegment
-                    End="104.85714447255,12.04117555255" />
+                    End="104.28571589139,11.4294108380879" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.85714447255,12.04117555255"
-                    Point2="108.85714447255,12.04117555255"
-                    Point3="108.85714447255,16.04117555255" />
+                    Point1="104.28571589139,11.4294108380879"
+                    Point2="108.28571589139,11.4294108380879"
+                    Point3="108.28571589139,15.4294108380879" />
                   <mssgle:LineSegment
-                    End="108.85714447255,16.5823511051" />
+                    End="108.28571589139,15.3588216761758" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8489,18 +8631,18 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="418.05714447255,440.435299467133">
+          TopLeft="417.48571589139,439.823534752671">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.057149990238,0"
+              EndConnector="146.628578571398,0"
               Start="0,0"
-              End="138.557149990238,0">
+              End="139.128578571398,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="138.557149990238,0" />
+                    End="139.128578571398,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8652,7 +8794,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
     design-time-name="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="247.2,41.6"
           Id="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason"
@@ -8700,9 +8842,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8724,19 +8864,59 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Sales_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Sales_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\Dim_NonTable_Purchases_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\NonTable_Jasons\NonTable_Purchases_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="228.8,41.6"
           Id="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason"
@@ -8792,9 +8972,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-34.99765625,43.8,50.3953125,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8828,9 +9006,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.45359375,43,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8864,16 +9040,69 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-36.25359375,41,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Sales_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Purchases_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Tax_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Tax_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Dim_Table_Purchases_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declaration_Jasons_STG_to_DWH\Table_Jasons\Table_Sales_Details_Jason">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8884,15 +9113,15 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
     design-time-name="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations"
-          TopLeft="264,144" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="195.2,41.6"
           Id="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add"
           TopLeft="242.4,38.4" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations"
+          TopLeft="264,144" />
         <EdgeLayout
           Id="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH.Paths[OLE DB Source Output]"
           TopLeft="342.2,80">
@@ -8912,19 +9141,38 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\All_Declarations_To_Add">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declarations_Add_STG_to_DWH\Dim_Declarations_STG_to_DWH\Dim_Declarations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Purchases\Dim_Invoices"
@@ -8964,7 +9212,9 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8974,7 +9224,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
     design-time-name="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\Dim_Invoices_STG_to_DWH\Dim_Invoices_Sales\Dim_Invoices"
@@ -9014,9 +9264,7 @@ on sms.SalesInvoice_Id=sinvd.Fk_SalesInvoices_Id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

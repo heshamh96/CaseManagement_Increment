@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_Income"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{6F1FB02F-9DC5-4611-B3A6-807FDDC6494B}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{619831E9-584A-41E8-A7A1-51D723777B64}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -14613,7 +14613,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\102_Flattening"
@@ -14641,9 +14641,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -14700,9 +14698,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14736,9 +14732,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14772,18 +14766,16 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43.2"
           IsExpanded="False"
           PanelSize="256,312"
-          Size="256,43.2"
+          Size="186.4,43.2"
           Id="Package\Flattened_to_STG"
-          TopLeft="148.142850810168,226.88235504322" />
+          TopLeft="148.142850810168,226.270590328758" />
         <NodeLayout
           Size="332,41.6"
           Id="Package\Post_Load_Deletions\Delete DWH_Dime_Income_102 overlapping with 106"
@@ -14823,9 +14815,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -14874,9 +14864,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -14885,7 +14873,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
           PanelSize="222.4,171.2"
           Size="177.6,43.2"
           Id="Package\Staging to DWH"
-          TopLeft="418.142864297848,314.223532637758" />
+          TopLeft="418.142864297848,313.611767923296" />
         <NodeLayout
           Size="206.4,41.6"
           Id="Package\Trunacte_IncomeFlattened"
@@ -15107,26 +15095,26 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.9428505547195,30.68235504322"
+              EndConnector="43.1428505547195,30.0705903287579"
               Start="0,0"
-              End="77.9428505547195,23.18235504322">
+              End="43.1428505547195,22.5705903287579">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.34117752161" />
+                    End="0,11.035295164379" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.34117752161"
-                    Point2="0,15.34117752161"
-                    Point3="4,15.34117752161" />
+                    Point1="0,11.035295164379"
+                    Point2="0,15.035295164379"
+                    Point3="4,15.035295164379" />
                   <mssgle:LineSegment
-                    End="73.9428505547195,15.34117752161" />
+                    End="39.1428505547195,15.035295164379" />
                   <mssgle:CubicBezierSegment
-                    Point1="73.9428505547195,15.34117752161"
-                    Point2="77.9428505547195,15.34117752161"
-                    Point3="77.9428505547195,19.34117752161" />
+                    Point1="39.1428505547195,15.035295164379"
+                    Point2="43.1428505547195,15.035295164379"
+                    Point3="43.1428505547195,19.035295164379" />
                   <mssgle:LineSegment
-                    End="77.9428505547195,23.18235504322" />
+                    End="43.1428505547195,22.5705903287579" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15137,13 +15125,13 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="276.142850810168,270.08235504322">
+          TopLeft="241.342850810168,269.470590328758">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="230.80001348768,44.141177594538"
+              EndConnector="265.60001348768,44.141177594538"
               Start="0,0"
-              End="230.80001348768,36.641177594538">
+              End="265.60001348768,36.641177594538">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15154,13 +15142,13 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
                     Point2="0,22.070588797269"
                     Point3="4,22.070588797269" />
                   <mssgle:LineSegment
-                    End="226.80001348768,22.070588797269" />
+                    End="261.60001348768,22.070588797269" />
                   <mssgle:CubicBezierSegment
-                    Point1="226.80001348768,22.070588797269"
-                    Point2="230.80001348768,22.070588797269"
-                    Point3="230.80001348768,26.070588797269" />
+                    Point1="261.60001348768,22.070588797269"
+                    Point2="265.60001348768,22.070588797269"
+                    Point3="265.60001348768,26.070588797269" />
                   <mssgle:LineSegment
-                    End="230.80001348768,36.641177594538" />
+                    End="265.60001348768,36.641177594538" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15175,9 +15163,9 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-129.571431731691,99.764706440038"
+              EndConnector="-129.571431731691,99.7647064400381"
               Start="0,0"
-              End="-129.571431731691,92.264706440038">
+              End="-129.571431731691,92.2647064400381">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -15194,7 +15182,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
                     Point2="-129.571431731691,49.882353220019"
                     Point3="-129.571431731691,53.882353220019" />
                   <mssgle:LineSegment
-                    End="-129.571431731691,92.264706440038" />
+                    End="-129.571431731691,92.2647064400381" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15205,30 +15193,30 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="506.942864297848,357.423532637758">
+          TopLeft="506.942864297848,356.811767923296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.371429194237,60.4117639851819"
+              EndConnector="-23.371429194237,61.0235286996441"
               Start="0,0"
-              End="-23.371429194237,52.9117639851819">
+              End="-23.371429194237,53.5235286996441">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.205881992591" />
+                    End="0,26.511764349822" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.205881992591"
-                    Point2="0,30.205881992591"
-                    Point3="-4,30.205881992591" />
+                    Point1="0,26.511764349822"
+                    Point2="0,30.511764349822"
+                    Point3="-4,30.511764349822" />
                   <mssgle:LineSegment
-                    End="-19.371429194237,30.205881992591" />
+                    End="-19.371429194237,30.511764349822" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.371429194237,30.205881992591"
-                    Point2="-23.371429194237,30.205881992591"
-                    Point3="-23.371429194237,34.205881992591" />
+                    Point1="-19.371429194237,30.511764349822"
+                    Point2="-23.371429194237,30.511764349822"
+                    Point3="-23.371429194237,34.511764349822" />
                   <mssgle:LineSegment
-                    End="-23.371429194237,52.9117639851819" />
+                    End="-23.371429194237,53.5235286996441" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15353,7 +15341,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
     design-time-name="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,41.6"
           Id="Package\Delta_Income_Flattening_from Src_to_IncomeFlattened\106_Flattening\Income_Tax_106"
@@ -15397,9 +15385,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15433,9 +15419,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15466,7 +15450,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
     design-time-name="Package\Flattened_to_STG\102_Stg_to_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Flattened_to_STG\102_Stg_to_STG\VW_102"
@@ -15506,7 +15490,9 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15542,7 +15528,7 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
     design-time-name="Package\Flattened_to_STG\106_Stg_to_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Flattened_to_STG\106_Stg_to_STG\VW_106"
@@ -15582,7 +15568,9 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15658,7 +15646,9 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16054,7 +16044,9 @@ and inc.CreationDate&gt;isnull(dw.CreationDate,dateadd(d,-1,inc.CreationDate))</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

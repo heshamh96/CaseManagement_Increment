@@ -2,28 +2,28 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CaseManagement Integeration Increment</Name>
-    <LastWriteTime>2022-11-08T09:22:14.5906563Z</LastWriteTime>
+    <LastWriteTime>2022-11-14T02:05:02.8823396Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>SSAS_Processing.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:47.1868573Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:26:09.5555306Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>AA_Deployment_Version.dtsx</Name>
-      <LastWriteTime>2022-06-21T11:00:02.3826747Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:27:30.9849578Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Post_Excution.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:47.3068682Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:33:24.5546756Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>VAT_IBM_Transferes.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:47.2038601Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:33:24.5146718Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_Income.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:47.2758671Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:33:24.537675Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -43,22 +43,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_Withholdings.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:47.2338619Z</LastWriteTime>
+      <LastWriteTime>2022-11-10T09:04:34.4919355Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_Vat_Executer.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:51.1075076Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:33:24.6016794Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_VAT_Watcher.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:51.0845059Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:33:24.5776784Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Module_PayRoll.dtsx</Name>
-      <LastWriteTime>2022-11-09T10:33:47.1598555Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T02:05:02.8093343Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -68,7 +68,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>VAT_Post_Excution_On_Staging.dtsx</Name>
-      <LastWriteTime>2022-11-08T09:22:14.5431933Z</LastWriteTime>
+      <LastWriteTime>2022-11-14T04:33:24.6156822Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

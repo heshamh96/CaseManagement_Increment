@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Module_VAT_Watcher"
   DTS:PackageType="5"
-  DTS:VersionBuild="126"
-  DTS:VersionGUID="{BB6EB45F-2A77-45CC-847E-0632A50C62FB}">
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{71A73A12-5836-4C1B-9AE4-A76F4E531F97}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,7 +31,6 @@
           DTS:refId="Package\Declarations' Json Vat to STG\NonTable_Jasons"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{35446cb9-3115-41ae-b81b-81dd2a4c8a01}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -3539,17 +3538,6 @@ where Namozag_Name=10</property>
                           lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[ExtractedDate]"
                           name="ExtractedDate"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          name="Developed_By"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3750,12 +3738,6 @@ where Namozag_Name=10</property>
                           refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Output].ExternalColumns[ExtractedDate]"
                           dataType="dbTimeStamp"
                           name="ExtractedDate" />
-                        <externalMetadataColumn
-                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -4002,13 +3984,6 @@ where Namozag_Name=10</property>
                           dataType="dbTimeStamp"
                           lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[ExtractedDate]"
                           name="ExtractedDate" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -4698,12 +4673,6 @@ where Namozag_Name=10</property>
                           name="TotalTaxValue"
                           precision="18"
                           scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Sales.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -5156,7 +5125,8 @@ where Namozag_Name=10</property>
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </input>
@@ -5321,17 +5291,17 @@ where Namozag_Name=10</property>
                           externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[TotalValue]"
                           lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1 1.Outputs[JsonParserTransformOutput].Columns[TotalValue]" />
                         <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[NonTableVatID]"
+                          refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
                           cachedDataType="wstr"
                           cachedLength="1000"
-                          cachedName="NonTableVatID"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1 1.Outputs[JsonParserTransformOutput].Columns[NonTableVatID]" />
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1 1.Outputs[JsonParserTransformOutput].Columns[Id]" />
                         <inputColumn
                           refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].Columns[ID]"
                           cachedDataType="guid"
                           cachedName="ID"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
                           lineageId="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1 1.Outputs[JsonParserTransformOutput].Columns[ID]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -5387,7 +5357,8 @@ where Namozag_Name=10</property>
                           name="TotalValue" />
                         <externalMetadataColumn
                           refId="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </input>
@@ -5447,7 +5418,6 @@ where Namozag_Name=10</property>
           DTS:refId="Package\Declarations' Json Vat to STG\Table_Jasons"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{85df3308-cabd-4d5b-8e1f-5c5254f190ee}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -5818,167 +5788,6 @@ where Namozag_Name=10</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableDetails]"
-                          cachedDataType="nText"
-                          cachedName="SalesTableDetails"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableDetails]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableDetails]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableTotal]"
-                          cachedDataType="numeric"
-                          cachedName="SalesTableTotal"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableTotal]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableTotal]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableAdjustment]"
-                          cachedDataType="numeric"
-                          cachedName="SalesTableAdjustment"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableAdjustment]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableAdjustment]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableVat]"
-                          cachedDataType="numeric"
-                          cachedName="SalesTableVat"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableVat]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableVat]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableDetails]"
-                          cachedDataType="nText"
-                          cachedName="PurchaseTableDetails"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableDetails]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableDetails]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableTotal]"
-                          cachedDataType="numeric"
-                          cachedName="PurchaseTableTotal"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableTotal]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableTotal]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableAdjustment]"
-                          cachedDataType="numeric"
-                          cachedName="PurchaseTableAdjustment"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableAdjustment]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableAdjustment]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableVat]"
-                          cachedDataType="numeric"
-                          cachedName="PurchaseTableVat"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableVat]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableVat]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[RecivableTableTax]"
-                          cachedDataType="numeric"
-                          cachedName="RecivableTableTax"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[RecivableTableTax]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[RecivableTableTax]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[DebtTableValue]"
-                          cachedDataType="numeric"
-                          cachedName="DebtTableValue"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[DebtTableValue]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[DebtTableValue]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[TotalTableTaxValue]"
-                          cachedDataType="numeric"
-                          cachedName="TotalTableTaxValue"
-                          cachedPrecision="18"
-                          cachedScale="2"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[TotalTableTaxValue]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TotalTableTaxValue]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[ApplicantName]"
                           cachedDataType="wstr"
                           cachedLength="50"
@@ -6272,6 +6081,167 @@ where Namozag_Name=10</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableDetails]"
+                          cachedDataType="nText"
+                          cachedName="SalesTableDetails"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableDetails]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableDetails]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableTotal]"
+                          cachedDataType="numeric"
+                          cachedName="SalesTableTotal"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableTotal]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableTotal]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableAdjustment]"
+                          cachedDataType="numeric"
+                          cachedName="SalesTableAdjustment"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableAdjustment]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableAdjustment]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableVat]"
+                          cachedDataType="numeric"
+                          cachedName="SalesTableVat"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[SalesTableVat]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableVat]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableDetails]"
+                          cachedDataType="nText"
+                          cachedName="PurchaseTableDetails"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableDetails]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableDetails]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableTotal]"
+                          cachedDataType="numeric"
+                          cachedName="PurchaseTableTotal"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableTotal]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableTotal]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableAdjustment]"
+                          cachedDataType="numeric"
+                          cachedName="PurchaseTableAdjustment"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableAdjustment]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableAdjustment]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableVat]"
+                          cachedDataType="numeric"
+                          cachedName="PurchaseTableVat"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[PurchaseTableVat]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableVat]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[RecivableTableTax]"
+                          cachedDataType="numeric"
+                          cachedName="RecivableTableTax"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[RecivableTableTax]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[RecivableTableTax]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[DebtTableValue]"
+                          cachedDataType="numeric"
+                          cachedName="DebtTableValue"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[DebtTableValue]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[DebtTableValue]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[TotalTableTaxValue]"
+                          cachedDataType="numeric"
+                          cachedName="TotalTableTaxValue"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[TotalTableTaxValue]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TotalTableTaxValue]">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              expressionType="Notify"
+                              name="IncludeDownStream">true</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[InquiryTransAmountVAT]"
                           cachedDataType="numeric"
                           cachedName="InquiryTransAmountVAT"
@@ -6327,21 +6297,6 @@ where Namozag_Name=10</property>
                               name="IncludeDownStream">true</property>
                           </properties>
                         </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[Developed_By]"
-                          cachedCodepage="1256"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Developed_By"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[Developed_By]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True" />
@@ -6355,14 +6310,6 @@ where Namozag_Name=10</property>
                       name="JsonParserTransformOutput"
                       truncationRowDisposition="FailComponent">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[Developed_By]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[Developed_By]"
-                          name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[ExtractedDate]"
                           dataType="dbTimeStamp"
@@ -6391,6 +6338,90 @@ where Namozag_Name=10</property>
                           name="InquiryTransAmountVAT"
                           precision="18"
                           scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TotalTableTaxValue]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TotalTableTaxValue]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[TotalTableTaxValue]"
+                          name="TotalTableTaxValue"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[DebtTableValue]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[DebtTableValue]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[DebtTableValue]"
+                          name="DebtTableValue"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[RecivableTableTax]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[RecivableTableTax]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[RecivableTableTax]"
+                          name="RecivableTableTax"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableVat]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableVat]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableVat]"
+                          name="PurchaseTableVat"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableAdjustment]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableAdjustment]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableAdjustment]"
+                          name="PurchaseTableAdjustment"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableTotal]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableTotal]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableTotal]"
+                          name="PurchaseTableTotal"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableDetails]"
+                          dataType="nText"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableDetails]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableDetails]"
+                          name="PurchaseTableDetails" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableVat]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableVat]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableVat]"
+                          name="SalesTableVat"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableAdjustment]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableAdjustment]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableAdjustment]"
+                          name="SalesTableAdjustment"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableTotal]"
+                          dataType="numeric"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableTotal]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableTotal]"
+                          name="SalesTableTotal"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableDetails]"
+                          dataType="nText"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableDetails]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableDetails]"
+                          name="SalesTableDetails" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[ReconciliationValue]"
                           dataType="numeric"
@@ -6530,90 +6561,6 @@ where Namozag_Name=10</property>
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[ApplicantName]"
                           mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[ApplicantName]"
                           name="ApplicantName" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TotalTableTaxValue]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TotalTableTaxValue]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[TotalTableTaxValue]"
-                          name="TotalTableTaxValue"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[DebtTableValue]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[DebtTableValue]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[DebtTableValue]"
-                          name="DebtTableValue"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[RecivableTableTax]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[RecivableTableTax]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[RecivableTableTax]"
-                          name="RecivableTableTax"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableVat]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableVat]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableVat]"
-                          name="PurchaseTableVat"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableAdjustment]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableAdjustment]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableAdjustment]"
-                          name="PurchaseTableAdjustment"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableTotal]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableTotal]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableTotal]"
-                          name="PurchaseTableTotal"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableDetails]"
-                          dataType="nText"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[PurchaseTableDetails]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[PurchaseTableDetails]"
-                          name="PurchaseTableDetails" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableVat]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableVat]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableVat]"
-                          name="SalesTableVat"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableAdjustment]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableAdjustment]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableAdjustment]"
-                          name="SalesTableAdjustment"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableTotal]"
-                          dataType="numeric"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableTotal]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableTotal]"
-                          name="SalesTableTotal"
-                          precision="18"
-                          scale="2" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableDetails]"
-                          dataType="nText"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[SalesTableDetails]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Inputs[JsonParserTransformInput].Columns[SalesTableDetails]"
-                          name="SalesTableDetails" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[TableTaxVat]"
                           dataType="numeric"
@@ -6800,13 +6747,6 @@ where Namozag_Name=10</property>
                       isErrorOut="true"
                       name="JsonParserTransform Error Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[Developed_By]"
-                          name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransform Error Output].Columns[ExtractedDate]"
                           dataType="dbTimeStamp"
@@ -8037,21 +7977,6 @@ where Namozag_Name=10</property>
                               name="IncludeDownStream">true</property>
                           </properties>
                         </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1.Inputs[JsonParserTransformInput].Columns[Developed_By]"
-                          cachedCodepage="1256"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Developed_By"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1.Outputs[JsonParserTransformOutput].Columns[Developed_By]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True" />
@@ -8071,7 +7996,7 @@ where Namozag_Name=10</property>
                           dataType="str"
                           length="50"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1.Outputs[JsonParserTransformOutput].Columns[Developed_By]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1.Inputs[JsonParserTransformInput].Columns[Developed_By]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
                           name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1.Outputs[JsonParserTransformOutput].Columns[ExtractedDate]"
@@ -9693,21 +9618,6 @@ where Namozag_Name=10</property>
                               name="IncludeDownStream">true</property>
                           </properties>
                         </inputColumn>
-                        <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1 2.Inputs[JsonParserTransformInput].Columns[Developed_By]"
-                          cachedCodepage="1256"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Developed_By"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1 2.Outputs[JsonParserTransformOutput].Columns[Developed_By]">
-                          <properties>
-                            <property
-                              dataType="System.Boolean"
-                              expressionType="Notify"
-                              name="IncludeDownStream">true</property>
-                          </properties>
-                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True" />
@@ -9727,7 +9637,7 @@ where Namozag_Name=10</property>
                           dataType="str"
                           length="50"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1 2.Outputs[JsonParserTransformOutput].Columns[Developed_By]"
-                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1 2.Inputs[JsonParserTransformInput].Columns[Developed_By]"
+                          mappedColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[ID]"
                           name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1 2.Outputs[JsonParserTransformOutput].Columns[ExtractedDate]"
@@ -11048,17 +10958,6 @@ where Namozag_Name=101</property>
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[ExtractedDate]"
                           name="ExtractedDate"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          name="Developed_By"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -11291,12 +11190,6 @@ where Namozag_Name=101</property>
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].ExternalColumns[ExtractedDate]"
                           dataType="dbTimeStamp"
                           name="ExtractedDate" />
-                        <externalMetadataColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -11581,13 +11474,6 @@ where Namozag_Name=101</property>
                           dataType="dbTimeStamp"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[ExtractedDate]"
                           name="ExtractedDate" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -12137,17 +12023,6 @@ where Namozag_Name=101</property>
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].Columns[ExtractedDate]"
                           name="ExtractedDate"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          name="Developed_By"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -12380,12 +12255,6 @@ where Namozag_Name=101</property>
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].ExternalColumns[ExtractedDate]"
                           dataType="dbTimeStamp"
                           name="ExtractedDate" />
-                        <externalMetadataColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -12670,13 +12539,6 @@ where Namozag_Name=101</property>
                           dataType="dbTimeStamp"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Error Output].Columns[ExtractedDate]"
                           name="ExtractedDate" />
-                        <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          name="Developed_By" />
                         <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -13061,17 +12923,6 @@ where Namozag_Name=101</property>
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[Developed_By]"
-                          name="Developed_By"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].Columns[TableTaxDetails]"
                           dataType="nText"
                           errorOrTruncationOperation="Conversion"
@@ -13383,12 +13234,6 @@ where Namozag_Name=101</property>
                           name="ReconciliationValue"
                           precision="18"
                           scale="2" />
-                        <externalMetadataColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                         <externalMetadataColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Output].ExternalColumns[TableTaxDetails]"
                           dataType="nText"
@@ -13760,13 +13605,6 @@ where Namozag_Name=101</property>
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Error Output].Columns[ExtractedDate]"
                           name="ExtractedDate" />
                         <outputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Error Output].Columns[Developed_By]"
-                          name="Developed_By" />
-                        <outputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
@@ -13972,7 +13810,8 @@ where Namozag_Name=101</property>
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Purchases_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="1000"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </input>
@@ -14167,7 +14006,8 @@ where Namozag_Name=101</property>
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Sales_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="100"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </input>
@@ -14283,13 +14123,6 @@ where Namozag_Name=101</property>
                           externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[UniqueTaxID]"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[UniqueTaxID]" />
                         <inputColumn
-                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
-                          cachedDataType="wstr"
-                          cachedLength="1000"
-                          cachedName="Id"
-                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[Id]" />
-                        <inputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[TaxTypeValue]"
                           cachedDataType="wstr"
                           cachedLength="1000"
@@ -14338,6 +14171,13 @@ where Namozag_Name=101</property>
                           cachedName="Tax"
                           externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Tax]"
                           lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[Tax]" />
+                        <inputColumn
+                          refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[Id]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="Id"
+                          externalMetadataColumnId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform.Outputs[JsonParserTransformOutput].Columns[Id]" />
                         <inputColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].Columns[ID]"
                           cachedDataType="guid"
@@ -14398,7 +14238,8 @@ where Namozag_Name=101</property>
                           name="Tax" />
                         <externalMetadataColumn
                           refId="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason.Inputs[OLE DB Destination Input].ExternalColumns[FK_ID]"
-                          dataType="guid"
+                          dataType="wstr"
+                          length="1000"
                           name="FK_ID" />
                       </externalMetadataColumns>
                     </input>
@@ -14468,7 +14309,6 @@ where Namozag_Name=101</property>
           DTS:refId="Package\Declarations' Json Vat to STG\truncate_STG_Jasons"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{6bc5b8fb-0a4b-45ab-b06b-8f6925555c82}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -14486,6 +14326,7 @@ where Namozag_Name=101</property>
           DTS:refId="Package\Declarations' Json Vat to STG\Update NonTable_Decs (Sales Net) in staging"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{5A21C6B5-B89D-478C-ADF2-35961D8D027E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -14503,6 +14344,7 @@ where Namozag_Name=101</property>
           DTS:refId="Package\Declarations' Json Vat to STG\Update Table_Decs (SalesNet &amp; SalesTableNet) in staging"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{58AFEB95-6842-4EF4-8918-CEE505A601F2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -20542,12 +20384,6 @@ and det.IsDeleted=0</property>
                           refId="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details.Outputs[OLE DB Source Output].ExternalColumns[InvoiceDate]"
                           dataType="dbDate"
                           name="InvoiceDate" />
-                        <externalMetadataColumn
-                          refId="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -21535,12 +21371,6 @@ and det.IsDeleted=0</property>
                           refId="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details.Outputs[OLE DB Source Output].ExternalColumns[InvoiceDate]"
                           dataType="dbDate"
                           name="InvoiceDate" />
-                        <externalMetadataColumn
-                          refId="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details.Outputs[OLE DB Source Output].ExternalColumns[Developed_By]"
-                          codePage="1256"
-                          dataType="str"
-                          length="50"
-                          name="Developed_By" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -27119,7 +26949,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,41.6"
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons"
@@ -27171,9 +27001,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27207,9 +27035,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27237,9 +27063,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27273,9 +27097,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27417,9 +27239,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27465,7 +27285,7 @@ and dwh.SendDate is null</property>
           PanelSize="338.4,200"
           Size="338.4,43.2"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging"
-          TopLeft="422.971435325,556.517650645167" />
+          TopLeft="422.971435325,555.905885930705" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging\SentPurchasesInvoices"
@@ -27502,7 +27322,7 @@ and dwh.SendDate is null</property>
           PanelSize="359.2,179.2"
           Size="359.2,43.2"
           Id="Package\Filter_Sent_Invoices_Based On Declarations in Staging"
-          TopLeft="429.514292827918,458.905886076561" />
+          TopLeft="429.514292827918,458.294121362099" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Fix The Sent Tables (On the Fly)\Sent_Purchases"
@@ -27752,9 +27572,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27788,9 +27606,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
@@ -27882,9 +27698,9 @@ and dwh.SendDate is null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.8571420883642,45.78823557725"
+              EndConnector="12.8571420883643,45.78823557725"
               Start="0,0"
-              End="12.8571420883642,38.28823557725">
+              End="12.8571420883643,38.28823557725">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -27895,13 +27711,13 @@ and dwh.SendDate is null</property>
                     Point2="0,22.894117788625"
                     Point3="4,22.894117788625" />
                   <mssgle:LineSegment
-                    End="8.85714208836424,22.894117788625" />
+                    End="8.8571420883643,22.894117788625" />
                   <mssgle:CubicBezierSegment
-                    Point1="8.85714208836424,22.894117788625"
-                    Point2="12.8571420883642,22.894117788625"
-                    Point3="12.8571420883642,26.894117788625" />
+                    Point1="8.8571420883643,22.894117788625"
+                    Point2="12.8571420883643,22.894117788625"
+                    Point3="12.8571420883643,26.894117788625" />
                   <mssgle:LineSegment
-                    End="12.8571420883642,38.28823557725" />
+                    End="12.8571420883643,38.28823557725" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27984,9 +27800,9 @@ and dwh.SendDate is null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-73.6000048364909,34.7450974643713"
+              EndConnector="-73.600004836491,34.7450974643713"
               Start="0,0"
-              End="-66.1000048364909,34.7450974643713">
+              End="-66.100004836491,34.7450974643713">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28003,7 +27819,7 @@ and dwh.SendDate is null</property>
                     Point2="-31.0171448953783,34.7450974643713"
                     Point3="-35.0171448953783,34.7450974643713" />
                   <mssgle:LineSegment
-                    End="-66.1000048364909,34.7450974643713" />
+                    End="-66.100004836491,34.7450974643713" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28102,9 +27918,9 @@ and dwh.SendDate is null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="42.6571478104109,47.141175844265"
+              EndConnector="42.6571478104109,46.5294111298028"
               Start="0,0"
-              End="35.1571478104109,47.141175844265">
+              End="35.1571478104109,46.5294111298028">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -28115,13 +27931,13 @@ and dwh.SendDate is null</property>
                     Point2="21.3285739052055,0"
                     Point3="21.3285739052055,4" />
                   <mssgle:LineSegment
-                    End="21.3285739052055,43.141175844265" />
+                    End="21.3285739052055,42.5294111298028" />
                   <mssgle:CubicBezierSegment
-                    Point1="21.3285739052055,43.141175844265"
-                    Point2="21.3285739052055,47.141175844265"
-                    Point3="25.3285739052055,47.141175844265" />
+                    Point1="21.3285739052055,42.5294111298028"
+                    Point2="21.3285739052055,46.5294111298028"
+                    Point3="25.3285739052055,46.5294111298028" />
                   <mssgle:LineSegment
-                    End="35.1571478104109,47.141175844265" />
+                    End="35.1571478104109,46.5294111298028" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28154,7 +27970,7 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="609.114292827918,502.105886076561">
+          TopLeft="609.114292827918,501.494121362099">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -28188,18 +28004,18 @@ and dwh.SendDate is null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="591.057149206863,599.717650645167">
+          TopLeft="591.057149206863,599.105885930705">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.8588232805979"
+              EndConnector="0,24.4705879950601"
               Start="0,0"
-              End="0,16.3588232805979">
+              End="0,16.9705879950601">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.3588232805979" />
+                    End="0,16.9705879950601" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28215,23 +28031,23 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="224,41.6"
-          Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason"
-          TopLeft="490,241.8" />
+          Size="247.2,41.6"
+          Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason"
+          TopLeft="63,240" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Sales"
           TopLeft="519.2,33" />
         <NodeLayout
+          Size="224,41.6"
+          Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason"
+          TopLeft="490,241.8" />
+        <NodeLayout
           Size="208.8,41.6"
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases"
           TopLeft="52.8,32.8" />
-        <NodeLayout
-          Size="247.2,41.6"
-          Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason"
-          TopLeft="63,240" />
         <NodeLayout
           Size="198.4,41.6"
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1"
@@ -28240,6 +28056,40 @@ and dwh.SendDate is null</property>
           Size="188,41.6"
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons\JSON Parser Transform 1 1"
           TopLeft="521.2,143.4" />
+        <EdgeLayout
+          Id="Package\Declarations' Json Vat to STG\NonTable_Jasons.Paths[OLE DB Source Output1]"
+          TopLeft="157.2,74.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,65.6"
+              Start="0,0"
+              End="12,58.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.8"
+                    Point2="0,32.8"
+                    Point3="4,32.8" />
+                  <mssgle:LineSegment
+                    End="7.99999999999997,32.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.99999999999997,32.8"
+                    Point2="12,32.8"
+                    Point3="12,36.8" />
+                  <mssgle:LineSegment
+                    End="12,58.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Declarations' Json Vat to STG\NonTable_Jasons.Paths[OLE DB Source Output]"
           TopLeft="613.7,75">
@@ -28259,9 +28109,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.57953125,24.82841796875,61.1590625,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28295,9 +28143,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-41.4001171875,33.2,69.600234375,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28331,52 +28177,14 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.0501171875,34,69.600234375,11.2431640625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Declarations' Json Vat to STG\NonTable_Jasons.Paths[OLE DB Source Output1]"
-          TopLeft="157.2,74.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12,65.6"
-              Start="0,0"
-              End="12,58.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.8"
-                    Point2="0,32.8"
-                    Point3="4,32.8" />
-                  <mssgle:LineSegment
-                    End="7.99999999999997,32.8" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.99999999999997,32.8"
-                    Point2="12,32.8"
-                    Point3="12,36.8" />
-                  <mssgle:LineSegment
-                    End="12,58.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.57953125,37.8,61.1590625,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason">
+    design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -28397,15 +28205,7 @@ and dwh.SendDate is null</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Purchases_Details_Jason">
+    design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTable_Sales_Details_Jason">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -28417,27 +28217,39 @@ and dwh.SendDate is null</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declarations' Json Vat to STG\NonTable_Jasons\NonTableVatTax_Purchases">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1"
-          TopLeft="643.8,93.4" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_TableTax"
           TopLeft="157.25714454067,32.8000001458561" />
         <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases"
-          TopLeft="404.114291601765,13.2235292830682" />
-        <NodeLayout
           Size="198.4,41.6"
           Id="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1 2"
           TopLeft="399,88" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform 1"
+          TopLeft="643.8,93.4" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales"
+          TopLeft="648.11429575706,8.70588228430301" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Sales_Details_Jason"
+          TopLeft="632,196" />
         <NodeLayout
           Size="198.4,41.6"
           Id="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Tax_Details_Jason"
@@ -28447,17 +28259,35 @@ and dwh.SendDate is null</property>
           Id="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Purchases_Details_Jason"
           TopLeft="394,184" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales"
-          TopLeft="648.11429575706,9.31764699876513" />
+          Size="189.6,41.6"
+          Id="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases"
+          TopLeft="404.114291601765,13.2235292830682" />
         <NodeLayout
           Size="188,41.6"
           Id="Package\Declarations' Json Vat to STG\Table_Jasons\JSON Parser Transform"
           TopLeft="164.7,144.3" />
-        <NodeLayout
-          Size="204.8,41.6"
-          Id="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Sales_Details_Jason"
-          TopLeft="632,196" />
+        <EdgeLayout
+          Id="Package\Declarations' Json Vat to STG\Table_Jasons.Paths[OLE DB Source Output2]"
+          TopLeft="734.75714787853,50.305882284303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.094117715697"
+              Start="0,0"
+              End="0,35.594117715697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.594117715697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Declarations' Json Vat to STG\Table_Jasons.Paths[OLE DB Source Output1]"
           TopLeft="498.557145800882,54.8235292830682">
@@ -28477,9 +28307,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.5844140625,7.2166533272159,61.168828125,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28513,9 +28341,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.2629863328349,39.949999927072,61.168828125,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28537,9 +28363,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.57953125,20.93818359375,61.1590625,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28573,9 +28397,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-29.51447265625,32,69.0289453125,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28597,33 +28419,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.64056640625,12.0990061096667,61.2811328125,11.2431640625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Declarations' Json Vat to STG\Table_Jasons.Paths[OLE DB Source Output2]"
-          TopLeft="734.75714787853,50.9176469987651">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.4823530012349"
-              Start="0,0"
-              End="0,34.9823530012349">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.9823530012349" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.5844140625,11.8695944693674,61.168828125,11.2431640625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -28638,10 +28434,23 @@ and dwh.SendDate is null</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases">
+    design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Sales_Details_Jason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -28672,23 +28481,10 @@ and dwh.SendDate is null</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Sales">
+    design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons\TableVatTax_Purchases">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Declarations' Json Vat to STG\Table_Jasons\Table_Sales_Details_Jason">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -28725,7 +28521,7 @@ and dwh.SendDate is null</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-18.1494140625,34.26337890625,36.298828125,9.5732421875"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -28864,7 +28660,7 @@ and dwh.SendDate is null</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-52.3587585700288,47.5176479468296,74.4889453125,11.228515625"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -28896,7 +28692,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="219.2,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Purchase_Invoice_Details\Purchase_Invoice_Details_Stg"
@@ -28936,9 +28732,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-22.1844140625,39,61.168828125,11.228515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -28969,7 +28763,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="201.6,41.6"
           Id="Package\Filter Inovices_Details Based on Invoices Staging\STG_Sales_Invoice_Details\Sales_Invoice_Details_Stg"
@@ -29009,9 +28803,7 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-38.71447265625,52.6,69.0289453125,11.2236328125"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29042,7 +28834,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="228,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Purchae_Invoice_Master_STG\Purchase_Invoices_Master_STG"
@@ -29086,7 +28878,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29120,7 +28914,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29156,7 +28952,7 @@ and dwh.SendDate is null</property>
     design-time-name="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Filter_Invoices_Based On Sent Invoices in Staging\Sales_Invoice_Master_STG\Sales_Invoices_Master_STG"
@@ -29200,7 +28996,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29234,7 +29032,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29417,7 +29217,7 @@ and dwh.SendDate is null</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-100.11447265625,-17.228515625,69.0289453125,11.228515625"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -29453,7 +29253,7 @@ and dwh.SendDate is null</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="119.68552734375,37,69.0289453125,11.228515625"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -29485,15 +29285,15 @@ and dwh.SendDate is null</property>
     design-time-name="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="297.6,41.6"
-          Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Final Declarations from STG_SCD_Declarations"
-          TopLeft="236,41.6" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Declarations_To_Add"
           TopLeft="286.4,174.4" />
+        <NodeLayout
+          Size="297.6,41.6"
+          Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial)\Final Declarations from STG_SCD_Declarations"
+          TopLeft="236,41.6" />
         <EdgeLayout
           Id="Package\New_Declarations_TO_ADD_ STG_to_STG (Initial).Paths[OLE DB Source Output]"
           TopLeft="385.2,83.2">
@@ -29525,7 +29325,9 @@ and dwh.SendDate is null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
